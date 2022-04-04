@@ -9,6 +9,6 @@ public class GameStarter : MonoBehaviour
     
     private void Awake()
     {   
-        SceneManager.LoadScene(assetRoot.mainMenuScene.name, LoadSceneMode.Additive);
+        SceneManager.LoadScene(assetRoot.mainMenuUIScene.name, LoadSceneMode.Additive);
     }
 }

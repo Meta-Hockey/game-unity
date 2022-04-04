@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384fe1e998fc46f49027a259c7105718, type: 3}
   m_Name: Asset Root
   m_EditorClassIdentifier: 
-  mainMenuScene: {fileID: 102900000, guid: 528d0cd41992ded6b9139008edc70394, type: 3}
+  mainMenuUIScene: {fileID: 102900000, guid: 528d0cd41992ded6b9139008edc70394, type: 3}
