@@ -27,10 +27,8 @@ namespace UI.MainMenu
                 args.limit = 50;
 
                 var opponents = await gameContract.View("get_available_players", args);
-
-                dynamic r = opponents.result;
                 
-                opponentsText.text = "Your opponents: " + r + "  ...";
+                opponentsText.text = "Your opponents: " + opponents.result;
                 
 
                 accountId.text = "Your account id: " + NearPersistentManager.Instance.WalletAccount.GetAccountId();
