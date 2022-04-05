@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384fe1e998fc46f49027a259c7105718, type: 3}
   m_Name: Asset Root
   m_EditorClassIdentifier: 
+  signInUIScene: {fileID: 102900000, guid: 64e9553e69fd6f33d8aba5b4cca5f282, type: 3}
   mainMenuUIScene: {fileID: 102900000, guid: 528d0cd41992ded6b9139008edc70394, type: 3}
+  betsUIScene: {fileID: 102900000, guid: 2929d0aaa8390ca1688c623ea596d6d1, type: 3}

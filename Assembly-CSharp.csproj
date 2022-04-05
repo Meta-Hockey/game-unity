@@ -53,12 +53,13 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Assets\AssetRoot.cs" />
-     <Compile Include="Assets\Scripts\NearPersistentManager.cs" />
-     <Compile Include="Assets\Scripts\UI\MainMenu\PlayGameButton.cs" />
-     <Compile Include="Assets\Scripts\UI\MainMenu\SignOutButton.cs" />
-     <Compile Include="Assets\Scripts\GameStarter.cs" />
-     <Compile Include="Assets\Scripts\UI\MainMenu\SignInButton.cs" />
-     <Compile Include="Assets\Scripts\UI\MainMenu\CompleteSignInButton.cs" />
+     <Compile Include="Assets\Scripts\Runtime\Game.cs" />
+     <Compile Include="Assets\Scripts\Runtime\NearPersistentManager.cs" />
+     <Compile Include="Assets\Scripts\UI\Main menu\PlayGameButton.cs" />
+     <Compile Include="Assets\Scripts\UI\Main menu\LoadInfo.cs" />
+     <Compile Include="Assets\Scripts\UI\Main menu\SignOutButton.cs" />
+     <Compile Include="Assets\Scripts\UI\Sign In\SignInButton.cs" />
+     <Compile Include="Assets\Scripts\UI\Sign In\CompleteSignInButton.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/home/yurii/Unity/Hub/Editor/2020.3.31f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
