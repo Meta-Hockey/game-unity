@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 using NearClientUnity;
 using NearClientUnity.KeyStores;
 
@@ -6,22 +7,26 @@ public class NearPersistentManager : MonoBehaviour
 {
     public static NearPersistentManager Instance { get; private set; }
     public WalletAccount WalletAccount { get; set; }
-    public Near Near { get; set; }
- 
+    private Near _near;
+    
+    private ContractNear _gameContract;
+    private readonly string _gameContactId = "uriyyuriy.testnet";
+
+
     void Start()
     {
-        Near = new Near(config: new NearConfig()
+        _near = new Near(config: new NearConfig()
         {
             NetworkId = "testnet",
             NodeUrl = "https://rpc.testnet.near.org",
             ProviderType = ProviderType.JsonRpc,
             SignerType = SignerType.InMemory,
             KeyStore = new InMemoryKeyStore(),
-            ContractName = "uriyyuriy.testnet",
+            ContractName = _gameContactId,
             WalletUrl = "https://wallet.testnet.near.org"
         });
         WalletAccount = new WalletAccount(
-        Near,
+            _near,
         "",
         new AuthService(),
         new AuthStorage());
@@ -38,6 +43,37 @@ public class NearPersistentManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    
+    public async Task<Account> GetAccount()
+    {
+        return await Instance._near.AccountAsync(WalletAccount.GetAccountId());
+    }
+
+    public async Task<ContractNear> GetContract()
+    {
+        if (_gameContract == null)
+        {
+            _gameContract = await CreateContract();
+            return _gameContract;
+        }   
+        
+        return _gameContract;
+    }
+    
+    private async Task<ContractNear> CreateContract()
+    {
+        Account account = await Instance.GetAccount();
+        
+        ContractOptions options = new ContractOptions()
+        {
+            viewMethods = new[] { "get_available_players", "get_available_games",
+                                         "is_already_in_the_waiting_list", "get_game_config" },
+            changeMethods = new[] { "make_available", "start_game", "generate_event",
+                                           "make_unavailable", "internal_stop_game", "get_owner_team" }
+        };
+        
+        return new ContractNear(account, _gameContactId, options);
     }
 }
 

@@ -16,7 +16,7 @@ namespace UI.MainMenu
             if(NearPersistentManager.Instance.WalletAccount.IsSignedIn())
             {
                 accountId.text = "Your account id: " + NearPersistentManager.Instance.WalletAccount.GetAccountId(); 
-            }        
+            }   
         }
     }
 }
