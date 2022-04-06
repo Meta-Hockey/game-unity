@@ -8,6 +8,8 @@ namespace Assets
     {
         public SceneAsset signInUIScene;
         public SceneAsset mainMenuUIScene;
+        
+        public SceneAsset betsScene;
         public SceneAsset betsUIScene;
     }
 }
