@@ -53,15 +53,15 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Assets\AssetRoot.cs" />
+     <Compile Include="Assets\Scripts\UI\Bets\LoadAvailablePlayers.cs" />
      <Compile Include="Assets\Scripts\Runtime\Game.cs" />
+     <Compile Include="Assets\Scripts\Runtime\GameStarter.cs" />
      <Compile Include="Assets\Scripts\Runtime\NearPersistentManager.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\PlayGameButton.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\LoadUserId.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\SignOutButton.cs" />
      <Compile Include="Assets\Scripts\UI\Sign In\SignInButton.cs" />
      <Compile Include="Assets\Scripts\UI\Sign In\CompleteSignInButton.cs" />
-     <Compile Include="Assets\Scripts\Runtime\GameStarter.cs" />
-     <Compile Include="Assets\Scripts\UI\Bets\LoadAvailablePlayers.cs" />
  <Reference Include="UnityEngine">
  <HintPath>/home/yurii/Unity/Hub/Editor/2020.3.31f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
@@ -283,6 +283,9 @@
  </Reference>
  <Reference Include="NearClientUnity">
  <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Assets/Plugins/NearClientUnity.dll</HintPath>
+ </Reference>
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Assets/Plugins/net45/Newtonsoft.Json.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>/home/yurii/Unity/Hub/Editor/2020.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
