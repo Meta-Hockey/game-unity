@@ -1,17 +1,12 @@
 ﻿using System.Threading.Tasks;
-using Assets;
 using NearClientUnity;
 using NearClientUnity.KeyStores;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Runtime
 {
     public class NearPersistentManager : MonoBehaviour
     {
-        [SerializeField] 
-        private AssetRoot assetRoot;
-        
         public static NearPersistentManager Instance { get; private set; }
         public WalletAccount WalletAccount { get; set; }
         private Near _near;
@@ -38,16 +33,7 @@ namespace Runtime
                 new AuthService(),
                 new AuthStorage());
 
-            Game.SetAssetRoot(assetRoot);
-            
-            if (WalletAccount.IsSignedIn())
-            {
-                SceneManager.LoadScene(assetRoot.mainMenuUIScene.name, LoadSceneMode.Additive);
-            }
-            else
-            {
-                SceneManager.LoadScene(assetRoot.signInUIScene.name, LoadSceneMode.Additive);
-            }
+            Game.LoadMainMenu();
         }    
 
         private void Awake()
