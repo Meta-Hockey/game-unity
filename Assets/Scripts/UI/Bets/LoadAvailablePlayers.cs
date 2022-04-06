@@ -27,9 +27,8 @@ namespace UI.Bets
             args.limit = 50;
 
             dynamic opponents = await gameContract.View("get_available_players", args);
-            //List<(string, Bid)> op = JsonUtility.FromJson<List<(string, Bid)>>(opponents.result);
-
-            dynamic stuff = JObject.Parse(opponents.result);
+            
+            // dynamic stuff = JObject.Parse(opponents.result);
                 
             availablePlayersText.text = "Your opponents: " + opponents.result;
             Debug.Log(opponents.result);

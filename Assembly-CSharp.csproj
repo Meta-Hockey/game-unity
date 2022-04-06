@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\Runtime\GameStarter.cs" />
      <Compile Include="Assets\Scripts\Runtime\NearPersistentManager.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\PlayGameButton.cs" />
+     <Compile Include="Assets\Scripts\UI\Bets\SetBidButton.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\LoadUserId.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\SignOutButton.cs" />
      <Compile Include="Assets\Scripts\UI\Sign In\SignInButton.cs" />

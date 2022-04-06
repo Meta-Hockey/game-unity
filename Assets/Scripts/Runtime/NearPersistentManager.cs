@@ -1,6 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Globalization;
+using System.Threading.Tasks;
 using NearClientUnity;
 using NearClientUnity.KeyStores;
+using NearClientUnity.Utilities;
 using UnityEngine;
 
 namespace Runtime
@@ -14,6 +17,9 @@ namespace Runtime
         private ContractNear _gameContract;
         public readonly string _gameContactId = "uriyyuriy.testnet";
 
+        public readonly ulong GasMakeAvailable = 300_000_000_000_000;
+        public readonly ulong GasMove = 50_000_000_000_000;
+        private readonly UInt128 _nearNominationExp = UInt128.Parse("1000000000000000000000000");
 
         void Start()
         {
@@ -78,6 +84,16 @@ namespace Runtime
             };
         
             return new ContractNear(account, _gameContactId, options);
+        }
+        
+        public UInt128 ParseNearAmount(string amount)
+        {
+            return UInt128.Parse(amount) * _nearNominationExp;
+        }
+        
+        public UInt128 FormatNearAmount(UInt128 amount)
+        {
+            return amount / _nearNominationExp;
         }
     }
 
