@@ -11,7 +11,9 @@ namespace UI.Bets
     public class LoadAvailablePlayers : MonoBehaviour
     {
         [SerializeField] private Text availablePlayersText;
+        [SerializeField] private Text isAlreadyInTheWaitingListText;
 
+        
         struct Bid
         {
             public string Deposit;
@@ -31,7 +33,14 @@ namespace UI.Bets
             // dynamic stuff = JObject.Parse(opponents.result);
                 
             availablePlayersText.text = "Your opponents: " + opponents.result;
-            Debug.Log(opponents.result);
+            
+            
+            dynamic argsList = new ExpandoObject();
+            args.account_id = NearPersistentManager.Instance.WalletAccount.GetAccountId();
+
+            dynamic isInTheList = await gameContract.View("is_already_in_the_waiting_list", argsList);
+
+            isAlreadyInTheWaitingListText.text = isInTheList.result;
         }
     }
 }
