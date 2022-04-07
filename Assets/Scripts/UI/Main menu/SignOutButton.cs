@@ -1,3 +1,4 @@
+using Near;
 using Runtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,7 +9,7 @@ namespace UI.Main_menu
     {
         public void SignOut()
         {
-            NearPersistentManager.Instance.WalletAccount.SignOut();
+            NearPersistentManager.Instance.SignOut();
             
             SceneManager.UnloadSceneAsync(Game.AssetRoot.mainMenuUIScene.name);
             SceneManager.LoadScene(Game.AssetRoot.signInUIScene.name, LoadSceneMode.Additive);

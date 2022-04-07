@@ -1,4 +1,4 @@
-using Runtime;
+using Near;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +10,7 @@ namespace UI.Main_menu
 
         private void Awake()
         {
-            accountId.text = "Welcome: " + NearPersistentManager.Instance.WalletAccount.GetAccountId() + " !";
+            accountId.text = "Welcome: " + NearPersistentManager.Instance.GetAccountId() + " !";
         }
     }
 }

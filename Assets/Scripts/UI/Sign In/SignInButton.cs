@@ -1,5 +1,4 @@
-using System;
-using Runtime;
+using Near;
 using UnityEngine;
 
 namespace UI.Sign_In
@@ -8,13 +7,7 @@ namespace UI.Sign_In
     {
         public async void RequestSignIn()
         {
-            await NearPersistentManager.Instance.WalletAccount.RequestSignIn(
-                NearPersistentManager.Instance._gameContactId,
-                "Nft hockey",
-                new Uri("nearclientunity://testnet.near.org/success"),
-                new Uri("nearclientunity://testnet.near.org/fail"),
-                new Uri("nearclientios://testnet.near.org")
-            );
+            await NearPersistentManager.Instance.SignIn();
         }
     }
 }
