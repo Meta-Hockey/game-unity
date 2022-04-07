@@ -1,13 +1,16 @@
 using System;
 using System.Dynamic;
+using System.Threading.Tasks;
 using NearClientUnity;
 
 namespace Near.GameContract
 {
     public static class Actions
     {
-        public static async void MakeAvailable(string bid)
+        public static async Task MakeAvailable(string bid)
         {
+            await NearPersistentManager.Instance.GetAccount().Result.FetchStateAsync();
+            
             ContractNear gameContract = await NearPersistentManager.Instance.GetContract();
                 
             dynamic args = new ExpandoObject();
@@ -20,7 +23,7 @@ namespace Near.GameContract
                 NearPersistentManager.Instance.ParseNearAmount(bid));
         }
 
-        public static async void MakeUnavailable()
+        public static async Task MakeUnavailable()
         {
             ContractNear gameContract = await NearPersistentManager.Instance.GetContract();
                 

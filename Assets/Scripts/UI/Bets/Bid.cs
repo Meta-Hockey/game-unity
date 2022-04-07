@@ -10,12 +10,12 @@ namespace UI.Bets
 
         public async void SetBid()
         {
-            Actions.MakeAvailable(bid.text);
+            await Actions.MakeAvailable(bid.text);
         }
 
         public async void CancelTheBid()
         {
-            Actions.MakeUnavailable();
+            await Actions.MakeUnavailable();
         }
     }
 }

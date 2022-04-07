@@ -1,3 +1,4 @@
+using Near;
 using Near.GameContract;
 using UnityEngine;
 using UnityEngine.UI;

@@ -43,6 +43,7 @@
   <ItemGroup>
      <Compile Include="Assets/Scripts/Assets/AssetRoot.cs" />
      <Compile Include="Assets/Scripts/UI/Bets/LoadAvailablePlayers.cs" />
+     <Compile Include="Assets/Scripts/Near/GameContract/Actions.cs" />
      <Compile Include="Assets/Scripts/Runtime/Game.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameStarter.cs" />
      <Compile Include="Assets/Scripts/Near/NearPersistentManager.cs" />
@@ -52,9 +53,8 @@
      <Compile Include="Assets/Scripts/UI/Main menu/SignOutButton.cs" />
      <Compile Include="Assets/Scripts/UI/Bets/AvailablePlayers.cs" />
      <Compile Include="Assets/Scripts/UI/Sign In/SignInButton.cs" />
-     <Compile Include="Assets/Scripts/UI/Sign In/CompleteSignInButton.cs" />
-     <Compile Include="Assets/Scripts/Near/GameContract/Actions.cs" />
      <Compile Include="Assets/Scripts/Near/GameContract/Views.cs" />
+     <Compile Include="Assets/Scripts/UI/Sign In/CompleteSignInButton.cs" />
      <Reference Include="UnityEngine">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

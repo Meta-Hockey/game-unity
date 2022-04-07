@@ -92,7 +92,7 @@ namespace Near
             return new ContractNear(account, GameContactId, options);
         }
 
-        private async Task<Account> GetAccount()
+        public async Task<Account> GetAccount()
         {
             return await Instance._near.AccountAsync(WalletAccount.GetAccountId());
         }
