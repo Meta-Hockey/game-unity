@@ -39,7 +39,7 @@ namespace Near
                 new AuthService(),
                 new AuthStorage());
 
-            Game.LoadMainMenu();
+            Game.LoadMainMenu(); ;
         }    
 
         private void Awake()
@@ -89,7 +89,7 @@ namespace Near
                     "make_unavailable", "internal_stop_game", "get_owner_team" }
             };
         
-            return new ContractNear(account, GameContactId, options);
+            return new ContractNear(account, WalletAccount, GameContactId, options);
         }
 
         public async Task<Account> GetAccount()
