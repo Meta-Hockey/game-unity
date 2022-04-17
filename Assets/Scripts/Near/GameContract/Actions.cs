@@ -9,20 +9,18 @@ namespace Near.GameContract
     {
         public static async Task MakeAvailable(string bid)
         {
-            ContractNear gameContract = await NearPersistentManager.Instance.GetContract();
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
                 
             dynamic args = new ExpandoObject();
             args.config = new Object();
             await gameContract.Change("make_available", args,
-                NearPersistentManager.
-                    Instance.
-                    GasMakeAvailable,
-                NearPersistentManager.Instance.ParseNearAmount(bid));
+                NearUtils.GasMakeAvailable,
+                NearUtils.ParseNearAmount(bid));
         }
 
         public static async Task MakeUnavailable()
         {
-            ContractNear gameContract = await NearPersistentManager.Instance.GetContract();
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
                 
             dynamic args = new ExpandoObject();
 

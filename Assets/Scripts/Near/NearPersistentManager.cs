@@ -14,15 +14,18 @@ namespace Near
         public static NearPersistentManager Instance { get; private set; }
         public WalletAccount WalletAccount { get; private set; }
         private NearClientUnity.Near _near;
-
-        private readonly string _dirName = "KeyStore";
-    
+        
         private ContractNear _gameContract;
         private const string GameContactId = "uriyyuriy.testnet";
 
-        public readonly ulong GasMakeAvailable = 300_000_000_000_000;
-        public readonly ulong GasMove = 50_000_000_000_000;
-        private readonly UInt128 _nearNominationExp = UInt128.Parse("1000000000000000000000000");
+        private ContractNear _marketplaceContract;
+        private const string MarketplaceContactId = "nft-marketplace.testnet";
+
+        private ContractNear _nftContract;
+        private const string NftContactId = "nft-0_0.testnet";
+        
+        private readonly string _dirName = "KeyStore";
+
 
         private async void Start()
         {
@@ -62,30 +65,19 @@ namespace Near
                 Destroy(gameObject);
             }
         }
-        
-                
-        public UInt128 ParseNearAmount(string amount)
-        {
-            return UInt128.Parse(amount) * _nearNominationExp;
-        }
-        
-        public UInt128 FormatNearAmount(UInt128 amount)
-        {
-            return amount / _nearNominationExp;
-        }
-        
-        public async Task<ContractNear> GetContract()
+
+        public async Task<ContractNear> GetGameContract()
         {
             if (_gameContract == null)
             {
-                _gameContract = await CreateContract();
+                _gameContract = await CreateGameContract();
                 return _gameContract;
             }   
         
             return _gameContract;
         }
     
-        private async Task<ContractNear> CreateContract()
+        private async Task<ContractNear> CreateGameContract()
         {
             Account account = await Instance.GetAccount();
         
@@ -99,8 +91,58 @@ namespace Near
         
             return new ContractNear(account, WalletAccount, GameContactId, options);
         }
+        
+        public async Task<ContractNear> GetMarketplaceContract()
+        {
+            if (_marketplaceContract == null)
+            {
+                _marketplaceContract = await CreateMarketplaceContract();
+                return _marketplaceContract;
+            }   
+        
+            return _marketplaceContract;
+        }
+    
+        private async Task<ContractNear> CreateMarketplaceContract()
+        {
+            Account account = await Instance.GetAccount();
+        
+            ContractOptions options = new ContractOptions()
+            {
+                viewMethods = new[] { "get_sales_by_owner_id", "get_sale",
+                    "get_sales_by_nft_contract_id", "storage_paid", "storage_amount"},
+                changeMethods = new[] { "update_price", "storage_deposit", "accept_offer", "offer"}
+            };
+        
+            return new ContractNear(account, WalletAccount, MarketplaceContactId, options);
+        }
+        
+        public async Task<ContractNear> GetNftContract()
+        {
+            if (_nftContract == null)
+            {
+                _nftContract = await CreateNftContract();
+                return _nftContract;
+            }   
+        
+            return _nftContract;
+        }
+        
+        private async Task<ContractNear> CreateNftContract()
+        {
+            Account account = await Instance.GetAccount();
+        
+            ContractOptions options = new ContractOptions()
+            {
+                viewMethods = new[] { "nft_tokens_for_owner", "nft_tokens_batch",
+                    "nft_token", "nft_tokens", "nft_total_supply"},
+                changeMethods = new[] { "nft_mint", "nft_approve"}
+            };
+        
+            return new ContractNear(account, WalletAccount, NftContactId, options);
+        }
 
-        public async Task<Account> GetAccount()
+        private async Task<Account> GetAccount()
         {
             return await Instance._near.AccountAsync(WalletAccount.GetAccountId());
         }

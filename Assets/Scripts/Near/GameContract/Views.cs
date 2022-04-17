@@ -8,7 +8,7 @@ namespace Near.GameContract
     {
         public static async Task<string> GetAvailablePlayers()
         {
-            ContractNear gameContract = await NearPersistentManager.Instance.GetContract();
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
                 
             dynamic args = new ExpandoObject();
             args.from_index = 0;
@@ -22,7 +22,7 @@ namespace Near.GameContract
         
         public static async Task<string> IsAlreadyInTheList()
         {
-            ContractNear gameContract = await NearPersistentManager.Instance.GetContract();
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
                 
             dynamic args = new ExpandoObject();
             args.account_id = NearPersistentManager.Instance.WalletAccount.GetAccountId();
