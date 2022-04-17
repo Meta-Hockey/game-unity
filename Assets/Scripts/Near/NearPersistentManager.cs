@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using NearClientUnity;
 using NearClientUnity.KeyStores;
@@ -13,6 +14,8 @@ namespace Near
         public static NearPersistentManager Instance { get; private set; }
         public WalletAccount WalletAccount { get; private set; }
         private NearClientUnity.Near _near;
+
+        private readonly string _dirName = "KeyStore";
     
         private ContractNear _gameContract;
         private const string GameContactId = "uriyyuriy.testnet";
@@ -21,15 +24,20 @@ namespace Near
         public readonly ulong GasMove = 50_000_000_000_000;
         private readonly UInt128 _nearNominationExp = UInt128.Parse("1000000000000000000000000");
 
-        private void Start()
+        private async void Start()
         {
+            if (!Directory.Exists(_dirName))
+            {
+                await UnencryptedFileSystemKeyStore.EnsureDir(_dirName);
+            }
+            
             _near = new NearClientUnity.Near(config: new NearConfig()
             {
                 NetworkId = "testnet",
                 NodeUrl = "https://rpc.testnet.near.org",
                 ProviderType = ProviderType.JsonRpc,
                 SignerType = SignerType.InMemory,
-                KeyStore = new InMemoryKeyStore(),
+                KeyStore = new UnencryptedFileSystemKeyStore(_dirName),
                 ContractName = GameContactId,
                 WalletUrl = "https://wallet.testnet.near.org"
             });
