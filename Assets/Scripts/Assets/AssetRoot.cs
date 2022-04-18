@@ -11,5 +11,6 @@ namespace Assets
         
         public SceneAsset betsScene;
         public SceneAsset betsUIScene;
+        public SceneAsset marketplaceScene;
     }
 }

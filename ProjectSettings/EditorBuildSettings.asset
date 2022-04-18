@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/UI/BetsUI.unity
     guid: 2929d0aaa8390ca1688c623ea596d6d1
+  - enabled: 1
+    path: Assets/Scenes/Marketplace.unity
+    guid: ab5e3608937998a429d4d65f260c1493
   m_configObjects: {}
