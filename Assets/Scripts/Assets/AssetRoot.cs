@@ -1,3 +1,4 @@
+using UI.Marketplace;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace Assets
         
         public SceneAsset betsScene;
         public SceneAsset betsUIScene;
-        public SceneAsset marketplaceScene;
+
+        public MarketplaceAsset marketplaceAsset;
     }
 }

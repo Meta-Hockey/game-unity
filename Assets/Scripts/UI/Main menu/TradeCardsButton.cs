@@ -8,7 +8,7 @@ namespace UI.Main_menu
     {
         public void TradeCards()
         {
-            SceneManager.LoadScene(Game.AssetRoot.marketplaceScene.name);
+            Game.LoadMarketplace();
         }
     }
 }

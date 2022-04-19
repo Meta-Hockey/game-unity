@@ -21,8 +21,7 @@ namespace Runtime
         
         public static void LoadMarketplace()
         {
-            AsyncOperation operation = SceneManager.LoadSceneAsync(_assetRoot.marketplaceScene.name);
-            operation.completed += StartPlayer;
+            SceneManager.LoadSceneAsync(_assetRoot.marketplaceAsset.marketplaceScene.name);
         }
 
         private static void StartPlayer(AsyncOperation operation)
@@ -46,6 +45,11 @@ namespace Runtime
             {
                 SceneManager.LoadScene(_assetRoot.signInUIScene.name, LoadSceneMode.Additive);
             }
+        }
+
+        public static void TickController(IController controller)
+        {
+            _runner.TickController(controller);
         }
     }
 }

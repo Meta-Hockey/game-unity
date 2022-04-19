@@ -16,4 +16,4 @@ MonoBehaviour:
   mainMenuUIScene: {fileID: 102900000, guid: 528d0cd41992ded6b9139008edc70394, type: 3}
   betsScene: {fileID: 102900000, guid: d083a200555e8697a83dc98dd829a9cc, type: 3}
   betsUIScene: {fileID: 102900000, guid: 2929d0aaa8390ca1688c623ea596d6d1, type: 3}
-  marketplaceScene: {fileID: 102900000, guid: ab5e3608937998a429d4d65f260c1493, type: 3}
+  marketplaceAsset: {fileID: 11400000, guid: 408238d896b862d148606df7153dc1bb, type: 2}
