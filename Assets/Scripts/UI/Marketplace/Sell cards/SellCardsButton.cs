@@ -5,20 +5,22 @@ namespace UI.Marketplace.Sell_cards
 {
     public class SellCardsButton : MonoBehaviour
     {
-        [SerializeField] private Transform buyCardsScrollView;
         [SerializeField] private Transform sellCardsScrollView;
-        [SerializeField] private Transform mintNftScrollView;
         [SerializeField] private Transform content;
+        
+        [SerializeField] private ViewInteractor viewInteractor;
+
+        private bool _isNftLoaded;
 
         public void LoadNft()
         {
-            sellCardsScrollView.gameObject.SetActive(true);
-            buyCardsScrollView.gameObject.SetActive(false);
-            mintNftScrollView.gameObject.SetActive(false);
+            viewInteractor.ChangeView(sellCardsScrollView);
 
-            sellCardsScrollView.SetAsLastSibling();
-            
-            ConstructNftCardsList();
+            if (!_isNftLoaded)
+            {
+                ConstructNftCardsList();
+                _isNftLoaded = true;
+            }
         }
         
         private void ConstructNftCardsList()

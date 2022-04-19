@@ -6,28 +6,31 @@ namespace UI.Marketplace.Buy_cards
     public class BuyCardsButton : MonoBehaviour
     {
         [SerializeField] private Transform buyCardsScrollView;
-        [SerializeField] private Transform sellCardsScrollView;
-        [SerializeField] private Transform mintNftScrollView;
         [SerializeField] private Transform content;
         
+        [SerializeField] private ViewInteractor viewInteractor;
+        
         private BuyCardsController _buyCardsController;
+        
+        private bool _isNftLoaded;
             
-        private void Awake()
+        private void Start()
         {
             _buyCardsController = new BuyCardsController();
+            LoadNft();
         }
 
         public void LoadNft()
         {
-            _buyCardsController.Start();
+            viewInteractor.ChangeView(buyCardsScrollView);
             
-            buyCardsScrollView.gameObject.SetActive(true);
-            sellCardsScrollView.gameObject.SetActive(false);
-            mintNftScrollView.gameObject.SetActive(false);
-
-            buyCardsScrollView.SetAsLastSibling();
-            
-            ConstructNftCardsList();
+            if (!_isNftLoaded)
+            {
+                _buyCardsController.Start();
+                ConstructNftCardsList();
+                
+                _isNftLoaded = true;
+            }
         }
         
         private void ConstructNftCardsList()
@@ -35,6 +38,7 @@ namespace UI.Marketplace.Buy_cards
             for (int i = 0; i < 4; i++)
             {
                 Instantiate(Game.AssetRoot.marketplaceAsset.nftCardInfoUI, content);
+                
             }
         }
     }

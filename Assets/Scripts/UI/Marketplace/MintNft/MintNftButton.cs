@@ -4,17 +4,12 @@ namespace UI.Marketplace.MintNft
 {
     public class MintNftButton : MonoBehaviour
     {
-        [SerializeField] private Transform buyCardsScrollView;
-        [SerializeField] private Transform sellCardsScrollView;
         [SerializeField] private Transform mintNftScrollView;
+        [SerializeField] private ViewInteractor viewInteractor;
 
         public void MintNft()
         {
-            mintNftScrollView.gameObject.SetActive(true);
-            sellCardsScrollView.gameObject.SetActive(false);
-            buyCardsScrollView.gameObject.SetActive(false);
-
-            mintNftScrollView.SetAsLastSibling();
+            viewInteractor.ChangeView(mintNftScrollView);
         }
     }
 }

@@ -62,6 +62,7 @@
      <Compile Include="Assets/Scripts/Near/NearPersistentManager.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark04.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceAsset.cs" />
      <Compile Include="Assets/Scripts/UI/Main menu/PlayGameButton.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_FrameRateCounter.cs" />
      <Compile Include="Assets/Scripts/UI/Bets/Bid.cs" />
@@ -81,8 +82,11 @@
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_UiFrameRateCounter.cs" />
      <Compile Include="Assets/Scripts/Runtime/IController.cs" />
      <Compile Include="Assets/Scripts/Near/NearUtils.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/MintNft/MintNftButton.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
      <Compile Include="Assets/Scripts/UI/Sign In/SignInButton.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceInteractor.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyCardsButton.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/DropdownSample.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
      <Compile Include="Assets/Scripts/Near/GameContract/Views.cs" />
@@ -95,13 +99,11 @@
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardsButton.cs" />
      <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventCheck.cs" />
      <Compile Include="Assets/Scripts/UI/Sign In/CompleteSignInButton.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyCardsButton.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceAsset.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardsButton.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/MintNft/MintNftButton.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/ViewInteractor.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
