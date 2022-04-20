@@ -47,7 +47,6 @@
      <Compile Include="Assets/Scripts/UI/Main menu/TradeCardsButton.cs" />
      <Compile Include="Assets/Scripts/UI/Bets/LoadAvailablePlayers.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/ViewInteractor.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/IViewNftCards.cs" />
      <Compile Include="Assets/Scripts/Near/GameContract/Actions.cs" />
      <Compile Include="Assets/Scripts/Runtime/Game.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameStarter.cs" />
@@ -55,7 +54,7 @@
      <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceAsset.cs" />
      <Compile Include="Assets/Scripts/UI/Main menu/PlayGameButton.cs" />
      <Compile Include="Assets/Scripts/UI/Bets/Bid.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardInfoUI.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardUI.cs" />
      <Compile Include="Assets/Scripts/UI/Main menu/LoadUserId.cs" />
      <Compile Include="Assets/Scripts/UI/Main menu/SignOutButton.cs" />
      <Compile Include="Assets/Scripts/Near/MarketplaceContract/Views.cs" />
@@ -200,6 +199,10 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/CryptoBytes.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/MergeKeyStore.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Lookup/sqrtm1.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyNftCard/BuyNftCardView.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/FieldPlayerNftCardUI.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/ICardRenderer.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/ICardLoader.cs" />
      <None Include="Assets/Scripts/NearApiLibrary/packages/Newtonsoft.Json.12.0.3/lib/net20/Newtonsoft.Json.xml" />
      <Reference Include="UnityEngine">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

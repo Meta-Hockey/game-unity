@@ -27,7 +27,7 @@ namespace UI.Marketplace.Sell_cards
         {
             for (int i = 0; i < 10; i++)
             {
-                Instantiate(Game.AssetRoot.marketplaceAsset.nftCardInfoUI, content);
+                // Instantiate(Game.AssetRoot.marketplaceAsset.nftCardInfoUI, content);
             }
         }
     }

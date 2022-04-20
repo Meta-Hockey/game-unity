@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Asset Marketplace
   m_EditorClassIdentifier: 
   marketplaceScene: {fileID: 102900000, guid: ab5e3608937998a429d4d65f260c1493, type: 3}
-  nftCardInfoUI: {fileID: 5855981394761750236, guid: df5cbbc39c93efa3ead29bb015e0417f, type: 3}
+  buyNftCardInfoUI: {fileID: 1028081720129200288, guid: df5cbbc39c93efa3ead29bb015e0417f, type: 3}

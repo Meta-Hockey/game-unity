@@ -1,14 +1,15 @@
 using Runtime;
+using UI.Marketplace.Buy_cards.BuyNftCard;
 using UnityEngine;
 
 namespace UI.Marketplace.Buy_cards
 {
-    public class BuyCardsView : MonoBehaviour, IViewNftCards
+    public class BuyCardsView : MonoBehaviour
     {
-        [SerializeField] private Transform buyCardView;
         [SerializeField] private Transform content;
-
         [SerializeField] private ViewInteractor viewInteractor;
+        [SerializeField] private BuyNftCardView buyNftCardView;
+
 
         private BuyCardsController _buyCardsController;
 
@@ -22,25 +23,24 @@ namespace UI.Marketplace.Buy_cards
 
         public void LoadNftCards()
         {
+            viewInteractor.ChangeView(gameObject.transform);
+            
             if (_isLoaded)
             {
                 return;
             }
             
-            // _buyCardsController.Start();
+            // TODO: _buyCardsController.Start();
             
             for (int i = 0; i < 4; i++)
             {
-                NftCardInfoUI card = Instantiate(Game.AssetRoot.marketplaceAsset.nftCardInfoUI, content);
-                card.SetNftCard(OnClickCard);
+                NftCardUI card = Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerNftCardUI, content);
+                
+                // TODO: transfer data to card
+                card.PrepareNftCard(buyNftCardView);
             }
 
             _isLoaded = true;
-        }
-
-        private void OnClickCard()
-        {
-            viewInteractor.ChangeView(buyCardView);
         }
     }
 }
