@@ -16,5 +16,10 @@ namespace UI.Marketplace
             
             toView.gameObject.SetActive(true);
         }
+        
+        public override void LoadNftCards(IViewNftCards viewNftCards)
+        {
+            viewNftCards.LoadNftCards();
+        }
     }
 }

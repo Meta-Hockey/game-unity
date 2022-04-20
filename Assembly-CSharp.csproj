@@ -104,6 +104,8 @@
      <Compile Include="Assets/Scripts/UI/Sign In/CompleteSignInButton.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/ViewInteractor.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/ILoadNftCards.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyCardsView.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />

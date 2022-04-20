@@ -1,6 +1,5 @@
-using System;
-using Runtime;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace UI.Marketplace
@@ -19,13 +18,11 @@ namespace UI.Marketplace
 
         [SerializeField] private Button chooseButton;
         
-        public void SetNftCard()
+        public void SetNftCard(UnityAction onClick)
         {
-            chooseButton.onClick.AddListener(OnClick);
-        }
-
-        private void OnClick()
-        {
+            // Set info
+            
+            chooseButton.onClick.AddListener(onClick);
         }
     }
 }
