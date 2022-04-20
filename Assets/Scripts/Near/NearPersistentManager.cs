@@ -3,9 +3,9 @@ using System.IO;
 using System.Threading.Tasks;
 using NearClientUnity;
 using NearClientUnity.KeyStores;
-using NearClientUnity.Utilities;
 using Runtime;
 using UnityEngine;
+
 
 namespace Near
 {
