@@ -1,27 +1,30 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI.Marketplace.Buy_cards.BuyNftCard
 {
     public class BuyNftCardView : MonoBehaviour, ICardLoader
     {
-        [SerializeField] private Image image;
-        [SerializeField] private Text price;
-        [SerializeField] private Text ownerId;
-
-        [SerializeField] private Text playerName;
-        [SerializeField] private Text playerType;
-        [SerializeField] private Text playerRole;
-        [SerializeField] private Text playerPosition;
-        [SerializeField] private Text playerStats;
-        
+        [SerializeField] private Transform cardTileContent;
+        [SerializeField] private Transform cardDescriptionContent;
         [SerializeField] private ViewInteractor viewInteractor;
+
+        private NftCardUI _cardTile;
+        private NftCardDescriptionUI _cardDescription;
 
         public void LoadCard(ICardRenderer cardRenderer)
         {
-            // TODO get prefabs from cardRenderer and insert them in view
-            price.text = "Price: 5N";
-            ownerId.text = "Owner id: Yurii";
+            if (_cardTile != null)
+            {
+                Destroy(_cardTile.gameObject);
+            }
+
+            if (_cardDescription != null)
+            {
+                Destroy(_cardDescription.gameObject);
+            }
+            
+            _cardTile = cardRenderer.RenderCardTile(cardTileContent);
+            _cardDescription = cardRenderer.RenderCardDescription(cardDescriptionContent);
             
             viewInteractor.ChangeView(gameObject.transform);
         }

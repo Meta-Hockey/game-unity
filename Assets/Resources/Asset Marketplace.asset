@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Asset Marketplace
   m_EditorClassIdentifier: 
   marketplaceScene: {fileID: 102900000, guid: ab5e3608937998a429d4d65f260c1493, type: 3}
-  buyNftCardInfoUI: {fileID: 1028081720129200288, guid: df5cbbc39c93efa3ead29bb015e0417f, type: 3}
+  fieldPlayerCardTile: {fileID: 7948316030570829348, guid: df5cbbc39c93efa3ead29bb015e0417f, type: 3}
+  fieldPlayerCardDescription: {fileID: 6430792553322085307, guid: 1cad49ddfa8055e49b6fc83664c78b03, type: 3}
+  goalieNftCardUI: {fileID: 6708084798186967851, guid: 50b97542f6920885abc77ac7d9f3f6e0, type: 3}
+  goalieDescriptionUI: {fileID: 6608402369560730131, guid: b1caa406a22b455f78a499a0e779bc43, type: 3}

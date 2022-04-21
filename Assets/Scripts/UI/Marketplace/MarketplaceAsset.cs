@@ -9,6 +9,10 @@ namespace UI.Marketplace
     {
         public SceneAsset marketplaceScene;
         
-        public FieldPlayerNftCardUI fieldPlayerNftCardUI;
+        public FieldPlayerNftCardUI fieldPlayerCardTile;
+        public FieldPlayerDescriptionUI fieldPlayerCardDescription;
+
+        public GoalieNftCardUI goalieNftCardUI;
+        public GoalieDescriptionUI goalieDescriptionUI;
     }
 }
