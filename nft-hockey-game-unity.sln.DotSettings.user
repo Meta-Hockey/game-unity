@@ -1,0 +1,6 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=B7AEAED9_002DB3D6_002D825E_002D3533_002D1AA4EE5705AE_002Fd_003AAssets_002Fd_003AScripts_002Fd_003AUI_002Fd_003AMainMenu_002Ff_003ACompleteSignInButton_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
+  &lt;Assembly Path="/home/yurii/Unity/Hub/Editor/2020.3.31f1/Editor/Data/Managed/Newtonsoft.Json.dll" /&gt;
+  &lt;Assembly Path="/home/yurii/Unity/Hub/Editor/2020.3.31f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll" /&gt;
+&lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
