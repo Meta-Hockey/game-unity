@@ -82,7 +82,7 @@ namespace NearClientUnity
 
         public string GetAccountId()
         {
-            return _authData["AccountId"].ToString() ?? "";
+            return _authData.AccountId ?? "";
         }
 
         public bool IsSignedIn()

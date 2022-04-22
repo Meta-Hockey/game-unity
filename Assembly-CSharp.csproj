@@ -207,7 +207,6 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/UI/Sign In/CompleteSignInButton.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <None Include="Assets/Scripts/NearApiLibrary/packages/Newtonsoft.Json.12.0.3/lib/net20/Newtonsoft.Json.xml" />
      <Reference Include="UnityEngine">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
@@ -449,7 +448,7 @@
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="Newtonsoft.Json">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Assets/Scripts/NearApiLibrary/packages/Newtonsoft.Json.12.0.3/lib/net20/Newtonsoft.Json.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Android.Types">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll</HintPath>
