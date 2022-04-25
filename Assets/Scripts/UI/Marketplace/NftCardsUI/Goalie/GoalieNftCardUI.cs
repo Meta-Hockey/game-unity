@@ -1,3 +1,5 @@
+using Near.Models;
+using Near.Models.Extras;
 using Runtime;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,9 +8,9 @@ namespace UI.Marketplace.NftCardsUI.Goalie
 {
     class GoalieRenderer : ICardRenderer
     {
-        private readonly dynamic _cardData;
+        private readonly NFT _cardData;
         
-        public GoalieRenderer(dynamic cardData)
+        public GoalieRenderer(NFT cardData)
         {
             _cardData = cardData;
         }
@@ -18,21 +20,22 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             GoalieNftCardUI goalie =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.goalieNftCardUI, content);
             
-            // TODO insert from CardData
+            goalie.Name.text = _cardData.metadata.title;
+            goalie.OwnerId.text = _cardData.owner_id;
+            
+            // TODO: Card price
 
-            goalie.Name.text = _cardData["name"].ToString();
-            goalie.OwnerId.text = _cardData["ownerId"].ToString();
-            goalie.Price.text = _cardData["price"].ToString();
+            GoalieExtra extra = (GoalieExtra)_cardData.metadata.extra.GetExtra();
+            
+            goalie.Type.text = extra.Type;
+            goalie.Position.text = extra.Position;
+            goalie.Role.text = extra.Role;
 
-            goalie.Type.text = _cardData["type"].ToString();
-            goalie.Position.text = _cardData["position"].ToString();
-            goalie.Role.text = _cardData["role"].ToString();
-
-            goalie.GloveAndBlocker.text = _cardData["gloveAndBlocker"].ToString();
-            goalie.Pads.text = _cardData["pads"].ToString();
-            goalie.Stretch.text = _cardData["stretch"].ToString();
-            goalie.Stand.text = _cardData["stand"].ToString();
-            goalie.Morale.text = _cardData["morale"].ToString();
+            goalie.GloveAndBlocker.text = extra.Stats.GloveAndBlocker.ToString();
+            goalie.Pads.text = extra.Stats.Pads.ToString();
+            goalie.Stretch.text = extra.Stats.Stretch.ToString();
+            goalie.Stand.text = extra.Stats.Stand.ToString();
+            goalie.Morale.text = extra.Stats.Morale.ToString();
             
             return goalie;
         }
@@ -44,14 +47,15 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             
             // TODO insert from CardData
 
-            cardDescription.OwnerId.text = _cardData["ownerId"].ToString();
-            cardDescription.Price.text = _cardData["price"].ToString();
+            cardDescription.OwnerId.text = _cardData.owner_id;
 
-            cardDescription.GloveAndBlocker.text = _cardData["gloveAndBlocker"].ToString();
-            cardDescription.Pads.text = _cardData["pads"].ToString();
-            cardDescription.Stretch.text = _cardData["stretch"].ToString();
-            cardDescription.Stand.text = _cardData["stand"].ToString();
-            cardDescription.Morale.text = _cardData["morale"].ToString();
+            GoalieExtra extra = (GoalieExtra)_cardData.metadata.extra.GetExtra();
+
+            cardDescription.GloveAndBlocker.text = extra.Stats.GloveAndBlocker.ToString();
+            cardDescription.Pads.text = extra.Stats.Pads.ToString();
+            cardDescription.Stretch.text = extra.Stats.Stretch.ToString();
+            cardDescription.Stand.text = extra.Stats.Stand.ToString();
+            cardDescription.Morale.text = extra.Stats.Morale.ToString();
             
             return cardDescription;
         }

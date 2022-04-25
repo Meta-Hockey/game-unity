@@ -473,7 +473,7 @@ MonoBehaviour:
   gloveAndBlocker: {fileID: 5533345366100492085}
   pads: {fileID: 5533345365984895623}
   stand: {fileID: 5533345366226150215}
-  stretch: {fileID: 5533345366226150215}
+  stretch: {fileID: 5533345366126556359}
   morale: {fileID: 5533345366912772478}
 --- !u!1 &3534415226786190221
 GameObject:

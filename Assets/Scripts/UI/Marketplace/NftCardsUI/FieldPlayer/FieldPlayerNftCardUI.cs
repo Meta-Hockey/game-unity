@@ -1,3 +1,5 @@
+using Near.Models;
+using Near.Models.Extras;
 using Runtime;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,9 +8,9 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
 {
     class FieldPlayerRenderer : ICardRenderer
     {
-        private readonly dynamic _cardData;
+        private readonly NFT _cardData;
         
-        public FieldPlayerRenderer(dynamic cardData)
+        public FieldPlayerRenderer(NFT cardData)
         {
             _cardData = cardData;
         }
@@ -18,21 +20,22 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             FieldPlayerNftCardUI fieldPlayer =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardTile, content);
             
-            // TODO insert from CardData
+            fieldPlayer.Name.text = _cardData.metadata.title;
+            fieldPlayer.OwnerId.text = _cardData.owner_id;
+            
+            // TODO: Card price
 
-            fieldPlayer.Name.text = _cardData["name"].ToString();
-            fieldPlayer.OwnerId.text = _cardData["ownerId"].ToString();
-            fieldPlayer.Price.text = _cardData["price"].ToString();
+            FieldPlayerExtra extra = (FieldPlayerExtra)_cardData.metadata.extra.GetExtra();
+            
+            fieldPlayer.Type.text = extra.Type;
+            fieldPlayer.Position.text = extra.Position;
+            fieldPlayer.Role.text = extra.Role;
 
-            fieldPlayer.Type.text = _cardData["type"].ToString();
-            fieldPlayer.Position.text = _cardData["position"].ToString();
-            fieldPlayer.Role.text = _cardData["role"].ToString();
-
-            fieldPlayer.Skating.text = _cardData["skating"].ToString();
-            fieldPlayer.Shooting.text = _cardData["shooting"].ToString();
-            fieldPlayer.Strength.text = _cardData["strength"].ToString();
-            fieldPlayer.Iq.text = _cardData["iq"].ToString();
-            fieldPlayer.Morale.text = _cardData["morale"].ToString();
+            fieldPlayer.Skating.text = extra.Stats.Skating.ToString();
+            fieldPlayer.Shooting.text = extra.Stats.Shooting.ToString();
+            fieldPlayer.Strength.text = extra.Stats.Strength.ToString();
+            fieldPlayer.Iq.text = extra.Stats.IQ.ToString();
+            fieldPlayer.Morale.text = extra.Stats.Morale.ToString();
             
             return fieldPlayer;
         }
@@ -42,16 +45,17 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             FieldPlayerDescriptionUI cardDescription =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardDescription, content);
             
-            // TODO insert from CardData
+            FieldPlayerExtra extra = (FieldPlayerExtra)_cardData.metadata.extra.GetExtra();
 
-            cardDescription.OwnerId.text = _cardData["ownerId"].ToString();
-            cardDescription.Price.text = _cardData["price"].ToString();
+            cardDescription.OwnerId.text = _cardData.owner_id;
 
-            cardDescription.Skating.text = _cardData["skating"].ToString();
-            cardDescription.Shooting.text = _cardData["shooting"].ToString();
-            cardDescription.Strength.text = _cardData["strength"].ToString();
-            cardDescription.Iq.text = _cardData["iq"].ToString();
-            cardDescription.Morale.text = _cardData["morale"].ToString();
+            // TODO: Card price
+
+            cardDescription.Skating.text = extra.Stats.Skating.ToString();
+            cardDescription.Shooting.text = extra.Stats.Shooting.ToString();
+            cardDescription.Strength.text = extra.Stats.Shooting.ToString();
+            cardDescription.Iq.text = extra.Stats.IQ.ToString();
+            cardDescription.Morale.text = extra.Stats.Morale.ToString();
             
             return cardDescription;
         }

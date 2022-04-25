@@ -1,4 +1,5 @@
 using System;
+using Near.Models;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +13,7 @@ namespace UI.Marketplace
         [SerializeField] protected Text ownerId;
         [SerializeField] protected Button chooseButton;
 
-        // TODO: abstract class for card data
-        protected dynamic CardData;
+        protected NFT CardData;
         
         private ICardLoader _cardLoader;
 
