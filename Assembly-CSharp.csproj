@@ -50,6 +50,7 @@
      <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyNftCard/BuyNftCardView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/ConnectionInfo.cs" />
      <Compile Include="Assets/Scripts/Assets/AssetRoot.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/MintNft/MintNftView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/PublicKey.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/KeyPair.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Add.cs" />
@@ -62,6 +63,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/CryptoBytes.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/SignerType.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/LocalAccountCreator.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/NearConfig.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/AccountState.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/KeyStore.cs" />
@@ -98,6 +100,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/ScalarOps/MulAdd.cs" />
      <Compile Include="Assets/Scripts/Near/GameContract/Actions.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/ProviderConfig.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardsView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/NearSignature.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/NearBinaryWriter.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Ed25519Ops/open.cs" />
@@ -207,8 +210,11 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/UI/Sign In/CompleteSignInButton.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardsView.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardView.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/ICardMinter.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/FieldPlayerInputUI.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardInputUI.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/MintNft/TypeNftDropDown.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/GoalieInputUI.cs" />
      <Reference Include="UnityEngine">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

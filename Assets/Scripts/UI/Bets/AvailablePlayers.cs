@@ -12,6 +12,7 @@ namespace UI.Bets
         public async void UpdateAvailablePlayers()
         {
             availablePlayersText.text = "Your opponents: " + await Views.GetAvailablePlayers();
+            await Near.MarketplaceContract.Views.LoadCards();
         }
 
         public async void IsAlreadyInTheWaitingList()

@@ -1,4 +1,3 @@
-using UI.Marketplace.NftCardsUI;
 using UnityEngine;
 
 namespace UI.Marketplace

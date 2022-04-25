@@ -15,7 +15,7 @@ namespace Near.MarketplaceContract
             args.limit = 50;
 
             dynamic cards = await gameContract.View("nft_tokens", args);
-            dynamic res = JObject.Parse(cards);
+            // dynamic res = JObject.Parse(cards);
             return cards.result;
         }
     }
