@@ -1,4 +1,5 @@
-using UI.Marketplace.NftCardsUI;
+using UI.Marketplace.NftCardsUI.FieldPlayer;
+using UI.Marketplace.NftCardsUI.Goalie;
 using UnityEditor;
 using UnityEngine;
 

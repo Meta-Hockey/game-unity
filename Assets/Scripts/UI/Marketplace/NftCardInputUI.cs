@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace UI.Marketplace
 {
-    public abstract class NftCardInputUI : MonoBehaviour, ICardMinter
+    public abstract class NftCardInputUI : MonoBehaviour
     {
         protected InputField Img;
 

@@ -3,9 +3,7 @@ using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using NearClientUnity;
-using NearClientUnity.Utilities;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Near.GameContract
 {
@@ -56,6 +54,5 @@ namespace Near.GameContract
             
             return isInTheList.result;
         }
-        
     }
 }

@@ -3,4 +3,5 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
   &lt;Assembly Path="/home/yurii/Unity/Hub/Editor/2020.3.31f1/Editor/Data/Managed/Newtonsoft.Json.dll" /&gt;
   &lt;Assembly Path="/home/yurii/Unity/Hub/Editor/2020.3.31f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll" /&gt;
+  &lt;Assembly Path="/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/System.IdentityModel.Selectors.dll" /&gt;
 &lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>

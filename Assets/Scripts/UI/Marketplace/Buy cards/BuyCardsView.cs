@@ -1,6 +1,5 @@
 using Newtonsoft.Json.Linq;
 using Runtime;
-using UI.Marketplace.Buy_cards.BuyNftCard;
 using UnityEngine;
 
 namespace UI.Marketplace.Buy_cards
