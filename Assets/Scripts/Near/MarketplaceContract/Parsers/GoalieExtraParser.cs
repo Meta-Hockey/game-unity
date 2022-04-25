@@ -10,7 +10,7 @@ namespace Near.MarketplaceContract.Parsers
     {
         public Extra ParseExtra(JObject data)
         {
-            uint[] stats = JsonConvert.DeserializeObject<uint[]>(data.ToString());
+            uint[] stats = JsonConvert.DeserializeObject<uint[]>(data["stats"].ToString());
 
             return new GoalieExtra()
             {

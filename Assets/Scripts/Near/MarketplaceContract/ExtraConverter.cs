@@ -8,33 +8,29 @@ namespace Near.MarketplaceContract
 {
     public class ExtraConverter : JsonConverter
     {
-        public override bool CanWrite
+        public override bool CanWrite => false;
+
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            get { return false; }
+            throw new NotImplementedException();
         }
         
         public override bool CanConvert(Type objectType)
         {
             return (objectType == typeof(Extra));
         }
-        
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-        {
-            throw new NotImplementedException();
-        }
 
         private IExtraParser MapDataToParser(JObject data)
         {
-            switch (data["type"].ToString())
+            return data["type"].ToString() switch
             {
-                case "Goalie":
-                    return new GoalieExtraParser();
-                default:
-                    throw new Exception("Extra type not found");
-            }
+                "Goalie" => new GoalieExtraParser(),
+                "FieldPlayer" => new FieldPlayerExtraParser(),
+                _ => throw new Exception("Extra type not found")
+            };
         }
         
-        public override object ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var extra = JObject.Load(reader);
             IExtraParser parser = MapDataToParser(extra);
