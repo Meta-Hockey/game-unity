@@ -48,7 +48,6 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/ContractNear.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Square2.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/ScalarMultBase.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyNftCardView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/ConnectionInfo.cs" />
      <Compile Include="Assets/Scripts/Assets/AssetRoot.cs" />
      <Compile Include="Assets/Scripts/Near/Models/NFT.cs" />
@@ -224,6 +223,8 @@
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
      <Compile Include="Assets/Scripts/Near/MarketplaceContract/Parsers/IExtraParser.cs" />
      <Compile Include="Assets/Scripts/Near/MarketplaceContract/Parsers/GoalieExtraParser.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyNftCardView.cs" />
+     <Compile Include="Assets/Scripts/Near/MarketplaceContract/Parsers/FieldPlayerExtraParser.cs" />
      <Reference Include="UnityEngine">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
