@@ -3,6 +3,7 @@ using Near.Models.Extras;
 using Runtime;
 using UnityEngine;
 using UnityEngine.UI;
+using Object = UnityEngine.Object;
 
 namespace UI.Marketplace.NftCardsUI.FieldPlayer
 {
@@ -20,13 +21,15 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             FieldPlayerNftCardUI fieldPlayer =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardTile, content);
             
+            fieldPlayer.LoadImage(_cardData.metadata.media);
             fieldPlayer.Name.text = _cardData.metadata.title;
             fieldPlayer.OwnerId.text = _cardData.owner_id;
             
             // TODO: Card price
 
             FieldPlayerExtra extra = (FieldPlayerExtra)_cardData.metadata.extra.GetExtra();
-            
+
+            // fieldPlayer.Image = _cardData.metadata.media;
             fieldPlayer.Type.text = extra.Type;
             fieldPlayer.Position.text = extra.Position;
             fieldPlayer.Role.text = extra.Role;

@@ -9,6 +9,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
     class GoalieRenderer : ICardRenderer
     {
         private readonly NFT _cardData;
+        private readonly MonoBehaviour _monoBehaviour;
         
         public GoalieRenderer(NFT cardData)
         {
@@ -20,6 +21,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             GoalieNftCardUI goalie =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.goalieNftCardUI, content);
             
+            goalie.LoadImage(_cardData.metadata.media);
             goalie.Name.text = _cardData.metadata.title;
             goalie.OwnerId.text = _cardData.owner_id;
             
