@@ -2227,7 +2227,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 414665727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b7b09a05ba54256853da536c22b8cfd, type: 3}
+  m_Script: {fileID: 11500000, guid: 085b68d97dff5d50692390626c03aa53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cardTileContent: {fileID: 621602406}
@@ -5626,7 +5626,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 805760936}
   m_HandleRect: {fileID: 805760935}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

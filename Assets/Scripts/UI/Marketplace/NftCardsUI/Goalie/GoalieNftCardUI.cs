@@ -20,7 +20,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
         {
             GoalieNftCardUI goalie =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.goalieNftCardUI, content);
-            
+
             goalie.LoadImage(_cardData.metadata.media);
             goalie.Name.text = _cardData.metadata.title;
             goalie.OwnerId.text = _cardData.owner_id;

@@ -11,7 +11,7 @@ namespace UI.Marketplace.Buy_cards
     {
         [SerializeField] private Transform content;
         [SerializeField] private ViewInteractor viewInteractor;
-        [SerializeField] private BuyNftCardView buyNftCardView;
+        [SerializeField] private BuyCardView buyNftCardView;
 
         private BuyCardsController _buyCardsController;
 

@@ -21,6 +21,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             FieldPlayerNftCardUI fieldPlayer =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardTile, content);
             
+            fieldPlayer.gameObject.SetActive(true);
             fieldPlayer.LoadImage(_cardData.metadata.media);
             fieldPlayer.Name.text = _cardData.metadata.title;
             fieldPlayer.OwnerId.text = _cardData.owner_id;

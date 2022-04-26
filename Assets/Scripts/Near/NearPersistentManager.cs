@@ -22,7 +22,7 @@ namespace Near
         private const string MarketplaceContactId = "nft-marketplace.testnet";
 
         private ContractNear _nftContract;
-        private const string NftContactId = "nft-0_0.testnet";
+        public string nftContactId = "nft-0_0.testnet";
         
         private readonly string _dirName = "KeyStore";
 
@@ -139,7 +139,7 @@ namespace Near
                 changeMethods = new[] { "nft_mint", "nft_approve"}
             };
         
-            return new ContractNear(account, WalletAccount, NftContactId, options);
+            return new ContractNear(account, WalletAccount, nftContactId, options);
         }
 
         private async Task<Account> GetAccount()

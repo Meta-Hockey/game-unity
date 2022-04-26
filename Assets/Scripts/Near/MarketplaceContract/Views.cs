@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Near.Models;
 using NearClientUnity;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace Near.MarketplaceContract
 {
@@ -44,6 +43,22 @@ namespace Near.MarketplaceContract
             });
             
             return nfts.ToList();
+        }
+
+        public static async Task<dynamic> LoadSales(string fromIndex = "0", int limit = 50)
+        {
+            ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
+            ContractNear marketContract = await NearPersistentManager.Instance.GetMarketplaceContract();
+
+            dynamic salesArgs = new ExpandoObject();
+            salesArgs.nft_contract_id = NearPersistentManager.Instance.nftContactId;
+            salesArgs.from_index = fromIndex;
+            salesArgs.limit = limit;
+            
+            dynamic sales = marketContract.View("get_sales_by_nft_contract_id", salesArgs);
+
+            
+            return sales;
         }
     }
 }

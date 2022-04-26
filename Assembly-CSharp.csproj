@@ -107,7 +107,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/ProviderConfig.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardsView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/NearSignature.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyNftCardView.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyCardView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/NearBinaryWriter.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Ed25519Ops/open.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/IExternalAuthService.cs" />
