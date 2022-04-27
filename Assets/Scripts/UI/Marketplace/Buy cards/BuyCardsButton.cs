@@ -8,7 +8,7 @@ namespace UI.Marketplace.Buy_cards
             
         private void Start()
         {
-            LoadNft();
+            // LoadNft();
         }
 
         public void LoadNft()
