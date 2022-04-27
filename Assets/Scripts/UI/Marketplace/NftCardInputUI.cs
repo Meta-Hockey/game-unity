@@ -1,15 +1,11 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI.Marketplace
 {
     public abstract class NftCardInputUI : MonoBehaviour
     {
-        protected InputField Img;
+        protected string Image;
 
-        public virtual void MintCard()
-        {
-            throw new System.NotImplementedException();
-        }
+        public abstract void MintCard();
     }
 }

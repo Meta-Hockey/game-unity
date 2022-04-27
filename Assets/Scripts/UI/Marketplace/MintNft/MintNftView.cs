@@ -1,11 +1,14 @@
 using Runtime;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI.Marketplace.MintNft
 {
     public class MintNftView : MonoBehaviour
     {
         [SerializeField] private Transform content;
+        [SerializeField] private Image image;
+        [SerializeField] private InputField imageURL;
         private NftCardInputUI _cardMinter;
 
         public void SwitchType(int id)
@@ -38,6 +41,11 @@ namespace UI.Marketplace.MintNft
             }
 
             _cardMinter = nftCardInputUI;
+        }
+
+        public void LoadImage()
+        {
+            StartCoroutine(Utils.Utils.LoadImage(image, imageURL.text));
         }
 
         public void Mint()

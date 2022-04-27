@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Near.Models;
 using UnityEngine;
@@ -17,8 +18,7 @@ namespace UI.Marketplace
         protected NFT CardData;
         
         private ICardLoader _cardLoader;
-
-        public Image Image => image;
+        
         public Text Name => nameNftCard;
         public Text Price => price;
         public Text OwnerId => ownerId;

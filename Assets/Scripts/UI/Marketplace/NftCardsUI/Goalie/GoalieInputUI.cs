@@ -13,7 +13,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
 
         public override void MintCard()
         {
-            base.MintCard();
+            
         }
     }
 }
