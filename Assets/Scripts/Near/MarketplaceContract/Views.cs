@@ -12,12 +12,12 @@ namespace Near.MarketplaceContract
     {
         public static async Task<List<NFT>> LoadCards(string fromIndex = "0", int limit = 50)
         {
-            ContractNear gameContract = await NearPersistentManager.Instance.GetNftContract();
+            ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
             dynamic args = new ExpandoObject();
             args.from_index = fromIndex;
             args.limit = 50;
 
-            dynamic cards = await gameContract.View("nft_tokens", args);
+            dynamic cards = await nftContract.View("nft_tokens", args);
             IEnumerable<dynamic> listDynamicNft = JsonConvert
                 .DeserializeObject<List<dynamic>>(cards.result.ToString());
 

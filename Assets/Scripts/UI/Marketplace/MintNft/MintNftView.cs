@@ -65,6 +65,7 @@ namespace UI.Marketplace.MintNft
         public void AddRoyalty()
         {
             // TODO: check account availability
+            
             _royalties.Add(royaltyReceiverInputField.text, double.Parse(royaltyInputField.text));
             ShowRoyalties();
         }
