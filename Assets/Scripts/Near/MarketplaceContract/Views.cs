@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -6,8 +5,6 @@ using System.Threading.Tasks;
 using Near.Models;
 using NearClientUnity;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using UnityEngine;
 
 namespace Near.MarketplaceContract
 {

@@ -220,6 +220,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/IExternalAuthStorage.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/FieldPlayer/FieldPlayerInputUI.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Add.cs" />
+     <Compile Include="Assets/Scripts/Near/MarketplaceContract/Actions.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Array16.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardsButton.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/SignedTransaction.cs" />

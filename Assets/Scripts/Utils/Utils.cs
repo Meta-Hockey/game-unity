@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -6,12 +5,11 @@ using UnityEngine.UI;
 
 namespace Utils
 {
-    public class Utils : MonoBehaviour
+    public static class Utils 
     {
         public static IEnumerator LoadImage(Image image, string url)
         {
             UnityWebRequest request = UnityWebRequestTexture.GetTexture(url);
-            Debug.Log(url);
             yield return request.SendWebRequest();
 
             try

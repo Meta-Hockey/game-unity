@@ -1,11 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI.Marketplace
 {
     public abstract class NftCardInputUI : MonoBehaviour
     {
-        protected string Image;
-
-        public abstract void MintCard();
+        [SerializeField] protected InputField name;
+        
+        public abstract void MintCard(Dictionary<string, double> royalties, string url);
     }
 }

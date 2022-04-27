@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,9 +12,9 @@ namespace UI.Marketplace.NftCardsUI.Goalie
         [SerializeField] private InputField stretch;
         [SerializeField] private InputField morale;
 
-        public override void MintCard()
+        public override void MintCard(Dictionary<string, double> royalties, string url)
         {
-            
+            throw new System.NotImplementedException();
         }
     }
 }

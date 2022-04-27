@@ -1829,6 +1829,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae99243e740b4fe19df79649508ec7a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: {fileID: 6664176759396218812}
+  position: {fileID: 5252749568920078140}
+  role: {fileID: 3040542324403380726}
+  hand: {fileID: 3869250823202795316}
+  number: {fileID: 2378574780887749612}
   iQ: {fileID: 2326473646937253286}
   skating: {fileID: 2326473646616540592}
   shooting: {fileID: 2326473646595533131}
