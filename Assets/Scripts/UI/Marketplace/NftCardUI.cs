@@ -44,24 +44,7 @@ namespace UI.Marketplace
         
         public void LoadImage(string url)
         {
-            StartCoroutine(SetImage(url));
-        }
-
-        private IEnumerator SetImage(string url)
-        {
-            UnityWebRequest request = UnityWebRequestTexture.GetTexture(url);
-            
-            yield return request.SendWebRequest();
-            
-            if (!request.isDone)
-            {
-                Debug.Log(request.error);
-            }
-            else
-            {
-                Texture texture = ((DownloadHandlerTexture) request.downloadHandler).texture;
-                Image.sprite = Sprite.Create((Texture2D)texture, new Rect(0, 0, texture.width, texture.height), Vector2.zero);
-            }
+            StartCoroutine(Utils.Utils.LoadImage(image, url));
         }
     }
 }

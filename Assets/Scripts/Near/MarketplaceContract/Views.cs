@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -5,6 +6,8 @@ using System.Threading.Tasks;
 using Near.Models;
 using NearClientUnity;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using UnityEngine;
 
 namespace Near.MarketplaceContract
 {
@@ -55,9 +58,13 @@ namespace Near.MarketplaceContract
             salesArgs.from_index = fromIndex;
             salesArgs.limit = limit;
             
-            dynamic sales = marketContract.View("get_sales_by_nft_contract_id", salesArgs);
-
-            
+            dynamic sales = await marketContract.View("get_sales_by_nft_contract_id", salesArgs);
+            List<Sale> salesList = JsonConvert.DeserializeObject<List<Sale>>(sales.resulg.ToString());
+            // const saleTokens = await nftContract.nft_tokens_batch({
+            //     token_ids: sales.filter(({ nft_contract_id }) => nft_contract_id === nftContractName).map(({ token_id }) => token_id)
+            // });
+            // dynamic tokenIds = sales.
+            // dynamic saleTokens = await nftContract.View("nft_tokens_batch", );
             return sales;
         }
     }
