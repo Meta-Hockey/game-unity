@@ -2749,6 +2749,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac86f415d814822b0f228d5b363c0c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: {fileID: 5051798611690155326}
+  role: {fileID: 8757383839682461677}
+  hand: {fileID: 4069648756383721886}
+  number: {fileID: 1996758634837341633}
   gloveAndBlocker: {fileID: 4466321506582120082}
   pads: {fileID: 4466321506378552964}
   stand: {fileID: 4466321506391100031}
