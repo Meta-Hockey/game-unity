@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -39,6 +40,27 @@ namespace Near.MarketplaceContract
             return nfts.ToList();
         }
 
+        private static List<Sale> DynamicSalesToList(dynamic dynamicSales)
+        {
+            IEnumerable<dynamic> listDynamicSales = JsonConvert
+                .DeserializeObject<List<dynamic>>(dynamicSales.result.ToString());
+
+            IEnumerable<Sale> sales = listDynamicSales.Select(o => new Sale()
+            {
+                owner_id = o.owner_id,
+                nft_contract_id = o.nft_contract_id,
+                token_id = o.token_id,
+                token_type = o.token_type,
+                approval_id = ulong.Parse(o.approval_id.ToString()),
+                created_at = ulong.Parse(o.created_at.ToString()),
+                is_auction = bool.Parse(o.is_auction.ToString()),
+                sale_conditions = JsonConvert.DeserializeObject<Dictionary<string, String>>(o.sale_conditions.ToString()),
+                bids = JsonConvert.DeserializeObject<Dictionary<string, List<Bid>>>(o.bids.ToString())
+            });
+
+            return sales.ToList();
+        }
+
         public static async Task<List<NFT>> LoadCards(string fromIndex = "0", int limit = 50)
         {
             ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
@@ -71,16 +93,24 @@ namespace Near.MarketplaceContract
             args.limit = limit;
 
             dynamic dynamicNFTs = await nftContract.View("nft_tokens_for_owner", args);
+            dynamic dynamicSales = await marketplaceContract.View("get_sales_by_owner_id", args);
 
             nfts = DynamicNFTsToList(dynamicNFTs);
-            
-            dynamic sales = await marketplaceContract.View("get_sales_by_owner_id", args);
+            List<Sale> sales = DynamicSalesToList(dynamicSales);
 
             // TODO: merge tokens with sale data if it's on sale
             foreach (NFT nft in nfts)
             {
                 string tokenId = nft.token_id;
+                Sale sale = sales.Find(x => x.token_id == tokenId);
 
+                if (sale == null)
+                {
+                    dynamic saleArgs = new ExpandoObject();
+                    saleArgs.nft_contract_token = NearPersistentManager.Instance.nftContactId + "||" + tokenId;
+                    
+                    sale = await marketplaceContract.View("get_sale", saleArgs);
+                }
             }
 
             return nfts;
