@@ -29,7 +29,7 @@ namespace UI.Marketplace.Sell_cards
                 return;
             }
             
-            List<NFTSaleInfo> nftSalesInfo = await viewInteractor.MarketplaceController.GetSales();
+            List<NFTSaleInfo> nftSalesInfo = await viewInteractor.MarketplaceController.GetUserNFTs();
 
             foreach (NFTSaleInfo nftSaleInfo in nftSalesInfo)
             {

@@ -27,7 +27,10 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             fieldPlayer.OwnerId.text = _nftSaleInfo.NFT.owner_id;
             
             // TODO: Card price
-            fieldPlayer.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["Near"];
+            if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("NEAR"))
+            {
+                fieldPlayer.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
+            }
 
             FieldPlayerExtra extra = (FieldPlayerExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
 
@@ -53,8 +56,12 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             FieldPlayerExtra extra = (FieldPlayerExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
 
             cardDescription.OwnerId.text = _nftSaleInfo.NFT.owner_id;
-            cardDescription.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
+            
             // TODO: Card price
+            if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("NEAR"))
+            {
+                cardDescription.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
+            }
 
             cardDescription.Skating.text = extra.Stats.Skating.ToString();
             cardDescription.Shooting.text = extra.Stats.Shooting.ToString();

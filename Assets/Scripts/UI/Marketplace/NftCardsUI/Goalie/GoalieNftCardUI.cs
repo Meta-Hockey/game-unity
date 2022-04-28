@@ -25,7 +25,10 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             goalie.OwnerId.text = _nftSaleInfo.NFT.owner_id;
             
             // TODO: Card price
-            goalie.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
+            if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("NEAR"))
+            {
+                goalie.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
+            }
 
             GoalieExtra extra = (GoalieExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
             
@@ -48,8 +51,11 @@ namespace UI.Marketplace.NftCardsUI.Goalie
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.goalieDescriptionUI, content);
             
             // TODO insert from CardData
-            cardDescription.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
-
+            if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("NEAR"))
+            {
+                cardDescription.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
+            }
+            
             cardDescription.OwnerId.text = _nftSaleInfo.NFT.owner_id;
 
             GoalieExtra extra = (GoalieExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();

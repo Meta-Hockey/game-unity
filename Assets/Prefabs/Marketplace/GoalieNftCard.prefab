@@ -401,7 +401,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Price
+  m_Text: 
 --- !u!1 &2961853769925872879
 GameObject:
   m_ObjectHideFlags: 0

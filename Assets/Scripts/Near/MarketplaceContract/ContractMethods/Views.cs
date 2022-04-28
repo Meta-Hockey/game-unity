@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Near.Models;
 using NearClientUnity;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Near.MarketplaceContract.ContractMethods
 {
@@ -116,7 +117,10 @@ namespace Near.MarketplaceContract.ContractMethods
                     saleArgs.nft_contract_token = NearPersistentManager.Instance.nftContactId + "||" + tokenId;
                     
                     dynamic dynamicSale = await marketplaceContract.View("get_sale", saleArgs);
-                    sale = ParseSale(dynamicSale);
+                    if (dynamicSale.result.ToString() != "null")
+                    {
+                        sale = ParseSale(JObject.Parse(dynamicSale.result.ToString()));
+                    }
                 }
 
                 nftSalesInfo.Add(new NFTSaleInfo()
@@ -147,7 +151,7 @@ namespace Near.MarketplaceContract.ContractMethods
             args.account_id = accountId;
             args.from_index = fromIndex;
             args.limit = limit;
-
+            
             dynamic dynamicNFTs = await nftContract.View("nft_tokens_for_owner", args);
             List<NFT> nfts = DynamicNFTsToList(dynamicNFTs);
 
@@ -190,8 +194,8 @@ namespace Near.MarketplaceContract.ContractMethods
                     dynamic tokenArgs = new ExpandoObject();
                     tokenArgs.token_id = sale.token_id;
 
-                    dynamic tokenDynamic = nftContract.View("nft_token", tokenArgs);
-                    token = ParseNFT(tokenDynamic);
+                    dynamic tokenDynamic = await nftContract.View("nft_token", tokenArgs);
+                    token = ParseNFT(JsonConvert.DeserializeObject<dynamic>(tokenDynamic.result.ToString()));
                 }
                 
                 nftSalesInfo.Add(new NFTSaleInfo()
