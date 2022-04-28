@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Dynamic;
+using Near.MarketplaceContract.ContractMethods;
 using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,7 +40,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             
             string goalieJson = JsonConvert.SerializeObject(goalie);
             
-            Near.MarketplaceContract.Actions.MintNFT(royalties, url, name.text, goalieJson);
+            Actions.MintNFT(royalties, url, name.text, goalieJson);
         }
     }
 }

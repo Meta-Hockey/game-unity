@@ -9,11 +9,11 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
 {
     class FieldPlayerRenderer : ICardRenderer
     {
-        private readonly NFT _cardData;
+        private readonly NFTSaleInfo _nftSaleInfo;
         
-        public FieldPlayerRenderer(NFT cardData)
+        public FieldPlayerRenderer(NFTSaleInfo nftSaleInfo)
         {
-            _cardData = cardData;
+            _nftSaleInfo = nftSaleInfo;
         }
         
         public NftCardUI RenderCardTile(Transform content)
@@ -22,13 +22,14 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardTile, content);
             
             fieldPlayer.gameObject.SetActive(true);
-            fieldPlayer.LoadImage(_cardData.metadata.media);
-            fieldPlayer.Name.text = _cardData.metadata.title;
-            fieldPlayer.OwnerId.text = _cardData.owner_id;
+            fieldPlayer.LoadImage(_nftSaleInfo.NFT.metadata.media);
+            fieldPlayer.Name.text = _nftSaleInfo.NFT.metadata.title;
+            fieldPlayer.OwnerId.text = _nftSaleInfo.NFT.owner_id;
             
             // TODO: Card price
+            fieldPlayer.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["Near"];
 
-            FieldPlayerExtra extra = (FieldPlayerExtra)_cardData.metadata.extra.GetExtra();
+            FieldPlayerExtra extra = (FieldPlayerExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
 
             // fieldPlayer.Image = _cardData.metadata.media;
             fieldPlayer.Type.text = extra.Type;
@@ -49,10 +50,10 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             FieldPlayerDescriptionUI cardDescription =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardDescription, content);
             
-            FieldPlayerExtra extra = (FieldPlayerExtra)_cardData.metadata.extra.GetExtra();
+            FieldPlayerExtra extra = (FieldPlayerExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
 
-            cardDescription.OwnerId.text = _cardData.owner_id;
-
+            cardDescription.OwnerId.text = _nftSaleInfo.NFT.owner_id;
+            cardDescription.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
             // TODO: Card price
 
             cardDescription.Skating.text = extra.Stats.Skating.ToString();
@@ -89,7 +90,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
         
         protected override ICardRenderer GetCardRenderer()
         {
-            return new FieldPlayerRenderer(CardData);
+            return new FieldPlayerRenderer(NftSaleInfo);
         }
     }
 }

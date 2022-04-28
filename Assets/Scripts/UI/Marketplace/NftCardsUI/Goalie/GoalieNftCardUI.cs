@@ -8,12 +8,11 @@ namespace UI.Marketplace.NftCardsUI.Goalie
 {
     class GoalieRenderer : ICardRenderer
     {
-        private readonly NFT _cardData;
-        private readonly MonoBehaviour _monoBehaviour;
+        private readonly NFTSaleInfo _nftSaleInfo;
         
-        public GoalieRenderer(NFT cardData)
+        public GoalieRenderer(NFTSaleInfo nftSaleInfo)
         {
-            _cardData = cardData;
+            _nftSaleInfo = nftSaleInfo;
         }
         
         public NftCardUI RenderCardTile(Transform content)
@@ -21,13 +20,14 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             GoalieNftCardUI goalie =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.goalieNftCardUI, content);
 
-            goalie.LoadImage(_cardData.metadata.media);
-            goalie.Name.text = _cardData.metadata.title;
-            goalie.OwnerId.text = _cardData.owner_id;
+            goalie.LoadImage(_nftSaleInfo.NFT.metadata.media);
+            goalie.Name.text = _nftSaleInfo.NFT.metadata.title;
+            goalie.OwnerId.text = _nftSaleInfo.NFT.owner_id;
             
             // TODO: Card price
+            goalie.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
 
-            GoalieExtra extra = (GoalieExtra)_cardData.metadata.extra.GetExtra();
+            GoalieExtra extra = (GoalieExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
             
             goalie.Type.text = extra.Type;
             goalie.Position.text = extra.Position;
@@ -48,10 +48,11 @@ namespace UI.Marketplace.NftCardsUI.Goalie
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.goalieDescriptionUI, content);
             
             // TODO insert from CardData
+            cardDescription.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
 
-            cardDescription.OwnerId.text = _cardData.owner_id;
+            cardDescription.OwnerId.text = _nftSaleInfo.NFT.owner_id;
 
-            GoalieExtra extra = (GoalieExtra)_cardData.metadata.extra.GetExtra();
+            GoalieExtra extra = (GoalieExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
 
             cardDescription.GloveAndBlocker.text = extra.Stats.GloveAndBlocker.ToString();
             cardDescription.Pads.text = extra.Stats.Pads.ToString();
@@ -87,7 +88,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
         
         protected override ICardRenderer GetCardRenderer()
         {
-            return new GoalieRenderer(CardData);
+            return new GoalieRenderer(NftSaleInfo);
         }
     }
 }

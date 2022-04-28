@@ -1,18 +1,19 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Near.MarketplaceContract.ContractMethods;
 using Near.Models;
 
 namespace UI.Marketplace
 {
     public class MarketplaceController
     {
-        private List<NFT> _AllNFTCards;
+        private List<NFTSaleInfo> _nftSalesInfo;
 
-        public async Task<List<NFT>> GetAllCards()
+        public async Task<List<NFTSaleInfo>> GetSales()
         {
-            _AllNFTCards ??= await Near.MarketplaceContract.Views.LoadCards();
+            _nftSalesInfo ??= await Views.LoadSales();
 
-            return _AllNFTCards;
+            return _nftSalesInfo;
         }
     }
 }

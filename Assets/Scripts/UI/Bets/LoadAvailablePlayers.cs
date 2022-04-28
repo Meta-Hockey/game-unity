@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Near.GameContract;
+using Near.GameContract.ContractMethods;
 using UnityEngine;
 using UnityEngine.UI;
 

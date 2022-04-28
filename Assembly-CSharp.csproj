@@ -57,6 +57,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Add.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/ScalarOps/Load.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/IsNegative.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceController.cs" />
      <Compile Include="Assets/Scripts/UI/Main menu/TradeCardsButton.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Multiplication.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/FinalExecutionStatusBasic.cs" />
@@ -66,7 +67,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/LocalAccountCreator.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/NearConfig.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardInputUI.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/NftCardInputUI.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Sale.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/AccountState.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/KeyStore.cs" />
@@ -104,7 +105,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Lookup/D.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/ProviderType.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/ScalarOps/MulAdd.cs" />
-     <Compile Include="Assets/Scripts/Near/GameContract/Actions.cs" />
+     <Compile Include="Assets/Scripts/Near/GameContract/ContractMethods/Actions.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/ProviderConfig.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardsView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/NearSignature.cs" />
@@ -137,7 +138,7 @@
      <Compile Include="Assets/Scripts/UI/Bets/Bid.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Reduce.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/UnencryptedFileSystemKeyStore.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardUI.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/NftCardUI.cs" />
      <Compile Include="Assets/Scripts/UI/Main menu/LoadUserId.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Sha512Internal.cs" />
      <Compile Include="Assets/Scripts/UI/Main menu/SignOutButton.cs" />
@@ -145,6 +146,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/BlockHeader.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Connection.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/Goalie/GoalieDescriptionUI.cs" />
+     <Compile Include="Assets/Scripts/Near/Models/SaleInfo.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/GetP3Dbl.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/AccountCreator.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/ExecutionOutcomeWithId.cs" />
@@ -157,7 +159,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/FromBytes.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/ICardRenderer.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/FieldOperations_0.cs" />
-     <Compile Include="Assets/Scripts/Near/MarketplaceContract/Views.cs" />
+     <Compile Include="Assets/Scripts/Near/MarketplaceContract/ContractMethods/Views.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/FromBytes2.cs" />
      <Compile Include="Assets/Scripts/UI/Bets/AvailablePlayers.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/FieldOperations_1.cs" />
@@ -199,7 +201,7 @@
      <Compile Include="Assets/Scripts/Near/MarketplaceContract/Parsers/FieldPlayerExtraParser.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Lookup/Base2.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyCardsView.cs" />
-     <Compile Include="Assets/Scripts/Near/GameContract/Views.cs" />
+     <Compile Include="Assets/Scripts/Near/GameContract/ContractMethods/Views.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Metadata.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/ByteArray64.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/FieldPlayer/FieldPlayerDescriptionUI.cs" />
@@ -208,7 +210,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Subtract.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Array8.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/ExecutionOutcome.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardDescriptionUI.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/NftCardDescriptionUI.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/MontgomeryOps/ScalarMult.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/ExecutionStatus.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/BlockResult.cs" />
@@ -219,7 +221,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/IExternalAuthStorage.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/FieldPlayer/FieldPlayerInputUI.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Add.cs" />
-     <Compile Include="Assets/Scripts/Near/MarketplaceContract/Actions.cs" />
+     <Compile Include="Assets/Scripts/Near/MarketplaceContract/ContractMethods/Actions.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Array16.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardsButton.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/SignedTransaction.cs" />
@@ -228,7 +230,6 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/UI/Sign In/CompleteSignInButton.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceController.cs" />
      <Reference Include="UnityEngine">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>

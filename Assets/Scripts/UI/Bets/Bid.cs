@@ -1,4 +1,5 @@
 using Near.GameContract;
+using Near.GameContract.ContractMethods;
 using UnityEngine;
 using UnityEngine.UI;
 

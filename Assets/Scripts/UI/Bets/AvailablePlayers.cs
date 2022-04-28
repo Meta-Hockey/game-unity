@@ -1,4 +1,5 @@
 using Near.GameContract;
+using Near.GameContract.ContractMethods;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,8 +13,8 @@ namespace UI.Bets
         public async void UpdateAvailablePlayers()
         {
             // availablePlayersText.text = "Your opponents: " + await Views.GetAvailablePlayers();
-            var nft =  await Near.MarketplaceContract.Views.LoadCards();
-            availablePlayersText.text = nft[0].owner_id + " " + nft[0].metadata.extra.Type;
+            // var nft =  await Near.MarketplaceContract.ContractMethods.Views.LoadCards();
+            // availablePlayersText.text = nft[0].owner_id + " " + nft[0].metadata.extra.Type;
         }
 
         public async void IsAlreadyInTheWaitingList()
