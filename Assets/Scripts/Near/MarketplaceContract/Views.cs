@@ -61,6 +61,22 @@ namespace Near.MarketplaceContract
             return sales.ToList();
         }
 
+        private static Sale ParseSale(dynamic sale)
+        {
+            return new Sale()
+            {
+                owner_id = sale.owner_id,
+                nft_contract_id = sale.nft_contract_id,
+                token_id = sale.token_id,
+                token_type = sale.token_type,
+                approval_id = ulong.Parse(sale.approval_id.ToString()),
+                created_at = ulong.Parse(sale.created_at.ToString()),
+                is_auction = bool.Parse(sale.is_auction.ToString()),
+                sale_conditions = JsonConvert.DeserializeObject<Dictionary<string, String>>(sale.sale_conditions.ToString()),
+                bids = JsonConvert.DeserializeObject<Dictionary<string, List<Bid>>>(sale.bids.ToString())
+            };
+        }
+
         public static async Task<List<NFT>> LoadCards(string fromIndex = "0", int limit = 50)
         {
             ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
@@ -98,7 +114,6 @@ namespace Near.MarketplaceContract
             nfts = DynamicNFTsToList(dynamicNFTs);
             List<Sale> sales = DynamicSalesToList(dynamicSales);
 
-            // TODO: merge tokens with sale data if it's on sale
             foreach (NFT nft in nfts)
             {
                 string tokenId = nft.token_id;
@@ -109,8 +124,11 @@ namespace Near.MarketplaceContract
                     dynamic saleArgs = new ExpandoObject();
                     saleArgs.nft_contract_token = NearPersistentManager.Instance.nftContactId + "||" + tokenId;
                     
-                    sale = await marketplaceContract.View("get_sale", saleArgs);
+                    dynamic dynamicSale = await marketplaceContract.View("get_sale", saleArgs);
+                    sale = ParseSale(dynamicSale);
                 }
+
+                nft.Sale = sale;
             }
 
             return nfts;
@@ -128,6 +146,8 @@ namespace Near.MarketplaceContract
             
             dynamic sales = await marketContract.View("get_sales_by_nft_contract_id", salesArgs);
             List<Sale> salesList = JsonConvert.DeserializeObject<List<Sale>>(sales.resulg.ToString());
+            List<string> token_ids = salesList.Where(x => x.nft_contract_id == NearPersistentManager.Instance
+                .nftContactId).Select(x => x.token_id).ToList();
             // const saleTokens = await nftContract.nft_tokens_batch({
             //     token_ids: sales.filter(({ nft_contract_id }) => nft_contract_id === nftContractName).map(({ token_id }) => token_id)
             // });

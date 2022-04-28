@@ -41,7 +41,7 @@ namespace Near.MarketplaceContract
             args.perpetual_royalties = perpetualRoyalties;
             
             UInt128 deposit = NearUtils.ParseNearAmount("1") / 10;
-
+            
             ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
             
             await nftContract.Change("nft_mint", args, NearUtils.GasMint, deposit);
