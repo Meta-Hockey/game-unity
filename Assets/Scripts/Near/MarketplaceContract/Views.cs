@@ -10,18 +10,12 @@ namespace Near.MarketplaceContract
 {
     public static class Views
     {
-        public static async Task<List<NFT>> LoadCards(string fromIndex = "0", int limit = 50)
+        private static List<NFT> DynamicNFTsToList(dynamic dynamicNFTs)
         {
-            ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
-            dynamic args = new ExpandoObject();
-            args.from_index = fromIndex;
-            args.limit = 50;
-
-            dynamic cards = await nftContract.View("nft_tokens", args);
-            IEnumerable<dynamic> listDynamicNft = JsonConvert
-                .DeserializeObject<List<dynamic>>(cards.result.ToString());
-
-            IEnumerable<NFT> nfts = listDynamicNft.Select(o => new NFT()
+            IEnumerable<dynamic> listDynamicNFT = JsonConvert
+                .DeserializeObject<List<dynamic>>(dynamicNFTs.result.ToString());
+            
+            IEnumerable<NFT> nfts = listDynamicNFT.Select(o => new NFT()
             {
                 token_id = o.token_id,
                 owner_id = o.owner_id,
@@ -41,8 +35,55 @@ namespace Near.MarketplaceContract
                 royalty = o.royalty,
                 token_type = o.token_type,
             });
-            
+
             return nfts.ToList();
+        }
+
+        public static async Task<List<NFT>> LoadCards(string fromIndex = "0", int limit = 50)
+        {
+            ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
+            dynamic args = new ExpandoObject();
+            args.from_index = fromIndex;
+            args.limit = 50;
+
+            dynamic dynamicNFTs = await nftContract.View("nft_tokens", args);
+
+            return DynamicNFTsToList(dynamicNFTs);
+        }
+
+        public static async Task<dynamic> LoadUserNFTs(string fromIndex = "0", int limit = 50)
+        {
+            List<NFT> nfts = new List<NFT>();
+
+            string accountId = NearPersistentManager.Instance.GetAccountId();
+            if (accountId == "")
+            {
+                return nfts;
+            }
+            
+            ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
+            ContractNear marketplaceContract = await NearPersistentManager.Instance.GetMarketplaceContract();
+            
+            dynamic args = new ExpandoObject();
+            
+            args.account_id = accountId;
+            args.from_index = fromIndex;
+            args.limit = limit;
+
+            dynamic dynamicNFTs = await nftContract.View("nft_tokens_for_owner", args);
+
+            nfts = DynamicNFTsToList(dynamicNFTs);
+            
+            dynamic sales = await marketplaceContract.View("get_sales_by_owner_id", args);
+
+            // TODO: merge tokens with sale data if it's on sale
+            foreach (NFT nft in nfts)
+            {
+                string tokenId = nft.token_id;
+
+            }
+
+            return nfts;
         }
 
         public static async Task<dynamic> LoadSales(string fromIndex = "0", int limit = 50)

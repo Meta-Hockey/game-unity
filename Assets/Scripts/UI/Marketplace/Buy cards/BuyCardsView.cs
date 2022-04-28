@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Near.Models;
-using Newtonsoft.Json.Linq;
 using Runtime;
 using UnityEngine;
 
@@ -12,14 +11,11 @@ namespace UI.Marketplace.Buy_cards
         [SerializeField] private Transform content;
         [SerializeField] private ViewInteractor viewInteractor;
         [SerializeField] private BuyCardView buyNftCardView;
-
-        private BuyCardsController _buyCardsController;
-
+        
         private bool _isLoaded;
 
         private void Awake()
         {
-            _buyCardsController = new BuyCardsController();
             _isLoaded = false;
         }
 
@@ -32,7 +28,7 @@ namespace UI.Marketplace.Buy_cards
                 return;
             }
 
-            List<NFT> nftCards = await _buyCardsController.GetAllCards();
+            List<NFT> nftCards = await viewInteractor.MarketplaceController.GetAllCards();
 
             foreach (NFT nftCard in nftCards)
             {
