@@ -44,7 +44,15 @@ namespace Near.MarketplaceContract.ContractMethods
             
             ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
             
-            await nftContract.Change("nft_mint", args, NearUtils.GasMint, deposit);
+            await nftContract.Change("nft_mint", args, NearUtils.Gas, deposit);
+        }
+
+        public static async void RegisterStorage(UInt128 amount)
+        {
+            ContractNear marketContract = await NearPersistentManager.Instance.GetMarketplaceContract();
+            UInt128 price = await Views.GetPriceForSpot();
+
+            await marketContract.Change("storage_deposit", new ExpandoObject(), NearUtils.Gas, price * amount);
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Near
         public static readonly ulong GasMove = 50_000_000_000_000;
         
         public static readonly int MinterRoyaltyCap = 2000;
-        public static readonly ulong GasMint = 200000000000000;
+        public static readonly ulong Gas = 200000000000000;
         
         private static readonly UInt128 NearNominationExp = UInt128.Parse("1000000000000000000000000");
 

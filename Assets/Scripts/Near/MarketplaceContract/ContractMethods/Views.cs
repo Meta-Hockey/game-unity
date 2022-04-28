@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Near.Models;
 using NearClientUnity;
+using NearClientUnity.Utilities;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -206,6 +207,14 @@ namespace Near.MarketplaceContract.ContractMethods
             }
             
             return nftSalesInfo;
+        }
+
+        public static async Task<UInt128> GetPriceForSpot()
+        {
+            ContractNear marketContract = await NearPersistentManager.Instance.GetMarketplaceContract();
+            dynamic dynamicAmount = await marketContract.View("storage_amount", new ExpandoObject());
+
+            return UInt128.Parse(dynamicAmount.result.ToString());
         }
     }
 }
