@@ -17,9 +17,15 @@ namespace Near
             return UInt128.Parse(amount) * NearNominationExp;
         }
         
-        public static UInt128 FormatNearAmount(UInt128 amount)
+        public static double FormatNearAmount(UInt128 amount)
         {
-            return amount / NearNominationExp;
+            int accuracy = 1000000000;
+            
+            UInt128 accuracyUInt128 = new UInt128(accuracy);
+            
+            amount *= accuracyUInt128;
+            
+            return double.Parse((amount / NearNominationExp).ToString()) / accuracy;
         }
     }
 }

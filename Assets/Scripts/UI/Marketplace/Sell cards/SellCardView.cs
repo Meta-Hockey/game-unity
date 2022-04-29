@@ -27,6 +27,8 @@ namespace UI.Marketplace.Sell_cards
             _cardTile = cardRenderer.RenderCardTile(cardTileContent);
             _cardDescription = cardRenderer.RenderCardDescription(cardDescriptionContent);
             
+            
+            
             viewInteractor.ChangeView(gameObject.transform);
         }
     }

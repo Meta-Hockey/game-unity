@@ -95,5 +95,38 @@ namespace Near.MarketplaceContract.ContractMethods
                 await nftContract.Change("nft_approve", nftApproveArgs, NearUtils.Gas, deposit);
             }
         }
+
+        public static async void Offer(string tokenId, string offerToken, string price)
+        {
+            if (offerToken != "near")
+            {
+                throw new Exception("currently only accepting NEAR offers");
+            }
+            
+            ContractNear marketContract = await NearPersistentManager.Instance.GetMarketplaceContract();
+
+            dynamic offerArgs = new ExpandoObject();
+            offerArgs.nft_contract_id = NearPersistentManager.Instance.nftContactId;
+            offerArgs.token_id = tokenId;
+
+            await marketContract.Change("offer", offerArgs, NearUtils.Gas, NearUtils.ParseNearAmount(price));
+        }
+
+        public static async void AcceptOffer(string tokenId, string ftId)
+        {
+            if (ftId != "near")
+            {
+                throw new Exception("currently only accepting NEAR offers");
+            }
+            
+            ContractNear marketContract = await NearPersistentManager.Instance.GetMarketplaceContract();
+            
+            dynamic acceptOfferArgs = new ExpandoObject();
+            acceptOfferArgs.nft_contract_id = NearPersistentManager.Instance.nftContactId;
+            acceptOfferArgs.token_id = tokenId;
+            acceptOfferArgs.ft_token_id = ftId;
+
+            await marketContract.Change("accept_offer", acceptOfferArgs, NearUtils.Gas);
+        }
     }
 }
