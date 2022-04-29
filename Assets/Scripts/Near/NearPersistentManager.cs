@@ -19,10 +19,10 @@ namespace Near
         private const string GameContactId = "uriyyuriy.testnet";
 
         private ContractNear _marketplaceContract;
-        private const string MarketplaceContactId = "nft-marketplace.testnet";
+        public readonly string MarketplaceContactId = "nft-marketplace.testnet";
 
         private ContractNear _nftContract;
-        public string nftContactId = "nft-0_0.testnet";
+        public readonly string nftContactId = "nft-0_0.testnet";
         
         private readonly string _dirName = "KeyStore";
 

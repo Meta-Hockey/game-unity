@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using NearClientUnity;
 using NearClientUnity.Utilities;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Near.MarketplaceContract.ContractMethods
@@ -53,6 +54,46 @@ namespace Near.MarketplaceContract.ContractMethods
             UInt128 price = await Views.GetPriceForSpot();
 
             await marketContract.Change("storage_deposit", new ExpandoObject(), NearUtils.Gas, price * amount);
+        }
+
+        public static async void SaleUpdate(Dictionary<string, UInt128> newSaleConditions, string tokenId, bool isAuction)
+        {
+            ContractNear marketContract = await NearPersistentManager.Instance.GetMarketplaceContract();
+
+            dynamic saleArgs = new ExpandoObject();
+            saleArgs.nft_contract_token = NearPersistentManager.Instance.nftContactId + ":" + tokenId;
+
+            dynamic sale = await marketContract.View("get_sale", saleArgs);
+
+            // TODO: Implement for other fts
+            if (sale.result.ToString() != "null")
+            {
+                dynamic updatePriceArgs = new ExpandoObject();
+                updatePriceArgs.nft_contract_id = NearPersistentManager.Instance.nftContactId;
+                updatePriceArgs.token_id = tokenId;
+                updatePriceArgs.ft_token_id = "near";
+                updatePriceArgs.price = newSaleConditions["near"];
+
+                await marketContract.Change("update_price", updatePriceArgs, NearUtils.Gas);
+            }
+            else
+            {
+                dynamic nftApproveArgs = new ExpandoObject();
+                nftApproveArgs.token_id = tokenId;
+                nftApproveArgs.account_id = NearPersistentManager.Instance.MarketplaceContactId;
+
+                dynamic msg = new ExpandoObject();
+                msg.isAuction = isAuction;
+                msg.newSaleConditions = newSaleConditions;
+
+                nftApproveArgs.msg = JsonConvert.SerializeObject(msg);
+
+                UInt128 deposit = NearUtils.ParseNearAmount("1") / 100;
+
+                ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
+
+                await nftContract.Change("nft_approve", nftApproveArgs, NearUtils.Gas, deposit);
+            }
         }
     }
 }
