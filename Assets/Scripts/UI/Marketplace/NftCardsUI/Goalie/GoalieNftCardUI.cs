@@ -41,8 +41,6 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             goalie.Stand.text = extra.Stats.Stand.ToString();
             goalie.Morale.text = extra.Stats.Morale.ToString();
             
-            goalie.LoadImage(_nftSaleInfo.NFT.metadata.media);
-
             return goalie;
         }
 

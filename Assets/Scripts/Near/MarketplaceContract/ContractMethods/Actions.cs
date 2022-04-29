@@ -84,7 +84,7 @@ namespace Near.MarketplaceContract.ContractMethods
 
                 dynamic msg = new ExpandoObject();
                 msg.isAuction = isAuction;
-                msg.newSaleConditions = newSaleConditions;
+                msg.sale_conditions = JsonConvert.SerializeObject(newSaleConditions);
 
                 nftApproveArgs.msg = JsonConvert.SerializeObject(msg);
 

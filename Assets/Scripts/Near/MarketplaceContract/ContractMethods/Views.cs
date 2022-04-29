@@ -212,7 +212,8 @@ namespace Near.MarketplaceContract.ContractMethods
         public static async Task<UInt128> GetPriceForSpot()
         {
             ContractNear marketContract = await NearPersistentManager.Instance.GetMarketplaceContract();
-            dynamic dynamicAmount = await marketContract.View("storage_amount", new ExpandoObject());
+            
+            dynamic dynamicAmount = await marketContract.View("storage_amount");
 
             return UInt128.Parse(dynamicAmount.result.ToString());
         }

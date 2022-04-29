@@ -115,7 +115,7 @@ namespace NearClientUnity
             }
         }
 
-        public async Task<dynamic> View(string methodName, dynamic args)
+        public async Task<dynamic> View(string methodName, dynamic args = null)
         {
             var rawResult = await _account.ViewFunctionAsync(_contractId, methodName, args);
             dynamic data = new ExpandoObject();

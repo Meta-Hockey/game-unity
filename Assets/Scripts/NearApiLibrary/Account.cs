@@ -269,13 +269,14 @@ namespace NearClientUnity
 
         public async Task<dynamic> ViewFunctionAsync(string contractId, string methodName, dynamic args)
         {
-            if (args == null)
+            string data = "";
+            if (args != null)
             {
-                args = new ExpandoObject();
+                var methodArgs = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(args));
+                data = Base58.Encode(methodArgs);
             }
 
-            var methodArgs = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(args));
-            var response = await _connection.Provider.QueryAsync($"call/{contractId}/{methodName}", Base58.Encode(methodArgs));
+            var response = await _connection.Provider.QueryAsync($"call/{contractId}/{methodName}", data);
 
             var result = response;
 

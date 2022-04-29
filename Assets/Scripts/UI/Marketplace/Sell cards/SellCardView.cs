@@ -38,13 +38,15 @@ namespace UI.Marketplace.Sell_cards
             }
 
             _nftSaleInfo = nftSaleInfo;
+                
             _cardTile = cardRenderer.RenderCardTile(cardTileContent);
             _cardDescription = cardRenderer.RenderCardDescription(cardDescriptionContent);
-
+            
             marketStoragePaid.text = "Market storage paid: " +  await viewInteractor.MarketplaceController.GetMarketStoragePaid();
             
-            
             viewInteractor.ChangeView(gameObject.transform);
+            
+            StartCoroutine(Utils.Utils.LoadImage(_cardDescription.Image, _nftSaleInfo.NFT.metadata.media));
         }
 
         public void RegisterStorage()

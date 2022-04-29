@@ -20,7 +20,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
         {
             FieldPlayerNftCardUI fieldPlayer =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardTile, content);
-            
+
             fieldPlayer.Name.text = _nftSaleInfo.NFT.metadata.title;
             fieldPlayer.OwnerId.text = _nftSaleInfo.NFT.owner_id;
             
@@ -36,15 +36,13 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             fieldPlayer.Type.text = extra.Type;
             fieldPlayer.Position.text = extra.Position;
             fieldPlayer.Role.text = extra.Role;
-
+            
             fieldPlayer.Skating.text = extra.Stats.Skating.ToString();
             fieldPlayer.Shooting.text = extra.Stats.Shooting.ToString();
             fieldPlayer.Strength.text = extra.Stats.Strength.ToString();
             fieldPlayer.Iq.text = extra.Stats.IQ.ToString();
             fieldPlayer.Morale.text = extra.Stats.Morale.ToString();
             
-            fieldPlayer.LoadImage(_nftSaleInfo.NFT.metadata.media);
-
             return fieldPlayer;
         }
 

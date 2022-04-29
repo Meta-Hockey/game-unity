@@ -27,7 +27,7 @@ namespace UI.Marketplace.NftCardsUI
             _cardLoader = cardLoader;
             
             NftSaleInfo = nftSaleInfo;
-
+            
             ICardRenderer cardRenderer = GetCardRenderer();
             var cardTile = cardRenderer.RenderCardTile(content);
             
