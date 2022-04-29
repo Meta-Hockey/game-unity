@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Near.Models;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,7 +36,7 @@ namespace UI.Marketplace.NftCardsUI
         
         private void OnClick()
         {
-            _cardLoader.LoadCard(GetCardRenderer());
+            _cardLoader.LoadCard(GetCardRenderer(), NftSaleInfo);
         }
         
         public void LoadImage(string url)

@@ -21,8 +21,6 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             FieldPlayerNftCardUI fieldPlayer =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardTile, content);
             
-            fieldPlayer.gameObject.SetActive(true);
-            fieldPlayer.LoadImage(_nftSaleInfo.NFT.metadata.media);
             fieldPlayer.Name.text = _nftSaleInfo.NFT.metadata.title;
             fieldPlayer.OwnerId.text = _nftSaleInfo.NFT.owner_id;
             
@@ -45,6 +43,8 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             fieldPlayer.Iq.text = extra.Stats.IQ.ToString();
             fieldPlayer.Morale.text = extra.Stats.Morale.ToString();
             
+            fieldPlayer.LoadImage(_nftSaleInfo.NFT.metadata.media);
+
             return fieldPlayer;
         }
 

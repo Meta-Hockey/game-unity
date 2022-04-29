@@ -26,11 +26,11 @@ namespace UI.Marketplace
             return _userNFTs;
         }
 
-        public async Task<double> GetMarketStoragePaid()
+        public async Task<string> GetMarketStoragePaid()
         {
             UInt128 amountUInt128 = await Views.GetPriceForSpot();
             
-            return NearUtils.FormatNearAmount(amountUInt128);
+            return NearUtils.FormatNearAmount(amountUInt128).ToString();
         }
 
         public void RegisterStorage(string amount)

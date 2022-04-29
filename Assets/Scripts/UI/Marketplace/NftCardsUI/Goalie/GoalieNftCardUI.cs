@@ -20,7 +20,6 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             GoalieNftCardUI goalie =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.goalieNftCardUI, content);
 
-            goalie.LoadImage(_nftSaleInfo.NFT.metadata.media);
             goalie.Name.text = _nftSaleInfo.NFT.metadata.title;
             goalie.OwnerId.text = _nftSaleInfo.NFT.owner_id;
             
@@ -42,6 +41,8 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             goalie.Stand.text = extra.Stats.Stand.ToString();
             goalie.Morale.text = extra.Stats.Morale.ToString();
             
+            goalie.LoadImage(_nftSaleInfo.NFT.metadata.media);
+
             return goalie;
         }
 

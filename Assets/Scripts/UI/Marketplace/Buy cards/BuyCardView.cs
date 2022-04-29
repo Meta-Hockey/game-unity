@@ -1,3 +1,4 @@
+using Near.Models;
 using UI.Marketplace.NftCardsUI;
 using UnityEngine;
 
@@ -12,7 +13,7 @@ namespace UI.Marketplace.Buy_cards
         private NftCardUI _cardTile;
         private NftCardDescriptionUI _cardDescription;
 
-        public void LoadCard(ICardRenderer cardRenderer)
+        public void LoadCard(ICardRenderer cardRenderer, NFTSaleInfo nftSaleInfo)
         {
             if (_cardTile != null)
             {
