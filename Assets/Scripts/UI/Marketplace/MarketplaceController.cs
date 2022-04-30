@@ -38,7 +38,7 @@ namespace UI.Marketplace
             Actions.RegisterStorage(UInt128.Parse(amount));
         }
 
-        public void SaleUpdate(Dictionary<string, UInt128> newSaleConditions, string tokenId, bool isAuction)
+        public void SaleUpdate(Dictionary<string, string> newSaleConditions, string tokenId, bool isAuction)
         {
             Actions.SaleUpdate(newSaleConditions, tokenId, isAuction);
         }

@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Near.Models;
 using NearClientUnity.Utilities;
+using Newtonsoft.Json;
 using UI.Marketplace.NftCardsUI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +25,6 @@ namespace UI.Marketplace.Sell_cards
         [SerializeField] private InputField isAuction;
         [SerializeField] private InputField price;
         [SerializeField] private InputField ftId;
-        
 
         public async void LoadCard(ICardRenderer cardRenderer, NFTSaleInfo nftSaleInfo)
         {
@@ -57,7 +58,7 @@ namespace UI.Marketplace.Sell_cards
         public void UpdatePrice()
         {
             UInt128 nearAmount = Near.NearUtils.ParseNearAmount(price.text);
-            Dictionary<string, UInt128> newSaleConditions = new Dictionary<string, UInt128> {{ftId.text, nearAmount}};
+            Dictionary<string, string> newSaleConditions = new Dictionary<string, string> {{ftId.text, nearAmount.ToString()}};
             
             viewInteractor.MarketplaceController.SaleUpdate(newSaleConditions, _nftSaleInfo.NFT.token_id, bool.Parse(isAuction.text));
         }

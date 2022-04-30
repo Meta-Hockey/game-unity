@@ -1,5 +1,7 @@
+using Near;
 using Near.Models;
 using Near.Models.Extras;
+using NearClientUnity.Utilities;
 using Runtime;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,9 +27,10 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             fieldPlayer.OwnerId.text = _nftSaleInfo.NFT.owner_id;
             
             // TODO: Card price
-            if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("NEAR"))
+            if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("near"))
             {
-                fieldPlayer.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
+                fieldPlayer.Price.text = "Price: " + NearUtils.FormatNearAmount(UInt128.Parse(_nftSaleInfo.Sale.sale_conditions["near"]));
+                Debug.Log(_nftSaleInfo.Sale.is_auction);
             }
 
             FieldPlayerExtra extra = (FieldPlayerExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();

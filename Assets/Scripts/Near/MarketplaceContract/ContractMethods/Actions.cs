@@ -56,7 +56,7 @@ namespace Near.MarketplaceContract.ContractMethods
             await marketContract.Change("storage_deposit", new ExpandoObject(), NearUtils.Gas, price * amount);
         }
 
-        public static async void SaleUpdate(Dictionary<string, UInt128> newSaleConditions, string tokenId, bool isAuction)
+        public static async void SaleUpdate(Dictionary<string, string> newSaleConditions, string tokenId, bool isAuction)
         {
             ContractNear marketContract = await NearPersistentManager.Instance.GetMarketplaceContract();
 
@@ -84,7 +84,7 @@ namespace Near.MarketplaceContract.ContractMethods
 
                 dynamic msg = new ExpandoObject();
                 msg.isAuction = isAuction;
-                msg.sale_conditions = JsonConvert.SerializeObject(newSaleConditions);
+                msg.sale_conditions = newSaleConditions;
 
                 nftApproveArgs.msg = JsonConvert.SerializeObject(msg);
 
