@@ -42,5 +42,10 @@ namespace UI.Marketplace
         {
             Actions.SaleUpdate(newSaleConditions, tokenId, isAuction);
         }
+
+        public void Offer(string tokenId, string offerToken, string price)
+        {
+            Actions.Offer(tokenId, offerToken, price);
+        }
     }
 }

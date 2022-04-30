@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using Near.Models;
 using NearClientUnity.Utilities;
-using Newtonsoft.Json;
 using UI.Marketplace.NftCardsUI;
 using UnityEngine;
 using UnityEngine.UI;
