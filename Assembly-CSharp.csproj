@@ -58,7 +58,6 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/ScalarOps/Load.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/IsNegative.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceController.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/TradeCardsButton.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Multiplication.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/FinalExecutionStatusBasic.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/InMemoryKeyStore.cs" />
@@ -130,7 +129,6 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/P3ConvertToP2.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/KeyPairEd25519.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/INetwork.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/PlayGameButton.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/Goalie/GoalieNftCardUI.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/SignerConfig.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/P1P1ConvertToP3.cs" />
@@ -139,9 +137,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Reduce.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/UnencryptedFileSystemKeyStore.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/NftCardUI.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/LoadUserId.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Sha512Internal.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/SignOutButton.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Extra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/BlockHeader.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Connection.cs" />
@@ -190,7 +186,6 @@
      <Compile Include="Assets/Scripts/UI/Marketplace/ICardLoader.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/ScalarOps/Clamp.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/ExecutionStatusBasic.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/Sign In/SignInButton.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/ContractOptions.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Extras/GoalieExtra.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceInteractor.cs" />
@@ -228,8 +223,10 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Signature.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/Sign In/CompleteSignInButton.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/MainMenuView.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/MainMenu.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/SignInView.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">

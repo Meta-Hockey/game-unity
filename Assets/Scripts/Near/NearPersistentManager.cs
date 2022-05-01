@@ -49,8 +49,6 @@ namespace Near
                 "",
                 new AuthService(),
                 new AuthStorage());
-
-            Game.LoadMainMenu(); ;
         }    
 
         private void Awake()

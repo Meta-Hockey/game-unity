@@ -35,18 +35,6 @@ namespace Runtime
             _runner.StartRunning();
         }
 
-        public static void LoadMainMenu()
-        {
-            if (NearPersistentManager.Instance.WalletAccount.IsSignedIn())
-            {
-                SceneManager.LoadScene(_assetRoot.mainMenuUIScene.name, LoadSceneMode.Additive);
-            }
-            else
-            {
-                SceneManager.LoadScene(_assetRoot.signInUIScene.name, LoadSceneMode.Additive);
-            }
-        }
-
         public static void TickController(IController controller)
         {
             _runner.TickController(controller);
