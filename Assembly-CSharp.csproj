@@ -229,8 +229,10 @@
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
      <Compile Include="Assets/Scripts/UI/ManageTeam/UIItem.cs" />
      <Compile Include="Assets/Scripts/UI/ManageTeam/UISlot.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/ManageTeamView.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
+     <None Include="Assets/Fonts/digital-7/readme.txt" />
      <Reference Include="UnityEngine">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
