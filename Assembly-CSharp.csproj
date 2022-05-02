@@ -44,6 +44,7 @@
      <Compile Include="Assets/Scripts/Runtime/Runner.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/Goalie/GoalieInputUI.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/ConditionalMove.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/MainMenu.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/ContractNear.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Square2.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/ScalarMultBase.cs" />
@@ -60,6 +61,7 @@
      <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceController.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Multiplication.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/FinalExecutionStatusBasic.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/SignInView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/InMemoryKeyStore.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/CryptoBytes.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/SignerType.cs" />
@@ -116,6 +118,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/ControlledSwap.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/MergeKeyStore.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Pow22523.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/MainMenuView.cs" />
      <Compile Include="Assets/Scripts/Runtime/Game.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameStarter.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Extras/PlayerExtra.cs" />
@@ -224,9 +227,8 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/MainMenuView.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/MainMenu.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/SignInView.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/UIItem.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/UISlot.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">
