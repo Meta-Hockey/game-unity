@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Marketplace.unity
     guid: ab5e3608937998a429d4d65f260c1493
+  - enabled: 1
+    path: Assets/Scenes/ManageTeam.unity
+    guid: a0a177751715e855b94a8879e4debfd9
   m_configObjects: {}

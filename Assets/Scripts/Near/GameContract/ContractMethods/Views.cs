@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
+using Near.Models.Team;
+using Near.Models.Team.Metadata;
 using NearClientUnity;
 using Newtonsoft.Json;
 
@@ -53,6 +55,30 @@ namespace Near.GameContract.ContractMethods
             dynamic isInTheList = await gameContract.View("is_already_in_the_waiting_list", args);
             
             return isInTheList.result;
+        }
+
+        public static async Task<(TeamIds, TeamMetadata)> LoadUserTeam()
+        {
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
+            ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
+            
+            dynamic args = new ExpandoObject();
+            args.account_id = NearPersistentManager.Instance.GetAccountId();
+            
+            dynamic ownerTeamResult = await gameContract.Change("get_owner_team", args, NearUtils.Gas);
+            
+            (Dictionary<string, dynamic>, Dictionary<string, dynamic>) dictionaries =
+                JsonConvert.DeserializeObject<(Dictionary<string, dynamic>, Dictionary<string, dynamic>)>(
+                    ownerTeamResult.ToString());
+            
+            TeamIds teamIds = new TeamIds();
+            if (ownerTeamResult != null)
+            {
+                dynamic ownerTeamIdsResult = await nftContract.View("get_owner_nft_team", args);
+                teamIds = JsonConvert.DeserializeObject<TeamIds>(ownerTeamIdsResult.result);
+            }
+            
+            return (null, null);
         }
     }
 }

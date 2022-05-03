@@ -38,6 +38,11 @@ namespace UI.Main_menu
         {
             Game.LoadMarketplace();
         }
+
+        public void LoadManageTeam()
+        {
+            SceneManager.LoadScene(Game.AssetRoot.manageTeamScene.name); 
+        }
         
         public void SignOut()
         {

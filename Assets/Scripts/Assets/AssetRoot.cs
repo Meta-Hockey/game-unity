@@ -9,6 +9,7 @@ namespace Assets
     {
         public SceneAsset betsScene;
         public SceneAsset betsUIScene;
+        public SceneAsset manageTeamScene;
         public MarketplaceAsset marketplaceAsset;
     }
 }

@@ -3,7 +3,6 @@ using System.IO;
 using System.Threading.Tasks;
 using NearClientUnity;
 using NearClientUnity.KeyStores;
-using Runtime;
 using UnityEngine;
 
 
@@ -22,7 +21,7 @@ namespace Near
         public readonly string MarketplaceContactId = "nft-marketplace.testnet";
 
         private ContractNear _nftContract;
-        public readonly string nftContactId = "nft-0_0.testnet";
+        public readonly string nftContactId = "nft_0_0.testnet";
         
         private readonly string _dirName = "KeyStore";
 
@@ -133,7 +132,7 @@ namespace Near
             ContractOptions options = new ContractOptions()
             {
                 viewMethods = new[] { "nft_tokens_for_owner", "nft_tokens_batch",
-                    "nft_token", "nft_tokens", "nft_total_supply"},
+                    "nft_token", "nft_tokens", "nft_total_supply", "get_owner_nft_team"},
                 changeMethods = new[] { "nft_mint", "nft_approve"}
             };
         
