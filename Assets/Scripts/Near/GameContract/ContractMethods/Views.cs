@@ -6,6 +6,7 @@ using Near.Models.Team;
 using Near.Models.Team.Metadata;
 using NearClientUnity;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace Near.GameContract.ContractMethods
 {
@@ -67,9 +68,26 @@ namespace Near.GameContract.ContractMethods
             
             dynamic ownerTeamResult = await gameContract.Change("get_owner_team", args, NearUtils.Gas);
             
-            (Dictionary<string, dynamic>, Dictionary<string, dynamic>) dictionaries =
-                JsonConvert.DeserializeObject<(Dictionary<string, dynamic>, Dictionary<string, dynamic>)>(
-                    ownerTeamResult.ToString());
+            foreach (dynamic five in ownerTeamResult["fives"])
+            {
+                dynamic fiveChild = five.Children();
+                
+                string numberFive = five.Name;
+                
+                foreach (dynamic fieldPlayers in fiveChild["field_players"])
+                {
+                    foreach (dynamic fieldPlayer in fieldPlayers)
+                    {
+                        string playerPosition = fieldPlayer.Name;
+
+                        dynamic f = fieldPlayer;
+                    }
+                }
+            }
+
+            foreach (dynamic goalie in ownerTeamResult["goalies"])
+            {
+            }
             
             TeamIds teamIds = new TeamIds();
             if (ownerTeamResult != null)
