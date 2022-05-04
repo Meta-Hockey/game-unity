@@ -22,9 +22,7 @@ namespace Near.MarketplaceContract
 
         private IExtraParser MapDataToParser(JObject data)
         {
-            string type = data["type"] != null ? data["type"].ToString() : data["player_type"].ToString();
-            
-            return type switch
+            return data["type"].ToString() switch
             {
                 "Goalie" => new GoalieExtraParser(),
                 "FieldPlayer" => new FieldPlayerExtraParser(),

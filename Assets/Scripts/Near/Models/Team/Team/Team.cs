@@ -4,7 +4,7 @@ namespace Near.Models.Team.Team
 {
     public class Team
     {
-        public Dictionary<string, Five> Fives;
-        public Dictionary<string, NFTMetadata> Goalies;
+        public Dictionary<string, FieldPlayer> fives;
+        public Dictionary<string, Goalie> goalies;
     }
 }
