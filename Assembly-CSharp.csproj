@@ -12,7 +12,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{b7aeaed9-b3d6-825e-3533-1aa4ee5705ae}</ProjectGuid>
+    <ProjectGuid>{c4553e08-78e7-59e0-79c9-5ae50c458fc4}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -243,7 +243,6 @@
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
-     <None Include="Assets/Fonts/digital-7/readme.txt" />
      <Reference Include="UnityEngine">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
@@ -485,7 +484,7 @@
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
      <Reference Include="Newtonsoft.Json">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Android.Types">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll</HintPath>
@@ -1094,43 +1093,43 @@
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/netstandard.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VSCode.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Sysroot.Linux_x86_64">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Toolchain.Linux-x86_64">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/Unity.Toolchain.Linux-x86_64.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Toolchain.Linux-x86_64.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Rider.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
      </Reference>
      <Reference Include="Unity.SysrootPackage.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/nft-hockey-game-unity/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
