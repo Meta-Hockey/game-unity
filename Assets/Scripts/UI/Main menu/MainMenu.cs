@@ -13,6 +13,7 @@ namespace UI.Main_menu
             if (NearPersistentManager.Instance.WalletAccount.IsSignedIn())
             {
                 mainMenuView.gameObject.SetActive(true);
+                mainMenuView.LoadAccountId();
                 signInView.gameObject.SetActive(false);
             }
             else
