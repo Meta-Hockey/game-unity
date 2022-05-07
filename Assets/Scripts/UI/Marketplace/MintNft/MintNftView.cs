@@ -11,6 +11,8 @@ namespace UI.Marketplace.MintNft
         [SerializeField] private Transform content;
         
         [SerializeField] private Image image;
+
+        [SerializeField] private InputField cardName;
         [SerializeField] private InputField imageURL;
 
         [SerializeField] private Transform playerType;
@@ -80,7 +82,10 @@ namespace UI.Marketplace.MintNft
 
         public void Mint()
         {
-            _cardMinter.MintCard(_royalties, imageURL.text);
+            _cardMinter.CardName = cardName.text;
+            _cardMinter.ImageUrl = imageURL.text;
+            
+            _cardMinter.MintCard(_royalties);
         }
     }
 }

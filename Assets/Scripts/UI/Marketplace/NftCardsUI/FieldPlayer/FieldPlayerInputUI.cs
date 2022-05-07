@@ -56,7 +56,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             }
         }
 
-        public override void MintCard(Dictionary<string, double> royalties, string url)
+        public override void MintCard(Dictionary<string, double> royalties)
         {
             dynamic fieldPlayer = new ExpandoObject();
             
@@ -76,7 +76,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             
             string fieldPlayerJson = JsonConvert.SerializeObject(fieldPlayer);
             
-            Actions.MintNFT(royalties, url, name, fieldPlayerJson);
+            Actions.MintNFT(royalties, ImageUrl, CardName, fieldPlayerJson);
         }
     }
 }

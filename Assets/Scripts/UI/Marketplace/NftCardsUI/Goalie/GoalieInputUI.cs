@@ -36,10 +36,10 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             _role = role;
         }
         
-        public override void MintCard(Dictionary<string, double> royalties, string url)
+        public override void MintCard(Dictionary<string, double> royalties)
         {
             dynamic goalie = new ExpandoObject();
-            
+
             goalie.type = "GoaliePos";
             goalie.position = "GoaliePos";
             goalie.role = _role;
@@ -56,7 +56,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             
             string goalieJson = JsonConvert.SerializeObject(goalie);
             
-            Actions.MintNFT(royalties, url, name, goalieJson);
+            Actions.MintNFT(royalties, ImageUrl, CardName, goalieJson);
         }
     }
 }
