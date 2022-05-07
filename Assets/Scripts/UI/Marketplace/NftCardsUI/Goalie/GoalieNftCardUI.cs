@@ -79,7 +79,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
     
     public class GoalieNftCardUI : NftCardUI
     {
-        [SerializeField] private Text type;
+        [SerializeField] private Text number;
         [SerializeField] private Text position;
         [SerializeField] private Text role;
         
@@ -89,7 +89,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
         [SerializeField] private Text stretch;
         [SerializeField] private Text morale;
 
-        public Text Type => type;
+        public Text Number => number;
         public Text Position => position;
         public Text Role => role;
 

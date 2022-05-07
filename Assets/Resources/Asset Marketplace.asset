@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   marketplaceScene: {fileID: 102900000, guid: 38df94f1d3a38189dab47d79b88602c1, type: 3}
   cardTileImg: {fileID: 0}
-  fieldPlayerCardTile: {fileID: 7167133962503043581, guid: e6435dc5ddf0075069755e2595d7812e, type: 3}
+  fieldPlayerCardTile: {fileID: 504305482604517825, guid: 8315491e1acefa9e3bb54736ae66b0d9, type: 3}
   fieldPlayerCardDescription: {fileID: 6430792553322085307, guid: 1cad49ddfa8055e49b6fc83664c78b03, type: 3}
   fieldPlayerInputUI: {fileID: 7939502926822039758, guid: e4fb889ff270b0a9bb26b310918c8d09, type: 3}
-  goalieNftCardUI: {fileID: 6505148302029668431, guid: 2847420e8051cb8bbae659d0ddc74c60, type: 3}
+  goalieNftCardUI: {fileID: 6427634280971067379, guid: 2847420e8051cb8bbae659d0ddc74c60, type: 3}
   goalieDescriptionUI: {fileID: 6608402369560730131, guid: b1caa406a22b455f78a499a0e779bc43, type: 3}
   goalieInputUI: {fileID: 6947983847716573197, guid: 23d8ca9c69dc0c8989ff838c3c32c6b1, type: 3}

@@ -36,7 +36,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             FieldPlayerExtra extra = (FieldPlayerExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
 
             // fieldPlayer.Image = _cardData.metadata.media;
-            fieldPlayer.Type.text = extra.Type;
+            fieldPlayer.Number.text = extra.Number.ToString();
             fieldPlayer.Position.text = extra.Position;
             fieldPlayer.Role.text = extra.Role;
             
@@ -68,7 +68,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
     
     public class FieldPlayerNftCardUI : NftCardUI
     {
-        [SerializeField] private Text type;
+        [SerializeField] private Text number;
         [SerializeField] private Text position;
         [SerializeField] private Text role;
         
@@ -78,7 +78,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
         [SerializeField] private Text iq;
         [SerializeField] private Text morale;
 
-        public Text Type => type;
+        public Text Number => number;
         public Text Position => position;
         public Text Role => role;
 

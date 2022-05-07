@@ -478,6 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2959403603366307706}
   - component: {fileID: 5996601902519872670}
+  - component: {fileID: 504305482604517825}
   m_Layer: 5
   m_Name: FieldPlayerPrefab
   m_TagString: Untagged
@@ -536,6 +537,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2605144515570822122}
   m_CullTransparentMesh: 1
+--- !u!114 &504305482604517825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605144515570822122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c6ed935ee034a4ca188ff2f0fd1777a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 1522503901608698172}
+  nameNftCard: {fileID: 8328718102025712179}
+  price: {fileID: 6002945620949458873}
+  ownerId: {fileID: 5341456380284991836}
+  chooseButton: {fileID: 0}
+  number: {fileID: 6563761028178715912}
+  position: {fileID: 3746273786232474738}
+  role: {fileID: 3295776113715953981}
+  skating: {fileID: 2344420195877033346}
+  shooting: {fileID: 3787389820228738180}
+  strength: {fileID: 98841722736145255}
+  iq: {fileID: 2816215776946270554}
+  morale: {fileID: 5035499480439213862}
 --- !u!1 &2641764619716247551
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +979,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4184396190955309045}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

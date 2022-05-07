@@ -27,6 +27,7 @@ namespace Near.MarketplaceContract
             return type switch
             {
                 "Goalie" => new GoalieExtraParser(),
+                "GoaliePos" => new GoalieExtraParser(),
                 "FieldPlayer" => new FieldPlayerExtraParser(),
                 _ => throw new Exception("Extra type not found")
             };

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Runtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace UI.Marketplace
 {
@@ -33,7 +34,7 @@ namespace UI.Marketplace
 
         public void Back()
         {
-            Game.LoadMarketplace();
+            SceneManager.LoadSceneAsync(Game.AssetRoot.mainMenuScene.name);
         }
     }
 }

@@ -37,6 +37,7 @@ namespace UI.Marketplace.Sell_cards
                 {
                     "FieldPlayer" => Game.AssetRoot.marketplaceAsset.fieldPlayerCardTile,
                     "Goalie" => Game.AssetRoot.marketplaceAsset.goalieNftCardUI,
+                    "GoaliePos" => Game.AssetRoot.marketplaceAsset.goalieNftCardUI,
                     _ => throw new Exception("Extra type not found")
                 };
 

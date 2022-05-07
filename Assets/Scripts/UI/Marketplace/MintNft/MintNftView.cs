@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Runtime;
 using UI.Marketplace.NftCardsUI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI.Marketplace.MintNft
@@ -86,6 +87,11 @@ namespace UI.Marketplace.MintNft
             _cardMinter.ImageUrl = imageURL.text;
             
             _cardMinter.MintCard(_royalties);
+        }
+
+        public void Back()
+        {
+            SceneManager.LoadSceneAsync(Game.AssetRoot.mainMenuScene.name);
         }
     }
 }
