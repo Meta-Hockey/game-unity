@@ -9,9 +9,9 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
 {
     public class FieldPlayerInputUI : NftCardInputUI
     {
-        [SerializeField] private Dropdown position;
-        [SerializeField] private Dropdown role;
-        [SerializeField] private Dropdown hand;
+        private string _position;
+        private string _role;
+        private string _hand;
         
         [SerializeField] private InputField number;
         
@@ -21,14 +21,19 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
         [SerializeField] private InputField strength;
         [SerializeField] private InputField morale;
 
+        public override void SetPosition(string position)
+        {
+            _position = position;
+        }
+
         public override void MintCard(Dictionary<string, double> royalties, string url)
         {
             dynamic fieldPlayer = new ExpandoObject();
             
             fieldPlayer.type = "FieldPlayer";
-            fieldPlayer.position = position.options[position.value].text;
-            fieldPlayer.role = role.options[role.value].text;
-            fieldPlayer.hand = hand.options[hand.value].text;
+            fieldPlayer.position = _position;
+            fieldPlayer.role = _role;
+            fieldPlayer.hand = _hand;
             fieldPlayer.number = number.text;
             fieldPlayer.stats = new []
             { 
@@ -41,7 +46,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             
             string fieldPlayerJson = JsonConvert.SerializeObject(fieldPlayer);
             
-            Actions.MintNFT(royalties, url, name.text, fieldPlayerJson);
+            Actions.MintNFT(royalties, url, name, fieldPlayerJson);
         }
     }
 }

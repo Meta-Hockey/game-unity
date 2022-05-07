@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Runtime;
 using UI.Marketplace.NftCardsUI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -46,6 +47,20 @@ namespace UI.Marketplace.MintNft
 
             buttonToChange.image.color = Color.blue;
             buttonToChange.text.color = Color.white;
+
+            NftCardInputUI card;
+            if (position == "GoaliePos")
+            {
+                card = Instantiate(Game.AssetRoot.marketplaceAsset.goalieInputUI, content);
+            }
+            else
+            {
+                card = Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerInputUI, content);
+                card.SetPosition(position);
+            }
+            
+            ChangePlayerType(card);
+
         }
 
         private void ChangePlayerType(NftCardInputUI nftCardInputUI)

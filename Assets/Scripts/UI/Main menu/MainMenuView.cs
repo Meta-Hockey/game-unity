@@ -39,6 +39,11 @@ namespace UI.Main_menu
             Game.LoadMarketplace();
         }
 
+        public void LoadMintNFT()
+        {
+            SceneManager.LoadScene(Game.AssetRoot.mintNFT.name);
+        }
+
         public void LoadManageTeam()
         {
             SceneManager.LoadScene(Game.AssetRoot.manageTeamScene.name); 

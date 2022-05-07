@@ -9,8 +9,8 @@ namespace UI.Marketplace.NftCardsUI.Goalie
 {
     public class GoalieInputUI : NftCardInputUI
     {
-        [SerializeField] private Dropdown role;
-        [SerializeField] private Dropdown hand;
+        private string _role;
+        private string _hand;
         
         [SerializeField] private InputField number;
         
@@ -26,8 +26,8 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             
             goalie.type = "GoaliePos";
             goalie.position = "GoaliePos";
-            goalie.role = role.options[role.value].text;
-            goalie.hand = hand.options[hand.value].text;
+            goalie.role = _role;
+            goalie.hand = _hand;
             goalie.number = number.text;
             goalie.stats = new []
             { 
@@ -40,7 +40,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             
             string goalieJson = JsonConvert.SerializeObject(goalie);
             
-            Actions.MintNFT(royalties, url, name.text, goalieJson);
+            Actions.MintNFT(royalties, url, name, goalieJson);
         }
     }
 }
