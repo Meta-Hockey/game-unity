@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Dynamic;
 using Near.MarketplaceContract.ContractMethods;
 using Newtonsoft.Json;
-using UI.Marketplace.NftCardsUI.Goalie;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +12,9 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
         private string _position;
         private string _role;
 
+        [SerializeField] private Transform defenderRoles;
+        [SerializeField] private Transform forwardRoles;
+        
         [SerializeField] private List<RolesButton> rolesButtons;
         [SerializeField] private Toggle hand;
         
@@ -41,6 +43,17 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
         public override void SetPosition(string position)
         {
             _position = position;
+
+            if (position is "LeftDefender" or "RightDefender")
+            {
+                forwardRoles.gameObject.SetActive(false);
+                defenderRoles.gameObject.SetActive(true);
+            }
+            else
+            {
+                forwardRoles.gameObject.SetActive(true);
+                defenderRoles.gameObject.SetActive(false);
+            }
         }
 
         public override void MintCard(Dictionary<string, double> royalties, string url)
