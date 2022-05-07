@@ -45,7 +45,6 @@ namespace UI.Marketplace.Sell_cards
             
             viewInteractor.ChangeView(gameObject.transform);
             
-            StartCoroutine(Utils.Utils.LoadImage(_cardDescription.Image, _nftSaleInfo.NFT.metadata.media));
         }
 
         public void RegisterStorage()

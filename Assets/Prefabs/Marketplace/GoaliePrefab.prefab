@@ -1540,6 +1540,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6510231029260256186}
   - component: {fileID: 6510231029595511941}
+  - component: {fileID: 6505148302029668431}
   m_Layer: 5
   m_Name: GoaliePrefab
   m_TagString: Untagged
@@ -1585,3 +1586,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6510231029595511940}
   m_CullTransparentMesh: 1
+--- !u!114 &6505148302029668431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6510231029595511940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87ffa08717c4109a56386348ef1b376, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 6510231029369722960}
+  nameNftCard: {fileID: 6510231028876973078}
+  price: {fileID: 0}
+  ownerId: {fileID: 0}
+  chooseButton: {fileID: 0}
+  type: {fileID: 0}
+  position: {fileID: 6510231029053676881}
+  role: {fileID: 6510231027889763112}
+  gloveAndBlocker: {fileID: 6510231028285844963}
+  pads: {fileID: 6510231029570309376}
+  stand: {fileID: 6510231028852068650}
+  stretch: {fileID: 6510231028167305778}
+  morale: {fileID: 6510231028054459400}

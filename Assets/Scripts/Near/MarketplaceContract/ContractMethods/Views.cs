@@ -137,7 +137,7 @@ namespace Near.MarketplaceContract.ContractMethods
         public static async Task<List<NFTSaleInfo>> LoadUserNFTs(string fromIndex = "0", int limit = 50)
         {
             List<NFTSaleInfo> nftSalesInfo = new List<NFTSaleInfo>();
-
+            
             string accountId = NearPersistentManager.Instance.GetAccountId();
             if (accountId == "")
             {

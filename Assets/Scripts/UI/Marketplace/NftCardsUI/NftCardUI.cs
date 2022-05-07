@@ -31,7 +31,7 @@ namespace UI.Marketplace.NftCardsUI
             ICardRenderer cardRenderer = GetCardRenderer();
             var cardTile = cardRenderer.RenderCardTile(content);
             
-            cardTile.chooseButton.onClick.AddListener(OnClick);
+            // cardTile.chooseButton.onClick.AddListener(OnClick);
         }
         
         private void OnClick()

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Runtime;
 using UnityEngine;
 
 namespace UI.Marketplace
@@ -15,6 +16,11 @@ namespace UI.Marketplace
             }
             
             toView.gameObject.SetActive(true);
+        }
+
+        public void Back()
+        {
+            Game.LoadMarketplace();
         }
     }
 }

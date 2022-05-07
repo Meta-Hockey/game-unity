@@ -282,6 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2211930886844348244}
+  - component: {fileID: 2457203069078618831}
   m_Layer: 0
   m_Name: FieldPlayerDescriptionField
   m_TagString: Untagged
@@ -311,6 +312,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2457203069078618831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211930886844348245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5b9fdeb47e4a92be1f71cd891596f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardName: {fileID: 2211930888032330736}
+  number: {fileID: 7912298840079979291}
+  position: {fileID: 516385577423650314}
+  role: {fileID: 5935251158433966504}
+  skating: {fileID: 3457909864017176144}
+  shooting: {fileID: 8601902739971079991}
+  strength: {fileID: 3047537532894671260}
+  iq: {fileID: 6720926933351314288}
+  morale: {fileID: 2558163633808557376}
 --- !u!1 &2211930887086422453
 GameObject:
   m_ObjectHideFlags: 0

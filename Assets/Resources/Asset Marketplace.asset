@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56df14342ac0433ab61db072712244ce, type: 3}
   m_Name: Asset Marketplace
   m_EditorClassIdentifier: 
-  marketplaceScene: {fileID: 102900000, guid: ab5e3608937998a429d4d65f260c1493, type: 3}
-  fieldPlayerCardTile: {fileID: 7948316030570829348, guid: df5cbbc39c93efa3ead29bb015e0417f, type: 3}
+  marketplaceScene: {fileID: 102900000, guid: 38df94f1d3a38189dab47d79b88602c1, type: 3}
+  cardTileImg: {fileID: 0}
+  fieldPlayerCardTile: {fileID: 7167133962503043581, guid: e6435dc5ddf0075069755e2595d7812e, type: 3}
   fieldPlayerCardDescription: {fileID: 6430792553322085307, guid: 1cad49ddfa8055e49b6fc83664c78b03, type: 3}
   fieldPlayerInputUI: {fileID: 3273399134107775031, guid: c4d0257b9df494951a27f1d36f052991, type: 3}
-  goalieNftCardUI: {fileID: 6708084798186967851, guid: 50b97542f6920885abc77ac7d9f3f6e0, type: 3}
+  goalieNftCardUI: {fileID: 6505148302029668431, guid: 2847420e8051cb8bbae659d0ddc74c60, type: 3}
   goalieDescriptionUI: {fileID: 6608402369560730131, guid: b1caa406a22b455f78a499a0e779bc43, type: 3}
   goalieInputUI: {fileID: 3222767844682376506, guid: bf40dd10c624a0286965107d542b16e9, type: 3}

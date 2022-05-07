@@ -1,3 +1,4 @@
+using UI.Marketplace.NftCardsUI;
 using UI.Marketplace.NftCardsUI.FieldPlayer;
 using UI.Marketplace.NftCardsUI.Goalie;
 using UnityEditor;
@@ -9,6 +10,8 @@ namespace UI.Marketplace
     public class MarketplaceAsset : ScriptableObject
     {
         public SceneAsset marketplaceScene;
+
+        public CardTileImg cardTileImg;
         
         public FieldPlayerNftCardUI fieldPlayerCardTile;
         public FieldPlayerDescriptionUI fieldPlayerCardDescription;

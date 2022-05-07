@@ -5,12 +5,8 @@ namespace UI.Marketplace.NftCardsUI
 {
     public abstract class NftCardDescriptionUI : MonoBehaviour
     {
-        [SerializeField] protected Image img;
-        [SerializeField] protected Text price;
-        [SerializeField] protected Text ownerId;
+        [SerializeField] protected Text cardName;
 
-        public Image Image => img;
-        public Text Price => price;
-        public Text OwnerId => ownerId;
+        public Text Name => cardName;
     }
 }

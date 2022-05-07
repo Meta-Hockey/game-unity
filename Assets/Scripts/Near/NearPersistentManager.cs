@@ -21,13 +21,22 @@ namespace Near
         public readonly string MarketplaceContactId = "nft-marketplace.testnet";
 
         private ContractNear _nftContract;
-        public readonly string nftContactId = "nft_0_0.testnet";
+        public readonly string nftContactId = "nft-0_0.testnet";
         
         private readonly string _dirName = "KeyStore";
 
-
-        private async void Start()
+        private async void Awake()
         {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            
             if (!Directory.Exists(_dirName))
             {
                 await UnencryptedFileSystemKeyStore.EnsureDir(_dirName);
@@ -48,19 +57,6 @@ namespace Near
                 "",
                 new AuthService(),
                 new AuthStorage());
-        }    
-
-        private void Awake()
-        {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
         }
 
         public async Task<ContractNear> GetGameContract()

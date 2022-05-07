@@ -81,6 +81,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Account.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/ViewInteractor.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/GetP2Dbl.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/CardTileImg.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/KeyTypeConverter.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/NearBinaryReader.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Base58.cs" />
@@ -101,8 +102,8 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/FromBytes.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/JsonRpcProvider.cs" />
      <Compile Include="Assets/Scripts/Near/MarketplaceContract/Parsers/IExtraParser.cs" />
-     <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/GetPreComp.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/FinalExecutionOutcome.cs" />
+     <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/GetPreComp.cs" />
      <Compile Include="Assets/Scripts/UI/ManageTeam/UISlot.cs" />
      <Compile Include="Assets/Scripts/UI/ManageTeam/ManageTeamController.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/WalletAccount.cs" />
@@ -178,7 +179,6 @@
      <Compile Include="Assets/Scripts/Near/NearUtils.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/Provider.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/AccessKeyPermissionType.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/MintNft/MintNftButton.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/DoubleScalarMult.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/ChunkResult.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/InMemorySigner.cs" />
@@ -201,7 +201,6 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/ContractOptions.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Extras/GoalieExtra.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceInteractor.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyCardsButton.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/ExecutionError.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Near.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/KeyType.cs" />
@@ -221,11 +220,10 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/MontgomeryOps/ScalarMult.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/ExecutionStatus.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/BlockResult.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/MintNft/TypeNftDropDown.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Negative.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Lookup/Base.cs" />
-     <Compile Include="Assets/Scripts/Near/MarketplaceContract/ExtraConverter.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/IExternalAuthStorage.cs" />
+     <Compile Include="Assets/Scripts/Near/MarketplaceContract/ExtraConverter.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/FieldPlayer/FieldPlayerInputUI.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Add.cs" />
      <Compile Include="Assets/Scripts/Near/MarketplaceContract/ContractMethods/Actions.cs" />
@@ -236,6 +234,7 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/MintNft/PositionButton.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">
@@ -478,9 +477,6 @@
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
-     <Reference Include="Newtonsoft.Json">
-     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Burst.Unsafe">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/PackageCache/com.unity.burst@1.6.4/Unity.Burst.Unsafe.dll</HintPath>
      </Reference>
@@ -495,6 +491,9 @@
      </Reference>
      <Reference Include="Unity.Burst.Cecil.Rocks">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/PackageCache/com.unity.burst@1.6.4/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Assets/Plugins/Newtonsoft.Json.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Android.Types">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll</HintPath>
@@ -1102,6 +1101,9 @@
      <Reference Include="netstandard">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/UnityReferenceAssemblies/unity-4.8-api/Facades/netstandard.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.InternalAPIEngineBridge.001">
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
      </Reference>
@@ -1114,14 +1116,23 @@
      <Reference Include="Unity.Sysroot.Linux_x86_64">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Sysroot.Linux_x86_64.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Timeline.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Timeline">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Burst.Editor">
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Sprite.Editor">
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.InternalAPIEditorBridge.001">
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Path.Editor">
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Toolchain.Linux-x86_64">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Toolchain.Linux-x86_64.dll</HintPath>
@@ -1138,29 +1149,23 @@
      <Reference Include="UnityEngine.UI">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.SysrootPackage.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.2D.Sprite.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.2D.Path.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.2D.Path.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Mathematics">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.2D.Common.Runtime">
-     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.InternalAPIEngineBridge.001">
-     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Burst">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Timeline.Editor">
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.Mathematics.Editor">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Common.Runtime">
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.SpriteShape.Editor">
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.2D.Common.Editor">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
@@ -1168,14 +1173,8 @@
      <Reference Include="Unity.2D.SpriteShape.Runtime">
      <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.2D.SpriteShape.Runtime.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Burst.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.InternalAPIEditorBridge.001">
-     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.2D.SpriteShape.Editor">
-     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.2D.SpriteShape.Editor.dll</HintPath>
+     <Reference Include="Unity.SysrootPackage.Editor">
+     <HintPath>/home/yurii/Desktop/projects/main/main-unity/Library/ScriptAssemblies/Unity.SysrootPackage.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

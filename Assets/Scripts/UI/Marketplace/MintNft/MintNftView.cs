@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Runtime;
 using UI.Marketplace.NftCardsUI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,18 +11,16 @@ namespace UI.Marketplace.MintNft
         
         [SerializeField] private Image image;
         [SerializeField] private InputField imageURL;
+
+        [SerializeField] private Transform playerType;
+        [SerializeField] private List<PositionButton> positionButtons;
         
-        [SerializeField] private InputField royaltyInputField;
-        [SerializeField] private InputField royaltyReceiverInputField;
-
-        [SerializeField] private Text royalties;
-
         private NftCardInputUI _cardMinter;
         private Dictionary<string, double> _royalties;
 
-        private void Awake()
+        private void Start()
         {
-            _royalties = new Dictionary<string, double>();
+            _royalties = new Dictionary<string, double> {{"nft-marketplace.testnet", 15}};
         }
 
         public void SwitchType(int id)
@@ -31,24 +28,27 @@ namespace UI.Marketplace.MintNft
             switch (id)
             {
                 case 0:
-                    ChangeType(null);
+                    playerType.gameObject.SetActive(false);
                     break;
                 case 1:
-                    NftCardInputUI fieldPlayerInput =
-                        Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerInputUI, content);
-                    
-                    ChangeType(fieldPlayerInput);
-                    break;
-                case 2:
-                    NftCardInputUI goalieInput =
-                        Instantiate(Game.AssetRoot.marketplaceAsset.goalieInputUI, content);
-                    
-                    ChangeType(goalieInput);
+                    playerType.gameObject.SetActive(true);
                     break;
             }
         }
 
-        private void ChangeType(NftCardInputUI nftCardInputUI)
+        public void ChoosePlayerPosition(string position, PositionButton buttonToChange)
+        {
+            foreach (PositionButton button in positionButtons)
+            {
+                button.text.color = Color.black;
+                button.image.color = Color.white;
+            }
+
+            buttonToChange.image.color = Color.blue;
+            buttonToChange.text.color = Color.white;
+        }
+
+        private void ChangePlayerType(NftCardInputUI nftCardInputUI)
         {
             if (_cardMinter != null)
             {
@@ -61,24 +61,6 @@ namespace UI.Marketplace.MintNft
         public void LoadImage()
         {
             StartCoroutine(Utils.Utils.LoadImage(image, imageURL.text));
-        }
-
-        public void AddRoyalty()
-        {
-            // TODO: check account availability
-            
-            _royalties.Add(royaltyReceiverInputField.text, double.Parse(royaltyInputField.text));
-            ShowRoyalties();
-        }
-
-        private void ShowRoyalties()
-        {
-            royalties.text = "";
-            
-            foreach (KeyValuePair<string, double> royalty in _royalties)
-            {
-                royalties.text += royalty.Key + " - " + royalty.Value + "%";
-            }
         }
 
         public void Mint()

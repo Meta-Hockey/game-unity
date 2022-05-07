@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384fe1e998fc46f49027a259c7105718, type: 3}
   m_Name: Asset Root
   m_EditorClassIdentifier: 
+  mainMenuScene: {fileID: 102900000, guid: 396039db2f1f9fff1bb1a8c45a3b9838, type: 3}
   betsScene: {fileID: 102900000, guid: d083a200555e8697a83dc98dd829a9cc, type: 3}
   betsUIScene: {fileID: 102900000, guid: 2929d0aaa8390ca1688c623ea596d6d1, type: 3}
   manageTeamScene: {fileID: 102900000, guid: a0a177751715e855b94a8879e4debfd9, type: 3}
