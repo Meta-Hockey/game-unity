@@ -236,6 +236,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/MintNft/SwitchToggle.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/RolesButton.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">

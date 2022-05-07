@@ -10,8 +10,10 @@ namespace UI.Marketplace.NftCardsUI.Goalie
     public class GoalieInputUI : NftCardInputUI
     {
         private string _role;
-        private string _hand;
+
+        [SerializeField] private List<RolesButton> rolesButtons;
         
+        [SerializeField] private Toggle hand;
         [SerializeField] private InputField number;
         
         [SerializeField] private InputField gloveAndBlocker;
@@ -20,6 +22,20 @@ namespace UI.Marketplace.NftCardsUI.Goalie
         [SerializeField] private InputField stretch;
         [SerializeField] private InputField morale;
 
+        public override void SetRole(string role, RolesButton activeButton)
+        {
+            foreach (RolesButton button in rolesButtons)
+            {
+                button.text.color = Color.black;
+                button.image.sprite = button.defaultSprite;
+            }
+
+            activeButton.text.color = Color.white;
+            activeButton.image.sprite = activeButton.activeSprite;
+
+            _role = role;
+        }
+        
         public override void MintCard(Dictionary<string, double> royalties, string url)
         {
             dynamic goalie = new ExpandoObject();
@@ -27,7 +43,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             goalie.type = "GoaliePos";
             goalie.position = "GoaliePos";
             goalie.role = _role;
-            goalie.hand = _hand;
+            goalie.hand = hand.isOn ? "Left" : "Right";
             goalie.number = number.text;
             goalie.stats = new []
             { 

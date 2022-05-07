@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 2341643347367117242}
   - component: {fileID: 2341643347367117243}
   - component: {fileID: 2341643347367117236}
+  - component: {fileID: 4441152593936226768}
   m_Layer: 5
   m_Name: Post-to-post
   m_TagString: Untagged
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: ffdad165052449d62987a557655c6074, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -159,7 +160,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2341643347367117243}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4441152593936226768}
+        m_TargetAssemblyTypeName: UI.Marketplace.NftCardsUI.RolesButton, Assembly-CSharp
+        m_MethodName: SetRole
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Post2Post
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4441152593936226768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2341643347367117238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c82a9644d54728980e431a045162f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: {fileID: 6947983847716573197}
+  image: {fileID: 2341643347367117243}
+  activeSprite: {fileID: 21300000, guid: 7c7c35b46ee697e62abbe06390a15e90, type: 3}
+  defaultSprite: {fileID: 21300000, guid: ffdad165052449d62987a557655c6074, type: 3}
+  text: {fileID: 2341643348124658171}
 --- !u!1 &2341643347782847215
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,6 +396,7 @@ GameObject:
   - component: {fileID: 2341643348208572277}
   - component: {fileID: 2341643348208572278}
   - component: {fileID: 2341643348208572279}
+  - component: {fileID: 8932350802478380447}
   m_Layer: 5
   m_Name: Wall
   m_TagString: Untagged
@@ -422,7 +453,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: ffdad165052449d62987a557655c6074, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -475,7 +506,36 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2341643348208572278}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8932350802478380447}
+        m_TargetAssemblyTypeName: UI.Marketplace.NftCardsUI.RolesButton, Assembly-CSharp
+        m_MethodName: SetRole
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Wall
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8932350802478380447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2341643348208572273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c82a9644d54728980e431a045162f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: {fileID: 6947983847716573197}
+  image: {fileID: 2341643348208572278}
+  activeSprite: {fileID: 21300000, guid: 7c7c35b46ee697e62abbe06390a15e90, type: 3}
+  defaultSprite: {fileID: 21300000, guid: ffdad165052449d62987a557655c6074, type: 3}
+  text: {fileID: 2341643348088326029}
 --- !u!1 &4693655630369371453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2972,6 +3032,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ac86f415d814822b0f228d5b363c0c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rolesButtons:
+  - {fileID: 8932350802478380447}
+  - {fileID: 4441152593936226768}
+  hand: {fileID: 1390411173318172050}
   number: {fileID: 5537371626954256702}
   gloveAndBlocker: {fileID: 4693655631011520063}
   pads: {fileID: 4693655631973967452}
@@ -3394,3 +3458,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1896076945939259283, guid: ab21335b923a479dfbadfdabd1448711, type: 3}
   m_PrefabInstance: {fileID: 656272616945435138}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1390411173318172050 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1896076945939259280, guid: ab21335b923a479dfbadfdabd1448711, type: 3}
+  m_PrefabInstance: {fileID: 656272616945435138}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390411173318172048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

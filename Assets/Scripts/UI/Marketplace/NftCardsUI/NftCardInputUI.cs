@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI.Marketplace.NftCardsUI
 {
@@ -9,6 +8,8 @@ namespace UI.Marketplace.NftCardsUI
         public string CardName { get; set; }
         
         public virtual void SetPosition(string position) { }
+        
+        public virtual void SetRole(string role, RolesButton activeButton) {}
 
         public abstract void MintCard(Dictionary<string, double> royalties, string url);
     }

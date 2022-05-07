@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Dynamic;
 using Near.MarketplaceContract.ContractMethods;
 using Newtonsoft.Json;
+using UI.Marketplace.NftCardsUI.Goalie;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,9 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
     {
         private string _position;
         private string _role;
-        private string _hand;
+
+        [SerializeField] private List<RolesButton> rolesButtons;
+        [SerializeField] private Toggle hand;
         
         [SerializeField] private InputField number;
         
@@ -20,6 +23,20 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
         [SerializeField] private InputField shooting;
         [SerializeField] private InputField strength;
         [SerializeField] private InputField morale;
+
+        public override void SetRole(string role, RolesButton activeButton)
+        {
+            foreach (RolesButton button in rolesButtons)
+            {
+                button.text.color = Color.black;
+                button.image.sprite = button.defaultSprite;
+            }
+
+            activeButton.text.color = Color.white;
+            activeButton.image.sprite = activeButton.activeSprite;
+
+            _role = role;
+        }
 
         public override void SetPosition(string position)
         {
@@ -33,7 +50,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             fieldPlayer.type = "FieldPlayer";
             fieldPlayer.position = _position;
             fieldPlayer.role = _role;
-            fieldPlayer.hand = _hand;
+            fieldPlayer.hand = hand ? "Left" : "Right";
             fieldPlayer.number = number.text;
             fieldPlayer.stats = new []
             { 
