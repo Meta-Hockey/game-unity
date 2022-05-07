@@ -7,6 +7,7 @@ namespace UI.Marketplace
     public class MarketplaceInteractor : ViewInteractor
     {
         [SerializeField] private List<Transform> views;
+        [SerializeField] private List<TopButton> buttons;
 
         public override void ChangeView(Transform toView)
         {
@@ -16,6 +17,18 @@ namespace UI.Marketplace
             }
             
             toView.gameObject.SetActive(true);
+        }
+
+        public void ChangeActiveButton(TopButton newActiveButton)
+        {
+            foreach (TopButton topButton in buttons)
+            {
+                topButton.image.sprite = topButton.defaultSprite;
+                topButton.text.color = Color.black;
+            }
+
+            newActiveButton.image.sprite = newActiveButton.activeSprite;
+            newActiveButton.text.color = Color.white;
         }
 
         public void Back()

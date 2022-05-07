@@ -193,6 +193,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/ConnectionConfig.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/ToBytes.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/GetP2.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/MintNft/SwitchToggle.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Ed25519Ops/KeyPair.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/FullAccessPermission.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/ActionType.cs" />
@@ -213,6 +214,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/ByteArray64.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/FieldPlayer/FieldPlayerDescriptionUI.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/ByteArray32.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/RolesButton.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/ChunkHeader.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Subtract.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Array8.cs" />
@@ -235,8 +237,7 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/MintNft/SwitchToggle.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/RolesButton.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/TopButton.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">
