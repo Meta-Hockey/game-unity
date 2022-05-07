@@ -63,7 +63,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             fieldPlayer.type = "FieldPlayer";
             fieldPlayer.position = _position;
             fieldPlayer.role = _role;
-            fieldPlayer.hand = hand ? "Left" : "Right";
+            fieldPlayer.hand = hand.isOn ? "Right" : "Left";
             fieldPlayer.number = number.text;
             fieldPlayer.stats = new []
             { 

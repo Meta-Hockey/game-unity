@@ -23,7 +23,7 @@ namespace UI.Marketplace.MintNft
 
         private void Start()
         {
-            _royalties = new Dictionary<string, double> {{"nft-marketplace.testnet", 15}};
+            _royalties = new Dictionary<string, double> {{Near.NearPersistentManager.Instance.MarketplaceContactId, 15}};
         }
 
         public void SwitchType(int id)

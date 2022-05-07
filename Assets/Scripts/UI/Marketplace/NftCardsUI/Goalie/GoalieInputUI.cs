@@ -43,7 +43,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             goalie.type = "GoaliePos";
             goalie.position = "GoaliePos";
             goalie.role = _role;
-            goalie.hand = hand.isOn ? "Left" : "Right";
+            goalie.hand = hand.isOn ? "Right" : "Left";
             goalie.number = number.text;
             goalie.stats = new []
             { 
