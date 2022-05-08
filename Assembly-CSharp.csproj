@@ -163,6 +163,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/P3ToCached.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Subtract.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Transaction.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/TopButton.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Team/Team/NFTMetadata.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerStats.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/FromBytes.cs" />
@@ -237,7 +238,6 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/TopButton.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">
