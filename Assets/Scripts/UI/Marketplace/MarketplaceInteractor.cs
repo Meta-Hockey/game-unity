@@ -25,11 +25,11 @@ namespace UI.Marketplace
             foreach (TopButton topButton in buttons)
             {
                 topButton.image.sprite = topButton.defaultSprite;
-                topButton.text.color = Color.black;
+                topButton.text.color = Color.white;
             }
 
             newActiveButton.image.sprite = newActiveButton.activeSprite;
-            newActiveButton.text.color = Color.white;
+            newActiveButton.text.color = Color.black;
         }
 
         public void Back()

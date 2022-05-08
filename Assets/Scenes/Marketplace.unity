@@ -2536,8 +2536,8 @@ MonoBehaviour:
   marketplaceInteractor: {fileID: 1871033816}
   text: {fileID: 168202053}
   image: {fileID: 215090566}
-  activeSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
-  defaultSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  activeSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
 --- !u!1 &222733804
 GameObject:
   m_ObjectHideFlags: 0
@@ -4369,7 +4369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8342,7 +8342,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 215090568}
+      - m_Target: {fileID: 1113096526}
         m_TargetAssemblyTypeName: UI.Marketplace.TopButton, Assembly-CSharp
         m_MethodName: ChangeActiveButton
         m_Mode: 1
@@ -8374,7 +8374,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8407,8 +8407,8 @@ MonoBehaviour:
   marketplaceInteractor: {fileID: 1871033816}
   text: {fileID: 615051924}
   image: {fileID: 1113096524}
-  activeSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
-  defaultSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  activeSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
 --- !u!1001 &1122842780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10515,7 +10515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12952,9 +12952,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1635540188}
-        m_TargetAssemblyTypeName: UI.Marketplace.Sell_cards.SellCardsView, Assembly-CSharp
-        m_MethodName: LoadNftCards
+      - m_Target: {fileID: 1767492765}
+        m_TargetAssemblyTypeName: UI.Marketplace.TopButton, Assembly-CSharp
+        m_MethodName: ChangeActiveButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12984,7 +12984,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13017,8 +13017,8 @@ MonoBehaviour:
   marketplaceInteractor: {fileID: 1871033816}
   text: {fileID: 1827038927}
   image: {fileID: 1767492763}
-  activeSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
-  defaultSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  activeSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
 --- !u!1 &1773857266
 GameObject:
   m_ObjectHideFlags: 0
@@ -13547,7 +13547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14703,9 +14703,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1747080514}
-        m_TargetAssemblyTypeName: UI.Marketplace.BuyPacks.BuyPacksView, Assembly-CSharp
-        m_MethodName: LoadPacks
+      - m_Target: {fileID: 1950867754}
+        m_TargetAssemblyTypeName: UI.Marketplace.TopButton, Assembly-CSharp
+        m_MethodName: ChangeActiveButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14735,7 +14735,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -14768,8 +14768,8 @@ MonoBehaviour:
   marketplaceInteractor: {fileID: 1871033816}
   text: {fileID: 1398659804}
   image: {fileID: 1950867752}
-  activeSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
-  defaultSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  activeSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
 --- !u!1 &1966566655
 GameObject:
   m_ObjectHideFlags: 0
