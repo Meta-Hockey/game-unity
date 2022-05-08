@@ -43,6 +43,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             
             GoalieExtra extra = (GoalieExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
             
+            goalie.LoadImage(_nftSaleInfo.NFT.metadata.media);
             goalie.Position.text = Utils.Utils.ConvertPosition(extra.Position);
             goalie.Role.text = extra.Role;
 

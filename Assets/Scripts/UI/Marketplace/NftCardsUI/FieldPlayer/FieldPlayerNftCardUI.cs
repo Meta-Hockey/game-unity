@@ -42,7 +42,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
 
             FieldPlayerExtra extra = (FieldPlayerExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
 
-            // fieldPlayer.Image = _cardData.metadata.media;
+            fieldPlayer.LoadImage(_nftSaleInfo.NFT.metadata.media);
             fieldPlayer.Number.text = extra.Number.ToString();
             fieldPlayer.Position.text = Utils.Utils.ConvertPosition(extra.Position);
             fieldPlayer.Role.text = extra.Role;
