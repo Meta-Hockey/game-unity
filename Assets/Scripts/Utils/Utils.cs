@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -21,6 +22,21 @@ namespace Utils
             {
                 Debug.Log("Invalid link");
             }
+        }
+
+        public static string ConvertPosition(string position)
+        {
+            return position switch
+            {
+                "LeftWing" => "LW",
+                "RightWing" => "RW",
+                "Center" => "C",
+                "LeftDefender" => "LD",
+                "RightDefender" => "RD",
+                "GoaliePos" => "G",
+                "Goalie" => "G",
+                _ => position
+            };
         }
     }
 }

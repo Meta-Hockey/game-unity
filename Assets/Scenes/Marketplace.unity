@@ -5642,8 +5642,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 106.80909, y: -25}
-  m_SizeDelta: {x: 153.61818, y: 36.43508}
+  m_AnchoredPosition: {x: 101.92594, y: -25}
+  m_SizeDelta: {x: 143.85188, y: 35.96297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &819324830
 MonoBehaviour:
@@ -6209,8 +6209,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 300, y: 450}
-  m_Spacing: {x: 25, y: 150}
+  m_CellSize: {x: 300, y: 675}
+  m_Spacing: {x: 25, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 4
 --- !u!222 &852781239
@@ -8769,8 +8769,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 106.80909, y: -25}
-  m_SizeDelta: {x: 153.61818, y: 36.43508}
+  m_AnchoredPosition: {x: 101.92594, y: -25}
+  m_SizeDelta: {x: 143.85188, y: 35.96297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1170273411
 MonoBehaviour:
@@ -11245,8 +11245,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 106.80909, y: -25}
-  m_SizeDelta: {x: 153.61818, y: 36.43508}
+  m_AnchoredPosition: {x: 101.92594, y: -25}
+  m_SizeDelta: {x: 143.85188, y: 35.96297}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1529865685
 MonoBehaviour:
@@ -12287,8 +12287,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 300, y: 450}
-  m_Spacing: {x: 25, y: 150}
+  m_CellSize: {x: 300, y: 675}
+  m_Spacing: {x: 25, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 4
 --- !u!114 &1702571435
@@ -12940,7 +12940,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 215090568}
+      - m_Target: {fileID: 1767492765}
         m_TargetAssemblyTypeName: UI.Marketplace.TopButton, Assembly-CSharp
         m_MethodName: ChangeActiveButton
         m_Mode: 1
@@ -12952,9 +12952,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1767492765}
-        m_TargetAssemblyTypeName: UI.Marketplace.TopButton, Assembly-CSharp
-        m_MethodName: ChangeActiveButton
+      - m_Target: {fileID: 1635540188}
+        m_TargetAssemblyTypeName: UI.Marketplace.Sell_cards.SellCardsView, Assembly-CSharp
+        m_MethodName: LoadNftCards
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13055,8 +13055,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -477.9519, y: -572.21906}
-  m_SizeDelta: {x: 1733.4072, y: 844.5027}
+  m_AnchoredPosition: {x: -477.9519, y: -583.2866}
+  m_SizeDelta: {x: 1733.4072, y: 866.6379}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1773857268
 MonoBehaviour:
@@ -15335,8 +15335,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09010416, y: 0.024}
   m_AnchorMax: {x: 0.9124375, y: 0.8527778}
-  m_AnchoredPosition: {x: 0, y: 52.030735}
-  m_SizeDelta: {x: 307.97, y: -699.9051}
+  m_AnchoredPosition: {x: 0, y: 53.394665}
+  m_SizeDelta: {x: 307.97, y: -718.25024}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2036629274
 MonoBehaviour:
@@ -15372,8 +15372,8 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 300, y: 450}
-  m_Spacing: {x: 25, y: 150}
+  m_CellSize: {x: 300, y: 675}
+  m_Spacing: {x: 25, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 4
 --- !u!114 &2036629276

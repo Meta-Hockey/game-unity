@@ -24,20 +24,27 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardTile, content);
             
             fieldPlayer.Name.text = _nftSaleInfo.NFT.metadata.title;
-            fieldPlayer.OwnerId.text = _nftSaleInfo.NFT.owner_id;
+            fieldPlayer.OwnerId.text = _nftSaleInfo.NFT.owner_id != NearPersistentManager.Instance.GetAccountId() 
+                ? "Owner: " + _nftSaleInfo.NFT.owner_id : "You are the owner";
             
-            // TODO: Card price
-            if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("near"))
+            if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.is_auction)
             {
-                fieldPlayer.Price.text = "Price: " + NearUtils.FormatNearAmount(UInt128.Parse(_nftSaleInfo.Sale.sale_conditions["near"]));
-                Debug.Log(_nftSaleInfo.Sale.is_auction);
+                fieldPlayer.Price.text = "Auction";
+            }
+            else if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("near"))
+            {
+                fieldPlayer.Price.text = "Cost: " + NearUtils.FormatNearAmount(UInt128.Parse(_nftSaleInfo.Sale.sale_conditions["near"]));
+            }
+            else
+            {
+                fieldPlayer.Price.text = "Not for sale";
             }
 
             FieldPlayerExtra extra = (FieldPlayerExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
 
             // fieldPlayer.Image = _cardData.metadata.media;
             fieldPlayer.Number.text = extra.Number.ToString();
-            fieldPlayer.Position.text = extra.Position;
+            fieldPlayer.Position.text = Utils.Utils.ConvertPosition(extra.Position);
             fieldPlayer.Role.text = extra.Role;
             
             fieldPlayer.Skating.text = extra.Stats.Skating.ToString();

@@ -597,8 +597,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -29.871887, y: -287.28363}
-  m_SizeDelta: {x: 83.9731, y: 42.1836}
+  m_AnchoredPosition: {x: -18, y: -292}
+  m_SizeDelta: {x: 183.4531, y: 42.1836}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8295603572163616932
 CanvasRenderer:
@@ -630,7 +630,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5e05c73de79a19ffc84ce22802fceb31, type: 3}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -641,7 +641,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'cost:'
+  m_Text: 'Cost: 5'
 --- !u!1 &3617510801514551010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1202,7 +1202,7 @@ GameObject:
   - component: {fileID: 3504033467593214949}
   - component: {fileID: 5341456380284991836}
   m_Layer: 5
-  m_Name: Text
+  m_Name: OwnerId
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1225,8 +1225,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34, y: -254}
-  m_SizeDelta: {x: 192.99, y: 38.0424}
+  m_AnchoredPosition: {x: 4.4850006, y: -254}
+  m_SizeDelta: {x: 269.96, y: 38.0424}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3504033467593214949
 CanvasRenderer:
@@ -1258,10 +1258,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5e05c73de79a19ffc84ce22802fceb31, type: 3}
-    m_FontSize: 24
+    m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -1269,7 +1269,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'owner:'
+  m_Text: 'owner: nft-marketplace.testnet
+
+'
 --- !u!1 &5365155651360105337
 GameObject:
   m_ObjectHideFlags: 0

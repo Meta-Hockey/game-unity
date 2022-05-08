@@ -44,7 +44,6 @@ namespace UI.Marketplace.Sell_cards
             marketStoragePaid.text = "Market storage paid: " +  await viewInteractor.MarketplaceController.GetMarketStoragePaid();
             
             viewInteractor.ChangeView(gameObject.transform);
-            
         }
 
         public void RegisterStorage()

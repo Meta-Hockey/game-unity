@@ -24,21 +24,26 @@ namespace UI.Marketplace.NftCardsUI.Goalie
 
             goalie.Name.text = _nftSaleInfo.NFT.metadata.title;
             
-            //goalie.OwnerId.text = _nftSaleInfo.NFT.owner_id;
+            goalie.OwnerId.text = _nftSaleInfo.NFT.owner_id != NearPersistentManager.Instance.GetAccountId() ? "Owner: " + _nftSaleInfo.NFT.owner_id : "You are the owner";
             
-            // TODO: Card price
-            /*
-            if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("near"))
+            
+            if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.is_auction)
+            {
+                goalie.Price.text = "Auction";
+            }
+            else if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("near"))
             {
                 goalie.Price.text = "Price: " + NearUtils.FormatNearAmount(UInt128.Parse(_nftSaleInfo.Sale.sale_conditions["near"]));
-                Debug.Log(_nftSaleInfo.Sale.is_auction);
             }
-            */
+            else
+            {
+                goalie.Price.text = "Not for sale";
+            }
+            
             
             GoalieExtra extra = (GoalieExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
             
-            // goalie.Type.text = extra.Type;
-            goalie.Position.text = extra.Position;
+            goalie.Position.text = Utils.Utils.ConvertPosition(extra.Position);
             goalie.Role.text = extra.Role;
 
             goalie.GloveAndBlocker.text = extra.Stats.GloveAndBlocker.ToString();
