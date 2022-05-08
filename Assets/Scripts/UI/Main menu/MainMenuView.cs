@@ -15,7 +15,7 @@ namespace UI.Main_menu
 
         public void LoadAccountId()
         {
-            accountId.text = "Welcome: " + NearPersistentManager.Instance.GetAccountId() + " !";
+            accountId.text = "Welcome, " + NearPersistentManager.Instance.GetAccountId() + " !";
         }
         
         public void LoadBetsScene()

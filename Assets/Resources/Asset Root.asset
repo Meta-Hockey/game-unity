@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Asset Root
   m_EditorClassIdentifier: 
   mintNFT: {fileID: 102900000, guid: 6d75ff04c134b951ba00bd14504bff40, type: 3}
-  mainMenuScene: {fileID: 102900000, guid: 396039db2f1f9fff1bb1a8c45a3b9838, type: 3}
+  mainMenuScene: {fileID: 102900000, guid: 7b3a53dea8a68f9318396f3e351a310d, type: 3}
   betsScene: {fileID: 102900000, guid: d083a200555e8697a83dc98dd829a9cc, type: 3}
   betsUIScene: {fileID: 102900000, guid: 2929d0aaa8390ca1688c623ea596d6d1, type: 3}
   manageTeamScene: {fileID: 102900000, guid: a0a177751715e855b94a8879e4debfd9, type: 3}

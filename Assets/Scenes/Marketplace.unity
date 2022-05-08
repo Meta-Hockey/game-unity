@@ -12742,6 +12742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1747080513}
+  - component: {fileID: 1747080514}
   m_Layer: 0
   m_Name: Buy packs
   m_TagString: Untagged
@@ -12765,6 +12766,19 @@ Transform:
   m_Father: {fileID: 2017709545}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1747080514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747080512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f859f086617b4a7085e5046c281dcadc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewInteractor: {fileID: 1871033816}
 --- !u!1 &1764727148
 GameObject:
   m_ObjectHideFlags: 0
@@ -14034,6 +14048,7 @@ MonoBehaviour:
   views:
   - {fileID: 2140439034}
   - {fileID: 1635540187}
+  - {fileID: 1747080513}
   buttons:
   - {fileID: 1950867754}
   - {fileID: 215090568}
@@ -14679,6 +14694,18 @@ MonoBehaviour:
       - m_Target: {fileID: 215090568}
         m_TargetAssemblyTypeName: UI.Marketplace.TopButton, Assembly-CSharp
         m_MethodName: ChangeActiveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1747080514}
+        m_TargetAssemblyTypeName: UI.Marketplace.BuyPacks.BuyPacksView, Assembly-CSharp
+        m_MethodName: LoadPacks
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

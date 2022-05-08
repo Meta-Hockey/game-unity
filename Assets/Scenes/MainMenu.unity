@@ -183,7 +183,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 5e05c73de79a19ffc84ce22802fceb31, type: 3}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -441,13 +441,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 223302180}
+  - component: {fileID: 223302182}
+  - component: {fileID: 223302181}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &223302180
 RectTransform:
   m_ObjectHideFlags: 0
@@ -475,6 +477,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0.00024414062, y: -0.00012207031}
   m_SizeDelta: {x: -0.0005, y: -0.00048828}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &223302181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223302179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 802faa4635594d58bb6dd04300c1d434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  signInView: {fileID: 1648670682}
+  accountId: {fileID: 104994509}
+--- !u!114 &223302182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223302179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac28202f319147068a2b80268c6a3980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuView: {fileID: 223302181}
+  signInView: {fileID: 1648670682}
 --- !u!1 &225184558
 GameObject:
   m_ObjectHideFlags: 0
@@ -821,7 +851,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 433526876}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 223302181}
+        m_TargetAssemblyTypeName: UI.Main_menu.MainMenuView, Assembly-CSharp
+        m_MethodName: TradeCards
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &433526876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1229,7 +1271,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 672528913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1648670682}
+        m_TargetAssemblyTypeName: UI.Main_menu.SignInView, Assembly-CSharp
+        m_MethodName: RequestSignIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &672528913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1351,7 +1405,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 765880303}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1648670682}
+        m_TargetAssemblyTypeName: UI.Main_menu.SignInView, Assembly-CSharp
+        m_MethodName: CompleteSignIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &765880303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,7 +1619,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 826685587}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 223302181}
+        m_TargetAssemblyTypeName: UI.Main_menu.MainMenuView, Assembly-CSharp
+        m_MethodName: LoadMintNFT
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &826685587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2167,13 +2245,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1648670681}
+  - component: {fileID: 1648670682}
   m_Layer: 5
   m_Name: SignIn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1648670681
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2198,6 +2277,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1648670682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648670680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee8c3cf3fcd4837b26157f418751126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuView: {fileID: 0}
+  inputUri: {fileID: 0}
 --- !u!1 &1668754020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,7 +2468,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1705603187}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 223302179}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1705603187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2708,6 +2813,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2081169531}
   - component: {fileID: 2081169532}
+  - component: {fileID: 2081169533}
   m_Layer: 0
   m_Name: Starter
   m_TagString: Untagged
@@ -2743,6 +2849,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assetRoot: {fileID: 11400000, guid: e81ec2bcc9346e88281902dc6d916818, type: 2}
+--- !u!114 &2081169533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081169530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd7376362794411bf5da9b16633c5fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2109035249
 GameObject:
   m_ObjectHideFlags: 0
