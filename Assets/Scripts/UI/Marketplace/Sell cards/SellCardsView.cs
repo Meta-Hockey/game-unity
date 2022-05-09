@@ -24,10 +24,12 @@ namespace UI.Marketplace.Sell_cards
         {
             viewInteractor.ChangeView(gameObject.transform);
             
+            /*
             if (_isLoaded)
             {
                 return;
             }
+            */
             
             List<NFTSaleInfo> nftSalesInfo = await viewInteractor.MarketplaceController.GetUserNFTs();
 

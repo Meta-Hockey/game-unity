@@ -83,7 +83,7 @@ namespace Near.MarketplaceContract.ContractMethods
                 nftApproveArgs.account_id = NearPersistentManager.Instance.MarketplaceContactId;
 
                 dynamic msg = new ExpandoObject();
-                msg.isAuction = isAuction;
+                msg.is_auction = isAuction;
                 msg.sale_conditions = newSaleConditions;
 
                 nftApproveArgs.msg = JsonConvert.SerializeObject(msg);

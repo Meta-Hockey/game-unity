@@ -24,10 +24,12 @@ namespace UI.Marketplace.Buy_cards
         {
             viewInteractor.ChangeView(gameObject.transform);
             
+            /*
             if (_isLoaded)
             {
                 return;
             }
+            */
 
             List<NFTSaleInfo> nftSalesInfo = await viewInteractor.MarketplaceController.GetSales();
 
@@ -37,6 +39,7 @@ namespace UI.Marketplace.Buy_cards
                 {
                     "FieldPlayer" => Game.AssetRoot.marketplaceAsset.fieldPlayerCardTile,
                     "Goalie" => Game.AssetRoot.marketplaceAsset.goalieNftCardUI,
+                    "GoaliePos" => Game.AssetRoot.marketplaceAsset.goalieNftCardUI,
                     _ => throw new Exception("Extra type not found")
                 };
 
