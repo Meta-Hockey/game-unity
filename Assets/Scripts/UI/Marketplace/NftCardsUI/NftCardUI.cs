@@ -36,7 +36,7 @@ namespace UI.Marketplace.NftCardsUI
         
         private void OnClick()
         {
-            _cardLoader.LoadCard(GetCardRenderer(), NftSaleInfo);
+            _cardLoader.LoadCard(GetCardRenderer(), NftSaleInfo, image);
         }
         
         public void LoadImage(string url)

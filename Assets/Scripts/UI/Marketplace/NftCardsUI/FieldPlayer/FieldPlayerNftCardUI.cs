@@ -62,13 +62,20 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardDescription, content);
             
             FieldPlayerExtra extra = (FieldPlayerExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
-
-            cardDescription.Skating.text = extra.Stats.Skating.ToString();
-            cardDescription.Shooting.text = extra.Stats.Shooting.ToString();
-            cardDescription.Strength.text = extra.Stats.Shooting.ToString();
-            cardDescription.Iq.text = extra.Stats.IQ.ToString();
-            cardDescription.Morale.text = extra.Stats.Morale.ToString();
             
+            cardDescription.OwnerId.text =  _nftSaleInfo.NFT.owner_id != NearPersistentManager.Instance.GetAccountId() 
+                ? "Owner: " + _nftSaleInfo.NFT.owner_id : "You are the owner";
+
+            cardDescription.Name.text = _nftSaleInfo.NFT.metadata.title;
+            cardDescription.Position.text = "Position: " + extra.Position;
+            cardDescription.Role.text = "Role: " + extra.Position;
+
+            cardDescription.Skating.text = "skating: " + extra.Stats.Skating;
+            cardDescription.Shooting.text = "shooting: " + extra.Stats.Shooting;
+            cardDescription.Strength.text = "strength: " + extra.Stats.Shooting;
+            cardDescription.Iq.text = "IQ: " + extra.Stats.IQ;
+            cardDescription.Morale.text = "morale: " + extra.Stats.Morale;
+
             return cardDescription;
         }
     }

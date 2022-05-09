@@ -61,23 +61,22 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             GoalieDescriptionUI cardDescription =
                 Object.Instantiate(Game.AssetRoot.marketplaceAsset.goalieDescriptionUI, content);
             
-            // TODO insert from CardData
-            /*
-            if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("NEAR"))
-            {
-                cardDescription.Price.text = "Price: " + _nftSaleInfo.Sale.sale_conditions["NEAR"];
-            }
-            
-            cardDescription.OwnerId.text = _nftSaleInfo.NFT.owner_id;
-            */
+            cardDescription.OwnerId.text =  _nftSaleInfo.NFT.owner_id != NearPersistentManager.Instance.GetAccountId() 
+                ? "Owner: " + _nftSaleInfo.NFT.owner_id : "You are the owner";
+
+            cardDescription.Name.text = _nftSaleInfo.NFT.metadata.title;
             
             GoalieExtra extra = (GoalieExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
 
-            cardDescription.GloveAndBlocker.text = extra.Stats.GloveAndBlocker.ToString();
-            cardDescription.Pads.text = extra.Stats.Pads.ToString();
-            cardDescription.Stretch.text = extra.Stats.Stretch.ToString();
-            cardDescription.Stand.text = extra.Stats.Stand.ToString();
-            cardDescription.Morale.text = extra.Stats.Morale.ToString();
+            cardDescription.Name.text = _nftSaleInfo.NFT.metadata.title;
+            cardDescription.Position.text = "Position: " + extra.Position;
+            cardDescription.Role.text = "Role: " + extra.Position;
+            
+            cardDescription.GloveAndBlocker.text = "agility: " +  extra.Stats.GloveAndBlocker;
+            cardDescription.Pads.text = "pads: " + extra.Stats.Pads;
+            cardDescription.Stretch.text = "stretch: " + extra.Stats.Stretch;
+            cardDescription.Stand.text = "stand: " + extra.Stats.Stand;
+            cardDescription.Morale.text = "morale: " + extra.Stats.Morale;
             
             return cardDescription;
         }

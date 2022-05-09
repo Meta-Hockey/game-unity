@@ -743,8 +743,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -433, y: -74}
-  m_SizeDelta: {x: 477.9939, y: 53.3357}
+  m_AnchoredPosition: {x: -94.83757, y: -74}
+  m_SizeDelta: {x: 820.9633, y: 53.3357}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1725772836900998946
 CanvasRenderer:
@@ -781,7 +781,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 50
-    m_Alignment: 2
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -953,6 +953,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5535813679854878655}
+  - component: {fileID: 926339542173635424}
   m_Layer: 0
   m_Name: GoalieDescriptionField
   m_TagString: Untagged
@@ -992,6 +993,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &926339542173635424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5535813679854878654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13bced5d0f0a46948b81d44f5fdd20d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardName: {fileID: 5535813679956405019}
+  ownerId: {fileID: 1178005289464023509}
+  number: {fileID: 4588978378557545456}
+  position: {fileID: 6146256429269759713}
+  role: {fileID: 17817729126080835}
+  gloveAndBlocker: {fileID: 9051536964334726843}
+  pads: {fileID: 2666529748729100252}
+  stand: {fileID: 8658862320823728503}
+  stretch: {fileID: 1091266621868063643}
+  morale: {fileID: 8205873115848658347}
 --- !u!1 &5535813679956405017
 GameObject:
   m_ObjectHideFlags: 0
