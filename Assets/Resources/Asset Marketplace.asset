@@ -19,3 +19,4 @@ MonoBehaviour:
   goalieNftCardUI: {fileID: 6427634280971067379, guid: 2847420e8051cb8bbae659d0ddc74c60, type: 3}
   goalieDescriptionUI: {fileID: 926339542173635424, guid: f728926033529e11480dc135dc1245aa, type: 3}
   goalieInputUI: {fileID: 6947983847716573197, guid: 23d8ca9c69dc0c8989ff838c3c32c6b1, type: 3}
+  bid: {fileID: 4597253030938329365, guid: 00d0261e01d4cf6e391ba9abdedde89e, type: 3}

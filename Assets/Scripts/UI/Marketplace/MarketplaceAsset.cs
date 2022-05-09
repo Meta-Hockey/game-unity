@@ -1,3 +1,4 @@
+using UI.Marketplace.Buy_cards;
 using UI.Marketplace.NftCardsUI.FieldPlayer;
 using UI.Marketplace.NftCardsUI.Goalie;
 using UnityEditor;
@@ -17,5 +18,7 @@ namespace UI.Marketplace
         public GoalieNftCardUI goalieNftCardUI;
         public GoalieDescriptionUI goalieDescriptionUI;
         public GoalieInputUI goalieInputUI;
+
+        public BidText bid;
     }
 }
