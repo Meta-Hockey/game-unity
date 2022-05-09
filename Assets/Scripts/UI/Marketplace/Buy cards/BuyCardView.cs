@@ -22,7 +22,7 @@ namespace UI.Marketplace.Buy_cards
         private string _price;
         
 
-        public void LoadCard(ICardRenderer cardRenderer, NFTSaleInfo nftSaleInfo, Image image)
+        public void LoadCard(ICardRenderer cardRenderer, NFTSaleInfo nftSaleInfo)
         {
             if (_cardTile != null)
             {

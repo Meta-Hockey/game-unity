@@ -9,6 +9,9 @@ namespace UI.Marketplace.Sell_cards
 {
     public class SellCardView : MonoBehaviour, ICardLoader
     {
+        [SerializeField] private Transform sellView;
+        [SerializeField] private Transform marketStoragePaidView;
+        
         [SerializeField] private Image cardImage;
         [SerializeField] private Transform cardDescriptionContent;
         [SerializeField] private ViewInteractor viewInteractor;
@@ -16,14 +19,13 @@ namespace UI.Marketplace.Sell_cards
         private NftCardUI _cardTile;
         private NftCardDescriptionUI _cardDescription;
         private NFTSaleInfo _nftSaleInfo;
+        private string _marketStoragePaid;
 
-        [SerializeField] private Text marketStoragePaid;
-        [SerializeField] private InputField amountSpots;
-
+        
         [SerializeField] private Toggle isAuction;
         [SerializeField] private InputField price;
 
-        public async void LoadCard(ICardRenderer cardRenderer, NFTSaleInfo nftSaleInfo, Image image)
+        public void LoadCard(ICardRenderer cardRenderer, NFTSaleInfo nftSaleInfo)
         {
             viewInteractor.ChangeView(gameObject.transform);
 
@@ -39,16 +41,33 @@ namespace UI.Marketplace.Sell_cards
 
             _nftSaleInfo = nftSaleInfo;
 
-            cardImage = image;
+            StartCoroutine(Utils.Utils.LoadImage(cardImage, nftSaleInfo.NFT.metadata.media));
             
             _cardDescription = cardRenderer.RenderCardDescription(cardDescriptionContent);
-            
-           // marketStoragePaid.text = "Market storage paid: " +  await viewInteractor.MarketplaceController.GetMarketStoragePaid();
+
+            CheckMarketStoragePaid();
         }
 
+        private async void CheckMarketStoragePaid()
+        {
+            _marketStoragePaid = await viewInteractor.MarketplaceController.GetMarketStoragePaid();
+
+            if (_marketStoragePaid == "0")
+            {
+                sellView.gameObject.SetActive(false);
+                marketStoragePaidView.gameObject.SetActive(true);
+            }
+            else
+            {
+                sellView.gameObject.SetActive(true);
+                marketStoragePaidView.gameObject.SetActive(false);
+            }
+        }
+        
         public void RegisterStorage()
         {
-            viewInteractor.MarketplaceController.RegisterStorage(amountSpots.text);
+            viewInteractor.MarketplaceController.RegisterStorage("10");
+            CheckMarketStoragePaid();
         }
 
         public void UpdatePrice()

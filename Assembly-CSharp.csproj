@@ -62,6 +62,7 @@
      <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceController.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Multiplication.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/FinalExecutionStatusBasic.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SwitchToggleSellCard.cs" />
      <Compile Include="Assets/Scripts/UI/Main menu/SignInView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/InMemoryKeyStore.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/CryptoBytes.cs" />
@@ -238,7 +239,6 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SwitchToggleSellCard.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">
