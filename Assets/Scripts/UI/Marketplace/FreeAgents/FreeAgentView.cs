@@ -109,7 +109,9 @@ namespace UI.Marketplace.FreeAgents
 
         public void UpdatePrice()
         {
-            Dictionary<string, string> newSale = new Dictionary<string, string> {{"near", newSaleConditions.text}};
+            UInt128 nearAmount = NearUtils.ParseNearAmount(newSaleConditions.text);
+
+            Dictionary<string, string> newSale = new Dictionary<string, string> {{"near", nearAmount.ToString()}};
             viewInteractor.MarketplaceController.SaleUpdate(newSale, _nftSaleInfo.NFT.token_id, _nftSaleInfo.Sale.is_auction);
             
             CloseSetNewPriceView();
