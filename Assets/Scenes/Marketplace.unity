@@ -282,6 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 12842427}
+  - component: {fileID: 12842428}
   m_Layer: 0
   m_Name: Free agents
   m_TagString: Untagged
@@ -306,6 +307,21 @@ Transform:
   m_Father: {fileID: 2017709545}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &12842428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12842426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9691b6efd5174b6aa725f8e149367821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 852781235}
+  viewInteractor: {fileID: 1871033816}
+  freeAgentView: {fileID: 88238524}
 --- !u!1 &14810068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 88238523}
+  - component: {fileID: 88238524}
   m_Layer: 0
   m_Name: Free agent
   m_TagString: Untagged
@@ -1196,6 +1213,18 @@ Transform:
   m_Father: {fileID: 2017709545}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &88238524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88238522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3995cef4d1d4e6c924a10ad189530e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &96743389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,7 +2168,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.078431375, g: 0.14509805, b: 0.78431374, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -5252,8 +5281,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 105.34421, y: -25}
-  m_SizeDelta: {x: 150.68842, y: 36.373066}
+  m_AnchoredPosition: {x: 102.29792, y: -25}
+  m_SizeDelta: {x: 144.59584, y: 35.702675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &819324830
 MonoBehaviour:
@@ -7504,7 +7533,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.078431375, g: 0.14509805, b: 0.78431374, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -7529,6 +7558,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1113096526}
         m_TargetAssemblyTypeName: UI.Marketplace.TopButton, Assembly-CSharp
         m_MethodName: ChangeActiveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 12842428}
+        m_TargetAssemblyTypeName: UI.Marketplace.FreeAgents.FreeAgentsView, Assembly-CSharp
+        m_MethodName: LoadNftCards
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8054,8 +8095,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 101.92594, y: -25}
-  m_SizeDelta: {x: 143.85188, y: 35.96297}
+  m_AnchoredPosition: {x: 102.29792, y: -25}
+  m_SizeDelta: {x: 144.59584, y: 35.702675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1170273411
 MonoBehaviour:
@@ -8555,7 +8596,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.078431375, g: 0.14509805, b: 0.78431374, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -12687,7 +12728,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.078431375, g: 0.14509805, b: 0.78431374, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -13819,6 +13860,8 @@ MonoBehaviour:
   - {fileID: 1403570438}
   - {fileID: 2140439034}
   - {fileID: 1139063771}
+  - {fileID: 12842427}
+  - {fileID: 88238523}
   buttons:
   - {fileID: 1950867754}
   - {fileID: 215090568}
@@ -14247,6 +14290,7 @@ GameObject:
   - component: {fileID: 1950867752}
   - component: {fileID: 1950867751}
   - component: {fileID: 1950867754}
+  - component: {fileID: 1950867755}
   m_Layer: 5
   m_Name: Buy packs button
   m_TagString: Untagged
@@ -14297,7 +14341,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.07756319, g: 0.14677829, b: 0.7830189, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -14319,9 +14363,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 215090568}
+      - m_Target: {fileID: 1950867754}
         m_TargetAssemblyTypeName: UI.Marketplace.TopButton, Assembly-CSharp
         m_MethodName: ChangeActiveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1950867755}
+        m_TargetAssemblyTypeName: UI.Marketplace.BuyPacks.BuyPacksView, Assembly-CSharp
+        m_MethodName: LoadPacks
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14386,6 +14442,19 @@ MonoBehaviour:
   image: {fileID: 1950867752}
   activeSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
+--- !u!114 &1950867755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950867749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f859f086617b4a7085e5046c281dcadc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewInteractor: {fileID: 1871033816}
 --- !u!1 &1971654614
 GameObject:
   m_ObjectHideFlags: 0

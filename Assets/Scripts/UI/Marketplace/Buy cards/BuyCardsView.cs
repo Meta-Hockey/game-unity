@@ -35,9 +35,9 @@ namespace UI.Marketplace.Buy_cards
             {
                 NftCardUI card = nftSaleInfo.NFT.metadata.extra.Type switch
                 {
-                    "FieldPlayer" => Game.AssetRoot.marketplaceAsset.fieldPlayerCardTile,
-                    "Goalie" => Game.AssetRoot.marketplaceAsset.goalieNftCardUI,
-                    "GoaliePos" => Game.AssetRoot.marketplaceAsset.goalieNftCardUI,
+                    "FieldPlayer" => Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardTile),
+                    "Goalie" => Instantiate(Game.AssetRoot.marketplaceAsset.goalieNftCardUI),
+                    "GoaliePos" => Instantiate(Game.AssetRoot.marketplaceAsset.goalieNftCardUI),
                     _ => throw new Exception("Extra type not found")
                 };
 
