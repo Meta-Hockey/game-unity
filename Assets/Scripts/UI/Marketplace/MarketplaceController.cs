@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Near;
 using Near.MarketplaceContract.ContractMethods;
@@ -15,15 +16,22 @@ namespace UI.Marketplace
         public async Task<List<NFTSaleInfo>> GetSales()
         {
             _nftSalesInfo ??= await Views.LoadSales();
-
+            
             return _nftSalesInfo;
         }
 
         public async Task<List<NFTSaleInfo>> GetUserNFTs()
         {
             _userNFTs ??= await Views.LoadUserNFTs();
+            
+            return _userNFTs.Where(x => x.Sale == null).ToList();
+        }
 
-            return _userNFTs;
+        public async Task<List<NFTSaleInfo>> GetFreeAgents()
+        {
+            _userNFTs ??= await Views.LoadUserNFTs();
+            
+            return _userNFTs.Where(x => x.Sale != null).ToList();
         }
 
         public async Task<string> GetMarketStoragePaid()

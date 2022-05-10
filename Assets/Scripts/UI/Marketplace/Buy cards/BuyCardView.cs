@@ -14,16 +14,16 @@ namespace UI.Marketplace.Buy_cards
         [SerializeField] private Transform buyImmediatelyView;
         
         [SerializeField] private Transform bidContent;
-        
+            
         [SerializeField] private Image cardImage;
         [SerializeField] private Text price;
-
+        
         [SerializeField] private Button buyButton;
         [SerializeField] private Text buyButtonText;
         
         [SerializeField] private Transform cardDescriptionContent;
         [SerializeField] private ViewInteractor viewInteractor;
-
+        
         [SerializeField] private InputField bid;
 
         private NftCardUI _cardTile;

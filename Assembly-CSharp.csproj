@@ -194,6 +194,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Multiplication121666.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/ConnectionConfig.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/ToBytes.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/FreeAgents/FreeAgentsView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/GetP2.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/MintNft/SwitchToggleHands.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Ed25519Ops/KeyPair.cs" />
@@ -205,6 +206,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/ContractOptions.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Extras/GoalieExtra.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceInteractor.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/FreeAgents/FreeAgentView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/ExecutionError.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Near.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/KeyType.cs" />
@@ -214,6 +216,7 @@
      <Compile Include="Assets/Scripts/Near/GameContract/ContractMethods/Views.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Metadata.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/ByteArray64.cs" />
+     <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BidText.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/FieldPlayer/FieldPlayerDescriptionUI.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/ByteArray32.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/RolesButton.cs" />
@@ -239,7 +242,6 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BidText.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">
