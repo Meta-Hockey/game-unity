@@ -55,5 +55,10 @@ namespace UI.Marketplace
         {
             Actions.Offer(tokenId, offerToken, price);
         }
+
+        public void AcceptOffer(string tokenId)
+        {
+            Actions.AcceptOffer(tokenId);
+        }
     }
 }

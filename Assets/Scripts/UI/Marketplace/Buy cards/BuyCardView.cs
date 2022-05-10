@@ -52,7 +52,7 @@ namespace UI.Marketplace.Buy_cards
             _cardDescription = cardRenderer.RenderCardDescription(cardDescriptionContent);
             _nftSaleInfo = nftSaleInfo;
 
-            if (nftSaleInfo.NFT.owner_id == Near.NearPersistentManager.Instance.GetAccountId())
+            if (nftSaleInfo.NFT.owner_id == NearPersistentManager.Instance.GetAccountId())
             {
                 buyButton.gameObject.SetActive(false);
                 return;
@@ -91,7 +91,7 @@ namespace UI.Marketplace.Buy_cards
                 {
                     BidText bidText = Instantiate(Game.AssetRoot.marketplaceAsset.bid, bidContent);
 
-                    string ownerId = _nftSaleInfo.NFT.owner_id == NearPersistentManager.Instance.GetAccountId() ? _nftSaleInfo.NFT.owner_id : "Your bid";
+                    string ownerId = saleBid.owner_id != NearPersistentManager.Instance.GetAccountId() ? saleBid.owner_id : "Your bid";
                     bidText.bid.text = ownerId + ":  " + NearUtils.FormatNearAmount(UInt128.Parse(saleBid.price));
                 }
             }
