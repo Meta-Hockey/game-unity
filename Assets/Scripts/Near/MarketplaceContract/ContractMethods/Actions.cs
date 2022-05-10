@@ -61,7 +61,7 @@ namespace Near.MarketplaceContract.ContractMethods
             ContractNear marketContract = await NearPersistentManager.Instance.GetMarketplaceContract();
 
             dynamic saleArgs = new ExpandoObject();
-            saleArgs.nft_contract_token = NearPersistentManager.Instance.nftContactId + ":" + tokenId;
+            saleArgs.nft_contract_token = NearPersistentManager.Instance.nftContactId + "||" + tokenId;
 
             dynamic sale = await marketContract.View("get_sale", saleArgs);
 
@@ -74,7 +74,9 @@ namespace Near.MarketplaceContract.ContractMethods
                 updatePriceArgs.ft_token_id = "near";
                 updatePriceArgs.price = newSaleConditions["near"];
 
-                await marketContract.Change("update_price", updatePriceArgs, NearUtils.Gas);
+                UInt128 deposit = 1;
+                    
+                await marketContract.Change("update_price", updatePriceArgs, NearUtils.Gas, deposit);
             }
             else
             {

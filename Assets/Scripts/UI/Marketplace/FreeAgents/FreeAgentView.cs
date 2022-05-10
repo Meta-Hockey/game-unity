@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Near;
 using Near.Models;
 using NearClientUnity.Utilities;
@@ -21,7 +22,10 @@ namespace UI.Marketplace.FreeAgents
         
         [SerializeField] private Transform cardDescriptionContent;
         [SerializeField] private ViewInteractor viewInteractor;
-        
+
+        [SerializeField] private Transform setNewPriceView;
+
+        [SerializeField] private Text currentSaleConditions;
         [SerializeField] private InputField newSaleConditions;
 
         private NftCardUI _cardTile;
@@ -55,6 +59,7 @@ namespace UI.Marketplace.FreeAgents
 
                 _price = NearUtils.FormatNearAmount(UInt128.Parse(nftSaleInfo.Sale.sale_conditions["near"])).ToString();
                 price.text = "Price: " + _price;
+                currentSaleConditions.text = _price;
             }
             else
             {
@@ -70,6 +75,8 @@ namespace UI.Marketplace.FreeAgents
 
                 saleConditionText.bid.text = "Sale conditions" + ":  " + NearUtils.FormatNearAmount(UInt128.Parse(_nftSaleInfo.Sale.sale_conditions["near"]));
 
+                currentSaleConditions.text = saleConditionText.bid.text;
+                
                 if (!nftSaleInfo.Sale.bids.ContainsKey("near"))
                 {
                     return;
@@ -88,6 +95,24 @@ namespace UI.Marketplace.FreeAgents
         public void AcceptOffer()
         {
             viewInteractor.MarketplaceController.AcceptOffer(_nftSaleInfo.NFT.token_id);
+        }
+
+        public void ShowSetNewPriceView()
+        {
+            setNewPriceView.gameObject.SetActive(true);
+        }
+
+        public void CloseSetNewPriceView()
+        {
+            setNewPriceView.gameObject.SetActive(false);
+        }
+
+        public void UpdatePrice()
+        {
+            Dictionary<string, string> newSale = new Dictionary<string, string> {{"near", newSaleConditions.text}};
+            viewInteractor.MarketplaceController.SaleUpdate(newSale, _nftSaleInfo.NFT.token_id, _nftSaleInfo.Sale.is_auction);
+            
+            CloseSetNewPriceView();
         }
     }
 }
