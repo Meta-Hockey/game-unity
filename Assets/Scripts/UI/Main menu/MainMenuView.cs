@@ -13,9 +13,17 @@ namespace UI.Main_menu
         
         [SerializeField] private Text accountId;
 
+        [SerializeField] private Transform mintNFTButton;
+
         public void LoadAccountId()
         {
-            accountId.text = "Welcome, " + NearPersistentManager.Instance.GetAccountId() + " !";
+            string accountID = NearPersistentManager.Instance.GetAccountId();
+            accountId.text = "Welcome, " + accountID + " !";
+            
+            if (accountID == NearPersistentManager.Instance.MarketplaceContactId)
+            {
+                mintNFTButton.gameObject.SetActive(true);
+            }
         }
         
         public void LoadBetsScene()

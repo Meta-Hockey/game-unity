@@ -52,8 +52,6 @@ namespace NearClientUnity
                 _authData.AccountId = null;
                 _authData.AllKeys = new List<string>();
             }
-
-            int x;
         }
 
         public IExternalAuthStorage NearAuthStorage => _authStorage;
