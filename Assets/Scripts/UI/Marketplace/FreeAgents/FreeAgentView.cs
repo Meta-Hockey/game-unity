@@ -116,5 +116,10 @@ namespace UI.Marketplace.FreeAgents
             
             CloseSetNewPriceView();
         }
+
+        public void RemoveSale()
+        {
+            viewInteractor.MarketplaceController.RemoveSale(_nftSaleInfo.NFT.token_id);
+        }
     }
 }

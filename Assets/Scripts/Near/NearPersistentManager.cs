@@ -104,7 +104,7 @@ namespace Near
             {
                 viewMethods = new[] { "get_sales_by_owner_id", "get_sale",
                     "get_sales_by_nft_contract_id", "storage_paid", "storage_amount"},
-                changeMethods = new[] { "update_price", "storage_deposit", "accept_offer", "offer"}
+                changeMethods = new[] { "update_price", "storage_deposit", "accept_offer", "offer", "remove_sale"}
             };
         
             return new ContractNear(account, WalletAccount, MarketplaceContactId, options);

@@ -125,5 +125,27 @@ namespace Near.MarketplaceContract.ContractMethods
 
             await marketContract.Change("accept_offer", acceptOfferArgs, NearUtils.Gas);
         }
+
+        public static async void RemoveSale(string tokenId)
+        {
+            ContractNear marketContract = await NearPersistentManager.Instance.GetMarketplaceContract();
+
+            dynamic saleArgs = new ExpandoObject();
+            saleArgs.nft_contract_token = NearPersistentManager.Instance.nftContactId + "||" + tokenId;
+
+            dynamic sale = await marketContract.View("get_sale", saleArgs);
+            
+            if (sale.result.ToString() != "null")
+            {
+                dynamic removeSaleArgs = new ExpandoObject();
+
+                removeSaleArgs.nft_contract_id = NearPersistentManager.Instance.nftContactId;
+                removeSaleArgs.token_id = tokenId;
+                
+                UInt128 deposit = 1;
+
+                await marketContract.Change("remove_sale", removeSaleArgs, NearUtils.Gas, deposit);
+            }
+        }
     }
 }
