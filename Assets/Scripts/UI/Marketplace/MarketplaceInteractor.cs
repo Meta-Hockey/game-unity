@@ -34,7 +34,7 @@ namespace UI.Marketplace
 
         public void Back()
         {
-            SceneManager.LoadSceneAsync(Game.AssetRoot.mainMenuScene.name);
+            SceneManager.LoadSceneAsync("MainMenu");
         }
     }
 }

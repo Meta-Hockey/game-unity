@@ -21,11 +21,11 @@ namespace Runtime
         
         public static void LoadMarketplace()
         {
-            SceneManager.LoadSceneAsync(_assetRoot.marketplaceAsset.marketplaceScene.name);
+            SceneManager.LoadSceneAsync("Marketplace");
         }        
         public static void LoadMainMenu()
         {
-            SceneManager.LoadSceneAsync(_assetRoot.mainMenuScene.name);
+            SceneManager.LoadSceneAsync("MainMenu");
         }
 
         private static void StartPlayer(AsyncOperation operation)

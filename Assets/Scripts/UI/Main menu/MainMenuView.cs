@@ -20,7 +20,7 @@ namespace UI.Main_menu
         
         public void LoadBetsScene()
         {
-            AsyncOperation operation = SceneManager.LoadSceneAsync(Game.AssetRoot.betsScene.name);
+            AsyncOperation operation = SceneManager.LoadSceneAsync("Bets");
             operation.completed += LoadBetsUI;
         }
 
@@ -30,8 +30,8 @@ namespace UI.Main_menu
             {
                 throw new Exception("Can't load scene");
             }
-            
-            SceneManager.LoadScene(Game.AssetRoot.betsUIScene.name, LoadSceneMode.Additive);
+
+            SceneManager.LoadScene("BetsUI", LoadSceneMode.Additive);
         }
 
         public void TradeCards()
@@ -41,12 +41,12 @@ namespace UI.Main_menu
 
         public void LoadMintNFT()
         {
-            SceneManager.LoadScene(Game.AssetRoot.mintNFT.name);
+            SceneManager.LoadScene("Mint NFT");
         }
 
         public void LoadManageTeam()
         {
-            SceneManager.LoadScene(Game.AssetRoot.manageTeamScene.name); 
+            SceneManager.LoadScene("ManageTeam"); 
         }
         
         public void SignOut()

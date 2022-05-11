@@ -9,8 +9,6 @@ namespace UI.Marketplace
     [CreateAssetMenu(menuName = "Assets/Asset Marketplace", fileName = "Asset Marketplace")]
     public class MarketplaceAsset : ScriptableObject
     {
-        public SceneAsset marketplaceScene;
-        
         public FieldPlayerNftCardUI fieldPlayerCardTile;
         public FieldPlayerDescriptionUI fieldPlayerCardDescription;
         public FieldPlayerInputUI fieldPlayerInputUI;

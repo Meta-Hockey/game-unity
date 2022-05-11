@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 7b3a53dea8a68f9318396f3e351a310d
+  - enabled: 1
     path: Assets/Scenes/Bets.unity
     guid: d083a200555e8697a83dc98dd829a9cc
   - enabled: 1
@@ -26,7 +29,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mint NFT.unity
     guid: 6d75ff04c134b951ba00bd14504bff40
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 7b3a53dea8a68f9318396f3e351a310d
   m_configObjects: {}
