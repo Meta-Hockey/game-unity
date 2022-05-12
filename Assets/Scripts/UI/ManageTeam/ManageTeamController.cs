@@ -6,9 +6,11 @@ namespace UI.ManageTeam
     {
         public async void LoadUserTeam()
         {
+            /*
             Team team = await Near.GameContract.ContractMethods.Views.LoadUserTeam();
 
             string x = team.Fives["First"].Number;
+            */
         }
     }
 }
