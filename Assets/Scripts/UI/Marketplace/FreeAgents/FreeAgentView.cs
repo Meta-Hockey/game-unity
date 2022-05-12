@@ -28,6 +28,8 @@ namespace UI.Marketplace.FreeAgents
         [SerializeField] private Text currentSaleConditions;
         [SerializeField] private InputField newSaleConditions;
 
+        private List<BidText> _bidTexts;
+
         private NftCardUI _cardTile;
         private NftCardDescriptionUI _cardDescription;
         private NFTSaleInfo _nftSaleInfo;
@@ -36,6 +38,15 @@ namespace UI.Marketplace.FreeAgents
         public void LoadCard(ICardRenderer cardRenderer, NFTSaleInfo nftSaleInfo)
         {
             viewInteractor.ChangeView(gameObject.transform);
+            
+            
+            if (_bidTexts != null)
+            {
+                foreach (BidText bidText in _bidTexts)
+                {
+                    Destroy(bidText.gameObject);
+                }
+            }
             
             if (_cardTile != null)
             {
@@ -76,6 +87,8 @@ namespace UI.Marketplace.FreeAgents
                 saleConditionText.bid.text = "Sale conditions" + ":  " + NearUtils.FormatNearAmount(UInt128.Parse(_nftSaleInfo.Sale.sale_conditions["near"]));
 
                 currentSaleConditions.text = saleConditionText.bid.text;
+
+                _bidTexts.Add(saleConditionText);
                 
                 if (!nftSaleInfo.Sale.bids.ContainsKey("near"))
                 {
@@ -88,6 +101,8 @@ namespace UI.Marketplace.FreeAgents
 
                     string ownerId = saleBid.owner_id != NearPersistentManager.Instance.GetAccountId() ? saleBid.owner_id : "Your bid";
                     bidText.bid.text = ownerId + ":  " + NearUtils.FormatNearAmount(UInt128.Parse(saleBid.price));
+                    
+                    _bidTexts.Add(bidText);
                 }
             }
         }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Near.Models;
 using NearClientUnity.Utilities;
+using UI.Marketplace.Buy_cards;
 using UI.Marketplace.NftCardsUI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,7 +21,6 @@ namespace UI.Marketplace.Sell_cards
         private NftCardDescriptionUI _cardDescription;
         private NFTSaleInfo _nftSaleInfo;
         private string _marketStoragePaid;
-
         
         [SerializeField] private Toggle isAuction;
         [SerializeField] private InputField price;

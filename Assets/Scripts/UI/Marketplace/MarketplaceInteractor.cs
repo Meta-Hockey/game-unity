@@ -29,7 +29,7 @@ namespace UI.Marketplace
             }
 
             newActiveButton.image.sprite = newActiveButton.activeSprite;
-            newActiveButton.text.color = Color.black;
+            newActiveButton.text.color = newActiveButton.activeColor;
         }
 
         public void Back()

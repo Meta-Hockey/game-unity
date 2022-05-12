@@ -140,6 +140,12 @@ namespace Near
             return await Instance._near.AccountAsync(WalletAccount.GetAccountId());
         }
 
+        public async Task<AccountState> GetAccountState()
+        {
+            Account account = await Instance.GetAccount();
+            return await account.GetStateAsync();
+        }
+
         public string GetAccountId()
         {
             return WalletAccount.GetAccountId();

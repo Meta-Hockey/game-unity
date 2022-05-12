@@ -29,15 +29,15 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             
             if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.is_auction)
             {
-                fieldPlayer.Price.text = "Auction";
+                fieldPlayer.Cost.text = "Auction";
             }
             else if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("near"))
             {
-                fieldPlayer.Price.text = "Cost: " + NearUtils.FormatNearAmount(UInt128.Parse(_nftSaleInfo.Sale.sale_conditions["near"]));
+                fieldPlayer.Cost.text = "Cost: " + NearUtils.FormatNearAmount(UInt128.Parse(_nftSaleInfo.Sale.sale_conditions["near"]));
             }
             else
             {
-                fieldPlayer.Price.text = "Not for sale";
+                fieldPlayer.Price.gameObject.SetActive(false);
             }
 
             FieldPlayerExtra extra = (FieldPlayerExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
@@ -68,7 +68,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
 
             cardDescription.Name.text = _nftSaleInfo.NFT.metadata.title;
             cardDescription.Position.text = "Position: " + extra.Position;
-            cardDescription.Role.text = "Role: " + extra.Position;
+            cardDescription.Role.text = "Role: " + extra.Role;
 
             cardDescription.Skating.text = "skating: " + extra.Stats.Skating;
             cardDescription.Shooting.text = "shooting: " + extra.Stats.Shooting;

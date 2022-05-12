@@ -8,8 +8,9 @@ namespace UI.Marketplace.NftCardsUI
     {
         [SerializeField] protected Image image;
         [SerializeField] protected Text nameNftCard;
-        [SerializeField] protected Text price;
+        [SerializeField] protected Text cost;
         [SerializeField] protected Text ownerId;
+        [SerializeField] protected Transform price;
         [SerializeField] protected Button chooseButton;
 
         protected NFTSaleInfo NftSaleInfo;
@@ -17,7 +18,8 @@ namespace UI.Marketplace.NftCardsUI
         private ICardLoader _cardLoader;
         
         public Text Name => nameNftCard;
-        public Text Price => price;
+        public Text Cost => cost;
+        public Transform Price => price;
         public Text OwnerId => ownerId;
         
         protected abstract ICardRenderer GetCardRenderer();

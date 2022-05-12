@@ -1,5 +1,7 @@
 using System;
 using Near;
+using NearClientUnity;
+using NearClientUnity.Utilities;
 using Runtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,13 +14,18 @@ namespace UI.Main_menu
         [SerializeField] private SignInView signInView;
         
         [SerializeField] private Text accountId;
+        [SerializeField] private Text balance;
 
         [SerializeField] private Transform mintNFTButton;
 
-        public void LoadAccountId()
+        public async void LoadAccountId()
         {
             string accountID = NearPersistentManager.Instance.GetAccountId();
+            
             accountId.text = "Welcome, " + accountID + " !";
+
+            AccountState accountState = await NearPersistentManager.Instance.GetAccountState();
+            balance.text = "Your balance: " + NearUtils.FormatNearAmount(UInt128.Parse(accountState.Amount)) + " NEAR";
             
             if (accountID == NearPersistentManager.Instance.MarketplaceContactId)
             {

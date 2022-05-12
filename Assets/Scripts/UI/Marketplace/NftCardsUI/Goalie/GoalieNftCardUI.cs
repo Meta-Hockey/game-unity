@@ -29,20 +29,21 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             
             if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.is_auction)
             {
-                goalie.Price.text = "Auction";
+                goalie.Cost.text = "Auction";
             }
             else if (_nftSaleInfo.Sale != null && _nftSaleInfo.Sale.sale_conditions.ContainsKey("near"))
             {
-                goalie.Price.text = "Price: " + NearUtils.FormatNearAmount(UInt128.Parse(_nftSaleInfo.Sale.sale_conditions["near"]));
+                goalie.Cost.text = "Price: " + NearUtils.FormatNearAmount(UInt128.Parse(_nftSaleInfo.Sale.sale_conditions["near"]));
             }
             else
             {
-                goalie.Price.text = "Not for sale";
+                goalie.Price.gameObject.SetActive(false);
             }
             
             
             GoalieExtra extra = (GoalieExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
             
+            goalie.Number.text = extra.Number.ToString();
             goalie.LoadImage(_nftSaleInfo.NFT.metadata.media);
             goalie.Position.text = Utils.Utils.ConvertPosition(extra.Position);
             goalie.Role.text = extra.Role;
@@ -70,7 +71,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
 
             cardDescription.Name.text = _nftSaleInfo.NFT.metadata.title;
             cardDescription.Position.text = "Position: " + extra.Position;
-            cardDescription.Role.text = "Role: " + extra.Position;
+            cardDescription.Role.text = "Role: " + extra.Role;
             
             cardDescription.GloveAndBlocker.text = "agility: " +  extra.Stats.GloveAndBlocker;
             cardDescription.Pads.text = "pads: " + extra.Stats.Pads;

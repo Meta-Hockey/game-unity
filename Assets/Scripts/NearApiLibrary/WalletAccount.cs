@@ -256,7 +256,7 @@ namespace NearClientUnity
                 accessKeys.Add(key);
             }
             
-            var accessKey = accessKeys.Find(key => key.public_key.ToString() == localKey.ToString());
+            var accessKey = accessKeys.Find(key => key.public_key != null && key.public_key.ToString() == localKey.ToString());
             
             if (accessKey != null && AccessKeyMatchesTransaction(accessKey, receiverId, actions))
             {
