@@ -47,6 +47,8 @@ namespace UI.Marketplace.FreeAgents
                     Destroy(bidText.gameObject);
                 }
             }
+
+            _bidTexts = new List<BidText>();
             
             if (_cardTile != null)
             {
