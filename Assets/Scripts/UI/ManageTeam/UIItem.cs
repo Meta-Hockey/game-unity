@@ -24,7 +24,7 @@ namespace UI.ManageTeam
             _currentParent = _rectTransform.parent;
             _rectTransform.SetParent(canvasContent);
             
-            _currentParent.SetAsLastSibling();
+            // _currentParent.SetAsLastSibling();
             _canvasGroup.blocksRaycasts = false;
         }
 
