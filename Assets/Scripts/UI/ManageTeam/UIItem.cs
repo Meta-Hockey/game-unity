@@ -8,15 +8,9 @@ namespace UI.ManageTeam
         private CanvasGroup _canvasGroup;
         private Canvas _mainCanvas;
         private RectTransform _rectTransform;
-        private Vector3 _localPosition;
-        
-        [SerializeField] private Transform content;
-        
-        private Transform _parent;
 
-        private Transform _parentContent;
-
-        private Transform _parentSlot;
+        [SerializeField] private Transform canvasContent;
+        private Transform _currentParent;
         
         private void Start()
         {
@@ -27,22 +21,11 @@ namespace UI.ManageTeam
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            Transform slotParent = _rectTransform.parent.parent.parent;
-            _parent = eventData.pointerDrag.transform.parent;
+            _currentParent = _rectTransform.parent;
+            _rectTransform.SetParent(canvasContent);
             
-            if (_parent == content)
-            {
-                _parentContent = slotParent;
-            }
-            else
-            {
-                _parentSlot = slotParent;
-            }
-            
-            eventData.pointerDrag.transform.SetParent(slotParent);
-            slotParent.SetAsLastSibling();
+            _currentParent.SetAsLastSibling();
             _canvasGroup.blocksRaycasts = false;
-            _localPosition = transform.localPosition;
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -53,27 +36,14 @@ namespace UI.ManageTeam
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            Transform otherItemTransform = eventData.pointerDrag.transform;
-            
-            if (otherItemTransform.parent == _parentContent)
+            Transform itemTransform = eventData.pointerDrag.transform;
+            if (itemTransform.parent == canvasContent)
             {
-                transform.localPosition = _localPosition;
-                eventData.pointerDrag.transform.SetParent(content);
-            }
-            else if (otherItemTransform.parent == _parentSlot)
-            {
-                eventData.pointerDrag.transform.SetParent(_parent);
-                transform.localPosition = Vector3.zero;
-            }
-            else
-            {
-                transform.localPosition = Vector3.zero;
+                itemTransform.SetParent(_currentParent);
             }
             
+            transform.localPosition = Vector3.zero;
             _canvasGroup.blocksRaycasts = true;
-
-            _parentSlot = null;
-            _parentContent = null;
         }
     }
 }
