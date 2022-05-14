@@ -1143,7 +1143,7 @@ MonoBehaviour:
   position: {fileID: 1219300801515505142}
   number: {fileID: 1219300799848223742}
   role: {fileID: 1219300801757161177}
-  background: {fileID: 0}
+  silverStroke: {fileID: 6498239776558107749}
   playerImg: {fileID: 1219300800336374580}
   canvasContent: {fileID: 0}
   currentParent: {fileID: 0}
@@ -1691,7 +1691,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a1c78504cc5d00e54a18915c35c9a629, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5df74ae62c1d770ec8a74c9d97bad1b8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

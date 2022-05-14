@@ -29,7 +29,7 @@ namespace UI.ManageTeam.DragAndDrop
             GoalieExtra goalieExtra =  (GoalieExtra)metadata.extra.GetExtra();
             number.text = goalieExtra.Number.ToString();
             role.text = goalieExtra.Role;
-            position.text = goalieExtra.Position;
+            position.text = Utils.Utils.ConvertPosition(goalieExtra.Position);
 
             gloveAndBlocker.text = goalieExtra.Stats.GloveAndBlocker.ToString();
             pads.text = goalieExtra.Stats.Pads.ToString();

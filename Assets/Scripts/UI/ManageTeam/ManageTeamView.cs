@@ -40,6 +40,11 @@ namespace UI.ManageTeam
             ShowFive("First");
             ShowBench("First");
         }
+        
+        public void Cancel()
+        {
+            Start();
+        }
 
         private void ShowFive(string number)
         {
@@ -133,12 +138,6 @@ namespace UI.ManageTeam
                 uiPlayer.SetData(playerMetadata.Metadata);
                 uiPlayer.transform.localPosition = Vector3.zero;
             }
-        }
-
-        public async void Cancel()
-        {
-            _team = await _controller.LoadUserTeam();
-            ShowFive("First");
         }
 
         public void Back()
