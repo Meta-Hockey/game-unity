@@ -1,5 +1,4 @@
 using Near.Models;
-using Near.Models.Team.Team;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -12,6 +11,7 @@ namespace UI.ManageTeam.DragAndDrop
         [SerializeField] protected Text position;
         [SerializeField] protected Text number;
         [SerializeField] protected Text role;
+        [SerializeField] protected Image silverStroke;
 
         public Image playerImg;
         

@@ -21,6 +21,10 @@ namespace UI.ManageTeam.DragAndDrop
             {
                 StartCoroutine(Utils.Utils.LoadImage(playerImg, metadata.media));
             }
+            else
+            {
+                silverStroke.gameObject.SetActive(true);
+            }
 
             GoalieExtra goalieExtra =  (GoalieExtra)metadata.extra.GetExtra();
             number.text = goalieExtra.Number.ToString();
