@@ -1,3 +1,5 @@
+using Near.Models;
+using Near.Models.Team.Team;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -53,5 +55,7 @@ namespace UI.ManageTeam.DragAndDrop
             transform.localPosition = Vector3.zero;
             _canvasGroup.blocksRaycasts = true;
         }
+
+        public abstract void SetData(Metadata metadata);
     }
 }

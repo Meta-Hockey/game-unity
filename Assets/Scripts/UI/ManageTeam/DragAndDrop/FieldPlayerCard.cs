@@ -1,3 +1,5 @@
+using Near.Models;
+using Near.Models.Extras;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,5 +12,26 @@ namespace UI.ManageTeam.DragAndDrop
         [SerializeField] private Text strength;
         [SerializeField] private Text iq;
         [SerializeField] private Text morale;
+        
+        public override void SetData(Metadata metadata)
+        {
+            playerName.text = metadata.title;
+            
+            if (metadata.media != null)
+            {
+                StartCoroutine(Utils.Utils.LoadImage(playerImg, metadata.media));
+            }
+            
+            FieldPlayerExtra goalieExtra =  (FieldPlayerExtra)metadata.extra.GetExtra();
+            number.text = goalieExtra.Number.ToString();
+            role.text = goalieExtra.Role;
+            position.text = goalieExtra.Position;
+
+            skating.text = goalieExtra.Stats.Skating.ToString();
+            shooting.text = goalieExtra.Stats.Shooting.ToString();
+            strength.text = goalieExtra.Stats.Strength.ToString();
+            iq.text = goalieExtra.Stats.IQ.ToString();
+            morale.text = goalieExtra.Stats.Morale.ToString();
+        }
     }
 }

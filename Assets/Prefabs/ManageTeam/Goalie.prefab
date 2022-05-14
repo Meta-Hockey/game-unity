@@ -915,7 +915,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1219300801347542959}
   - component: {fileID: -9041268347404392676}
-  - component: {fileID: 1046681422145612562}
+  - component: {fileID: 3991885817635442726}
   m_Layer: 5
   m_Name: Goalie
   m_TagString: Untagged
@@ -974,7 +974,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1046681422145612562
+--- !u!114 &3991885817635442726
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -983,11 +983,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219300801347542958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65091507bf9f4adfb2ee350d69d1aece, type: 3}
+  m_Script: {fileID: 11500000, guid: 4eb0a64b80af4a9b92fd4beda7cfe260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerName: {fileID: 1219300801287341671}
+  position: {fileID: 1219300801515505142}
+  number: {fileID: 1219300799848223742}
+  role: {fileID: 1219300801757161177}
+  playerImg: {fileID: 1219300800336374580}
   canvasContent: {fileID: 0}
   currentParent: {fileID: 0}
+  gloveAndBlocker: {fileID: 1219300801217408319}
+  pads: {fileID: 1219300800896016640}
+  stand: {fileID: 1219300799835375633}
+  stretch: {fileID: 1219300800842096103}
+  morale: {fileID: 1219300801655607063}
 --- !u!1 &1219300801492997778
 GameObject:
   m_ObjectHideFlags: 0
