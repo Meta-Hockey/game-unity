@@ -5,12 +5,27 @@ namespace UI.ManageTeam
 {
     public class UISlot : MonoBehaviour, IDropHandler
     {
+        private UIItem _uiItem;
+        
         public void OnDrop(PointerEventData eventData)
         {
-            Transform otherItemTransform = eventData.pointerDrag.transform;
+            UIItem uiItem = eventData.pointerDrag.GetComponent<UIItem>();
+            
+            if (uiItem == null)
+            {
+                return;
+            }
 
-            otherItemTransform.SetParent(transform);
-            otherItemTransform.localPosition = Vector3.zero;
+            if (_uiItem != null)
+            {
+                _uiItem.transform.SetParent(uiItem.currentParent);
+            }
+            
+            Transform uiItemTransform = uiItem.transform;
+            uiItemTransform.SetParent(transform); 
+            uiItemTransform.localPosition = Vector3.zero;
+
+            _uiItem = uiItem;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace UI.ManageTeam
         private RectTransform _rectTransform;
 
         [SerializeField] private Transform canvasContent;
-        private Transform _currentParent;
+        public Transform currentParent;
         
         private void Start()
         {
@@ -21,7 +21,7 @@ namespace UI.ManageTeam
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            _currentParent = _rectTransform.parent;
+            currentParent = _rectTransform.parent;
             _rectTransform.SetParent(canvasContent);
             
             // _currentParent.SetAsLastSibling();
@@ -39,7 +39,7 @@ namespace UI.ManageTeam
             Transform itemTransform = eventData.pointerDrag.transform;
             if (itemTransform.parent == canvasContent)
             {
-                itemTransform.SetParent(_currentParent);
+                itemTransform.SetParent(currentParent);
             }
             
             transform.localPosition = Vector3.zero;
