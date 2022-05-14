@@ -59,5 +59,11 @@ namespace UI.ManageTeam
         {
             
         }
+
+        public async void Cancel()
+        {
+            _team = await _controller.LoadUserTeam();
+            ShowFive("First");
+        }
     }
 }
