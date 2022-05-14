@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a3363a587a4e64a27b8f0dfaf8a0a1, type: 3}
+  m_Name: Asset ManageTeam
+  m_EditorClassIdentifier: 
+  fieldPlayer: {fileID: 3946202882844026853, guid: 23042b6fde94cae5a97e987cbf8572ea, type: 3}
+  goalie: {fileID: 3991885817635442726, guid: 5944931202ed30c48a0bbc5f2ac3e6ac, type: 3}

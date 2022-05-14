@@ -16,8 +16,12 @@ namespace UI.ManageTeam.DragAndDrop
         public override void SetData(Metadata metadata)
         {
             playerName.text = metadata.title;
-            StartCoroutine(Utils.Utils.LoadImage(playerImg, metadata.media));
-            
+
+            if (!string.IsNullOrEmpty(metadata.media))
+            {
+                StartCoroutine(Utils.Utils.LoadImage(playerImg, metadata.media));
+            }
+
             GoalieExtra goalieExtra =  (GoalieExtra)metadata.extra.GetExtra();
             number.text = goalieExtra.Number.ToString();
             role.text = goalieExtra.Role;

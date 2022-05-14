@@ -17,7 +17,7 @@ namespace UI.ManageTeam.DragAndDrop
         {
             playerName.text = metadata.title;
             
-            if (metadata.media != null)
+            if (!string.IsNullOrEmpty(metadata.media))
             {
                 StartCoroutine(Utils.Utils.LoadImage(playerImg, metadata.media));
             }

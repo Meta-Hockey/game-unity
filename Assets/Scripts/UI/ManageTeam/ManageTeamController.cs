@@ -11,7 +11,7 @@ namespace UI.ManageTeam
     {
         public async Task<Team> LoadUserTeam()
         {
-            return await Near.GameContract.ContractMethods.Views.LoadUserTeam();
+            return await Views.LoadUserTeam();
         }
 
         public async Task<List<NFTMetadata>> LoadUserNFTs()

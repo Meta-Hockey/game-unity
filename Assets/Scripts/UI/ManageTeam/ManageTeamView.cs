@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Near.Models.Team.Team;
 using Runtime;
 using UI.ManageTeam.DragAndDrop;
@@ -14,15 +16,18 @@ namespace UI.ManageTeam
         [SerializeField] private List<UISlot> fives; 
         [SerializeField] private List<UISlot> goalies;
 
+        private List<NFTMetadata> _userNFTs;
+        private List<UIPlayer> _benchPlayers;
+
         [SerializeField] private Transform canvasContent;
         [SerializeField] private Transform benchContent;
 
-        [SerializeField] private Text line;
+        [SerializeField] private Text lineText;
         [SerializeField] private Text iceTimePriority;
 
         private Team _team;
 
-        private void Awake()
+        private async void Awake()
         {
             _controller = new ManageTeamController();
         }
@@ -30,37 +35,46 @@ namespace UI.ManageTeam
         private async void Start()
         {
             _team = await _controller.LoadUserTeam();
+            _userNFTs = await _controller.LoadUserNFTs();
+
             ShowFive("First");
+            ShowBench("First");
         }
 
         private void ShowFive(string number)
         {
             Five firstFive = _team.Fives[number];
             
-            line.text = firstFive.Number + " line";
+            lineText.text = firstFive.Number + " line";
             iceTimePriority.text = firstFive.IceTimePriority;
 
             int fieldPlayerNumber = 0;
             foreach (var fieldPlayer in firstFive.FieldPlayers)
             {
                 UISlot fieldPlayerSlot = fives[fieldPlayerNumber];
-                UIPlayer player = Instantiate(Game.AssetRoot.manageTeamAsset.fieldPlayer, fieldPlayerSlot.transform,
+                UIPlayer uiPlayer = Instantiate(Game.AssetRoot.manageTeamAsset.fieldPlayer, fieldPlayerSlot.transform,
                     true);
 
-                player.SetData(fieldPlayer.Value.Metadata);
+                uiPlayer.SetData(fieldPlayer.Value.Metadata);
                 
-                player.currentParent = fieldPlayerSlot.transform;
-                player.canvasContent = canvasContent;
+                uiPlayer.currentParent = fieldPlayerSlot.transform;
+                uiPlayer.canvasContent = canvasContent;
                 
-                fieldPlayerSlot.uiPlayer = player;
+                fieldPlayerSlot.uiPlayer = uiPlayer;
 
+                uiPlayer.transform.localPosition = Vector3.zero;
+                
+                RectTransform rectTransformUIPlayer = uiPlayer.GetComponent<RectTransform>();
+                rectTransformUIPlayer.localScale = Vector3.one;
+
+                
                 fieldPlayerNumber++;
             }
         }
         
         private void ShowGoalies()
         {
-            line.text = "Goalies";
+            lineText.text = "Goalies";
 
             int goalieNumber = 0;
             foreach (var goalieNftMetadata in  _team.Goalies)
@@ -79,10 +93,57 @@ namespace UI.ManageTeam
             }
         }
 
+        private void ShowBench(string line)
+        {
+            if (_benchPlayers == null)
+            {
+                _benchPlayers = new List<UIPlayer>();
+            }
+            else
+            {
+                foreach (UIPlayer uiPlayer in _benchPlayers)
+                {
+                    Destroy(uiPlayer);
+                }
+            }
+            
+            string type = line switch
+            {
+                "Goalies" => "FieldPlayer",
+                _ => "GoaliePos"
+            };
+
+            List<NFTMetadata> benchPlayers = type switch
+            {
+                "GoaliePos" => _userNFTs.Where(x => x.Metadata.extra.Type != type && x.Metadata.extra.Type != "Goalie")
+                    .ToList(),
+                _ => _userNFTs.Where(x => x.Metadata.extra.Type != type).ToList()
+            };
+
+            foreach (NFTMetadata playerMetadata in benchPlayers)
+            {
+                UIPlayer uiPlayer = playerMetadata.Metadata.extra.Type switch
+                {
+                    "FieldPlayer" => Instantiate(Game.AssetRoot.manageTeamAsset.fieldPlayer, benchContent),
+                    "Goalie" => Instantiate(Game.AssetRoot.manageTeamAsset.goalie, benchContent),
+                    "GoaliePos" => Instantiate(Game.AssetRoot.manageTeamAsset.goalie, benchContent),
+                    _ => throw new Exception("Extra type not found")
+                };
+                
+                uiPlayer.SetData(playerMetadata.Metadata);
+                uiPlayer.transform.localPosition = Vector3.zero;
+            }
+        }
+
         public async void Cancel()
         {
             _team = await _controller.LoadUserTeam();
             ShowFive("First");
+        }
+
+        public void Back()
+        {
+            Game.LoadMainMenu();
         }
     }
 }

@@ -20,13 +20,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/ManageTeam.unity
-    guid: a0a177751715e855b94a8879e4debfd9
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Marketplace.unity
     guid: 38df94f1d3a38189dab47d79b88602c1
   - enabled: 1
     path: Assets/Scenes/Mint NFT.unity
     guid: 6d75ff04c134b951ba00bd14504bff40
+  - enabled: 1
+    path: Assets/Scenes/ManageTeam.unity
+    guid: f2bea7b0e5aa7e95e8908db5789dea3b
   m_configObjects: {}
