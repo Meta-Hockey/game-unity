@@ -43,12 +43,18 @@ namespace UI.ManageTeam
             foreach (var fieldPlayer in firstFive.FieldPlayers)
             {
                 UISlot fieldPlayerSlot = fives[fieldPlayerNumber];
-                UIPlayer player = Instantiate(Game.AssetRoot.manageTeamAsset.fieldPlayer, fieldPlayerSlot.transform, true);
+                UIPlayer player = Instantiate(Game.AssetRoot.manageTeamAsset.fieldPlayer, fieldPlayerSlot.transform,
+                    true);
+
+                player.SetData(fieldPlayer.Value.Metadata);
+                
+                player.currentParent = fieldPlayerSlot.transform;
+                player.canvasContent = canvasContent;
                 
                 fieldPlayerSlot.uiPlayer = player;
             }
         }
-
+        
         private void ShowGoalies()
         {
             
