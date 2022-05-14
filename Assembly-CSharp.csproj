@@ -47,6 +47,8 @@
      <Compile Include="Assets/Scripts/UI/Main menu/MainMenu.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/ContractNear.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Square2.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/FieldPlayerCard.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/ManageTeamAsset.cs" />
      <Compile Include="Assets/Scripts/UI/ManageTeam/ManageTeamView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/ScalarMultBase.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/ConnectionInfo.cs" />
@@ -134,6 +136,7 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/PlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Web.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/FinalExecutionStatus.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/GoalieCard.cs" />
      <Compile Include="Assets/Scripts/Near/NearPersistentManager.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/AccessKey.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Lookup/D2.cs" />
@@ -242,9 +245,6 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/UI/ManageTeam/ManageTeamAsset.cs" />
-     <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/FieldPlayerCard.cs" />
-     <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/GoalieCard.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">

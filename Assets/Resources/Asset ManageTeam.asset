@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Asset ManageTeam
   m_EditorClassIdentifier: 
   fieldPlayer: {fileID: 3946202882844026853, guid: 23042b6fde94cae5a97e987cbf8572ea, type: 3}
-  goalie: {fileID: 3991885817635442726, guid: 5944931202ed30c48a0bbc5f2ac3e6ac, type: 3}
+  goalie: {fileID: 1779183472078979028, guid: f474741edeb26681cab9244a1c1cf42f, type: 3}

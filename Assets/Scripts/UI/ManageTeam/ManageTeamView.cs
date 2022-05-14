@@ -25,6 +25,9 @@ namespace UI.ManageTeam
         [SerializeField] private Text lineText;
         [SerializeField] private Text iceTimePriority;
 
+        [SerializeField] private Transform fiveView;
+        [SerializeField] private Transform goaliesView;
+
         private Team _team;
 
         private async void Awake()
@@ -48,6 +51,14 @@ namespace UI.ManageTeam
 
         private void ShowFive(string number)
         {
+            foreach (UISlot fieldPlayer in fives)
+            {
+                if (fieldPlayer.uiPlayer != null)
+                {
+                    Destroy(fieldPlayer.uiPlayer.gameObject);
+                }
+            }
+            
             Five firstFive = _team.Fives[number];
             
             lineText.text = firstFive.Number + " line";
@@ -65,7 +76,7 @@ namespace UI.ManageTeam
                 uiPlayer.currentParent = fieldPlayerSlot.transform;
                 uiPlayer.canvasContent = canvasContent;
                 
-                fieldPlayerSlot.uiPlayer = uiPlayer;
+                fives[fieldPlayerNumber].uiPlayer = uiPlayer;
 
                 uiPlayer.transform.localPosition = Vector3.zero;
                 
@@ -79,6 +90,14 @@ namespace UI.ManageTeam
         
         private void ShowGoalies()
         {
+            foreach (UISlot goalie in goalies)
+            {
+                if (goalie.uiPlayer != null)
+                {
+                    Destroy(goalie.uiPlayer.gameObject);
+                }
+            }
+            
             lineText.text = "Goalies";
 
             int goalieNumber = 0;
@@ -92,7 +111,7 @@ namespace UI.ManageTeam
                 player.currentParent = goalieSlot.transform;
                 player.canvasContent = canvasContent;
 
-                goalieSlot.uiPlayer = player;
+                goalies[goalieNumber].uiPlayer = player;
 
                 goalieNumber++;
             }
@@ -100,17 +119,14 @@ namespace UI.ManageTeam
 
         private void ShowBench(string line)
         {
-            if (_benchPlayers == null)
-            {
-                _benchPlayers = new List<UIPlayer>();
-            }
-            else
+            if (_benchPlayers != null)
             {
                 foreach (UIPlayer uiPlayer in _benchPlayers)
                 {
-                    Destroy(uiPlayer);
+                    Destroy(uiPlayer.gameObject);
                 }
             }
+            _benchPlayers = new List<UIPlayer>();
             
             string type = line switch
             {
@@ -137,7 +153,29 @@ namespace UI.ManageTeam
                 
                 uiPlayer.SetData(playerMetadata.Metadata);
                 uiPlayer.transform.localPosition = Vector3.zero;
+                
+                _benchPlayers.Add(uiPlayer);
             }
+        }
+        
+        public void SwitchLine(string line)
+        {
+            if (line == "Goalies")
+            {
+                fiveView.gameObject.SetActive(false);
+                goaliesView.gameObject.SetActive(true);
+                
+                ShowGoalies();
+            }
+            else
+            {
+                fiveView.gameObject.SetActive(true);
+                goaliesView.gameObject.SetActive(false);
+                
+                ShowFive(line);
+            }
+            
+            ShowBench(line);
         }
 
         public void Back()

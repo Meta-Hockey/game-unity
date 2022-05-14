@@ -842,7 +842,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 176795473}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1041897911}
+        m_TargetAssemblyTypeName: UI.ManageTeam.ManageTeamView, Assembly-CSharp
+        m_MethodName: SwitchLine
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Third
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &176795473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1242,7 +1254,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 252812229}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1041897911}
+        m_TargetAssemblyTypeName: UI.ManageTeam.ManageTeamView, Assembly-CSharp
+        m_MethodName: SwitchLine
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Goalies
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &252812229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1829,7 +1853,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 368926744}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1041897911}
+        m_TargetAssemblyTypeName: UI.ManageTeam.ManageTeamView, Assembly-CSharp
+        m_MethodName: SwitchLine
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Second
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &368926744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2641,7 +2677,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 816180907}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1041897911}
+        m_TargetAssemblyTypeName: UI.ManageTeam.ManageTeamView, Assembly-CSharp
+        m_MethodName: SwitchLine
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fourth
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &816180907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3222,6 +3270,8 @@ MonoBehaviour:
   benchContent: {fileID: 908311037}
   lineText: {fileID: 363072232}
   iceTimePriority: {fileID: 673235381}
+  fiveView: {fileID: 1132143870}
+  goaliesView: {fileID: 1157983503}
 --- !u!1 &1122820735
 GameObject:
   m_ObjectHideFlags: 0
@@ -5314,7 +5364,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1954270850}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1041897911}
+        m_TargetAssemblyTypeName: UI.ManageTeam.ManageTeamView, Assembly-CSharp
+        m_MethodName: SwitchLine
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: First
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1954270850
 MonoBehaviour:
   m_ObjectHideFlags: 0
