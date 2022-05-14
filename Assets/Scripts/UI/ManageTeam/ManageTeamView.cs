@@ -15,6 +15,7 @@ namespace UI.ManageTeam
         [SerializeField] private List<UISlot> goalies;
 
         [SerializeField] private Transform canvasContent;
+        [SerializeField] private Transform benchContent;
 
         [SerializeField] private Text line;
         [SerializeField] private Text iceTimePriority;
@@ -36,7 +37,7 @@ namespace UI.ManageTeam
         {
             Five firstFive = _team.Fives[number];
             
-            line.text = firstFive.Number;
+            line.text = firstFive.Number + " line";
             iceTimePriority.text = firstFive.IceTimePriority;
 
             int fieldPlayerNumber = 0;
