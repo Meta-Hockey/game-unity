@@ -1,3 +1,4 @@
+using UI.ManageTeam;
 using UI.Marketplace;
 using UnityEngine;
 
@@ -7,5 +8,6 @@ namespace Assets
     public class AssetRoot : ScriptableObject
     {
         public MarketplaceAsset marketplaceAsset;
+        public ManageTeamAsset manageTeamAsset;
     }
 }

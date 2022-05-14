@@ -1,16 +1,13 @@
+using System.Threading.Tasks;
 using Near.Models.Team.Team;
 
 namespace UI.ManageTeam
 {
     public class ManageTeamController
     {
-        public async void LoadUserTeam()
+        public async Task<Team> LoadUserTeam()
         {
-            /*
-            Team team = await Near.GameContract.ContractMethods.Views.LoadUserTeam();
-
-            string x = team.Fives["First"].Number;
-            */
+            return await Near.GameContract.ContractMethods.Views.LoadUserTeam();
         }
     }
 }

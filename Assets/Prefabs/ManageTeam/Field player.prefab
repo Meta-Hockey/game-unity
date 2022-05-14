@@ -1066,6 +1066,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1219300801347542959}
+  - component: {fileID: 7703741697811653039}
+  - component: {fileID: 3946202882844026853}
   m_Layer: 5
   m_Name: Field player
   m_TagString: Untagged
@@ -1109,9 +1111,45 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 418.2, y: 237.5}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &7703741697811653039
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219300801347542958}
+  m_Enabled: 0
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &3946202882844026853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219300801347542958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b388d2b1ac64a068b61c55132cb9a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerName: {fileID: 1219300801287341671}
+  position: {fileID: 1219300801515505142}
+  number: {fileID: 1219300799848223742}
+  role: {fileID: 1219300801757161177}
+  playerImg: {fileID: 1219300800336374580}
+  canvasContent: {fileID: 0}
+  currentParent: {fileID: 0}
+  skating: {fileID: 1219300801217408319}
+  shooting: {fileID: 1219300800896016640}
+  strength: {fileID: 1219300799835375633}
+  iq: {fileID: 1219300800842096103}
+  morale: {fileID: 1219300801655607063}
 --- !u!1 &1219300801405556594
 GameObject:
   m_ObjectHideFlags: 0

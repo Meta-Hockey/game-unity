@@ -105,7 +105,7 @@
      <Compile Include="Assets/Scripts/Near/MarketplaceContract/Parsers/IExtraParser.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/FinalExecutionOutcome.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/GetPreComp.cs" />
-     <Compile Include="Assets/Scripts/UI/ManageTeam/UISlot.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/UISlot.cs" />
      <Compile Include="Assets/Scripts/UI/ManageTeam/ManageTeamController.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/WalletAccount.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/GroupElement.cs" />
@@ -116,7 +116,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/ProviderConfig.cs" />
      <Compile Include="Assets/Scripts/Near/Models/Team/Team/Five.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardsView.cs" />
-     <Compile Include="Assets/Scripts/UI/ManageTeam/UIItem.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/UIPlayer.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/NearSignature.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyCardView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/NearBinaryWriter.cs" />
@@ -242,6 +242,9 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/ManageTeamAsset.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/FieldPlayerCard.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/GoalieCard.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">
