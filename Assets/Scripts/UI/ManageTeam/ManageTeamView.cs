@@ -52,12 +52,30 @@ namespace UI.ManageTeam
                 player.canvasContent = canvasContent;
                 
                 fieldPlayerSlot.uiPlayer = player;
+
+                fieldPlayerNumber++;
             }
         }
         
         private void ShowGoalies()
         {
-            
+            line.text = "Goalies";
+
+            int goalieNumber = 0;
+            foreach (var goalieNftMetadata in  _team.Goalies)
+            {
+                UISlot goalieSlot = goalies[goalieNumber];
+                UIPlayer player = Instantiate(Game.AssetRoot.manageTeamAsset.goalie, goalieSlot.transform);
+                
+                player.SetData(goalieNftMetadata.Value.Metadata);
+
+                player.currentParent = goalieSlot.transform;
+                player.canvasContent = canvasContent;
+
+                goalieSlot.uiPlayer = player;
+
+                goalieNumber++;
+            }
         }
 
         public async void Cancel()
