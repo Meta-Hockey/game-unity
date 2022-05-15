@@ -4,6 +4,7 @@ using System.Dynamic;
 using System.Threading.Tasks;
 using Near.Models.Team.Team;
 using NearClientUnity;
+using Newtonsoft.Json;
 
 namespace Near.GameContract.ContractMethods
 {
@@ -47,11 +48,11 @@ namespace Near.GameContract.ContractMethods
         {
             ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
             
-            List<(string, List<(string, string)>)> fives = new List<(string, List<(string, string)>)>();
+            List<dynamic> fives = new List<dynamic>();
 
             foreach (var five in team.Fives)
             {
-                List<(string, string)> fiveArgs = new List<(string, string)>();
+                List<List<string>> fiveArgs = new List<List<string>>();
                 
                 string fiveNumber = five.Key;
                 
@@ -59,13 +60,14 @@ namespace Near.GameContract.ContractMethods
                 {
                     if (fieldPlayer.Value.Id != "-1")
                     {
-                        fiveArgs.Add((fieldPlayer.Key, fieldPlayer.Value.Id));
+                        fiveArgs.Add(new List<string> { fieldPlayer.Key, fieldPlayer.Value.Id });
                     }
                 }
 
                 if (fiveArgs.Count != 0)
                 {
-                    fives.Add((fiveNumber, fiveArgs));
+                    List<dynamic> fiveTuple = new List<dynamic>() { fiveNumber, fiveArgs }; 
+                    fives.Add(fiveTuple);
                 }
             }
 
@@ -74,7 +76,7 @@ namespace Near.GameContract.ContractMethods
                 dynamic args = new ExpandoObject();
                 args.fives = fives;
                 
-                await gameContract.Change("insert_nft_field_players", args, NearUtils.GasMove);
+                await gameContract.Change("insert_nft_field_players", args, NearUtils.GasMakeAvailable);
             }
 
             List<(string, string)> goalies = new List<(string, string)>();
@@ -92,7 +94,7 @@ namespace Near.GameContract.ContractMethods
                 dynamic args = new ExpandoObject();
                 args.goalies = goalies;
                 
-                await gameContract.Change("insert_nft_goalies", args, NearUtils.GasMove);
+                await gameContract.Change("insert_nft_goalies", args, NearUtils.GasMakeAvailable);
             }
         }
     }

@@ -8,5 +8,6 @@ namespace UI.ManageTeam
     {
         public UIPlayer fieldPlayer;
         public UIPlayer goalie;
+        public UISlot uiSlot;
     }
 }

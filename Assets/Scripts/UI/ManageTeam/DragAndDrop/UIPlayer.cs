@@ -1,4 +1,3 @@
-using Near.Models;
 using Near.Models.Team.Team;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -24,6 +23,7 @@ namespace UI.ManageTeam.DragAndDrop
         public Transform currentParent;
 
         public NFTMetadata CardData;
+        public UISlot uiSlot;
         
         protected void Start()
         {

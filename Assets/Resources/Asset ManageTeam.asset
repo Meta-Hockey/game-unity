@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldPlayer: {fileID: 3946202882844026853, guid: 23042b6fde94cae5a97e987cbf8572ea, type: 3}
   goalie: {fileID: 1779183472078979028, guid: f474741edeb26681cab9244a1c1cf42f, type: 3}
+  uiSlot: {fileID: 5700369718395824579, guid: 1cd74595b9af43a21a718a20cae9a62f, type: 3}

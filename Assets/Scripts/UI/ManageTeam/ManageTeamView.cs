@@ -17,7 +17,7 @@ namespace UI.ManageTeam
         [SerializeField] private List<UISlot> goalies;
 
         private List<NFTMetadata> _userNFTs;
-        private List<UIPlayer> _benchPlayers;
+        private List<UISlot> _benchPlayers;
 
         [SerializeField] private Transform canvasContent;
         [SerializeField] private Transform benchContent;
@@ -30,7 +30,7 @@ namespace UI.ManageTeam
 
         private Team _team;
         private string lineNumber;
-
+        
         private void Awake()
         {
             _controller = new ManageTeamController();
@@ -119,12 +119,12 @@ namespace UI.ManageTeam
         {
             if (_benchPlayers != null)
             {
-                foreach (UIPlayer uiPlayer in _benchPlayers)
+                foreach (UISlot uiPlayerSlot in _benchPlayers)
                 {
-                    Destroy(uiPlayer.gameObject);
+                    Destroy(uiPlayerSlot.gameObject);
                 }
             }
-            _benchPlayers = new List<UIPlayer>();
+            _benchPlayers = new List<UISlot>();
             
             string type = line switch
             {
@@ -141,19 +141,24 @@ namespace UI.ManageTeam
 
             foreach (NFTMetadata playerMetadata in benchPlayers)
             {
+                UISlot benchSlot = Instantiate(Game.AssetRoot.manageTeamAsset.uiSlot, benchContent);
+                
                 UIPlayer uiPlayer = playerMetadata.Metadata.extra.Type switch
                 {
-                    "FieldPlayer" => Instantiate(Game.AssetRoot.manageTeamAsset.fieldPlayer, benchContent),
-                    "Goalie" => Instantiate(Game.AssetRoot.manageTeamAsset.goalie, benchContent),
-                    "GoaliePos" => Instantiate(Game.AssetRoot.manageTeamAsset.goalie, benchContent),
+                    "FieldPlayer" => Instantiate(Game.AssetRoot.manageTeamAsset.fieldPlayer, benchSlot.transform),
+                    "Goalie" => Instantiate(Game.AssetRoot.manageTeamAsset.goalie, benchSlot.transform),
+                    "GoaliePos" => Instantiate(Game.AssetRoot.manageTeamAsset.goalie, benchSlot.transform),
                     _ => throw new Exception("Extra type not found")
                 };
+
+                benchSlot.uiPlayer = uiPlayer;
+                uiPlayer.uiSlot = benchSlot;
                 
                 uiPlayer.SetData(playerMetadata);
                 uiPlayer.transform.localPosition = Vector3.zero;
                 uiPlayer.canvasContent = canvasContent;
                 
-                _benchPlayers.Add(uiPlayer);
+                _benchPlayers.Add(benchSlot);
             }
         }
 

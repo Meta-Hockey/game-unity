@@ -9,26 +9,30 @@ namespace UI.ManageTeam.DragAndDrop
         
         public void OnDrop(PointerEventData eventData)
         {
-            UIPlayer uiPlayer = eventData.pointerDrag.GetComponent<UIPlayer>();
+            UIPlayer uiPlayerDropped = eventData.pointerDrag.GetComponent<UIPlayer>();
             
-            if (uiPlayer == null)
+            if (uiPlayerDropped == null || uiPlayer == null)
             {
                 return;
             }
             
-            Transform uiItemTransform = uiPlayer.transform;
+            Transform uiPlayerTransform = uiPlayer.transform;
+            uiPlayerTransform.SetParent(uiPlayerDropped.currentParent);
+            uiPlayerTransform.localPosition = Vector3.zero;
 
-            if (uiPlayer != null)
-            {
-                Transform _uiItemTransform = uiPlayer.transform;
-                _uiItemTransform.SetParent(uiPlayer.currentParent);
-                _uiItemTransform.localPosition = Vector3.zero;
-            }
+            Transform uiPlayerDroppedTransform = uiPlayerDropped.transform;
+
+            uiPlayerDroppedTransform.SetParent(transform); 
+            uiPlayerDroppedTransform.localPosition = Vector3.zero;
             
-            uiItemTransform.SetParent(transform); 
-            uiItemTransform.localPosition = Vector3.zero;
+            UISlot uiDroppedSlot = uiPlayerDropped.uiSlot;
 
-            uiPlayer = uiPlayer;
+            uiPlayerDropped.uiSlot.uiPlayer = uiPlayer;
+            uiPlayerDropped.uiSlot = this;
+            
+            uiPlayer = uiPlayerDropped;
+            
+            uiPlayer.uiSlot = uiDroppedSlot;
         }
     }
 }
