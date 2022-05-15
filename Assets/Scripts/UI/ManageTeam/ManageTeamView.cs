@@ -181,16 +181,20 @@ namespace UI.ManageTeam
         
         public void SwitchLine(string line)
         {
-            lineNumber = line;
-            
             SetLineDataToTeam(line);
             
             if (line == "Goalies")
             {
+                if (lineNumber == "Goalies")
+                {
+                    return;
+                }
+                
                 fiveView.gameObject.SetActive(false);
                 goaliesView.gameObject.SetActive(true);
                 
                 ShowGoalies();
+                ShowBench(line);
             }
             else
             {
@@ -198,9 +202,14 @@ namespace UI.ManageTeam
                 goaliesView.gameObject.SetActive(false);
                 
                 ShowFive(line);
+                
+                if (lineNumber == "Goalies")
+                {
+                    ShowBench(line);
+                }
             }
             
-            ShowBench(line);
+            lineNumber = line;
         }
         
         public void Apply()
