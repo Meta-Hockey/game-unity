@@ -1,5 +1,6 @@
 using Near.Models;
 using Near.Models.Extras;
+using Near.Models.Team.Team;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,20 +14,22 @@ namespace UI.ManageTeam.DragAndDrop
         [SerializeField] private Text stretch;
         [SerializeField] private Text morale;
         
-        public override void SetData(Metadata metadata)
+        public override void SetData(NFTMetadata nftMetadata)
         {
-            playerName.text = metadata.title;
+            CardData = nftMetadata;
+            
+            playerName.text = nftMetadata.Metadata.title;
 
-            if (!string.IsNullOrEmpty(metadata.media))
+            if (!string.IsNullOrEmpty(nftMetadata.Metadata.media))
             {
-                StartCoroutine(Utils.Utils.LoadImage(playerImg, metadata.media));
+                StartCoroutine(Utils.Utils.LoadImage(playerImg, nftMetadata.Metadata.media));
             }
             else
             {
                 silverStroke.gameObject.SetActive(true);
             }
 
-            GoalieExtra goalieExtra =  (GoalieExtra)metadata.extra.GetExtra();
+            GoalieExtra goalieExtra =  (GoalieExtra)nftMetadata.Metadata.extra.GetExtra();
             number.text = goalieExtra.Number.ToString();
             role.text = goalieExtra.Role;
             position.text = Utils.Utils.ConvertPosition(goalieExtra.Position);

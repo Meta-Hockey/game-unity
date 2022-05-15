@@ -24,5 +24,10 @@ namespace UI.ManageTeam
                 Id = x.NFT.token_id
             }).ToList();
         }
+
+        public void ChangeLineups(Team team)
+        {
+            Actions.ChangeLineups(team);
+        }
     }
 }

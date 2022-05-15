@@ -29,8 +29,9 @@ namespace UI.ManageTeam
         [SerializeField] private Transform goaliesView;
 
         private Team _team;
+        private string lineNumber;
 
-        private async void Awake()
+        private void Awake()
         {
             _controller = new ManageTeamController();
         }
@@ -40,13 +41,10 @@ namespace UI.ManageTeam
             _team = await _controller.LoadUserTeam();
             _userNFTs = await _controller.LoadUserNFTs();
 
-            ShowFive("First");
-            ShowBench("First");
-        }
-        
-        public void Cancel()
-        {
-            Start();
+            lineNumber = "First";
+            
+            ShowFive(lineNumber);
+            ShowBench(lineNumber);
         }
 
         private void ShowFive(string number)
@@ -71,7 +69,8 @@ namespace UI.ManageTeam
                 UIPlayer uiPlayer = Instantiate(Game.AssetRoot.manageTeamAsset.fieldPlayer, fieldPlayerSlot.transform,
                     true);
 
-                uiPlayer.SetData(fieldPlayer.Value.Metadata);
+                uiPlayer.CardData = fieldPlayer.Value;
+                uiPlayer.SetData(fieldPlayer.Value);
                 
                 uiPlayer.currentParent = fieldPlayerSlot.transform;
                 uiPlayer.canvasContent = canvasContent;
@@ -82,7 +81,6 @@ namespace UI.ManageTeam
                 
                 RectTransform rectTransformUIPlayer = uiPlayer.GetComponent<RectTransform>();
                 rectTransformUIPlayer.localScale = Vector3.one;
-
                 
                 fieldPlayerNumber++;
             }
@@ -106,7 +104,7 @@ namespace UI.ManageTeam
                 UISlot goalieSlot = goalies[goalieNumber];
                 UIPlayer player = Instantiate(Game.AssetRoot.manageTeamAsset.goalie, goalieSlot.transform);
                 
-                player.SetData(goalieNftMetadata.Value.Metadata);
+                player.SetData(goalieNftMetadata.Value);
 
                 player.currentParent = goalieSlot.transform;
                 player.canvasContent = canvasContent;
@@ -151,15 +149,42 @@ namespace UI.ManageTeam
                     _ => throw new Exception("Extra type not found")
                 };
                 
-                uiPlayer.SetData(playerMetadata.Metadata);
+                uiPlayer.SetData(playerMetadata);
                 uiPlayer.transform.localPosition = Vector3.zero;
+                uiPlayer.canvasContent = canvasContent;
                 
                 _benchPlayers.Add(uiPlayer);
+            }
+        }
+
+        private void SetLineDataToTeam(string line)
+        {
+            if (line == "Goalies")
+            {
+                if (goalies[0].uiPlayer == null || goalies[1] == null)
+                {
+                    return;
+                }
+                
+                _team.Goalies["MainGoalkeeper"] = goalies[0].uiPlayer.CardData ;
+                _team.Goalies["SubstituteGoalkeeper"] = goalies[1].uiPlayer.CardData;
+            }
+            else
+            {
+                _team.Fives[line].FieldPlayers["LeftWing"] = fives[0].uiPlayer.CardData;
+                _team.Fives[line].FieldPlayers["Center"] = fives[1].uiPlayer.CardData;
+                _team.Fives[line].FieldPlayers["RightWing"] = fives[2].uiPlayer.CardData;
+                _team.Fives[line].FieldPlayers["LeftDefender"] = fives[3].uiPlayer.CardData;
+                _team.Fives[line].FieldPlayers["RightDefender"] = fives[4].uiPlayer.CardData;
             }
         }
         
         public void SwitchLine(string line)
         {
+            lineNumber = line;
+            
+            SetLineDataToTeam(line);
+            
             if (line == "Goalies")
             {
                 fiveView.gameObject.SetActive(false);
@@ -177,7 +202,19 @@ namespace UI.ManageTeam
             
             ShowBench(line);
         }
-
+        
+        public void Apply()
+        {
+            SetLineDataToTeam(lineNumber);
+            
+            _controller.ChangeLineups(_team);
+        }
+        
+        public void Cancel()
+        {
+            Start();
+        }
+        
         public void Back()
         {
             Game.LoadMainMenu();

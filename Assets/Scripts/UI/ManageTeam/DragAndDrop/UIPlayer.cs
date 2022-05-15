@@ -1,4 +1,5 @@
 using Near.Models;
+using Near.Models.Team.Team;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -21,6 +22,8 @@ namespace UI.ManageTeam.DragAndDrop
 
         public Transform canvasContent;
         public Transform currentParent;
+
+        public NFTMetadata CardData;
         
         protected void Start()
         {
@@ -56,6 +59,6 @@ namespace UI.ManageTeam.DragAndDrop
             _canvasGroup.blocksRaycasts = true;
         }
 
-        public abstract void SetData(Metadata metadata);
+        public abstract void SetData(NFTMetadata nftMetadata);
     }
 }
