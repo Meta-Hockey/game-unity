@@ -17,6 +17,7 @@ namespace UI.Main_menu
         [SerializeField] private Text balance;
 
         [SerializeField] private Transform mintNFTButton;
+        [SerializeField] private Transform uiPopupSettings;
 
         public async void LoadAccountId()
         {
@@ -62,6 +63,16 @@ namespace UI.Main_menu
         public void LoadManageTeam()
         {
             SceneManager.LoadScene("ManageTeam"); 
+        }
+
+        public void ShowSettings()
+        {
+            uiPopupSettings.gameObject.SetActive(true);
+        }
+
+        public void CloseSettings()
+        {
+            uiPopupSettings.gameObject.SetActive(false);
         }
         
         public void SignOut()

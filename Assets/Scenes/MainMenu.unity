@@ -1621,6 +1621,7 @@ MonoBehaviour:
   accountId: {fileID: 104994509}
   balance: {fileID: 466427324}
   mintNFTButton: {fileID: 826685585}
+  uiPopupSettings: {fileID: 249200812}
 --- !u!114 &223302182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2644,7 +2645,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 311006430}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 223302181}
+        m_TargetAssemblyTypeName: UI.Main_menu.MainMenuView, Assembly-CSharp
+        m_MethodName: SignOut
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &311006430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3736,9 +3749,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Marketplace.FreeAgents.FreeAgentView, Assembly-CSharp
-        m_MethodName: CloseSetNewPriceView
+      - m_Target: {fileID: 223302181}
+        m_TargetAssemblyTypeName: UI.Main_menu.MainMenuView, Assembly-CSharp
+        m_MethodName: CloseSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9385,7 +9398,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 223302181}
         m_TargetAssemblyTypeName: UI.Main_menu.MainMenuView, Assembly-CSharp
-        m_MethodName: SignOut
+        m_MethodName: ShowSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
