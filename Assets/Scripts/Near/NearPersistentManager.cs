@@ -77,7 +77,7 @@ namespace Near
             ContractOptions options = new ContractOptions()
             {
                 viewMethods = new[] { "get_available_players", "get_available_games",
-                    "is_already_in_the_waiting_list", "get_game_config", "insert_nft_field_players", "insert_nft_goalies"},
+                    "is_already_in_the_waiting_list", "get_game_config"},
                 changeMethods = new[] { "make_available", "start_game", "generate_event",
                     "make_unavailable", "internal_stop_game", "get_owner_team" }
             };
@@ -129,7 +129,7 @@ namespace Near
             {
                 viewMethods = new[] { "nft_tokens_for_owner", "nft_tokens_batch",
                     "nft_token", "nft_tokens", "nft_total_supply", "get_owner_nft_team"},
-                changeMethods = new[] { "nft_mint", "nft_approve"}
+                changeMethods = new[] { "nft_mint", "nft_approve", "insert_nft_field_players", "insert_nft_goalies"}
             };
         
             return new ContractNear(account, WalletAccount, nftContactId, options);

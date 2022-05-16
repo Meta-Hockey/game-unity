@@ -1,5 +1,4 @@
 using Near.Models;
-using UnityEngine.UI;
 
 namespace UI.Marketplace
 {

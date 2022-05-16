@@ -46,7 +46,7 @@ namespace Near.GameContract.ContractMethods
 
         public static async void ChangeLineups(Team team)
         {
-            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
+            ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
             
             List<dynamic> fives = new List<dynamic>();
 
@@ -76,7 +76,7 @@ namespace Near.GameContract.ContractMethods
                 dynamic args = new ExpandoObject();
                 args.fives = fives;
                 
-                await gameContract.Change("insert_nft_field_players", args, NearUtils.GasMakeAvailable);
+                await nftContract.Change("insert_nft_field_players", args, NearUtils.GasMakeAvailable);
             }
 
             List<(string, string)> goalies = new List<(string, string)>();
@@ -94,7 +94,7 @@ namespace Near.GameContract.ContractMethods
                 dynamic args = new ExpandoObject();
                 args.goalies = goalies;
                 
-                await gameContract.Change("insert_nft_goalies", args, NearUtils.GasMakeAvailable);
+                await nftContract.Change("insert_nft_goalies", args, NearUtils.GasMakeAvailable);
             }
         }
     }
