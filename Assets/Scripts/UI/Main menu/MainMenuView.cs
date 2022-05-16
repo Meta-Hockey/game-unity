@@ -71,5 +71,10 @@ namespace UI.Main_menu
             gameObject.SetActive(false);
             signInView.gameObject.SetActive(true);
         }
+
+        public void Exit()
+        {
+            Application.Quit();
+        }
     }
 }

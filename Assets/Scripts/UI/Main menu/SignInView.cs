@@ -9,7 +9,6 @@ namespace UI.Main_menu
         [SerializeField] private MainMenuView mainMenuView;
         [SerializeField] private Text inputUri;
 
-        
         public async void RequestSignIn()
         {
             await NearPersistentManager.Instance.SignIn();

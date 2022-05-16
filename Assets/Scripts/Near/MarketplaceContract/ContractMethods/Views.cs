@@ -35,7 +35,7 @@ namespace Near.MarketplaceContract.ContractMethods
                     extra = JsonConvert.DeserializeObject<Extra>(o.metadata.extra.ToString(), new ExtraConverter())
                 },
                 approved_accounts_ids = o.approved_accounts_ids,
-                royalty = o.royalty,
+                royalty = JsonConvert.DeserializeObject<Dictionary<string, double>>(o.royalty.ToString()),
                 token_type = o.token_type,
             });
 
@@ -123,7 +123,7 @@ namespace Near.MarketplaceContract.ContractMethods
                         sale = ParseSale(JObject.Parse(dynamicSale.result.ToString()));
                     }
                 }
-
+                
                 nftSalesInfo.Add(new NFTSaleInfo()
                 {
                     NFT = nft,

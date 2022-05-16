@@ -7,7 +7,9 @@ namespace UI.Marketplace.NftCardsUI
     {
         [SerializeField] protected Text cardName;
         [SerializeField] protected Text ownerId;
+        [SerializeField] protected Text royalty;
         public Text Name => cardName;
         public Text OwnerId => ownerId;
+        public Text Royalty => royalty;
     }
 }

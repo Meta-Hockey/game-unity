@@ -65,8 +65,14 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             
             cardDescription.OwnerId.text =  _nftSaleInfo.NFT.owner_id != NearPersistentManager.Instance.GetAccountId() 
                 ? "Owner: " + _nftSaleInfo.NFT.owner_id : "You are the owner";
-
+            
+            foreach (var royalty in _nftSaleInfo.NFT.royalty)
+            {
+                cardDescription.Royalty.text = royalty.Value / 100 + "% - " + royalty.Key;
+            }
+            
             cardDescription.Name.text = _nftSaleInfo.NFT.metadata.title;
+            
             cardDescription.Position.text = "Position: " + extra.Position;
             cardDescription.Role.text = "Role: " + extra.Role;
 

@@ -66,7 +66,12 @@ namespace UI.Marketplace.NftCardsUI.Goalie
                 ? "Owner: " + _nftSaleInfo.NFT.owner_id : "You are the owner";
 
             cardDescription.Name.text = _nftSaleInfo.NFT.metadata.title;
-            
+
+            foreach (var royalty in _nftSaleInfo.NFT.royalty)
+            {
+                cardDescription.Royalty.text = royalty.Value / 100 + "% - " + royalty.Key;
+            }
+
             GoalieExtra extra = (GoalieExtra)_nftSaleInfo.NFT.metadata.extra.GetExtra();
 
             cardDescription.Name.text = _nftSaleInfo.NFT.metadata.title;
