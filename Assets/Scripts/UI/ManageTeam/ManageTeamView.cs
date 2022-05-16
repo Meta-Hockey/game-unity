@@ -24,6 +24,7 @@ namespace UI.ManageTeam
 
         [SerializeField] private Text lineText;
         [SerializeField] private Text iceTimePriority;
+        [SerializeField] private Slider iceTimePrioritySlider;
 
         [SerializeField] private Transform fiveView;
         [SerializeField] private Transform goaliesView;
@@ -61,6 +62,7 @@ namespace UI.ManageTeam
             
             lineText.text = firstFive.Number + " line";
             iceTimePriority.text = firstFive.IceTimePriority;
+            iceTimePrioritySlider.value = Utils.Utils.GetSliderValueIceTimePriority(firstFive.IceTimePriority);
 
             int fieldPlayerNumber = 0;
             foreach (var fieldPlayer in firstFive.FieldPlayers)
@@ -215,6 +217,11 @@ namespace UI.ManageTeam
             }
             
             lineNumber = line;
+        }
+
+        public void ChangeIceTimePriority()
+        {
+            iceTimePriority.text = Utils.Utils.GetIceTimePriority((int)iceTimePrioritySlider.value);
         }
         
         public void Apply()

@@ -38,5 +38,29 @@ namespace Utils
                 _ => position
             };
         }
+
+        public static int GetSliderValueIceTimePriority(string iceTimePriority)
+        {
+            return iceTimePriority switch
+            {
+                "SuperLowPriority" => 1,
+                "LowPriority" => 2,
+                "Normal" => 3,
+                "HighPriority" => 4,
+                "SuperHighPriority" => 5,
+            };
+        }
+
+        public static string GetIceTimePriority(int value)
+        {
+            return value switch
+            {
+                1 => "SuperLowPriority",
+                2 => "LowPriority",
+                3 => "Normal",
+                4 => "HighPriority",
+                5 => "SuperHighPriority",
+            };
+        }
     }
 }
