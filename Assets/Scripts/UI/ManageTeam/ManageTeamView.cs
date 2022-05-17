@@ -15,9 +15,9 @@ namespace UI.ManageTeam
 
         [SerializeField] private List<UISlot> fives; 
         [SerializeField] private List<UISlot> goalies;
+        private List<UISlot> _benchPlayers;
 
         private List<NFTMetadata> _userNFTs;
-        private List<UISlot> _benchPlayers;
 
         [SerializeField] private Transform canvasContent;
         [SerializeField] private Transform benchContent;
@@ -31,7 +31,7 @@ namespace UI.ManageTeam
 
         private Team _team;
         private string lineNumber;
-        
+
         private void Awake()
         {
             _controller = new ManageTeamController();
@@ -43,7 +43,7 @@ namespace UI.ManageTeam
             _userNFTs = await _controller.LoadUserNFTs();
 
             lineNumber = "First";
-            
+
             ShowFive(lineNumber);
             ShowBench(lineNumber);
         }
@@ -58,33 +58,32 @@ namespace UI.ManageTeam
                 }
             }
             
-            Five firstFive = _team.Fives[number];
+            Five selectedFive = _team.Fives[number];
             
-            lineText.text = firstFive.Number + " line";
-            iceTimePriority.text = firstFive.IceTimePriority;
-            iceTimePrioritySlider.value = Utils.Utils.GetSliderValueIceTimePriority(firstFive.IceTimePriority);
+            lineText.text = selectedFive.Number + " line";
+            iceTimePriority.text = selectedFive.IceTimePriority;
+            iceTimePrioritySlider.value = Utils.Utils.GetSliderValueIceTimePriority(selectedFive.IceTimePriority);
 
-            int fieldPlayerNumber = 0;
-            foreach (var fieldPlayer in firstFive.FieldPlayers)
+            foreach (var fieldPlayer in selectedFive.FieldPlayers)
             {
-                UISlot fieldPlayerSlot = fives[fieldPlayerNumber];
+                int positionId = Utils.Utils.GetFieldPlayerPositionId(fieldPlayer.Key);
+                
+                UISlot fieldPlayerSlot = fives[positionId];
                 UIPlayer uiPlayer = Instantiate(Game.AssetRoot.manageTeamAsset.fieldPlayer, fieldPlayerSlot.transform,
                     true);
 
                 uiPlayer.CardData = fieldPlayer.Value;
                 uiPlayer.SetData(fieldPlayer.Value);
                 
-                uiPlayer.currentParent = fieldPlayerSlot.transform;
                 uiPlayer.canvasContent = canvasContent;
                 
-                fives[fieldPlayerNumber].uiPlayer = uiPlayer;
+                fives[positionId].uiPlayer = uiPlayer;
+                uiPlayer.uiSlot = fives[positionId];
 
                 uiPlayer.transform.localPosition = Vector3.zero;
                 
                 RectTransform rectTransformUIPlayer = uiPlayer.GetComponent<RectTransform>();
                 rectTransformUIPlayer.localScale = Vector3.one;
-                
-                fieldPlayerNumber++;
             }
         }
         
@@ -108,10 +107,10 @@ namespace UI.ManageTeam
                 
                 player.SetData(goalieNftMetadata.Value);
 
-                player.currentParent = goalieSlot.transform;
                 player.canvasContent = canvasContent;
 
                 goalies[goalieNumber].uiPlayer = player;
+                player.uiSlot = goalies[goalieNumber];
 
                 goalieNumber++;
             }
@@ -144,6 +143,7 @@ namespace UI.ManageTeam
             foreach (NFTMetadata playerMetadata in benchPlayers)
             {
                 UISlot benchSlot = Instantiate(Game.AssetRoot.manageTeamAsset.uiSlot, benchContent);
+                benchSlot.slotPosition = SlotPositionEnum.Bench;
                 
                 UIPlayer uiPlayer = playerMetadata.Metadata.extra.Type switch
                 {
@@ -219,6 +219,37 @@ namespace UI.ManageTeam
             lineNumber = line;
         }
 
+        private UISlot GetUISlot(SlotPositionEnum slotPositionEnum)
+        {
+            UISlot uiSlot;
+
+            switch (slotPositionEnum)
+            {
+                case SlotPositionEnum.Bench:
+                    uiSlot = _benchPlayers.FirstOrDefault(x => x);
+                    break;
+                case SlotPositionEnum.MainGoalie or SlotPositionEnum.BackupGoalie:
+                    uiSlot = goalies.FirstOrDefault(x => x.slotPosition == slotPositionEnum);
+                    break;
+                default:
+                    uiSlot = fives.FirstOrDefault(x => x.slotPosition == slotPositionEnum);
+                    break;
+            }
+            
+            return uiSlot;
+        }
+
+        public void SwapCards(UIPlayer uiPlayer1, UIPlayer uiPlayer2)
+        {
+            UISlot uiSlot1 = GetUISlot(uiPlayer1.uiSlot.slotPosition);
+            UISlot uiSlot2 = GetUISlot(uiPlayer2.uiSlot.slotPosition);
+
+            uiSlot1.uiPlayer.uiSlot = uiSlot2;
+            uiSlot2.uiPlayer.uiSlot = uiSlot1;
+            
+            (uiSlot1.uiPlayer, uiSlot2.uiPlayer) = (uiSlot2.uiPlayer, uiSlot1.uiPlayer);
+        }
+        
         public void ChangeIceTimePriority()
         {
             iceTimePriority.text = Utils.Utils.GetIceTimePriority((int)iceTimePrioritySlider.value);

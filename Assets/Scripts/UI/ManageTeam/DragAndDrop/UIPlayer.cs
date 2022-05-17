@@ -20,7 +20,6 @@ namespace UI.ManageTeam.DragAndDrop
         private RectTransform _rectTransform;
 
         public Transform canvasContent;
-        public Transform currentParent;
 
         public NFTMetadata CardData;
         public UISlot uiSlot;
@@ -34,9 +33,7 @@ namespace UI.ManageTeam.DragAndDrop
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            currentParent = _rectTransform.parent;
             _rectTransform.SetParent(canvasContent);
-            
             _canvasGroup.blocksRaycasts = false;
         }
 
@@ -51,7 +48,7 @@ namespace UI.ManageTeam.DragAndDrop
             Transform itemTransform = eventData.pointerDrag.transform;
             if (itemTransform.parent == canvasContent)
             {
-                itemTransform.SetParent(currentParent);
+                itemTransform.SetParent(uiSlot.transform);
                 itemTransform.localPosition = Vector3.zero;
             }
             

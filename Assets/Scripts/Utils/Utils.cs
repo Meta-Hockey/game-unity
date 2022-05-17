@@ -57,9 +57,21 @@ namespace Utils
             {
                 1 => "SuperLowPriority",
                 2 => "LowPriority",
-                3 => "Normal",
+                3 => "RightWing",
                 4 => "HighPriority",
                 5 => "SuperHighPriority",
+            };
+        }
+
+        public static int GetFieldPlayerPositionId(string position)
+        {
+            return position switch
+            {
+                "LeftWing" => 0,
+                "Center" => 1,
+                "RightWing" => 2,
+                "LeftDefender" => 3,
+                "RightDefender" => 4,
             };
         }
     }

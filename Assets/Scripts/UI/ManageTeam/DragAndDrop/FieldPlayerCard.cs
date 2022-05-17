@@ -1,4 +1,3 @@
-using Near.Models;
 using Near.Models.Extras;
 using Near.Models.Team.Team;
 using UnityEngine;

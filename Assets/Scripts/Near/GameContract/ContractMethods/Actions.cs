@@ -79,13 +79,13 @@ namespace Near.GameContract.ContractMethods
                 await nftContract.Change("insert_nft_field_players", args, NearUtils.GasMakeAvailable);
             }
 
-            List<(string, string)> goalies = new List<(string, string)>();
+            List<List<string>> goalies = new List<List<string>>();
 
             foreach (var goalie in team.Goalies)
             {
                 if (goalie.Value.Id != "-1")
                 {
-                    goalies.Add((goalie.Key, goalie.Value.Id));
+                    goalies.Add(new List<string> { goalie.Key, goalie.Value.Id });
                 }
             }
 

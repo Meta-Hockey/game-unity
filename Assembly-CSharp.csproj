@@ -130,6 +130,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/ControlledSwap.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/MergeKeyStore.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Pow22523.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/Buttons/LineButton.cs" />
      <Compile Include="Assets/Scripts/UI/Main menu/MainMenuView.cs" />
      <Compile Include="Assets/Scripts/Runtime/Game.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameStarter.cs" />
@@ -139,6 +140,7 @@
      <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/GoalieCard.cs" />
      <Compile Include="Assets/Scripts/Near/NearPersistentManager.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/AccessKey.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/Buttons/SwitchColorButtonsView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Lookup/D2.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/FieldPlayer/FieldPlayerNftCardUI.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceAsset.cs" />
@@ -245,8 +247,7 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/UI/ManageTeam/Buttons/SwitchColorButtonsView.cs" />
-     <Compile Include="Assets/Scripts/UI/ManageTeam/Buttons/LineButton.cs" />
+     <Compile Include="Assets/Scripts/UI/ManageTeam/SlotPositionEnum.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">
