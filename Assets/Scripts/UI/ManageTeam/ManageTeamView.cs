@@ -194,7 +194,7 @@ namespace UI.ManageTeam
         
         public void SwitchLine(string line)
         {
-            SetLineDataToTeam(line);
+            SetLineDataToTeam(lineNumber);
             
             if (line == "Goalies")
             {
