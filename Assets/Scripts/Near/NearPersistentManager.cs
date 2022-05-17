@@ -23,10 +23,10 @@ namespace Near
         private ContractNear _nftContract;
         public readonly string nftContactId = "nft_0_0.testnet";
         
-        private readonly string _dirName = "KeyStore";
-
         private async void Awake()
         {
+            var dirName = Application.persistentDataPath + "KeyStore";
+            
             if (Instance == null)
             {
                 Instance = this;
@@ -37,9 +37,9 @@ namespace Near
                 Destroy(gameObject);
             }
             
-            if (!Directory.Exists(_dirName))
+            if (!Directory.Exists(dirName))
             {
-                await UnencryptedFileSystemKeyStore.EnsureDir(_dirName);
+                await UnencryptedFileSystemKeyStore.EnsureDir(dirName);
             }
             
             _near = new NearClientUnity.Near(config: new NearConfig()
@@ -48,7 +48,7 @@ namespace Near
                 NodeUrl = "https://rpc.testnet.near.org",
                 ProviderType = ProviderType.JsonRpc,
                 SignerType = SignerType.InMemory,
-                KeyStore = new UnencryptedFileSystemKeyStore(_dirName),
+                KeyStore = new UnencryptedFileSystemKeyStore(dirName),
                 ContractName = GameContactId,
                 WalletUrl = "https://wallet.testnet.near.org"
             });
