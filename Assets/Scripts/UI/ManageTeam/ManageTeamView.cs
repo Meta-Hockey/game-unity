@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Near.Models.Team.Team;
 using Runtime;
 using UI.ManageTeam.DragAndDrop;
@@ -41,13 +42,13 @@ namespace UI.ManageTeam
         {
             _team = await _controller.LoadUserTeam();
             _userNFTs = await _controller.LoadUserNFTs();
-
+            
             lineNumber = "First";
 
             ShowFive(lineNumber);
             ShowBench(lineNumber);
         }
-
+        
         private void ShowFive(string number)
         {
             foreach (UISlot fieldPlayer in fives)
