@@ -5,9 +5,11 @@ namespace UI.ManageTeam.DragAndDrop
 {
     public class UISlot : MonoBehaviour, IDropHandler
     {
-        [SerializeField] private ManageTeamView manageTeamView;
+        public ManageTeamView manageTeamView;
         
         public SlotPositionEnum slotPosition;
+        public int slotId;
+        
         public UIPlayer uiPlayer;
 
         public void OnDrop(PointerEventData eventData)

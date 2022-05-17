@@ -140,6 +140,8 @@ namespace UI.ManageTeam
                 _ => _userNFTs.Where(x => x.Metadata.extra.Type != type).ToList()
             };
 
+            int slotId = 0;
+            
             foreach (NFTMetadata playerMetadata in benchPlayers)
             {
                 UISlot benchSlot = Instantiate(Game.AssetRoot.manageTeamAsset.uiSlot, benchContent);
@@ -159,6 +161,10 @@ namespace UI.ManageTeam
                 uiPlayer.SetData(playerMetadata);
                 uiPlayer.transform.localPosition = Vector3.zero;
                 uiPlayer.canvasContent = canvasContent;
+
+                benchSlot.manageTeamView = this;
+                benchSlot.slotId = slotId;
+                slotId++;
                 
                 _benchPlayers.Add(benchSlot);
             }
@@ -219,14 +225,14 @@ namespace UI.ManageTeam
             lineNumber = line;
         }
 
-        private UISlot GetUISlot(SlotPositionEnum slotPositionEnum)
+        private UISlot GetUISlot(SlotPositionEnum slotPositionEnum, int slotId)
         {
             UISlot uiSlot;
 
             switch (slotPositionEnum)
             {
                 case SlotPositionEnum.Bench:
-                    uiSlot = _benchPlayers.FirstOrDefault(x => x);
+                    uiSlot = _benchPlayers.FirstOrDefault(x => x.slotId == slotId);
                     break;
                 case SlotPositionEnum.MainGoalie or SlotPositionEnum.BackupGoalie:
                     uiSlot = goalies.FirstOrDefault(x => x.slotPosition == slotPositionEnum);
@@ -241,8 +247,8 @@ namespace UI.ManageTeam
 
         public void SwapCards(UIPlayer uiPlayer1, UIPlayer uiPlayer2)
         {
-            UISlot uiSlot1 = GetUISlot(uiPlayer1.uiSlot.slotPosition);
-            UISlot uiSlot2 = GetUISlot(uiPlayer2.uiSlot.slotPosition);
+            UISlot uiSlot1 = GetUISlot(uiPlayer1.uiSlot.slotPosition, uiPlayer1.uiSlot.slotId);
+            UISlot uiSlot2 = GetUISlot(uiPlayer2.uiSlot.slotPosition, uiPlayer2.uiSlot.slotId);
 
             uiSlot1.uiPlayer.uiSlot = uiSlot2;
             uiSlot2.uiPlayer.uiSlot = uiSlot1;

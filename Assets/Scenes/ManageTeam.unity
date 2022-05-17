@@ -1012,6 +1012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manageTeamView: {fileID: 1041897911}
   slotPosition: 2
+  slotId: 1
   uiPlayer: {fileID: 0}
 --- !u!1 &190945792
 GameObject:
@@ -2105,6 +2106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manageTeamView: {fileID: 1041897911}
   slotPosition: 6
+  slotId: 1
   uiPlayer: {fileID: 0}
 --- !u!1 &450410391
 GameObject:
@@ -2631,6 +2633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manageTeamView: {fileID: 1041897911}
   slotPosition: 3
+  slotId: 1
   uiPlayer: {fileID: 0}
 --- !u!1 &809751622
 GameObject:
@@ -4285,6 +4288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manageTeamView: {fileID: 1041897911}
   slotPosition: 4
+  slotId: 1
   uiPlayer: {fileID: 0}
 --- !u!1 &1495022718
 GameObject:
@@ -5723,6 +5727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manageTeamView: {fileID: 1041897911}
   slotPosition: 5
+  slotId: 1
   uiPlayer: {fileID: 0}
 --- !u!1 &2016288327
 GameObject:
@@ -5853,6 +5858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manageTeamView: {fileID: 1041897911}
   slotPosition: 1
+  slotId: 1
   uiPlayer: {fileID: 0}
 --- !u!1001 &5700369719430645843
 PrefabInstance:
@@ -5861,6 +5867,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 192167209}
     m_Modifications:
+    - target: {fileID: 5700369718395824579, guid: 1cd74595b9af43a21a718a20cae9a62f, type: 3}
+      propertyPath: slotId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5700369718395824579, guid: 1cd74595b9af43a21a718a20cae9a62f, type: 3}
       propertyPath: uiPlayer
       value: 
