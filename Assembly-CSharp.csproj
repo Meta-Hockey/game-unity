@@ -248,6 +248,11 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupSettings.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupSetBid.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupOpponentsBets.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupOpponent.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopup.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">

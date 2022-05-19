@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Near;
 using NearClientUnity;
 using NearClientUnity.Utilities;
@@ -16,9 +17,9 @@ namespace UI.Main_menu
         [SerializeField] private Text accountId;
         [SerializeField] private Text balance;
 
+        [SerializeField] private List<Transform> popups;
+
         [SerializeField] private Transform mintNFTButton;
-        [SerializeField] private Transform uiPopupSettings;
-        [SerializeField] private Transform uiPopupSetBid;
 
         public async void LoadAccountId()
         {
@@ -66,26 +67,16 @@ namespace UI.Main_menu
             SceneManager.LoadScene("ManageTeam"); 
         }
 
-        public void ShowSettings()
+        public void ShowPopup(Transform popupTransform)
         {
-            uiPopupSettings.gameObject.SetActive(true);
+            foreach (Transform popup in popups)
+            {
+                popup.gameObject.SetActive(false);
+            }
+            
+            popupTransform.gameObject.SetActive(true);
         }
 
-        public void CloseSettings()
-        {
-            uiPopupSettings.gameObject.SetActive(false);
-        }
-
-        public void ShowSetBid()
-        {
-            uiPopupSetBid.gameObject.SetActive(true);
-        }
-
-        public void CloseSetBid()
-        {
-            uiPopupSetBid.gameObject.SetActive(false);
-        }
-        
         public void SignOut()
         {
             NearPersistentManager.Instance.SignOut();
