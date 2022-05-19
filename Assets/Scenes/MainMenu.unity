@@ -207,9 +207,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Marketplace.FreeAgents.FreeAgentView, Assembly-CSharp
-        m_MethodName: CloseSetNewPriceView
+      - m_Target: {fileID: 223302181}
+        m_TargetAssemblyTypeName: UI.Main_menu.MainMenuView, Assembly-CSharp
+        m_MethodName: CloseSetBid
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1622,6 +1622,7 @@ MonoBehaviour:
   balance: {fileID: 466427324}
   mintNFTButton: {fileID: 826685585}
   uiPopupSettings: {fileID: 249200812}
+  uiPopupSetBid: {fileID: 759038184}
 --- !u!114 &223302182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3456,7 +3457,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6245269, y: 0.739}
   m_AnchorMax: {x: 0.95952684, y: 0.80200005}
-  m_AnchoredPosition: {x: 12.897888, y: 25.632141}
+  m_AnchoredPosition: {x: 12.897949, y: 25.632141}
   m_SizeDelta: {x: 83.9446, y: -3.0588}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &466427324
@@ -9212,13 +9213,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 223302179}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 223302181}
+        m_TargetAssemblyTypeName: UI.Main_menu.MainMenuView, Assembly-CSharp
+        m_MethodName: ShowSetBid
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11701,7 +11702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2898819239905734715, guid: f626cebb15f3c5813a2644592e1666ae, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2898819239905734715, guid: f626cebb15f3c5813a2644592e1666ae, type: 3}
       propertyPath: m_AnchorMin.x
@@ -11709,7 +11710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2898819239905734715, guid: f626cebb15f3c5813a2644592e1666ae, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2898819239905734715, guid: f626cebb15f3c5813a2644592e1666ae, type: 3}
       propertyPath: m_SizeDelta.x
@@ -11749,11 +11750,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2898819239905734715, guid: f626cebb15f3c5813a2644592e1666ae, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 411.951
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2898819239905734715, guid: f626cebb15f3c5813a2644592e1666ae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2898819239905734715, guid: f626cebb15f3c5813a2644592e1666ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

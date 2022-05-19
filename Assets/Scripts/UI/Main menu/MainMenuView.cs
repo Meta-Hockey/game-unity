@@ -18,6 +18,7 @@ namespace UI.Main_menu
 
         [SerializeField] private Transform mintNFTButton;
         [SerializeField] private Transform uiPopupSettings;
+        [SerializeField] private Transform uiPopupSetBid;
 
         public async void LoadAccountId()
         {
@@ -73,6 +74,16 @@ namespace UI.Main_menu
         public void CloseSettings()
         {
             uiPopupSettings.gameObject.SetActive(false);
+        }
+
+        public void ShowSetBid()
+        {
+            uiPopupSetBid.gameObject.SetActive(true);
+        }
+
+        public void CloseSetBid()
+        {
+            uiPopupSetBid.gameObject.SetActive(false);
         }
         
         public void SignOut()
