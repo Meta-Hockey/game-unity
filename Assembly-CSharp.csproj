@@ -77,7 +77,6 @@
      <Compile Include="Assets/Scripts/Near/Models/Sale.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/AccountState.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/KeyStore.cs" />
-     <Compile Include="Assets/Scripts/UI/Bets/LoadAvailablePlayers.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Invert.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/P3ToBytes.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/TotalWeight.cs" />
@@ -112,6 +111,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/WalletAccount.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/GroupElement.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Lookup/D.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupSettings.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/ProviderType.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/ScalarOps/MulAdd.cs" />
      <Compile Include="Assets/Scripts/Near/GameContract/ContractMethods/Actions.cs" />
@@ -119,6 +119,7 @@
      <Compile Include="Assets/Scripts/Near/Models/Team/Team/Five.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardsView.cs" />
      <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/UIPlayer.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupOpponentsBets.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/NearSignature.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyCardView.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/NearBinaryWriter.cs" />
@@ -137,6 +138,7 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/PlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Web.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/FinalExecutionStatus.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupOpponent.cs" />
      <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/GoalieCard.cs" />
      <Compile Include="Assets/Scripts/Near/NearPersistentManager.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/AccessKey.cs" />
@@ -151,7 +153,7 @@
      <Compile Include="Assets/Scripts/NearApiLibrary/SignerConfig.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/P1P1ConvertToP3.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Providers/Transaction.cs" />
-     <Compile Include="Assets/Scripts/UI/Bets/Bid.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupSetBid.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/Reduce.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/UnencryptedFileSystemKeyStore.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/NftCardUI.cs" />
@@ -178,8 +180,8 @@
      <Compile Include="Assets/Scripts/UI/Marketplace/ICardRenderer.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/FieldOperations_0.cs" />
      <Compile Include="Assets/Scripts/Near/MarketplaceContract/ContractMethods/Views.cs" />
+     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopup.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/FromBytes2.cs" />
-     <Compile Include="Assets/Scripts/UI/Bets/AvailablePlayers.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Field/Operations/FieldOperations_1.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Action.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/KeyStores/AccountInfo.cs" />
@@ -248,11 +250,8 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupSettings.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupSetBid.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupOpponentsBets.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupOpponent.cs" />
-     <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopup.cs" />
+     <Compile Include="Assets/Scripts/Near/Models/Opponent.cs" />
+     <Compile Include="Assets/Scripts/Near/Models/GameConfig.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">

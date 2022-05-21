@@ -4,7 +4,6 @@ using System.Dynamic;
 using System.Threading.Tasks;
 using Near.Models.Team.Team;
 using NearClientUnity;
-using Newtonsoft.Json;
 
 namespace Near.GameContract.ContractMethods
 {

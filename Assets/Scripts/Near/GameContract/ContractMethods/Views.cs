@@ -6,6 +6,7 @@ using Near.MarketplaceContract;
 using Near.Models;
 using Near.Models.Team;
 using Near.Models.Team.Team;
+using Near.Models.Team.TeamIds;
 using NearClientUnity;
 using Newtonsoft.Json;
 
@@ -13,18 +14,6 @@ namespace Near.GameContract.ContractMethods
 {
     public static class Views
     {
-        public class Opponent
-        {
-            public string Name { get; set; }
-            public GameConfig GameConfig { get; set; }
-        }
-
-        public class GameConfig
-        {
-            public string OpponentId { get; set; }
-            public string Deposit { get; set; }
-        }
-        
         public static async Task<IEnumerable<Opponent>> GetAvailablePlayers()
         {
             ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
