@@ -119,6 +119,7 @@
      <Compile Include="Assets/Scripts/Near/Models/Team/Team/Five.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Sell cards/SellCardsView.cs" />
      <Compile Include="Assets/Scripts/UI/ManageTeam/DragAndDrop/UIPlayer.cs" />
+     <Compile Include="Assets/Scripts/Near/Models/Opponent.cs" />
      <Compile Include="Assets/Scripts/UI/Main menu/UIPopups/UIPopupOpponentsBets.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/NearSignature.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/Buy cards/BuyCardView.cs" />
@@ -147,6 +148,7 @@
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/FieldPlayer/FieldPlayerNftCardUI.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/MarketplaceAsset.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/P3ConvertToP2.cs" />
+     <Compile Include="Assets/Scripts/Near/Models/GameConfig.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/KeyPairEd25519.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/INetwork.cs" />
      <Compile Include="Assets/Scripts/UI/Marketplace/NftCardsUI/Goalie/GoalieNftCardUI.cs" />
@@ -250,8 +252,6 @@
      <Compile Include="Assets/Scripts/Near/Models/Extras/FieldPlayerExtra.cs" />
      <Compile Include="Assets/Scripts/NearApiLibrary/Utilities/Ed25519/Internal/Ed25519Ref10/Group/Operations/Msub.cs" />
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
-     <Compile Include="Assets/Scripts/Near/Models/Opponent.cs" />
-     <Compile Include="Assets/Scripts/Near/Models/GameConfig.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
      <Reference Include="UnityEngine">
