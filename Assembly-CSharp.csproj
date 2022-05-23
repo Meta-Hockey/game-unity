@@ -254,6 +254,9 @@
      <Compile Include="Assets/Scripts/Runtime/GameRunner.cs" />
      <None Include="Assets/Fonts/Orbitron/OFL.txt" />
      <None Include="Assets/Fonts/Orbitron/README.txt" />
+     <None Include="Assets/Fonts/Digital-Numbers/digitalnumbers/OFL.txt" />
+     <None Include="Assets/Fonts/Digital-Numbers/ffonts.net.txt" />
+     <None Include="Assets/Fonts/Digital-Numbers/install-a-new-font.txt" />
      <Reference Include="UnityEngine">
      <HintPath>/home/yurii/Unity/Hub/Editor/2021.2.18f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
