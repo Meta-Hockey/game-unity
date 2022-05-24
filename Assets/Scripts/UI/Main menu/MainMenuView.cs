@@ -21,6 +21,13 @@ namespace UI.Main_menu
 
         [SerializeField] private Transform mintNFTButton;
 
+        public MainMenuController MainMenuController;
+
+        private void Start()
+        {
+            MainMenuController = new MainMenuController();
+        }
+
         public async void LoadAccountId()
         {
             string accountID = NearPersistentManager.Instance.GetAccountId();

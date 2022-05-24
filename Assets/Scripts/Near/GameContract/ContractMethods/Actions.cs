@@ -9,7 +9,7 @@ namespace Near.GameContract.ContractMethods
 {
     public static class Actions
     {
-        public static async Task MakeAvailable(string bid)
+        public static async void MakeAvailable(string bid)
         {
             ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
                 
@@ -20,7 +20,7 @@ namespace Near.GameContract.ContractMethods
                 NearUtils.ParseNearAmount(bid));
         }
 
-        public static async Task MakeUnavailable()
+        public static async void MakeUnavailable()
         {
             ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
                 
