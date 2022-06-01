@@ -12,7 +12,6 @@ namespace UI.Marketplace
         
         public Sprite activeSprite;
         public Sprite defaultSprite;
-
         public Color activeColor;
         
         public void ChangeActiveButton()

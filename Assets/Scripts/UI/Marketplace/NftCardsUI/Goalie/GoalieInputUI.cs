@@ -26,11 +26,11 @@ namespace UI.Marketplace.NftCardsUI.Goalie
         {
             foreach (RolesButton button in rolesButtons)
             {
-                button.text.color = Color.black;
+                button.text.color = Color.white;
                 button.image.sprite = button.defaultSprite;
             }
 
-            activeButton.text.color = Color.white;
+            activeButton.text.color = Color.black;
             activeButton.image.sprite = activeButton.activeSprite;
 
             _role = role;

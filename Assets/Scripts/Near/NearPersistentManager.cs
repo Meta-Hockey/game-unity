@@ -36,12 +36,7 @@ namespace Near
             {
                 Destroy(gameObject);
             }
-            
-            if (!Directory.Exists(dirName))
-            {
-                await UnencryptedFileSystemKeyStore.EnsureDir(dirName);
-            }
-            
+
             _near = new NearClientUnity.Near(config: new NearConfig()
             {
                 NetworkId = "testnet",

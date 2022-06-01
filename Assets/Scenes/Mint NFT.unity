@@ -493,6 +493,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -951,7 +952,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249566756}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UI.Marketplace.MintNft.MintNftView, Assembly-CSharp
         m_MethodName: Back
         m_Mode: 1
@@ -1092,7 +1093,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1249566757}
-  - component: {fileID: 1249566756}
+  - component: {fileID: 1249566758}
   m_Layer: 0
   m_Name: MintView
   m_TagString: Untagged
@@ -1100,30 +1101,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1249566756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1249566755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fb3d416174b4c51a21de5ddd3143a0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 617905073}
-  image: {fileID: 591130592}
-  cardName: {fileID: 283943325416832595}
-  imageURL: {fileID: 7784376544537722368}
-  playerType: {fileID: 617905073}
-  positionButtons:
-  - {fileID: 3833739408273743022}
-  - {fileID: 3833739409586451254}
-  - {fileID: 3833739409489130412}
-  - {fileID: 3833739408811949358}
-  - {fileID: 3833739409013587328}
-  - {fileID: 3833739409600143462}
 --- !u!4 &1249566757
 Transform:
   m_ObjectHideFlags: 0
@@ -1139,6 +1116,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1249566758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249566755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e82a75fecc38fe74d8c06cc0993428fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 617905073}
+  image: {fileID: 591130592}
+  cardName: {fileID: 283943325416832595}
+  imageURL: {fileID: 7784376544537722368}
+  playerType: {fileID: 617905073}
+  positionButtons:
+  - {fileID: 3833739409600143462}
+  - {fileID: 3833739409013587328}
+  - {fileID: 3833739408811949358}
+  - {fileID: 3833739409489130412}
+  - {fileID: 3833739409586451254}
+  - {fileID: 3833739408273743022}
 --- !u!1 &1438157463
 GameObject:
   m_ObjectHideFlags: 0
@@ -1257,7 +1258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249566756}
+      - m_Target: {fileID: 1249566758}
         m_TargetAssemblyTypeName: UI.Marketplace.MintNft.MintNftView, Assembly-CSharp
         m_MethodName: Mint
         m_Mode: 1
@@ -2863,7 +2864,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249566756}
+      - m_Target: {fileID: 1249566758}
         m_TargetAssemblyTypeName: UI.Marketplace.MintNft.MintNftView, Assembly-CSharp
         m_MethodName: SwitchType
         m_Mode: 0
@@ -2918,7 +2919,6 @@ GameObject:
   - component: {fileID: 3106358366820116310}
   - component: {fileID: 3106358366820116305}
   - component: {fileID: 3106358366820116304}
-  - component: {fileID: 3106358366820116311}
   m_Layer: 5
   m_Name: Dropdown (Legacy)
   m_TagString: Untagged
@@ -2957,18 +2957,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3106358366820116306}
   m_CullTransparentMesh: 1
---- !u!114 &3106358366820116311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3106358366820116306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ebcbd42713424db97d10c7076e631d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &3833739408273743016
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3113,10 +3101,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3833739408273743020}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01033394253c452cacea9d54f70fc728, type: 3}
+  m_Script: {fileID: 11500000, guid: 992558e8e7d45f3499ccaf43bd4fb3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 1249566756}
+  view: {fileID: 1249566758}
   image: {fileID: 3833739408273743019}
   text: {fileID: 3833739408514777373}
 --- !u!222 &3833739408281153132
@@ -3870,10 +3858,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3833739408811949356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01033394253c452cacea9d54f70fc728, type: 3}
+  m_Script: {fileID: 11500000, guid: 992558e8e7d45f3499ccaf43bd4fb3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 1249566756}
+  view: {fileID: 1249566758}
   image: {fileID: 3833739408811949355}
   text: {fileID: 3833739408692635018}
 --- !u!224 &3833739408824426666
@@ -4137,10 +4125,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3833739409013587264}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01033394253c452cacea9d54f70fc728, type: 3}
+  m_Script: {fileID: 11500000, guid: 992558e8e7d45f3499ccaf43bd4fb3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 1249566756}
+  view: {fileID: 1249566758}
   image: {fileID: 3833739409013587327}
   text: {fileID: 3833739408281153135}
 --- !u!224 &3833739409272696588
@@ -4323,10 +4311,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3833739409489130410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01033394253c452cacea9d54f70fc728, type: 3}
+  m_Script: {fileID: 11500000, guid: 992558e8e7d45f3499ccaf43bd4fb3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 1249566756}
+  view: {fileID: 1249566758}
   image: {fileID: 3833739409489130409}
   text: {fileID: 3833739408386409316}
 --- !u!222 &3833739409586451248
@@ -4473,10 +4461,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3833739409586451252}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01033394253c452cacea9d54f70fc728, type: 3}
+  m_Script: {fileID: 11500000, guid: 992558e8e7d45f3499ccaf43bd4fb3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 1249566756}
+  view: {fileID: 1249566758}
   image: {fileID: 3833739409586451251}
   text: {fileID: 3833739408360915568}
 --- !u!114 &3833739409600143456
@@ -4624,10 +4612,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3833739409600143461}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01033394253c452cacea9d54f70fc728, type: 3}
+  m_Script: {fileID: 11500000, guid: 992558e8e7d45f3499ccaf43bd4fb3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 1249566756}
+  view: {fileID: 1249566758}
   image: {fileID: 3833739409600143456}
   text: {fileID: 3833739408334980843}
 --- !u!1 &3833739409950885948
@@ -5120,7 +5108,7 @@ MonoBehaviour:
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1249566756}
+      - m_Target: {fileID: 1249566758}
         m_TargetAssemblyTypeName: UI.Marketplace.MintNft.MintNftView, Assembly-CSharp
         m_MethodName: LoadImage
         m_Mode: 1

@@ -2,14 +2,9 @@
 using NearClientUnity.Utilities;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Dynamic;
-using System.Linq;
 using System.Net.Http;
-using System.Reflection;
 using System.Threading.Tasks;
-using System.Web;
-using System.Web.Util;
 using NearClientUnity.Providers;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -50,7 +45,7 @@ namespace NearClientUnity
             else
             {
                 _authData.AccountId = null;
-                _authData.AllKeys = new List<string>();
+                _authData.AllKeys = "";
             }
         }
 
@@ -58,12 +53,14 @@ namespace NearClientUnity
 
         public async Task CompleteSignIn(string url)
         {
-            HttpEncoder.Current = HttpEncoder.Default;
+            // TODO: parse URL
+            //HttpEncoder.Current = HttpEncoder.Default;
             Uri uri = new Uri(url);
-            string publicKey = HttpUtility.ParseQueryString(uri.Query).Get("public_key");
-            string accountId = HttpUtility.ParseQueryString(uri.Query).Get("account_id");
-            string[] allKeys = HttpUtility.ParseQueryString(uri.Query).Get("all_keys").Split(',');
-            
+            string[] s = uri.Query.Split('&');
+            string publicKey = s[1].Split("=")[1];//HttpUtility.ParseQueryString(uri.Query).Get("public_key");
+            string accountId = s[0].Split("=")[1];//HttpUtility.ParseQueryString(uri.Query).Get("account_id");
+            string allKeys = s[2].Split("=")[1].Replace("%3A", ":"); //HttpUtility.ParseQueryString(uri.Query).Get("all_keys").Split(',');
+
             _authData.AccountId = accountId;
             _authData.AllKeys = allKeys;
 
@@ -263,16 +260,16 @@ namespace NearClientUnity
                 return accessKey;
             }
 
-            List<string> walletKeys;
-            if (_authData.AllKeys is Array)
+            List<string> walletKeys = new List<string>();
+            if (_authData.AllKeys is string[])
             {
-                walletKeys = new List<string>(_authData.AllKeys);
+                walletKeys = _authData.AllKeys.Split(",");
             }
             else
             {
-                walletKeys = new List<string>(_authData.AllKeys.ToObject<string[]>());
+                walletKeys.Add(_authData.AllKeys.ToString());
             }
-            
+
             foreach (var key in accessKeys)
             {
                 if (walletKeys.Contains(key.public_key.ToString()) && AccessKeyMatchesTransaction(key, receiverId, actions))

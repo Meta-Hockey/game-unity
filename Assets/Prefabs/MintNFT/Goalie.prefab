@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 2341643347367117242}
   - component: {fileID: 2341643347367117243}
   - component: {fileID: 2341643347367117236}
-  - component: {fileID: 4441152593936226768}
+  - component: {fileID: 3063511400968942261}
   m_Layer: 5
   m_Name: Post-to-post
   m_TagString: Untagged
@@ -107,8 +107,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ffdad165052449d62987a557655c6074, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4441152593936226768}
+      - m_Target: {fileID: 3063511400968942261}
         m_TargetAssemblyTypeName: UI.Marketplace.NftCardsUI.RolesButton, Assembly-CSharp
         m_MethodName: SetRole
         m_Mode: 5
@@ -173,7 +173,7 @@ MonoBehaviour:
           m_StringArgument: Post2Post
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4441152593936226768
+--- !u!114 &3063511400968942261
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,13 +182,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2341643347367117238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77c82a9644d54728980e431a045162f6, type: 3}
+  m_Script: {fileID: 11500000, guid: fc8fecff58083d94e9c22be9795c7ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 6947983847716573197}
+  view: {fileID: 8968975252818913786}
   image: {fileID: 2341643347367117243}
-  activeSprite: {fileID: 21300000, guid: 7c7c35b46ee697e62abbe06390a15e90, type: 3}
-  defaultSprite: {fileID: 21300000, guid: ffdad165052449d62987a557655c6074, type: 3}
+  activeSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
   text: {fileID: 2341643348124658171}
 --- !u!1 &2341643347782847215
 GameObject:
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 2341643348208572277}
   - component: {fileID: 2341643348208572278}
   - component: {fileID: 2341643348208572279}
-  - component: {fileID: 8932350802478380447}
+  - component: {fileID: 1762443885652740653}
   m_Layer: 5
   m_Name: Wall
   m_TagString: Untagged
@@ -453,8 +453,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ffdad165052449d62987a557655c6074, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8932350802478380447}
+      - m_Target: {fileID: 1762443885652740653}
         m_TargetAssemblyTypeName: UI.Marketplace.NftCardsUI.RolesButton, Assembly-CSharp
         m_MethodName: SetRole
         m_Mode: 5
@@ -519,7 +519,7 @@ MonoBehaviour:
           m_StringArgument: Wall
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8932350802478380447
+--- !u!114 &1762443885652740653
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -528,13 +528,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2341643348208572273}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77c82a9644d54728980e431a045162f6, type: 3}
+  m_Script: {fileID: 11500000, guid: fc8fecff58083d94e9c22be9795c7ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: {fileID: 6947983847716573197}
+  view: {fileID: 8968975252818913786}
   image: {fileID: 2341643348208572278}
-  activeSprite: {fileID: 21300000, guid: 7c7c35b46ee697e62abbe06390a15e90, type: 3}
-  defaultSprite: {fileID: 21300000, guid: ffdad165052449d62987a557655c6074, type: 3}
+  activeSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
   text: {fileID: 2341643348088326029}
 --- !u!1 &4693655630369371453
 GameObject:
@@ -2988,7 +2988,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7137144654494425104}
-  - component: {fileID: 6947983847716573197}
+  - component: {fileID: 8968975252818913786}
   m_Layer: 5
   m_Name: Goalie
   m_TagString: Untagged
@@ -3013,14 +3013,14 @@ RectTransform:
   - {fileID: 2341643347782847214}
   - {fileID: 4693655631840092983}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 101, y: 11}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &6947983847716573197
+--- !u!114 &8968975252818913786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3029,12 +3029,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7137144654494425105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ac86f415d814822b0f228d5b363c0c1, type: 3}
+  m_Script: {fileID: 11500000, guid: f12212e6407b4674898a115e3f62f3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rolesButtons:
-  - {fileID: 8932350802478380447}
-  - {fileID: 4441152593936226768}
+  - {fileID: 1762443885652740653}
+  - {fileID: 3063511400968942261}
   hand: {fileID: 1390411173318172050}
   number: {fileID: 5537371626954256702}
   gloveAndBlocker: {fileID: 4693655631011520063}
@@ -3322,8 +3322,29 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 9163165672938841337}
     m_Modifications:
+    - target: {fileID: 1896076945939259280, guid: ab21335b923a479dfbadfdabd1448711, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896076945939259280, guid: ab21335b923a479dfbadfdabd1448711, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896076945939259280, guid: ab21335b923a479dfbadfdabd1448711, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3308312939650050391}
+    - target: {fileID: 1896076945939259280, guid: ab21335b923a479dfbadfdabd1448711, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896076945939259280, guid: ab21335b923a479dfbadfdabd1448711, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI.Marketplace.MintNft.SwitchToggleHands, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 1896076945939259282, guid: ab21335b923a479dfbadfdabd1448711, type: 3}
       propertyPath: m_Name
       value: SwitchToggle
@@ -3425,6 +3446,7 @@ PrefabInstance:
       value: 0.94528115
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: ab21335b923a479dfbadfdabd1448711, type: 3}
 --- !u!224 &1390411172522660342 stripped
 RectTransform:
@@ -3436,7 +3458,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1896076945939259282, guid: ab21335b923a479dfbadfdabd1448711, type: 3}
   m_PrefabInstance: {fileID: 656272616945435138}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7379483351801323856
+--- !u!114 &3308312939650050391
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3445,13 +3467,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1390411173318172048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad8d54edb59946859ac8786a2aecbb05, type: 3}
+  m_Script: {fileID: 11500000, guid: 4527ab29743f8064681b49ee9617d6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftHand: {fileID: 9163165674003286743}
   rightHand: {fileID: 9163165674314332679}
-  activeColor: {r: 0.94528115, g: 0.8197299, b: 0.54517436, a: 1}
-  defaultColor: {r: 0.19589533, g: 0.19589533, b: 0.19589533, a: 1}
+  activeColor: {r: 0.94117653, g: 0.81568635, b: 0.5411765, a: 1}
+  defaultColor: {r: 0.19607845, g: 0.19607845, b: 0.19607845, a: 1}
   uiHandleRectTransform: {fileID: 1390411172522660342}
 --- !u!224 &1390411173318172049 stripped
 RectTransform:

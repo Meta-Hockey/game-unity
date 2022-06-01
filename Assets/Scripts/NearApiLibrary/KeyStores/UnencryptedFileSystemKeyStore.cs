@@ -129,6 +129,7 @@ namespace NearClientUnity.KeyStores
         public override async Task SetKeyAsync(string networkId, string accountId, KeyPair keyPair)
         {
             await EnsureDir($"{_keyDir}/{networkId}");
+            
             var content = new AccountInfo() { AccountId = accountId, PrivateKey = keyPair.ToString() };
             var jsonString = JsonConvert.SerializeObject(content);
             var encodedJsonString = Encoding.Unicode.GetBytes(jsonString);
@@ -143,7 +144,7 @@ namespace NearClientUnity.KeyStores
 
         private string GetKeyFilePath(string networkId, string accountId)
         {
-            return $"{_keyDir}/{networkId}/{accountId}.json";
+            return $"{_keyDir}/{networkId}/{accountId.Replace(":", "%3A")}.json";
         }
 
         private string GetNetworkDirPath(string networkId)

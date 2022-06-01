@@ -478,7 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2959403603366307706}
   - component: {fileID: 5996601902519872670}
-  - component: {fileID: 504305482604517825}
+  - component: {fileID: 8397411083321723764}
   m_Layer: 5
   m_Name: FieldPlayerPrefab
   m_TagString: Untagged
@@ -521,7 +521,7 @@ RectTransform:
   - {fileID: 5432672108415251276}
   - {fileID: 671357782994749437}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -536,7 +536,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2605144515570822122}
   m_CullTransparentMesh: 1
---- !u!114 &504305482604517825
+--- !u!114 &8397411083321723764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -545,7 +545,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2605144515570822122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c6ed935ee034a4ca188ff2f0fd1777a, type: 3}
+  m_Script: {fileID: 11500000, guid: 11c12132df61362418e33b59f91da813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1522503901608698172}

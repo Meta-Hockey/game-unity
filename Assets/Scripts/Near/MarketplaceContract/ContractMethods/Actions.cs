@@ -16,7 +16,7 @@ namespace Near.MarketplaceContract.ContractMethods
 
             int totalPerpetual = 0;
             
-            foreach (KeyValuePair<string,double> royalty in royalties)
+            foreach (KeyValuePair<string, double> royalty in royalties)
             {
                 int amount = (int)(royalty.Value * 100);
                 
