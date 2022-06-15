@@ -1744,6 +1744,7 @@ GameObject:
   - component: {fileID: 215090567}
   - component: {fileID: 215090566}
   - component: {fileID: 215090565}
+  - component: {fileID: 215090568}
   m_Layer: 5
   m_Name: Buy cards button
   m_TagString: Untagged
@@ -1816,9 +1817,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 215090563}
+      - m_Target: {fileID: 215090568}
         m_TargetAssemblyTypeName: UI.Marketplace.TopButton, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ChangeActiveButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1878,6 +1879,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215090563}
   m_CullTransparentMesh: 1
+--- !u!114 &215090568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215090563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bc0761e8745a08499268e3677224ee8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marketplaceInteractor: {fileID: 1871033816}
+  text: {fileID: 168202053}
+  image: {fileID: 215090566}
+  activeSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
+  defaultSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
+  activeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1001 &221352098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2720,13 +2739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de00b49f0fc474bade158fc82391df8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sellImmediately: {fileID: 813269723}
-  sellOnAuction: {fileID: 1888114328}
-  sellImmediatelyView: {fileID: 275541901}
-  sellOnAuctionView: {fileID: 1379610633}
-  activeColor: {r: 0.2628214, g: 0.34879074, b: 0.6472877, a: 1}
-  defaultColor: {r: 0.83927673, g: 0.83927673, b: 0.83927673, a: 1}
-  uiHandleRectTransform: {fileID: 1874529223}
 --- !u!1 &434574044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3473,7 +3485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5747035105899890647, guid: a10d6db70298d06478bbe53f4953e61e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5747035105899890647, guid: a10d6db70298d06478bbe53f4953e61e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -3481,7 +3493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5747035105899890647, guid: a10d6db70298d06478bbe53f4953e61e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5747035105899890647, guid: a10d6db70298d06478bbe53f4953e61e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3521,11 +3533,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5747035105899890647, guid: a10d6db70298d06478bbe53f4953e61e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 415.47983
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5747035105899890647, guid: a10d6db70298d06478bbe53f4953e61e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5747035105899890647, guid: a10d6db70298d06478bbe53f4953e61e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5157,7 +5169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -5165,7 +5177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -5205,11 +5217,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1402.3992
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5751,7 +5763,7 @@ GameObject:
   - component: {fileID: 1113096525}
   - component: {fileID: 1113096524}
   - component: {fileID: 1113096523}
-  - component: {fileID: 1113096526}
+  - component: {fileID: 1113096527}
   m_Layer: 5
   m_Name: Free agents button
   m_TagString: Untagged
@@ -5824,7 +5836,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1113096526}
+      - m_Target: {fileID: 1113096527}
         m_TargetAssemblyTypeName: UI.Marketplace.TopButton, Assembly-CSharp
         m_MethodName: ChangeActiveButton
         m_Mode: 1
@@ -5886,7 +5898,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113096521}
   m_CullTransparentMesh: 1
---- !u!114 &1113096526
+--- !u!114 &1113096527
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5895,7 +5907,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1113096521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e97d219ea1c642c2a6222cbf5ffa1096, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bc0761e8745a08499268e3677224ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   marketplaceInteractor: {fileID: 1871033816}
@@ -5903,7 +5915,7 @@ MonoBehaviour:
   image: {fileID: 1113096524}
   activeSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
-  activeColor: {r: 0.21152057, g: 0.30580607, b: 0.6277409, a: 1}
+  activeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1116560192
 GameObject:
   m_ObjectHideFlags: 0
@@ -6426,6 +6438,115 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!1001 &1246224122
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 1635540189}
+    m_Modifications:
+    - target: {fileID: 8086400338214608920, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_Name
+      value: Scroll View
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+--- !u!224 &1246224123 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8086400338214608923, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+  m_PrefabInstance: {fileID: 1246224122}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1246224124 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8086400339570807041, guid: 94d76bd8311cf0d499518ac19ffaeb4f, type: 3}
+  m_PrefabInstance: {fileID: 1246224122}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1250231417
 GameObject:
   m_ObjectHideFlags: 0
@@ -7913,7 +8034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1635540188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7926,9 +8047,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb66850e0a83524ea52f33346d5875a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content: {fileID: 0}
-  viewInteractor: {fileID: 0}
-  sellNftCardView: {fileID: 0}
+  content: {fileID: 1246224124}
+  viewInteractor: {fileID: 1871033816}
+  sellNftCardView: {fileID: 1403570439}
 --- !u!224 &1635540189
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7942,6 +8063,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 582276101}
+  - {fileID: 1246224123}
   m_Father: {fileID: 2017709545}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8176,7 +8298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -8184,7 +8306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -8224,11 +8346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1021.4395
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1493743981794307387, guid: d1fc25c2b78bf664fbaddb3ae228305e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8468,7 +8590,7 @@ GameObject:
   - component: {fileID: 1767492764}
   - component: {fileID: 1767492763}
   - component: {fileID: 1767492762}
-  - component: {fileID: 1767492765}
+  - component: {fileID: 1767492766}
   m_Layer: 5
   m_Name: Sell cards button
   m_TagString: Untagged
@@ -8541,7 +8663,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1767492765}
+      - m_Target: {fileID: 1767492766}
         m_TargetAssemblyTypeName: UI.Marketplace.TopButton, Assembly-CSharp
         m_MethodName: ChangeActiveButton
         m_Mode: 1
@@ -8603,7 +8725,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767492760}
   m_CullTransparentMesh: 1
---- !u!114 &1767492765
+--- !u!114 &1767492766
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8612,7 +8734,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1767492760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e97d219ea1c642c2a6222cbf5ffa1096, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bc0761e8745a08499268e3677224ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   marketplaceInteractor: {fileID: 1871033816}
@@ -8620,7 +8742,7 @@ MonoBehaviour:
   image: {fileID: 1767492763}
   activeSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
-  activeColor: {r: 0.21152057, g: 0.30580607, b: 0.6277409, a: 1}
+  activeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1777756062
 GameObject:
   m_ObjectHideFlags: 0
@@ -9176,7 +9298,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   views: []
-  buttons: []
+  buttons:
+  - {fileID: 1950867754}
+  - {fileID: 215090568}
+  - {fileID: 1767492766}
+  - {fileID: 1113096527}
 --- !u!4 &1871033817
 Transform:
   m_ObjectHideFlags: 0
@@ -9192,11 +9318,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1874529223 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 5505193888223739184, guid: 0b4bc3c0260cec210a973777c53fea1c, type: 3}
-  m_PrefabInstance: {fileID: 402142384}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1888114326
 GameObject:
   m_ObjectHideFlags: 0
@@ -9487,7 +9608,6 @@ GameObject:
   - component: {fileID: 1950867752}
   - component: {fileID: 1950867751}
   - component: {fileID: 1950867754}
-  - component: {fileID: 1950867755}
   m_Layer: 5
   m_Name: Buy packs button
   m_TagString: Untagged
@@ -9631,7 +9751,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1950867749}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e97d219ea1c642c2a6222cbf5ffa1096, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bc0761e8745a08499268e3677224ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   marketplaceInteractor: {fileID: 1871033816}
@@ -9639,20 +9759,7 @@ MonoBehaviour:
   image: {fileID: 1950867752}
   activeSprite: {fileID: 21300000, guid: 00c8148673fe653198b561515f45d71f, type: 3}
   defaultSprite: {fileID: 21300000, guid: 3e83481415104465db941af41aa8c951, type: 3}
-  activeColor: {r: 0.21152057, g: 0.30580607, b: 0.6277409, a: 1}
---- !u!114 &1950867755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1950867749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f859f086617b4a7085e5046c281dcadc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewInteractor: {fileID: 1871033816}
+  activeColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1976386816
 GameObject:
   m_ObjectHideFlags: 0
