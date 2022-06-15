@@ -117,6 +117,7 @@ namespace UI.Marketplace.FreeAgents
         public void ShowSetNewPriceView()
         {
             setNewPriceView.gameObject.SetActive(true);
+            setNewPriceView.transform.SetAsLastSibling();
         }
 
         public void CloseSetNewPriceView()
