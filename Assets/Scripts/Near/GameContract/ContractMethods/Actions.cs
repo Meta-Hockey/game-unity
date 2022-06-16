@@ -54,10 +54,8 @@ namespace Near.GameContract.ContractMethods
             args.game_id = gameId;
             
 
-            var results = await gameContract.Change("generate_event", args, NearUtils.GasMove);
-            List<dynamic> dynamicEvents = JsonConvert.DeserializeObject<List<dynamic>>(results.result.ToString());
-
-            List<Event> events = new List<Event>();
+            var results = await gameContract.Change("generate_event", args, NearUtils.GasMakeAvailable);
+            List<Event> events = JsonConvert.DeserializeObject<List<Event>>(results);
 
             return events;
         }

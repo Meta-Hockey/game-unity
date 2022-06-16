@@ -11,22 +11,22 @@ namespace UI.GameUI
         
         private async void Start()
         {
-            gameId = await controller.GetGameId();
             controller = new GameController();
-            
-            StartCoroutine(ShowEvents());
+            gameId = await controller.GetGameId();
+            await controller.GenerateEvents(0, gameId); 
+            // StartCoroutine(ShowEvents());
         }
 
         private IEnumerator ShowEvents()
         {
             while (true)
             {
-                if (gameId == -1)
+                if (gameId != -1)
                 {
-                    
+                    controller.GenerateEvents(0, gameId);
                 }
                 
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(10);
             }
         }
     }

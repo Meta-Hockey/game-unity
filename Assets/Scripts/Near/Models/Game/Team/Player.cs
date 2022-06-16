@@ -2,14 +2,14 @@
 {
     public class Player
     {
-        public string ImgUrl { get; set; } 
+        public string img { get; set; } 
         
-        public string Name { get; set; }
+        public string name { get; set; }
         
-        public string Role { get; set; } 
+        public string role { get; set; } 
         
-        public int Number { get; set; }
+        public int number { get; set; }
         
-        public int UserId { get; set; }
+        public int user_id { get; set; }
     }
 }

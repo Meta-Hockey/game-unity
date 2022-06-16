@@ -4,6 +4,6 @@ namespace Near.Models.Game.Team
 {
     public class Goalie : Player
     {
-        public GoalieStats Stats;
+        public GoalieStats stats;
     }
 }

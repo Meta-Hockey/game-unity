@@ -4,16 +4,16 @@ namespace Near.Models.Game
 {
     public class Event
     {
-        public Team.Team MyTeam { get; set; }
+        public Team.Team my_team { get; set; }
         
-        public Team.Team OpponentTeam { get; set; }
+        public Team.Team opponent_team { get; set; }
         
-        public FieldPlayer PlayerWithPuck { get; set; }
+        public FieldPlayer player_with_puck { get; set; }
         
-        public string Action { get; set; }
+        public string action { get; set; }
         
-        public int ZoneNumber { get; set; }
+        public int zone_number { get; set; }
         
-        private int Time { get; set; }
+        private int time { get; set; }
     }
 }
