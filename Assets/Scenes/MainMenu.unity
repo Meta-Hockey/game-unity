@@ -423,7 +423,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 759038186}
         m_TargetAssemblyTypeName: UI.Main_menu.UIPopups.UIPopupSetBid, Assembly-CSharp
-        m_MethodName: SetBid
+        m_MethodName: MakeUnavailable
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5021,7 +5021,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuView: {fileID: 223302181}
   bidText: {fileID: 1624138109}
-  view: {fileID: 223302181}
   waitForOpponentView: {fileID: 641957384}
   setBidView: {fileID: 1752144368}
   ownBid: {fileID: 1750351792}
@@ -10535,7 +10534,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Your bid: 2'
+  m_Text: 
 --- !u!222 &1750351793
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11120,7 +11119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1902760094
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11727,9 +11726,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Marketplace.FreeAgents.FreeAgentView, Assembly-CSharp
-        m_MethodName: UpdatePrice
+      - m_Target: {fileID: 1902760096}
+        m_TargetAssemblyTypeName: UI.Main_menu.UIPopups.UIPopupOpponent, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

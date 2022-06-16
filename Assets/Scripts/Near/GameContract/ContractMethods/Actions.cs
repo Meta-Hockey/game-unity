@@ -9,6 +9,18 @@ namespace Near.GameContract.ContractMethods
 {
     public static class Actions
     {
+        public static async void StartGame(string opponentId, string deposit)
+        {
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
+                
+            dynamic args = new ExpandoObject();
+            args.opponent_id = opponentId;
+            
+            await gameContract.Change("start_game", args,
+                NearUtils.GasMakeAvailable,
+                NearUtils.ParseNearAmount(deposit));
+        }
+        
         public static async void MakeAvailable(string bid)
         {
             ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();

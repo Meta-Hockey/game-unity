@@ -6,6 +6,11 @@ namespace UI.Main_menu
 {
     public class MainMenuController
     {
+        public void StartGame(string opponentId, string deposit)
+        {
+            Near.GameContract.ContractMethods.Actions.StartGame(opponentId, deposit);
+        }
+        
         public void SetBid(string bid)
         {
             Near.GameContract.ContractMethods.Actions.MakeAvailable(bid);

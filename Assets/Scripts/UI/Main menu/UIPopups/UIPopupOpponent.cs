@@ -21,5 +21,9 @@ namespace UI.Main_menu.UIPopups
             goalie.text = bet.Goalie.text;
         }
 
+        public void StartGame()
+        {
+            mainMenuView.MainMenuController.StartGame(opponentId.text, price.text);    
+        }
     }
 }
