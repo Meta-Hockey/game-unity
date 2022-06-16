@@ -43,6 +43,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Runtime\Runner.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\ConditionalMove.cs" />
+     <Compile Include="Assets\Scripts\UI\Main menu\MainMenuAsset.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\MainMenu.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\ContractNear.cs" />
      <Compile Include="Assets\Scripts\UI\ManageTeam\DragAndDrop\FieldPlayerCard.cs" />
@@ -207,6 +208,7 @@
      <Compile Include="Assets\Scripts\UI\Main menu\UIPopups\UIPopupSetBid.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\MarketplaceInteractor.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\Reduce.cs" />
+     <Compile Include="Assets\Scripts\UI\Main menu\OpponentBet.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Extra.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\BlockHeader.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Connection.cs" />
@@ -253,8 +255,10 @@
      <Compile Include="Assets\Scripts\Near\Models\Extras\FieldPlayerExtra.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\MintNft\PositionButton.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\Msub.cs" />
-     <Compile Include="Assets\Scripts\UI\Main menu\MainMenuAsset.cs" />
-     <Compile Include="Assets\Scripts\UI\Main menu\OpponentBet.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\GameView.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\GameController.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\AvailableGame.cs" />
+     <Compile Include="Assets\Scripts\Near\GameContract\ContractMethods\AvailableGameParser.cs" />
      <None Include="Assets\Fonts\Orbitron\OFL.txt" />
      <None Include="Assets\Fonts\Orbitron\README.txt" />
      <None Include="Assets\Fonts\Digital-Numbers\digitalnumbers\OFL.txt" />
@@ -899,23 +903,11 @@
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Services.Core.Analytics">
-     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Shared.Editor">
-     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Services.Core.Environments">
-     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Timeline.Editor">
-     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -950,11 +942,23 @@
      <Reference Include="Unity.Services.Core">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.State">
-     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.Core">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Core.Analytics">
+     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Shared.Editor">
+     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Core.Environments">
+     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Timeline.Editor">
+     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.State">
+     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

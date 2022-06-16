@@ -1,3 +1,4 @@
+using System.Collections;
 using Near;
 using Near.Models;
 using NearClientUnity.Utilities;
@@ -46,6 +47,13 @@ namespace UI.Main_menu.UIPopups
             mainMenuView.MainMenuController.SetBid(bid);
             // TODO: redirect URL
             Show();
+            
+            
+        }
+
+        private IEnumerable CheckGame()
+        {
+            yield return new  WaitForSeconds(60);
         }
 
         public void MakeUnavailable()

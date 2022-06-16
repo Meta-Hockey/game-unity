@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Near.MarketplaceContract;
 using Near.Models;
-using Near.Models.Team;
 using Near.Models.Team.Team;
 using Near.Models.Team.TeamIds;
 using NearClientUnity;
@@ -14,6 +13,48 @@ namespace Near.GameContract.ContractMethods
 {
     public static class Views
     {
+        public static async Task<List<AvailableGame>> GetAvailableGames()
+        {
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
+
+            dynamic args = new ExpandoObject();
+            args.from_index = 0;
+            args.limit = 50;
+
+            dynamic availableGamesResults = JsonConvert.DeserializeObject<List<dynamic>>(
+                await gameContract.View("get_available_games", args)
+                );
+
+            List<AvailableGame> availableGames = new List<AvailableGame>(); 
+            foreach (dynamic availableGamesResult in availableGamesResults)
+            {
+                AvailableGame availableGame = JsonConvert.DeserializeObject<AvailableGame>(
+                    availableGamesResult.result.ToString(), new AvailableGameParser()); 
+                
+                availableGames.Add(availableGame);
+            }
+
+            return availableGames;
+        }
+
+        /// <summary>
+        /// If user is not in the game gameId = -1
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<int> GetGameId()
+        {
+            string accountId = NearPersistentManager.Instance.WalletAccount.GetAccountId();
+            AvailableGame userGame = (await GetAvailableGames())
+                .FirstOrDefault(x => x.PlayerIds.Item1 == accountId || x.PlayerIds.Item2 == accountId);
+
+        if (userGame == null)
+            {
+                return -1;
+            }
+            
+            return userGame.GameId;
+        }
+        
         public static async Task<IEnumerable<Opponent>> GetAvailablePlayers()
         {
             ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
