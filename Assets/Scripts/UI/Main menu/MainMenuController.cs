@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Near.Models;
+using Near.Models.Game.Bid;
 
 namespace UI.Main_menu
 {

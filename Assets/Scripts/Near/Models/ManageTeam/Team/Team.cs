@@ -1,6 +1,7 @@
 using System.Collections.Generic;
+using Near.Models.Team.Team;
 
-namespace Near.Models.Team.Team
+namespace Near.Models.ManageTeam.Team
 {
     public class Team
     {

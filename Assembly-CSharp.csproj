@@ -184,10 +184,10 @@
      <Compile Include="Assets\Scripts\Near\Models\ManageTeam\Team\Five.cs" />
      <Compile Include="Assets\Scripts\UI\ManageTeam\DragAndDrop\UIPlayer.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\UIPopups\UIPopupOpponentsBets.cs" />
-     <Compile Include="Assets\Scripts\Near\Models\Game\Opponent.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Bid\Opponent.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\NearSignature.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\MintNft\MintNftView.cs" />
-     <Compile Include="Assets\Scripts\Near\Models\Game\Bid.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Bid\Bid.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Ed25519Ops\open.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\IExternalAuthService.cs" />
      <Compile Include="Assets\Scripts\Near\Models\ManageTeam\TeamIds\TeamIds.cs" />
@@ -200,7 +200,7 @@
      <Compile Include="Assets\Scripts\UI\ManageTeam\DragAndDrop\GoalieCard.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\Goalie\GoalieDescriptionUI.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\FreeAgents\FreeAgentsView.cs" />
-     <Compile Include="Assets\Scripts\Near\Models\Game\GameConfig.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Bid\GameConfig.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\INetwork.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\SignerConfig.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\P1P1ConvertToP3.cs" />
@@ -257,10 +257,12 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\Msub.cs" />
      <Compile Include="Assets\Scripts\UI\GameUI\GameView.cs" />
      <Compile Include="Assets\Scripts\UI\GameUI\GameController.cs" />
-     <Compile Include="Assets\Scripts\Near\Models\Game\AvailableGame.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Bid\AvailableGame.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Game\Event.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Game\Team\FieldPlayer.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Game\Team\Goalie.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Team\Team.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Team\Player.cs" />
      <None Include="Assets\Fonts\Orbitron\OFL.txt" />
      <None Include="Assets\Fonts\Orbitron\README.txt" />
      <None Include="Assets\Fonts\Digital-Numbers\digitalnumbers\OFL.txt" />

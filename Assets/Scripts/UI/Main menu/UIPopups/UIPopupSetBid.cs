@@ -1,6 +1,7 @@
 using System.Collections;
 using Near;
 using Near.Models;
+using Near.Models.Game.Bid;
 using NearClientUnity.Utilities;
 using Runtime;
 using UnityEngine;

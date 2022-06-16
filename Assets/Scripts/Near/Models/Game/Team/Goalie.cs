@@ -1,7 +1,9 @@
-﻿namespace Near.Models
+﻿using Near.Models.Extras;
+
+namespace Near.Models.Game.Team
 {
-    public class Goalie
+    public class Goalie : Player
     {
-        
+        public GoalieStats Stats;
     }
 }

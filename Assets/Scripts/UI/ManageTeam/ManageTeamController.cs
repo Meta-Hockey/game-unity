@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Near.GameContract.ContractMethods;
 using Near.Models;
+using Near.Models.ManageTeam.Team;
 using Near.Models.Team.Team;
 
 namespace UI.ManageTeam

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Near;
 using Near.Models;
 using Near.Models.Game;
+using Near.Models.Game.Bid;
 using NearClientUnity.Utilities;
 using Runtime;
 using UI.Marketplace.NftCardsUI;

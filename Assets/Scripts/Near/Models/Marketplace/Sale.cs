@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Near.Models.Game;
+using Near.Models.Game.Bid;
 
 namespace Near.Models
 {

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Near.MarketplaceContract;
 using Near.Models;
+using Near.Models.Game.Bid;
+using Near.Models.ManageTeam.Team;
 using Near.Models.Team.Team;
 using Near.Models.Team.TeamIds;
 using NearClientUnity;

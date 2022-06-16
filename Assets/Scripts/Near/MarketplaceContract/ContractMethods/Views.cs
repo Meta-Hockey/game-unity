@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Near.Models;
 using Near.Models.Game;
+using Near.Models.Game.Bid;
 using NearClientUnity;
 using NearClientUnity.Utilities;
 using Newtonsoft.Json;

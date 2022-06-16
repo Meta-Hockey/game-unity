@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Dynamic;
 using System.Threading.Tasks;
 using Near.Models;
+using Near.Models.Game;
+using Near.Models.ManageTeam.Team;
 using Near.Models.Team.Team;
 using NearClientUnity;
 using Newtonsoft.Json;
