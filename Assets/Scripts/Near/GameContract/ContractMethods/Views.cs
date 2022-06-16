@@ -36,7 +36,7 @@ namespace Near.GameContract.ContractMethods
             return result;
         }
         
-        public static async Task<string> IsAlreadyInTheList()
+        public static async Task<bool> IsAlreadyInTheList()
         {
             ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
                 
@@ -45,9 +45,21 @@ namespace Near.GameContract.ContractMethods
 
             dynamic isInTheList = await gameContract.View("is_already_in_the_waiting_list", args);
             
-            return isInTheList.result;
+            return bool.Parse(isInTheList.result);
         }
 
+        public static async Task<GameConfig> GetGameConfig()
+        {
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
+                
+            dynamic args = new ExpandoObject();
+            args.account_id = NearPersistentManager.Instance.WalletAccount.GetAccountId();
+
+            dynamic gameConfig = await gameContract.View("get_game_config", args);
+            
+            return JsonConvert.DeserializeObject<GameConfig>(gameConfig.result);
+        }
+        
         private static Metadata ParseMetadata(dynamic card)
         {
             return new Metadata()

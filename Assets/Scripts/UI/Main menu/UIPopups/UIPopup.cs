@@ -2,9 +2,9 @@ using UnityEngine;
 
 namespace UI.Main_menu.UIPopups
 {
-    public class UIPopup : MonoBehaviour
+    public abstract class UIPopup : MonoBehaviour
     {
-        [SerializeField] private MainMenuView mainMenuView;
+        [SerializeField] protected MainMenuView mainMenuView;
 
         public void Show()
         {

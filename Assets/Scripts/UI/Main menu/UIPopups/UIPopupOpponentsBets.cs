@@ -14,7 +14,7 @@ namespace UI.Main_menu.UIPopups
     public class UIPopupOpponentsBets : UIPopup
     {
         [SerializeField] private Transform content;
-        [SerializeField] private UIPopupSetBid uiPopupSetBid;
+        [SerializeField] private UIPopupOpponent uiPopupOpponent;
 
         [SerializeField] private MainMenuController controller;
 
@@ -26,8 +26,25 @@ namespace UI.Main_menu.UIPopups
             controller = new MainMenuController();
         }
 
+        public void ChooseOpponent()
+        {
+            if (_selectedOpponentBet)
+            {
+                uiPopupOpponent.Show();
+                uiPopupOpponent.LoadData(_selectedOpponentBet);
+            }
+        }
+        
         public async void LoadOpponentBeds()
         {
+            if (_opponentBets != null)
+            {
+                foreach (OpponentBet opponentBet in _opponentBets)
+                {
+                    Destroy(opponentBet.gameObject); 
+                }    
+            }
+            
             _opponentBets = new List<OpponentBet>();
             IEnumerable<Opponent> opponents = await controller.GetOpponents();
             

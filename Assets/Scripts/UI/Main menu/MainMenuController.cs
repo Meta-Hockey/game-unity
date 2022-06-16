@@ -11,9 +11,24 @@ namespace UI.Main_menu
             Near.GameContract.ContractMethods.Actions.MakeAvailable(bid);
         }
 
+        public void MakeUnAvailable()
+        {
+            Near.GameContract.ContractMethods.Actions.MakeUnavailable();
+        }
+
         public async Task<IEnumerable<Opponent>> GetOpponents()
         {
             return await Near.GameContract.ContractMethods.Views.GetAvailablePlayers();
+        }
+
+        public async Task<bool> IsAlreadyInTheList()
+        {
+            return await Near.GameContract.ContractMethods.Views.IsAlreadyInTheList();
+        }
+
+        public async Task<GameConfig> GetGameConfig()
+        {
+            return await Near.GameContract.ContractMethods.Views.GetGameConfig();
         }
     }
 }
