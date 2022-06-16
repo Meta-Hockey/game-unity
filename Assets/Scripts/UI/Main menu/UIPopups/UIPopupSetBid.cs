@@ -2,6 +2,7 @@ using System.Collections;
 using Near;
 using Near.Models;
 using NearClientUnity.Utilities;
+using Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,12 +16,13 @@ namespace UI.Main_menu.UIPopups
         [SerializeField] private Transform setBidView;
 
         [SerializeField] private Text ownBid;
+
+        private bool isWaitForOpponent;
         
         public new async void Show()
         {
             bool isAlreadyInTheList = await mainMenuView.MainMenuController.IsAlreadyInTheList();
             
-            await Near.GameContract.ContractMethods.Views.GetAvailableGames();
             if (isAlreadyInTheList)
             {
                 GameConfig gameConfig = await mainMenuView.MainMenuController.GetGameConfig();
@@ -28,9 +30,15 @@ namespace UI.Main_menu.UIPopups
                 
                 waitForOpponentView.gameObject.SetActive(true);
                 setBidView.gameObject.SetActive(false);
+
+                isWaitForOpponent = true;
+                StartCoroutine(WaitForOpponent());
             }
             else
             {
+                isWaitForOpponent = false;
+                CheckGame();
+                
                 waitForOpponentView.gameObject.SetActive(false);
                 setBidView.gameObject.SetActive(true);
             }
@@ -48,18 +56,41 @@ namespace UI.Main_menu.UIPopups
             mainMenuView.MainMenuController.SetBid(bid);
             // TODO: redirect URL
             Show();
-            
-            
+            isWaitForOpponent = true;
+            StartCoroutine(WaitForOpponent());
         }
 
-        private IEnumerable CheckGame()
+        private IEnumerator WaitForOpponent()
         {
-            yield return new  WaitForSeconds(60);
+            while (true)
+            {
+                yield return new WaitForSeconds(1);
+
+                if (!isWaitForOpponent)
+                {
+                    yield break;
+                }
+                
+                CheckGame();
+            }
+        }
+
+        private async void CheckGame()
+        {
+            int gameId = await mainMenuView.MainMenuController.GetGameId();
+
+            if (gameId != -1)
+            {
+                isWaitForOpponent = false;
+                Game.LoadGame();    
+            }
         }
 
         public void MakeUnavailable()
         {
             mainMenuView.MainMenuController.MakeUnAvailable();
+            isWaitForOpponent = false;
+            
             // TODO: redirect URL
             waitForOpponentView.gameObject.SetActive(false);
             setBidView.gameObject.SetActive(true);

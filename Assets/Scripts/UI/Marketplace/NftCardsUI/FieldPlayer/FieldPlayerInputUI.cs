@@ -64,7 +64,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             fieldPlayer.position = _position;
             fieldPlayer.role = _role;
             fieldPlayer.hand = hand.isOn ? "Right" : "Left";
-            fieldPlayer.number = number.text;
+            fieldPlayer.number = int.Parse(number.text);
             fieldPlayer.stats = new []
             { 
                 int.Parse(iQ.text),

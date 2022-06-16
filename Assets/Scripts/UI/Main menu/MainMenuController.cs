@@ -10,6 +10,11 @@ namespace UI.Main_menu
         {
             Near.GameContract.ContractMethods.Actions.StartGame(opponentId, deposit);
         }
+
+        public async Task<int> GetGameId()
+        {
+            return await Near.GameContract.ContractMethods.Views.GetGameId();
+        }
         
         public void SetBid(string bid)
         {
