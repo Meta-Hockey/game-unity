@@ -15,11 +15,12 @@ namespace UI.Main_menu.UIPopups
         [SerializeField] private Transform setBidView;
 
         [SerializeField] private Text ownBid;
-
+        
         public new async void Show()
         {
             bool isAlreadyInTheList = await mainMenuView.MainMenuController.IsAlreadyInTheList();
             
+            await Near.GameContract.ContractMethods.Views.GetAvailableGames();
             if (isAlreadyInTheList)
             {
                 GameConfig gameConfig = await mainMenuView.MainMenuController.GetGameConfig();

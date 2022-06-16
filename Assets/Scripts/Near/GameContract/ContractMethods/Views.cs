@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
@@ -21,17 +22,23 @@ namespace Near.GameContract.ContractMethods
             args.from_index = 0;
             args.limit = 50;
 
-            dynamic availableGamesResults = JsonConvert.DeserializeObject<List<dynamic>>(
-                await gameContract.View("get_available_games", args)
+            dynamic results = await gameContract.View("get_available_games", args);
+            List<dynamic> availableGamesResults = JsonConvert.DeserializeObject<List<dynamic>>(
+                results.result.ToString()
                 );
 
             List<AvailableGame> availableGames = new List<AvailableGame>(); 
             foreach (dynamic availableGamesResult in availableGamesResults)
             {
-                AvailableGame availableGame = JsonConvert.DeserializeObject<AvailableGame>(
-                    availableGamesResult.result.ToString(), new AvailableGameParser()); 
+                int gameId = availableGamesResult[0];
+                string playerId1 = availableGamesResult[1][0].ToString();
+                string playerId2 = availableGamesResult[1][1].ToString();
                 
-                availableGames.Add(availableGame);
+                availableGames.Add(new AvailableGame()
+                {
+                    GameId = gameId, 
+                    PlayerIds = new Tuple<string, string>(playerId1, playerId2)
+                });
             }
 
             return availableGames;

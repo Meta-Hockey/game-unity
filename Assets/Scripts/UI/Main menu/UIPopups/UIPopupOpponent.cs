@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,9 @@ namespace UI.Main_menu.UIPopups
         [SerializeField] private Text defensive;
         [SerializeField] private Text attack;
         [SerializeField] private Text goalie;
-        
+
+
+
         public void LoadData(OpponentBet bet)
         {
             opponentId.text = bet.OpponentId.text;
