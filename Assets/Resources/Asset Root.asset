@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 384fe1e998fc46f49027a259c7105718, type: 3}
   m_Name: Asset Root
   m_EditorClassIdentifier: 
+  mainMenuAsset: {fileID: 11400000, guid: 37c6cea8f8574a244b41d89dd518466b, type: 2}
   marketplaceAsset: {fileID: 11400000, guid: 34c1b212bb618c74baf0efc442541ca0, type: 2}
   manageTeamAsset: {fileID: 11400000, guid: 57e6e3f999e7022858b132abcc4af0d0, type: 2}
