@@ -54,7 +54,7 @@ namespace Near.GameContract.ContractMethods
             args.game_id = gameId;
             
 
-            var results = await gameContract.Change("generate_event", args, NearUtils.GasMakeAvailable);
+            var results = await gameContract.Change("generate_event", args, NearUtils.GasMove);
             List<Event> events = JsonConvert.DeserializeObject<List<Event>>(results);
 
             return events;

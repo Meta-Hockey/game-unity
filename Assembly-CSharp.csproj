@@ -264,6 +264,11 @@
      <Compile Include="Assets\Scripts\Near\Models\Game\Team\Team.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Game\Team\Player.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Game\Team\Five.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\GameAsset.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\Events\GoalEvent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\Events\OpponentEvent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\Events\OwnEvent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\Events\OtherEvent.cs" />
      <None Include="Assets\Fonts\Orbitron\OFL.txt" />
      <None Include="Assets\Fonts\Orbitron\README.txt" />
      <None Include="Assets\Fonts\Digital-Numbers\digitalnumbers\OFL.txt" />
