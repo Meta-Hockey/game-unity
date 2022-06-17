@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Runtime;
-using UI.GameUI.Events;
+using UI.GameUI.EventsUI;
 using UnityEngine;
 using UnityEngine.UI;
 using Event = Near.Models.Game.Event;
@@ -84,24 +84,28 @@ namespace UI.GameUI
                 
                 switch (data.action)
                 {
+                    case "EndOfPeriod":
+                        DefaultEvent endOfPer = Instantiate(Game.AssetRoot.gameAsset.defaultEvent, eventsContent); 
+                        endOfPer.ShowEvent(data);
+                        ChangePeriod();
+                        
+                        continue;
                     case "Overtime":
                     case "FaceOff":
-                    case "EndOfPeriod":
                     case "StartGame":
-                        OtherEvent otherEvent = Instantiate(Game.AssetRoot.gameAsset.otherEvent, eventsContent);
-                        otherEvent.transform.SetAsLastSibling();
-                        
-                        otherEvent.textAction.text = data.action;
+                        DefaultEvent defaultEvent = Instantiate(Game.AssetRoot.gameAsset.defaultEvent, eventsContent);
+                        defaultEvent.ShowEvent(data);
                         
                         continue;
                     case "Goal":
                         GoalEvent goalEvent = Instantiate(Game.AssetRoot.gameAsset.goalEvent, eventsContent);
-                       
-                        goalEvent.transform.SetAsLastSibling();
-                        goalEvent.text.color = myId != data.player_with_puck.user_id ? Color.red : Color.blue;
-
+                        goalEvent.ShowEvent(data); 
+                        
                         continue;
                     case "GameFinish":
+                        DefaultEvent gameFinish = Instantiate(Game.AssetRoot.gameAsset.defaultEvent, eventsContent); 
+                        gameFinish.ShowEvent(data); 
+                        
                         isEndOfGame = true;
                         resultView.ShowResult(ownScore, opponentScore);
                         
@@ -111,16 +115,12 @@ namespace UI.GameUI
                 if (data.player_with_puck.user_id != myId)
                 {
                     OpponentEvent opponentEvent = Instantiate(Game.AssetRoot.gameAsset.opponentEvent, eventsContent);
-                   
-                    opponentEvent.transform.SetAsLastSibling(); 
-                    opponentEvent.textAction.text = data.action;
+                    opponentEvent.ShowEvent(data);
                 }
                 else
                 {
                     OwnEvent ownEvent = Instantiate(Game.AssetRoot.gameAsset.ownEvent, eventsContent);
-                    
-                    ownEvent.transform.SetAsLastSibling();
-                    ownEvent.textAction.text = data.action;
+                    ownEvent.ShowEvent(data);
                 }
             }
 
@@ -130,6 +130,15 @@ namespace UI.GameUI
             isRenders = false;
         }
 
+        private void ChangePeriod()
+        {
+            int period = int.Parse(periodText.text);
+            if (period < 3)
+            {
+                periodText.text = (period + 1).ToString();
+            }
+        }
+        
         private void UpdateStats(Event data)
         {
         }

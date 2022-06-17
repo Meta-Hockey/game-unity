@@ -3808,10 +3808,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb7f7dbf41d4940afd9f4a14e0c7f2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resultView: {fileID: 0}
-  ownScoreText: {fileID: 0}
-  opponentScoreText: {fileID: 0}
-  periodText: {fileID: 0}
+  resultView: {fileID: 164155966}
+  ownScoreText: {fileID: 1017110412}
+  opponentScoreText: {fileID: 1133645321}
+  periodText: {fileID: 1883831824}
   eventsContent: {fileID: 509680424}
   scrollView: {fileID: 360966001}
 --- !u!4 &1223493126
@@ -6144,7 +6144,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: 1
 --- !u!222 &1883831825
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Runtime;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace UI.GameUI
@@ -24,6 +25,11 @@ namespace UI.GameUI
             opponentScoreText.text = opponentScore < 10 ? "0" + opponentScore : opponentScore.ToString();
             
             gameObject.SetActive(true);
+        }
+
+        public void LoadMainMenu()
+        {
+            Game.LoadMainMenu();
         }
     }
 }

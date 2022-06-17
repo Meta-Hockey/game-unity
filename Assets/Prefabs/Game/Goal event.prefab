@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 390caec5c20547dd9df92ff447c4b8ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textColor: {r: 0.75294125, g: 0.75294125, b: 0.75294125, a: 1}
+  eventText: {fileID: 5857740234294740018}
 --- !u!1 &5857740234971054805
 GameObject:
   m_ObjectHideFlags: 0

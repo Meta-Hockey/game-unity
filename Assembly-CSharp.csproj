@@ -42,7 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Near\Models\Game\Bid\AvailableGame.cs" />
-     <Compile Include="Assets\Scripts\UI\GameUI\Events\GoalEvent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\EventsUI\GoalEvent.cs" />
      <Compile Include="Assets\Scripts\Runtime\Runner.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\ConditionalMove.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\MainMenuAsset.cs" />
@@ -95,7 +95,7 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\P3ConvertToP2.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\KeyPairEd25519.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\Goalie\GoalieInputUI.cs" />
-     <Compile Include="Assets\Scripts\UI\GameUI\Events\OtherEvent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\EventsUI\DefaultEvent.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\KeyStores\UnencryptedFileSystemKeyStore.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Sha512Internal.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\RolesButton.cs" />
@@ -111,8 +111,8 @@
      <Compile Include="Assets\Scripts\Near\Models\ManageTeam\TeamIds\FiveIds.cs" />
      <Compile Include="Assets\Scripts\Near\MarketplaceContract\ContractMethods\Views.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Action.cs" />
-     <Compile Include="Assets\Scripts\UI\GameUI\Events\OpponentEvent.cs" />
-     <Compile Include="Assets\Scripts\UI\GameUI\Events\OwnEvent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\EventsUI\OpponentEvent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\EventsUI\OwnEvent.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\IsNonZero.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\Provider.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\AccessKeyPermissionType.cs" />
