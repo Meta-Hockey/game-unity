@@ -10,6 +10,12 @@ namespace UI.GameUI
 {
     public class GameView : MonoBehaviour
     {
+        [SerializeField] private UIPopupResult resultView;
+        
+        [SerializeField] private Text ownScoreText;
+        [SerializeField] private Text opponentScoreText;
+        [SerializeField] private Text periodText;
+        
         [SerializeField] private Transform eventsContent;
         [SerializeField] private ScrollRect scrollView;
 
@@ -19,6 +25,8 @@ namespace UI.GameUI
         
         private GameController controller;
         private List<Event> events;
+
+        private bool isRenders;
         
         private async void Start()
         {
@@ -39,33 +47,46 @@ namespace UI.GameUI
             while (!isEndOfGame)
             {
                 controller.GenerateEvents(gameId);
-                RenderEvents();
+
+                if (!isRenders)
+                {
+                    StartCoroutine(RenderEvents());
+                }
                 
-                yield return new WaitForSeconds(2);
+                yield return new WaitForSeconds(1);
             }
         }
 
-        private void RenderEvents()
+        private IEnumerator RenderEvents()
         {
             if (numberOfRenderedEvents == controller.NumberOfGeneratedEvents)
             {
-                return;
+                yield break;
             }
+
+            isRenders = true;
             
             int numberOfGeneratedEvents = controller.NumberOfGeneratedEvents;
             for (int i = numberOfRenderedEvents; i < numberOfGeneratedEvents; i++)
             {
+                yield return new WaitForSeconds(1);
+                scrollView.verticalNormalizedPosition = 0;
+                
                 Event data = controller.Events[i];
 
                 int myId = data.my_team.goalie.user_id;
-                
 
+                uint ownScore = data.my_team.score;
+                uint opponentScore = data.opponent_team.score;
+
+                ownScoreText.text = ownScore < 10 ? "0" + ownScore : ownScore.ToString();
+                opponentScoreText.text = opponentScore < 10 ? "0" + opponentScore : opponentScore.ToString();
+                
                 switch (data.action)
                 {
                     case "Overtime":
                     case "FaceOff":
                     case "EndOfPeriod":
-                    case "GameFinished":
                     case "StartGame":
                         OtherEvent otherEvent = Instantiate(Game.AssetRoot.gameAsset.otherEvent, eventsContent);
                         otherEvent.transform.SetAsLastSibling();
@@ -77,9 +98,14 @@ namespace UI.GameUI
                         GoalEvent goalEvent = Instantiate(Game.AssetRoot.gameAsset.goalEvent, eventsContent);
                        
                         goalEvent.transform.SetAsLastSibling();
-                        goalEvent.textColor = myId != data.player_with_puck.user_id ? Color.red : Color.blue;
+                        goalEvent.text.color = myId != data.player_with_puck.user_id ? Color.red : Color.blue;
 
                         continue;
+                    case "GameFinish":
+                        isEndOfGame = true;
+                        resultView.ShowResult(ownScore, opponentScore);
+                        
+                        yield break;
                 }
                 
                 if (data.player_with_puck.user_id != myId)
@@ -100,6 +126,8 @@ namespace UI.GameUI
 
             scrollView.verticalNormalizedPosition = 0;
             numberOfRenderedEvents = numberOfGeneratedEvents;
+
+            isRenders = false;
         }
 
         private void UpdateStats(Event data)

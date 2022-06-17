@@ -41,6 +41,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Near\Models\Game\Bid\AvailableGame.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\Events\GoalEvent.cs" />
      <Compile Include="Assets\Scripts\Runtime\Runner.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\ConditionalMove.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\MainMenuAsset.cs" />
@@ -52,6 +54,7 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\PublicKey.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\IsNegative.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\FinalExecutionStatusBasic.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\GameAsset.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\SignInView.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\CryptoBytes.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\ViewInteractor.cs" />
@@ -60,6 +63,7 @@
      <Compile Include="Assets\Scripts\Near\Models\Marketplace\Sale.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\AccountState.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\TotalWeight.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Team\Goalie.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Account.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\KeyTypeConverter.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\FieldPlayer\FieldPlayerInputUI.cs" />
@@ -91,11 +95,13 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\P3ConvertToP2.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\KeyPairEd25519.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\Goalie\GoalieInputUI.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\Events\OtherEvent.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\KeyStores\UnencryptedFileSystemKeyStore.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Sha512Internal.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\RolesButton.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\Buy cards\BidText.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\GetP3Dbl.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Team\Player.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\NftCardInputUI.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\ExecutionOutcomeWithId.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\P3ToCached.cs" />
@@ -105,6 +111,8 @@
      <Compile Include="Assets\Scripts\Near\Models\ManageTeam\TeamIds\FiveIds.cs" />
      <Compile Include="Assets\Scripts\Near\MarketplaceContract\ContractMethods\Views.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Action.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\Events\OpponentEvent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\Events\OwnEvent.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\IsNonZero.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\Provider.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\AccessKeyPermissionType.cs" />
@@ -175,10 +183,12 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\ScalarOps\Reduce.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\JsonRpcProvider.cs" />
      <Compile Include="Assets\Scripts\Near\MarketplaceContract\Parsers\IExtraParser.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\GameController.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\GetPreComp.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\WalletAccount.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\Sell cards\SellCardView.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\UIPopups\UIPopupSettings.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\GameView.cs" />
      <Compile Include="Assets\Scripts\Near\GameContract\ContractMethods\Actions.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\ProviderConfig.cs" />
      <Compile Include="Assets\Scripts\Near\Models\ManageTeam\Team\Five.cs" />
@@ -186,6 +196,7 @@
      <Compile Include="Assets\Scripts\UI\Main menu\UIPopups\UIPopupOpponentsBets.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Game\Bid\Opponent.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\NearSignature.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Team\Team.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\MintNft\MintNftView.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Game\Bid\Bid.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Ed25519Ops\open.cs" />
@@ -199,6 +210,7 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\FinalExecutionStatus.cs" />
      <Compile Include="Assets\Scripts\UI\ManageTeam\DragAndDrop\GoalieCard.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\Goalie\GoalieDescriptionUI.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Team\Five.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\FreeAgents\FreeAgentsView.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Game\Bid\GameConfig.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\INetwork.cs" />
@@ -211,6 +223,7 @@
      <Compile Include="Assets\Scripts\UI\Main menu\OpponentBet.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Extra.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\BlockHeader.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Event.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Connection.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Marketplace\SaleInfo.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\AccountCreator.cs" />
@@ -247,6 +260,7 @@
      <Compile Include="Assets\Scripts\Runtime\GameRunner.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\MontgomeryOps\ScalarMult.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\ExecutionStatus.cs" />
+     <Compile Include="Assets\Scripts\Near\Models\Game\Team\FieldPlayer.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\IExternalAuthStorage.cs" />
      <Compile Include="Assets\Scripts\Near\MarketplaceContract\ExtraConverter.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\Add.cs" />
@@ -255,20 +269,7 @@
      <Compile Include="Assets\Scripts\Near\Models\Extras\FieldPlayerExtra.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\MintNft\PositionButton.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\Msub.cs" />
-     <Compile Include="Assets\Scripts\UI\GameUI\GameView.cs" />
-     <Compile Include="Assets\Scripts\UI\GameUI\GameController.cs" />
-     <Compile Include="Assets\Scripts\Near\Models\Game\Bid\AvailableGame.cs" />
-     <Compile Include="Assets\Scripts\Near\Models\Game\Event.cs" />
-     <Compile Include="Assets\Scripts\Near\Models\Game\Team\FieldPlayer.cs" />
-     <Compile Include="Assets\Scripts\Near\Models\Game\Team\Goalie.cs" />
-     <Compile Include="Assets\Scripts\Near\Models\Game\Team\Team.cs" />
-     <Compile Include="Assets\Scripts\Near\Models\Game\Team\Player.cs" />
-     <Compile Include="Assets\Scripts\Near\Models\Game\Team\Five.cs" />
-     <Compile Include="Assets\Scripts\UI\GameUI\GameAsset.cs" />
-     <Compile Include="Assets\Scripts\UI\GameUI\Events\GoalEvent.cs" />
-     <Compile Include="Assets\Scripts\UI\GameUI\Events\OpponentEvent.cs" />
-     <Compile Include="Assets\Scripts\UI\GameUI\Events\OwnEvent.cs" />
-     <Compile Include="Assets\Scripts\UI\GameUI\Events\OtherEvent.cs" />
+     <Compile Include="Assets\Scripts\UI\GameUI\UIPopupResult.cs" />
      <None Include="Assets\Fonts\Orbitron\OFL.txt" />
      <None Include="Assets\Fonts\Orbitron\README.txt" />
      <None Include="Assets\Fonts\Digital-Numbers\digitalnumbers\OFL.txt" />
