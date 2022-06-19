@@ -15,9 +15,9 @@ MonoBehaviour:
   fieldPlayerCardTile: {fileID: 8397411083321723764, guid: ef70fe767d3f6674c85684867450c4af, type: 3}
   fieldPlayerCardDescription: {fileID: 9044912632805470155, guid: ab3c19b135cde3a4eb81d4cb5f2176db, type: 3}
   fieldPlayerInputUI: {fileID: 2952779108869935156, guid: e4fb889ff270b0a9bb26b310918c8d09, type: 3}
-  fieldPlayerCardUI: {fileID: 5427516847430301221, guid: a6be6285816f1f44b9515cdfdb5a02b1, type: 3}
+  fieldPlayerCardUI: {fileID: 5394080265272238260, guid: 92290effb261643498ba5f7445947a2e, type: 3}
   goalieNftCardUI: {fileID: 6392023576596532420, guid: 6cd0beba1b62cc043865030a34508be1, type: 3}
   goalieDescriptionUI: {fileID: 8559181328076912949, guid: ed8ed32932df6f447b4f01d0a6fe5ce2, type: 3}
   goalieInputUI: {fileID: 8968975252818913786, guid: 23d8ca9c69dc0c8989ff838c3c32c6b1, type: 3}
-  goalieCardUI: {fileID: 931162030759435779, guid: fc8d295566328ab4d9d210445475655f, type: 3}
+  goalieCardUI: {fileID: 7957114766191171668, guid: 9d4e952670592ff4eb90a89a09dee2c4, type: 3}
   bid: {fileID: 4597253030938329365, guid: 35295512d8040b640a0b811fe602f1fc, type: 3}

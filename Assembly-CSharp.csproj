@@ -273,6 +273,9 @@
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\FieldPlayer\FieldPlayerCardUI.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\Goalie\GoalieCardUI.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\CardUI.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\UIPopup.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\Buy cards\UIPopups\UIPopupPurchasedCard.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\Buy cards\UIPopups\UIPopupSetBid.cs" />
      <None Include="Assets\Fonts\Orbitron\OFL.txt" />
      <None Include="Assets\Fonts\Orbitron\README.txt" />
      <None Include="Assets\Fonts\Digital-Numbers\digitalnumbers\OFL.txt" />
