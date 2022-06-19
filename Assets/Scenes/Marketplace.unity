@@ -986,6 +986,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b00ac573514aa458a18a7529a078c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPopupOnAccept: {fileID: 1121717975}
+  uiPopupOnRemoveSale: {fileID: 2132665096}
+  uiPopupOnUpdatePrice: {fileID: 479317763}
   bidsView: {fileID: 1609119603}
   buyImmediatelyView: {fileID: 779532200}
   bidContent: {fileID: 4758928}
@@ -1471,9 +1474,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Marketplace.MintNft.MintNftView, Assembly-CSharp
-        m_MethodName: MintMore
+      - m_Target: {fileID: 479317763}
+        m_TargetAssemblyTypeName: UI.Marketplace.UIPopup, Assembly-CSharp
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2720,7 +2723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMin.x
@@ -2728,7 +2731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2768,11 +2771,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1185.5791
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -299.2987
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3962,7 +3965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMin.x
@@ -3970,7 +3973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4010,11 +4013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1524.3159
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -299.2987
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4177,7 +4180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4185,7 +4188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_SizeDelta.x
@@ -4225,11 +4228,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 169.36844
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -299.2987
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4500,6 +4503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 479317761}
   - component: {fileID: 479317762}
+  - component: {fileID: 479317763}
   m_Layer: 0
   m_Name: UIPopupOnUpdatePrice
   m_TagString: Untagged
@@ -4549,6 +4553,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &479317763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479317760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f0183ded034aa891d9c46c639a2e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 849456663}
+  newPriceText: {fileID: 566378633}
 --- !u!1 &529017307
 GameObject:
   m_ObjectHideFlags: 0
@@ -5213,9 +5231,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Marketplace.MintNft.MintNftView, Assembly-CSharp
-        m_MethodName: MintMore
+      - m_Target: {fileID: 2132665096}
+        m_TargetAssemblyTypeName: UI.Marketplace.UIPopup, Assembly-CSharp
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6684,7 +6702,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMin.x
@@ -6692,7 +6710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_SizeDelta.x
@@ -6732,11 +6750,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 846.84216
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -299.2987
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7585,7 +7603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMin.x
@@ -7593,7 +7611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_SizeDelta.x
@@ -7633,11 +7651,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 508.10532
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -299.2987
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 581449903632956710, guid: a721e5070604bf44b9f6acbd78db4d86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9051,6 +9069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1121717973}
   - component: {fileID: 1121717974}
+  - component: {fileID: 1121717975}
   m_Layer: 0
   m_Name: UIPopupOnAcceptOffer
   m_TagString: Untagged
@@ -9100,6 +9119,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1121717975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1121717972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c32c3622228a4fd793b474a8d2e7749c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 2035909471}
+  priceText: {fileID: 858308536}
 --- !u!1 &1131347494
 GameObject:
   m_ObjectHideFlags: 0
@@ -12697,7 +12730,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1747080513
 Transform:
   m_ObjectHideFlags: 0
@@ -15626,9 +15659,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.Marketplace.MintNft.MintNftView, Assembly-CSharp
-        m_MethodName: MintMore
+      - m_Target: {fileID: 1121717975}
+        m_TargetAssemblyTypeName: UI.Marketplace.UIPopup, Assembly-CSharp
+        m_MethodName: Close
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15723,6 +15756,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2132665094}
   - component: {fileID: 2132665095}
+  - component: {fileID: 2132665096}
   m_Layer: 0
   m_Name: 'UIPopupOnWithdrawn '
   m_TagString: Untagged
@@ -15772,6 +15806,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2132665096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132665093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a03b3c30bc924e0faeab07e1141863a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: {fileID: 565702301}
 --- !u!1 &2140439033
 GameObject:
   m_ObjectHideFlags: 0
