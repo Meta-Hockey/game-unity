@@ -28,9 +28,14 @@ namespace UI.Main_menu.UIPopups
 
         public void StartGame()
         {
-            // TODO: Redirect URL
             mainMenuView.MainMenuController.StartGame(opponentBet.OpponentId.text, opponentBet.Price.text);
-            
+
+            Application.deepLinkActivated += OnStartGame;
+        }
+
+        private void OnStartGame(string url)
+        {
+            Application.deepLinkActivated -= OnStartGame;
             Game.LoadGame();
         }
     }
