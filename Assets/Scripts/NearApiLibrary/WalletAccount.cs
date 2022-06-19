@@ -25,7 +25,12 @@ namespace NearClientUnity
         private string _networkId;
         private string _walletBaseUrl;
 
-        public WalletAccount(Near near, string appKeyPrefix, IExternalAuthService authService, IExternalAuthStorage authStorage)
+        private Uri _successUri;
+        private Uri _failUri;
+        private Uri _appUri;
+
+        public WalletAccount(Near near, string appKeyPrefix, IExternalAuthService authService, IExternalAuthStorage authStorage,
+            Uri successUri, Uri failUri, Uri appUri)
         {
             _networkId = near.Config.NetworkId;
             _walletBaseUrl = near.Config.WalletUrl;
@@ -36,6 +41,10 @@ namespace NearClientUnity
             _keyStore = (near.Connection.Signer as InMemorySigner).KeyStore;
             _authService = authService;
             _authStorage = authStorage;
+
+            _successUri = successUri;
+            _failUri = failUri;
+            _appUri = appUri;
 
            
             if (_authStorage.HasKey(_authDataKey))
@@ -86,7 +95,7 @@ namespace NearClientUnity
             return true;
         }
 
-        public async Task<bool> RequestSignIn(string contractId, string title, Uri successUrl, Uri failureUrl, Uri appUrl)
+        public async Task<bool> RequestSignIn(string contractId, string title)
         {
             if (!string.IsNullOrWhiteSpace(GetAccountId())) return true;
             if (await _keyStore.GetKeyAsync(_networkId, GetAccountId()) != null) return true;
@@ -99,9 +108,9 @@ namespace NearClientUnity
             {
                 { "title", title },
                 { "contract_id", contractId },
-                { "success_url", successUrl.AbsoluteUri },
-                { "failure_url", failureUrl.AbsoluteUri },
-                { "app_url", appUrl.AbsoluteUri},
+                { "success_url", _successUri.AbsoluteUri },
+                { "failure_url", _failUri.AbsoluteUri },
+                { "app_url", _appUri.AbsoluteUri},
                 { "public_key", accessKey.GetPublicKey().ToString() },
             }).ReadAsStringAsync().Result;
 
@@ -288,6 +297,7 @@ namespace NearClientUnity
             url.Query = new FormUrlEncodedContent(new Dictionary<string, string>()
             {
                 { "transactions", transaction },
+                { "callbackUrl", _appUri.AbsoluteUri}, 
             }).ReadAsStringAsync().Result;
 
             _authService.OpenUrl(url.Uri.AbsoluteUri);

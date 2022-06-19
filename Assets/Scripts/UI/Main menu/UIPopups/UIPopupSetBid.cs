@@ -56,7 +56,15 @@ namespace UI.Main_menu.UIPopups
         {
             mainMenuView.MainMenuController.SetBid(bid);
             // TODO: redirect URL
+            Application.deepLinkActivated += OnSetBid;
+        }
+
+        private void OnSetBid(string url)
+        {
+            Application.deepLinkActivated -=OnSetBid;
+            
             Show();
+            
             isWaitForOpponent = true;
             StartCoroutine(WaitForOpponent());
         }
