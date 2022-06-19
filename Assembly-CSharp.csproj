@@ -276,6 +276,7 @@
      <Compile Include="Assets\Scripts\UI\Marketplace\UIPopup.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\Buy cards\UIPopups\UIPopupPurchasedCard.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\Buy cards\UIPopups\UIPopupSetBid.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\Sell cards\UIPopupOnSell.cs" />
      <None Include="Assets\Fonts\Orbitron\OFL.txt" />
      <None Include="Assets\Fonts\Orbitron\README.txt" />
      <None Include="Assets\Fonts\Digital-Numbers\digitalnumbers\OFL.txt" />

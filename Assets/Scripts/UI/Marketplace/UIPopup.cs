@@ -5,7 +5,7 @@ namespace UI.Marketplace
 {
     public abstract class UIPopup : MonoBehaviour
     {
-        [SerializeField] private Text title;
+        [SerializeField] protected Text title;
 
         public void Show()
         {
