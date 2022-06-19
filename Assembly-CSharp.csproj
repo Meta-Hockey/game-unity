@@ -270,6 +270,9 @@
      <Compile Include="Assets\Scripts\Near\Models\Extras\FieldPlayerExtra.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\MintNft\PositionButton.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\Msub.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\FieldPlayer\FieldPlayerCardUI.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\Goalie\GoalieCardUI.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\CardUI.cs" />
      <None Include="Assets\Fonts\Orbitron\OFL.txt" />
      <None Include="Assets\Fonts\Orbitron\README.txt" />
      <None Include="Assets\Fonts\Digital-Numbers\digitalnumbers\OFL.txt" />

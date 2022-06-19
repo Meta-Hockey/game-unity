@@ -12,10 +12,12 @@ namespace UI.Marketplace
         public FieldPlayerNftCardUI fieldPlayerCardTile;
         public FieldPlayerDescriptionUI fieldPlayerCardDescription;
         public FieldPlayerInputUI fieldPlayerInputUI;
+        public FieldPlayerCardUI fieldPlayerCardUI;
 
         public GoalieNftCardUI goalieNftCardUI;
         public GoalieDescriptionUI goalieDescriptionUI;
         public GoalieInputUI goalieInputUI;
+        public GoalieCardUI goalieCardUI;
 
         public BidText bid;
     }

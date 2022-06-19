@@ -13,5 +13,7 @@ namespace UI.Marketplace.NftCardsUI
         public virtual void SetRole(string role, RolesButton activeButton) {}
 
         public abstract void MintCard(Dictionary<string, double> royalties);
+
+        public abstract void ShowMintedCard(Transform content);
     }
 }
