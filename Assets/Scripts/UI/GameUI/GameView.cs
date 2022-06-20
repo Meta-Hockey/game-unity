@@ -102,7 +102,7 @@ namespace UI.GameUI
                         goalEvent.ShowEvent(data); 
                         
                         continue;
-                    case "GameFinish":
+                    case "GameFinished":
                         DefaultEvent gameFinish = Instantiate(Game.AssetRoot.gameAsset.defaultEvent, eventsContent); 
                         gameFinish.ShowEvent(data); 
                         
