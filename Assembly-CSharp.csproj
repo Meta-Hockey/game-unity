@@ -81,7 +81,9 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Lookup\D.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\ProviderType.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\ScalarOps\MulAdd.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\FreeAgents\UIPopups\UIPopupOnAccept.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\NearBinaryWriter.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\FreeAgents\UIPopups\UIPopupOnRemoveSale.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\ControlledSwap.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\KeyStores\MergeKeyStore.cs" />
      <Compile Include="Assets\Scripts\UI\ManageTeam\Buttons\LineButton.cs" />
@@ -93,6 +95,7 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\AccessKey.cs" />
      <Compile Include="Assets\Scripts\UI\ManageTeam\Buttons\SwitchColorButtonsView.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Lookup\D2.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\FieldPlayer\FieldPlayerCardUI.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\P3ConvertToP2.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\KeyPairEd25519.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\Goalie\GoalieInputUI.cs" />
@@ -126,6 +129,7 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Lookup\sqrtm1.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\SyncInfo.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\ByteIntegerConverter.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\Goalie\GoalieCardUI.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\ConnectionConfig.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\ToBytes.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\FieldPlayer\FieldPlayerNftCardUI.cs" />
@@ -137,6 +141,7 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\ContractOptions.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\FreeAgents\FreeAgentView.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\ExecutionError.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\UIPopup.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Near.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Lookup\Base2.cs" />
      <Compile Include="Assets\Scripts\Near\GameContract\ContractMethods\Views.cs" />
@@ -149,6 +154,7 @@
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\NftCardUI.cs" />
      <Compile Include="Assets\Scripts\Near\MarketplaceContract\ContractMethods\Actions.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Array16.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\Buy cards\UIPopups\UIPopupPurchasedCard.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\Square2.cs" />
      <Compile Include="Assets\Scripts\UI\ManageTeam\ManageTeamAsset.cs" />
      <Compile Include="Assets\Scripts\UI\ManageTeam\ManageTeamView.cs" />
@@ -186,6 +192,7 @@
      <Compile Include="Assets\Scripts\Near\MarketplaceContract\Parsers\IExtraParser.cs" />
      <Compile Include="Assets\Scripts\UI\GameUI\GameController.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\GetPreComp.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\FreeAgents\UIPopups\UIPopupOnUpdatePrice.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\WalletAccount.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\Sell cards\SellCardView.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\UIPopups\UIPopupSettings.cs" />
@@ -212,6 +219,7 @@
      <Compile Include="Assets\Scripts\UI\ManageTeam\DragAndDrop\GoalieCard.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\Goalie\GoalieDescriptionUI.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Game\Team\Five.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\Sell cards\UIPopupOnSell.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\FreeAgents\FreeAgentsView.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Game\Bid\GameConfig.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\INetwork.cs" />
@@ -228,6 +236,7 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Connection.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Marketplace\SaleInfo.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\AccountCreator.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\CardUI.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\P1P1ConvertToP2.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\Madd.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\Subtract.cs" />
@@ -261,6 +270,7 @@
      <Compile Include="Assets\Scripts\Runtime\GameRunner.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\MontgomeryOps\ScalarMult.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\ExecutionStatus.cs" />
+     <Compile Include="Assets\Scripts\UI\Marketplace\Buy cards\UIPopups\UIPopupSetBid.cs" />
      <Compile Include="Assets\Scripts\Near\Models\Game\Team\FieldPlayer.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\IExternalAuthStorage.cs" />
      <Compile Include="Assets\Scripts\Near\MarketplaceContract\ExtraConverter.cs" />
@@ -270,16 +280,6 @@
      <Compile Include="Assets\Scripts\Near\Models\Extras\FieldPlayerExtra.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\MintNft\PositionButton.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\Msub.cs" />
-     <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\FieldPlayer\FieldPlayerCardUI.cs" />
-     <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\Goalie\GoalieCardUI.cs" />
-     <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\CardUI.cs" />
-     <Compile Include="Assets\Scripts\UI\Marketplace\UIPopup.cs" />
-     <Compile Include="Assets\Scripts\UI\Marketplace\Buy cards\UIPopups\UIPopupPurchasedCard.cs" />
-     <Compile Include="Assets\Scripts\UI\Marketplace\Buy cards\UIPopups\UIPopupSetBid.cs" />
-     <Compile Include="Assets\Scripts\UI\Marketplace\Sell cards\UIPopupOnSell.cs" />
-     <Compile Include="Assets\Scripts\UI\Marketplace\FreeAgents\UIPopups\UIPopupOnAccept.cs" />
-     <Compile Include="Assets\Scripts\UI\Marketplace\FreeAgents\UIPopups\UIPopupOnUpdatePrice.cs" />
-     <Compile Include="Assets\Scripts\UI\Marketplace\FreeAgents\UIPopups\UIPopupOnRemoveSale.cs" />
      <None Include="Assets\Fonts\Orbitron\OFL.txt" />
      <None Include="Assets\Fonts\Orbitron\README.txt" />
      <None Include="Assets\Fonts\Digital-Numbers\digitalnumbers\OFL.txt" />
