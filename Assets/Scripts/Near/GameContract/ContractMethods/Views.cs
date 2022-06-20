@@ -46,17 +46,24 @@ namespace Near.GameContract.ContractMethods
             return availableGames;
         }
 
+        public static async Task<AvailableGame> GetUserGame()
+        {
+            string accountId = NearPersistentManager.Instance.WalletAccount.GetAccountId();
+            AvailableGame userGame = (await GetAvailableGames())
+                .FirstOrDefault(x => x.PlayerIds.Item1 == accountId || x.PlayerIds.Item2 == accountId);
+
+            return userGame;
+        }
+        
         /// <summary>
         /// If user is not in the game gameId = -1
         /// </summary>
         /// <returns></returns>
         public static async Task<int> GetGameId()
         {
-            string accountId = NearPersistentManager.Instance.WalletAccount.GetAccountId();
-            AvailableGame userGame = (await GetAvailableGames())
-                .FirstOrDefault(x => x.PlayerIds.Item1 == accountId || x.PlayerIds.Item2 == accountId);
+            AvailableGame userGame = await GetUserGame();
 
-        if (userGame == null)
+            if (userGame == null)
             {
                 return -1;
             }

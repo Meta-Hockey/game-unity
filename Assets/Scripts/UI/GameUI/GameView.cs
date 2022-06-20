@@ -1,5 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Near;
+using Near.Models.Game.Bid;
+using Near.Models.Game.Team;
 using Runtime;
 using UI.GameUI.EventsUI;
 using UnityEngine;
@@ -14,6 +17,7 @@ namespace UI.GameUI
         
         [SerializeField] private Text ownScoreText;
         [SerializeField] private Text opponentScoreText;
+        [SerializeField] private Text opponentIdText;
         [SerializeField] private Text periodText;
         
         [SerializeField] private Transform eventsContent;
@@ -31,15 +35,20 @@ namespace UI.GameUI
         private async void Start()
         {
             controller = new GameController();
-            gameId = await controller.GetGameId();
+            AvailableGame availableGame = await controller.GetUserGame();
+            
+            if (availableGame == null)
+            {
+                return;
+            }
             
             numberOfRenderedEvents = 0;
             isEndOfGame = false;
             
-            if (gameId != -1)
-            {
-                StartCoroutine(GenerateEvents());
-            }
+            opponentIdText.text = availableGame.PlayerIds.Item1 == NearPersistentManager.Instance.GetAccountId()
+                ? availableGame.PlayerIds.Item1 : availableGame.PlayerIds.Item2;
+
+            StartCoroutine(GenerateEvents());
         }
 
         private IEnumerator GenerateEvents()

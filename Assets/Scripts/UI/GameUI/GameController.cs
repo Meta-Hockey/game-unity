@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Near.Models.Game;
+using Near.Models.Game.Bid;
 
 namespace UI.GameUI
 {
@@ -18,9 +19,9 @@ namespace UI.GameUI
             NumberOfGeneratedEvents = 0;
         }
         
-        public async Task<int> GetGameId()
+        public async Task<AvailableGame> GetUserGame()
         {
-            return await Near.GameContract.ContractMethods.Views.GetGameId();
+            return await Near.GameContract.ContractMethods.Views.GetUserGame();
         }
 
         public async void GenerateEvents(int gameId)
