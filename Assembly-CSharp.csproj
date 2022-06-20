@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\PublicKey.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\IsNegative.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\FinalExecutionStatusBasic.cs" />
+     <Compile Include="Assets\Scripts\UI\Main menu\Music.cs" />
      <Compile Include="Assets\Scripts\UI\GameUI\GameAsset.cs" />
      <Compile Include="Assets\Scripts\UI\Main menu\SignInView.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\CryptoBytes.cs" />
@@ -151,6 +152,7 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Providers\BlockResult.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\Negative.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Lookup\Base.cs" />
+     <Compile Include="Assets\Scripts\UI\Main menu\SceneLoading.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\NftCardsUI\NftCardUI.cs" />
      <Compile Include="Assets\Scripts\Near\MarketplaceContract\ContractMethods\Actions.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Array16.cs" />
@@ -179,6 +181,7 @@
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Base58.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\MarketplaceAsset.cs" />
      <Compile Include="Assets\Scripts\Utils\Utils.cs" />
+     <Compile Include="Assets\Scripts\UI\Main menu\ButtonFX.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Field\Operations\Square.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\UInt128.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\ToBytes.cs" />
@@ -280,11 +283,33 @@
      <Compile Include="Assets\Scripts\Near\Models\Extras\FieldPlayerExtra.cs" />
      <Compile Include="Assets\Scripts\UI\Marketplace\MintNft\PositionButton.cs" />
      <Compile Include="Assets\Scripts\NearApiLibrary\Utilities\Ed25519\Internal\Ed25519Ref10\Group\Operations\Msub.cs" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Fonts\Orbitron\OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\Fonts\Orbitron\README.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
      <None Include="Assets\Fonts\Digital-Numbers\digitalnumbers\OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <None Include="Assets\Fonts\Digital-Numbers\ffonts.net.txt" />
      <None Include="Assets\Fonts\Digital-Numbers\install-a-new-font.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne.json" />
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.1.2f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -915,11 +940,23 @@
      <Reference Include="Unity.VSCode.Editor">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Services.Core.Analytics">
+     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Shared.Editor">
+     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Services.Core.Environments">
+     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Timeline.Editor">
+     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -954,23 +991,11 @@
      <Reference Include="Unity.Services.Core">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Services.Core.Analytics">
-     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Shared.Editor">
-     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Services.Core.Environments">
-     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Timeline.Editor">
-     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Core">
+     <HintPath>C:\Users\User\Desktop\nft-hockey-game-unity\Library\ScriptAssemblies\Unity.VisualScripting.Core.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>

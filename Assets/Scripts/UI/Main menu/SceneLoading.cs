@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoading : MonoBehaviour
 {
-    [Header("Загружаемаяч сцена")]
+    [Header("Loading scene")]
     public int sceneID;
-    [Header("Загружаемаяч сцена")]
+    [Header("Loading scene")]
     public Image loadingImg;
     public Text progressText;
 
