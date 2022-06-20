@@ -1,8 +1,11 @@
 using System.Collections.Generic;
 using Near;
 using Near.Models;
+using Near.Models.Game;
+using Near.Models.Game.Bid;
 using NearClientUnity.Utilities;
 using Runtime;
+using UI.Marketplace.Buy_cards.UIPopups;
 using UI.Marketplace.NftCardsUI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +14,11 @@ namespace UI.Marketplace.Buy_cards
 {
     public class BuyCardView : MonoBehaviour, ICardLoader
     {
+        [SerializeField] private UIPopupPurchasedCard uiPopupPurchasedCard;
+        [SerializeField] private UIPopupSetBid uiPopupSetBid;
+
+        [SerializeField] private Transform popupContent;
+        
         [SerializeField] private Transform setBidView;
         [SerializeField] private Transform buyImmediatelyView;
         
@@ -64,7 +72,7 @@ namespace UI.Marketplace.Buy_cards
             
             _cardDescription = cardRenderer.RenderCardDescription(cardDescriptionContent);
             _nftSaleInfo = nftSaleInfo;
-
+            
             if (nftSaleInfo.NFT.owner_id == NearPersistentManager.Instance.GetAccountId())
             {
                 buyButton.gameObject.SetActive(false);
@@ -118,9 +126,29 @@ namespace UI.Marketplace.Buy_cards
             if (_nftSaleInfo.Sale.is_auction)
             {
                 _price = bid.text;
+                Application.deepLinkActivated += OnSetBid;
+            }
+            else
+            {
+                Application.deepLinkActivated += OnBuyCard;
             }
             
             viewInteractor.MarketplaceController.Offer(_nftSaleInfo.NFT.token_id, "near", _price);
+        }
+
+        private void OnBuyCard(string url)
+        {
+            Application.deepLinkActivated -= OnBuyCard;
+            uiPopupPurchasedCard.Show();
+            uiPopupPurchasedCard.SetData(_nftSaleInfo, popupContent);
+        }
+
+        private void OnSetBid(string url)
+        {
+            Application.deepLinkActivated -= OnSetBid;
+
+            uiPopupSetBid.SetData(bid.text);
+            uiPopupSetBid.Show();
         }
     }
 }

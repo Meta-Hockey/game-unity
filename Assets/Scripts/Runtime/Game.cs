@@ -28,6 +28,11 @@ namespace Runtime
             SceneManager.LoadSceneAsync("MainMenu");
         }
 
+        public static void LoadGame()
+        {
+            SceneManager.LoadSceneAsync("Game");
+        }
+
         private static void StartPlayer(AsyncOperation operation)
         {
             if (!operation.isDone)

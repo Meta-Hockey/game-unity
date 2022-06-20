@@ -51,7 +51,10 @@ namespace Near
                 _near,
                 "",
                 new AuthService(),
-                new AuthStorage());
+                new AuthStorage(),
+                new Uri("nfthockey://testnet.near.org/success"),
+                new Uri("nfthockey://testnet.near.org/fail"),
+                new Uri("nfthockey://testnet.near.org/"));
         }
 
         public async Task<ContractNear> GetGameContract()
@@ -150,10 +153,7 @@ namespace Near
         {
             return await WalletAccount.RequestSignIn(
                 GameContactId,
-                "Nft hockey",
-                new Uri("nearclientunity://testnet.near.org/success"),
-                new Uri("nearclientunity://testnet.near.org/fail"),
-                new Uri("nearclientios://testnet.near.org")
+                "Nft hockey"
             );
         }
 

@@ -1,10 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using Near.MarketplaceContract;
 using Near.Models;
-using Near.Models.Team;
+using Near.Models.Game.Bid;
+using Near.Models.ManageTeam.Team;
 using Near.Models.Team.Team;
 using Near.Models.Team.TeamIds;
 using NearClientUnity;
@@ -14,6 +16,61 @@ namespace Near.GameContract.ContractMethods
 {
     public static class Views
     {
+        public static async Task<List<AvailableGame>> GetAvailableGames()
+        {
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
+
+            dynamic args = new ExpandoObject();
+            args.from_index = 0;
+            args.limit = 50;
+
+            dynamic results = await gameContract.View("get_available_games", args);
+            List<dynamic> availableGamesResults = JsonConvert.DeserializeObject<List<dynamic>>(
+                results.result.ToString()
+                );
+
+            List<AvailableGame> availableGames = new List<AvailableGame>(); 
+            foreach (dynamic availableGamesResult in availableGamesResults)
+            {
+                int gameId = availableGamesResult[0];
+                string playerId1 = availableGamesResult[1][0].ToString();
+                string playerId2 = availableGamesResult[1][1].ToString();
+                
+                availableGames.Add(new AvailableGame()
+                {
+                    GameId = gameId, 
+                    PlayerIds = new Tuple<string, string>(playerId1, playerId2)
+                });
+            }
+
+            return availableGames;
+        }
+
+        public static async Task<AvailableGame> GetUserGame()
+        {
+            string accountId = NearPersistentManager.Instance.WalletAccount.GetAccountId();
+            AvailableGame userGame = (await GetAvailableGames())
+                .FirstOrDefault(x => x.PlayerIds.Item1 == accountId || x.PlayerIds.Item2 == accountId);
+
+            return userGame;
+        }
+        
+        /// <summary>
+        /// If user is not in the game gameId = -1
+        /// </summary>
+        /// <returns></returns>
+        public static async Task<int> GetGameId()
+        {
+            AvailableGame userGame = await GetUserGame();
+
+            if (userGame == null)
+            {
+                return -1;
+            }
+            
+            return userGame.GameId;
+        }
+        
         public static async Task<IEnumerable<Opponent>> GetAvailablePlayers()
         {
             ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
