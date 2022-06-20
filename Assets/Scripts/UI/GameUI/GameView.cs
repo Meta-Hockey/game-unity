@@ -53,7 +53,7 @@ namespace UI.GameUI
                     StartCoroutine(RenderEvents());
                 }
                 
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(2);
             }
         }
 

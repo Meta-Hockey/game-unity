@@ -10,6 +10,8 @@ namespace UI.GameUI
 
         public int NumberOfGeneratedEvents;
 
+        private bool isGenerated = false;
+
         public GameController()
         {
             Events = new List<Event>();
@@ -23,11 +25,31 @@ namespace UI.GameUI
 
         public async void GenerateEvents(int gameId)
         {
-            List<Event> events =  await Near.GameContract.ContractMethods
-                .Actions.GenerateEvent(NumberOfGeneratedEvents, gameId);
+            if (isGenerated)
+            {
+                return;
+            }
 
-            NumberOfGeneratedEvents += events.Count;
-            Events.AddRange(events);
+            isGenerated = true;
+
+            try
+            {
+                List<Event> events = await Near.GameContract.ContractMethods
+                    .Actions.GenerateEvent(NumberOfGeneratedEvents, gameId);
+
+                if (events != null)
+                {
+                    NumberOfGeneratedEvents += events.Count;
+                    Events.AddRange(events);
+
+                    isGenerated = false;
+                }
+            }
+            catch
+            {
+                isGenerated = false;
+                GenerateEvents(gameId);
+            }
         }
     }
 }
