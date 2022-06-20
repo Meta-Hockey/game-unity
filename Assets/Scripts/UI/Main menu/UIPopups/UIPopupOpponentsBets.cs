@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Near.Models;
-using Near.Models.Game.Bid;
 using NearClientUnity.Utilities;
 using Runtime;
 using UnityEngine;

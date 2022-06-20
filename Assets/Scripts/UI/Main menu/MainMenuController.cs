@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Near.Models;
-using Near.Models.Game.Bid;
 
 namespace UI.Main_menu
 {
@@ -10,11 +9,6 @@ namespace UI.Main_menu
         public void StartGame(string opponentId, string deposit)
         {
             Near.GameContract.ContractMethods.Actions.StartGame(opponentId, deposit);
-        }
-
-        public async Task<int> GetGameId()
-        {
-            return await Near.GameContract.ContractMethods.Views.GetGameId();
         }
         
         public void SetBid(string bid)

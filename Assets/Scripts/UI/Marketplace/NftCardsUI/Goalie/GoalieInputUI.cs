@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Dynamic;
 using Near.MarketplaceContract.ContractMethods;
 using Newtonsoft.Json;
-using Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -45,7 +44,7 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             goalie.position = "GoaliePos";
             goalie.role = _role;
             goalie.hand = hand.isOn ? "Right" : "Left";
-            goalie.number = int.Parse(number.text);
+            goalie.number = number.text;
             goalie.stats = new []
             { 
                 int.Parse(gloveAndBlocker.text),
@@ -58,24 +57,6 @@ namespace UI.Marketplace.NftCardsUI.Goalie
             string goalieJson = JsonConvert.SerializeObject(goalie);
             
             Actions.MintNFT(royalties, ImageUrl, CardName, goalieJson);
-        }
-
-        public override void ShowMintedCard(Transform content)
-        {
-            GoalieCardUI goalieCardUI = Instantiate(Game.AssetRoot.marketplaceAsset.goalieCardUI, content);
-
-            StartCoroutine(Utils.Utils.LoadImage(goalieCardUI.Image, ImageUrl));
-            
-            goalieCardUI.CardName.text = CardName;
-            goalieCardUI.Number.text = number.text;
-            goalieCardUI.Position.text = "GoaliePos";
-            goalieCardUI.Role.text = _role;
-
-            goalieCardUI.Pads.text = pads.text;
-            goalieCardUI.GloveAndBlocker.text = gloveAndBlocker.text;
-            goalieCardUI.Stretch.text = stretch.text;
-            goalieCardUI.Stand.text = stand.text;
-            goalieCardUI.Morale.text = morale.text;
         }
     }
 }

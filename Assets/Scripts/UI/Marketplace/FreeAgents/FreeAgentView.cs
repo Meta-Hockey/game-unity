@@ -1,11 +1,9 @@
 using System.Collections.Generic;
 using Near;
 using Near.Models;
-using Near.Models.Game.Bid;
 using NearClientUnity.Utilities;
 using Runtime;
 using UI.Marketplace.Buy_cards;
-using UI.Marketplace.FreeAgents.UIPopups;
 using UI.Marketplace.NftCardsUI;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,10 +12,6 @@ namespace UI.Marketplace.FreeAgents
 {
     public class FreeAgentView : MonoBehaviour, ICardLoader
     {
-        [SerializeField] private UIPopupOnAccept uiPopupOnAccept;
-        [SerializeField] private UIPopupOnRemoveSale uiPopupOnRemoveSale;
-        [SerializeField] private UIPopupOnUpdatePrice uiPopupOnUpdatePrice;
-        
         [SerializeField] private Transform bidsView;
         [SerializeField] private Transform buyImmediatelyView;
         
@@ -41,8 +35,6 @@ namespace UI.Marketplace.FreeAgents
         private NFTSaleInfo _nftSaleInfo;
 
         private string _price;
-        private string _bidToAccept;
-        
         public void LoadCard(ICardRenderer cardRenderer, NFTSaleInfo nftSaleInfo)
         {
             viewInteractor.ChangeView(gameObject.transform);
@@ -104,8 +96,6 @@ namespace UI.Marketplace.FreeAgents
                 {
                     return;
                 }
-
-                _bidToAccept = nftSaleInfo.Sale.bids["near"][0].price;
                 
                 foreach (Bid saleBid in nftSaleInfo.Sale.bids["near"])
                 {
@@ -121,16 +111,7 @@ namespace UI.Marketplace.FreeAgents
 
         public void AcceptOffer()
         {
-            Application.deepLinkActivated += OnAcceptOffer;
             viewInteractor.MarketplaceController.AcceptOffer(_nftSaleInfo.NFT.token_id);
-        }
-
-        private void OnAcceptOffer(string url)
-        {
-            Application.deepLinkActivated -= OnAcceptOffer;
-            
-            uiPopupOnAccept.SetData(_bidToAccept); 
-            uiPopupOnAccept.Show();
         }
 
         public void ShowSetNewPriceView()
@@ -149,32 +130,14 @@ namespace UI.Marketplace.FreeAgents
             UInt128 nearAmount = NearUtils.ParseNearAmount(newSaleConditions.text);
 
             Dictionary<string, string> newSale = new Dictionary<string, string> {{"near", nearAmount.ToString()}};
-
-            Application.deepLinkActivated += OnUpdatePrice;
-            
             viewInteractor.MarketplaceController.SaleUpdate(newSale, _nftSaleInfo.NFT.token_id, _nftSaleInfo.Sale.is_auction);
             
             CloseSetNewPriceView();
         }
 
-        private void OnUpdatePrice(string url)
-        {
-            Application.deepLinkActivated -= OnUpdatePrice;
-            
-            uiPopupOnUpdatePrice.SetData(newSaleConditions.text);
-            uiPopupOnUpdatePrice.Show();
-        }
-
         public void RemoveSale()
         {
-            Application.deepLinkActivated += OnRemoveSale;
             viewInteractor.MarketplaceController.RemoveSale(_nftSaleInfo.NFT.token_id);
-        }
-
-        private void OnRemoveSale(string url)
-        {
-            Application.deepLinkActivated -= OnRemoveSale;
-            uiPopupOnRemoveSale.Show();
         }
     }
 }

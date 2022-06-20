@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Dynamic;
 using Near.MarketplaceContract.ContractMethods;
 using Newtonsoft.Json;
-using Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -65,7 +64,7 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             fieldPlayer.position = _position;
             fieldPlayer.role = _role;
             fieldPlayer.hand = hand.isOn ? "Right" : "Left";
-            fieldPlayer.number = int.Parse(number.text);
+            fieldPlayer.number = number.text;
             fieldPlayer.stats = new []
             { 
                 int.Parse(iQ.text),
@@ -78,24 +77,6 @@ namespace UI.Marketplace.NftCardsUI.FieldPlayer
             string fieldPlayerJson = JsonConvert.SerializeObject(fieldPlayer);
             
             Actions.MintNFT(royalties, ImageUrl, CardName, fieldPlayerJson);
-        }
-        
-        public override void ShowMintedCard(Transform content)
-        {
-            FieldPlayerCardUI fieldPlayerCardUI = Instantiate(Game.AssetRoot.marketplaceAsset.fieldPlayerCardUI, content);
-
-            StartCoroutine(Utils.Utils.LoadImage(fieldPlayerCardUI.Image, ImageUrl));
-            
-            fieldPlayerCardUI.CardName.text = CardName;
-            fieldPlayerCardUI.Number.text = number.text;
-            fieldPlayerCardUI.Position.text = _position;
-            fieldPlayerCardUI.Role.text = _role;
-
-            fieldPlayerCardUI.Skating.text = skating.text;
-            fieldPlayerCardUI.Strength.text = strength.text;
-            fieldPlayerCardUI.Shooting.text = shooting.text;
-            fieldPlayerCardUI.IQ.text = iQ.text;
-            fieldPlayerCardUI.Morale.text = morale.text;
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Near
     public static class NearUtils
     {
         public static readonly ulong GasMakeAvailable = 300_000_000_000_000;
-        public static readonly ulong GasMove = 100_000_000_000_000;
+        public static readonly ulong GasMove = 50_000_000_000_000;
         
         public static readonly int MinterRoyaltyCap = 2000;
         public static readonly ulong Gas = 200000000000000;

@@ -10,8 +10,6 @@ namespace UI.Marketplace.Sell_cards
 {
     public class SellCardView : MonoBehaviour, ICardLoader
     {
-        [SerializeField] private UIPopupOnSell uiPopupOnSell;
-        
         [SerializeField] private Transform sellView;
         [SerializeField] private Transform marketStoragePaidView;
         
@@ -76,17 +74,8 @@ namespace UI.Marketplace.Sell_cards
         {
             UInt128 nearAmount = Near.NearUtils.ParseNearAmount(price.text);
             Dictionary<string, string> newSaleConditions = new Dictionary<string, string> {{"near", nearAmount.ToString()}};
-
-            Application.deepLinkActivated += OnSellCard;
             
             viewInteractor.MarketplaceController.SaleUpdate(newSaleConditions, _nftSaleInfo.NFT.token_id, isAuction.isOn);
-        }
-
-        private void OnSellCard(string url)
-        {
-            Application.deepLinkActivated -= OnSellCard;
-            uiPopupOnSell.SetData(price.text, isAuction.isOn);
-            uiPopupOnSell.Show();
         }
     }
 }

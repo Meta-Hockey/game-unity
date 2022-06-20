@@ -18,9 +18,6 @@ namespace UI.Marketplace.MintNft
 
         [SerializeField] private Transform playerType;
         [SerializeField] private List<PositionButton> positionButtons;
-
-        [SerializeField] private Transform uiPopupSuccessful;
-        [SerializeField] private Transform contentSuccessful;
         
         private NftCardInputUI _cardMinter;
         private Dictionary<string, double> _royalties;
@@ -90,23 +87,8 @@ namespace UI.Marketplace.MintNft
             _cardMinter.ImageUrl = imageURL.text;
             
             _cardMinter.MintCard(_royalties);
-
-            Application.deepLinkActivated += OnMint;
         }
 
-        private void OnMint(string url)
-        {
-            Application.deepLinkActivated -= OnMint;
-            
-            _cardMinter.ShowMintedCard(contentSuccessful);
-            uiPopupSuccessful.gameObject.SetActive(true);
-        }
-
-        public void MintMore()
-        {
-            uiPopupSuccessful.gameObject.SetActive(false);
-        }
-        
         public void Back()
         {
             SceneManager.LoadSceneAsync("MainMenu");

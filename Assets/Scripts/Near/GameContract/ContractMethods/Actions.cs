@@ -2,12 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Threading.Tasks;
-using Near.Models;
-using Near.Models.Game;
-using Near.Models.ManageTeam.Team;
 using Near.Models.Team.Team;
 using NearClientUnity;
-using Newtonsoft.Json;
 
 namespace Near.GameContract.ContractMethods
 {
@@ -45,7 +41,7 @@ namespace Near.GameContract.ContractMethods
             await gameContract.Change("make_unavailable", args);
         }
 
-        public static async Task<List<Event>> GenerateEvent(int numberOfRenderedEvents, int gameId)
+        public static async Task<dynamic> GenerateEvent(int numberOfRenderedEvents, int gameId)
         {
             ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
                 
@@ -54,10 +50,9 @@ namespace Near.GameContract.ContractMethods
             args.game_id = gameId;
             
 
-            var results = await gameContract.Change("generate_event", args, NearUtils.GasMove);
-            List<Event> events = JsonConvert.DeserializeObject<List<Event>>(results);
+            var result = await gameContract.Change("generate_event", args, NearUtils.GasMove);
 
-            return events;
+            return result;
         }
 
         public static async void ChangeLineups(Team team)

@@ -36,8 +36,27 @@ namespace UI.Main_menu
 
             AccountState accountState = await NearPersistentManager.Instance.GetAccountState();
             balance.text = "Your balance: " + NearUtils.FormatNearAmount(UInt128.Parse(accountState.Amount)) + " NEAR";
+            
+            if (accountID == NearPersistentManager.Instance.MarketplaceContactId)
+            {
+                mintNFTButton.gameObject.SetActive(true);
+            }
+        }
+        
+        public void LoadBetsScene()
+        {
+            AsyncOperation operation = SceneManager.LoadSceneAsync("Bets");
+            operation.completed += LoadBetsUI;
+        }
 
-            mintNFTButton.gameObject.SetActive(accountID == NearPersistentManager.Instance.MarketplaceContactId);
+        private void LoadBetsUI(AsyncOperation operation)
+        {
+            if (!operation.isDone)
+            {
+                throw new Exception("Can't load scene");
+            }
+
+            SceneManager.LoadScene("BetsUI", LoadSceneMode.Additive);
         }
 
         public void TradeCards()

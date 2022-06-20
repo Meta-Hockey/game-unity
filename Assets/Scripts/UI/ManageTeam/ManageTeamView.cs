@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Near.Models.ManageTeam.Team;
 using Near.Models.Team.Team;
 using Runtime;
 using UI.ManageTeam.DragAndDrop;

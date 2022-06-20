@@ -1,4 +1,3 @@
-using Runtime;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,13 +11,9 @@ namespace UI.Main_menu.UIPopups
         [SerializeField] private Text defensive;
         [SerializeField] private Text attack;
         [SerializeField] private Text goalie;
-
-        private OpponentBet opponentBet;
-
+        
         public void LoadData(OpponentBet bet)
         {
-            opponentBet = bet;
-            
             opponentId.text = bet.OpponentId.text;
             price.text = "Choose a bet: " + bet.Price.text + "N";
             defensive.text = bet.Defensive.text;
@@ -28,15 +23,7 @@ namespace UI.Main_menu.UIPopups
 
         public void StartGame()
         {
-            mainMenuView.MainMenuController.StartGame(opponentBet.OpponentId.text, opponentBet.Price.text);
-
-            Application.deepLinkActivated += OnStartGame;
-        }
-
-        private void OnStartGame(string url)
-        {
-            Application.deepLinkActivated -= OnStartGame;
-            Game.LoadGame();
+            mainMenuView.MainMenuController.StartGame(opponentId.text, price.text);    
         }
     }
 }
