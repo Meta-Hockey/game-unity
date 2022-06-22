@@ -77,7 +77,8 @@ namespace Near
                 viewMethods = new[] { "get_available_players", "get_available_games",
                     "is_already_in_the_waiting_list", "get_game_config", "get_game_config"},
                 changeMethods = new[] { "make_available", "start_game", "generate_event",
-                    "make_unavailable", "internal_stop_game", "get_owner_team" }
+                    "make_unavailable", "internal_stop_game", "get_owner_team", "take_to",
+                    "coach_speech", "goalie_out", "goalie_back"}
             };
         
             return new ContractNear(account, WalletAccount, GameContactId, options);

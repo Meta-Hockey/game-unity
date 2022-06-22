@@ -60,6 +60,46 @@ namespace Near.GameContract.ContractMethods
             return events;
         }
 
+        public static async Task TakeTO(int gameId)
+        {
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
+                
+            dynamic args = new ExpandoObject();
+            args.game_id = gameId;
+            
+            await gameContract.Change("take_to", args, NearUtils.GasMove);
+        }
+        
+        public static async Task CoachSpeech(int gameId)
+        {
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
+                
+            dynamic args = new ExpandoObject();
+            args.game_id = gameId;
+            
+            await gameContract.Change("coach_speech", args, NearUtils.GasMove);
+        }
+        
+        public static async Task GoalieOut(int gameId)
+        {
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
+                
+            dynamic args = new ExpandoObject();
+            args.game_id = gameId;
+            
+            await gameContract.Change("coach_speech", args, NearUtils.GasMove);
+        } 
+        
+        public static async Task GoalieBack(int gameId)
+        {
+            ContractNear gameContract = await NearPersistentManager.Instance.GetGameContract();
+                
+            dynamic args = new ExpandoObject();
+            args.game_id = gameId;
+            
+            await gameContract.Change("goalie_back", args, NearUtils.GasMove);
+        } 
+        
         public static async void ChangeLineups(Team team)
         {
             ContractNear nftContract = await NearPersistentManager.Instance.GetNftContract();
