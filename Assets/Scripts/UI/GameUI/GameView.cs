@@ -1,8 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Near;
 using Near.Models.Game.Bid;
-using Near.Models.Game.Team;
 using Runtime;
 using UI.GameUI.EventsUI;
 using UnityEngine;
@@ -13,6 +11,9 @@ namespace UI.GameUI
 {
     public class GameView : MonoBehaviour
     {
+        [SerializeField] private Text iceTimePriority;
+        [SerializeField] private Slider iceTimePrioritySlider;
+
         [SerializeField] private UIPopupResult resultView;
         
         [SerializeField] private Text ownScoreText;
@@ -151,6 +152,11 @@ namespace UI.GameUI
         
         private void UpdateStats(Event data)
         {
+        }
+        
+        public void ChangeIceTimePriority()
+        {
+            iceTimePriority.text = Utils.Utils.GetIceTimePriority((int)iceTimePrioritySlider.value);
         }
     }
 }

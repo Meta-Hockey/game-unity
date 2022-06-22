@@ -57,7 +57,7 @@ namespace Utils
             {
                 1 => "SuperLowPriority",
                 2 => "LowPriority",
-                3 => "RightWing",
+                3 => "Normal",
                 4 => "HighPriority",
                 5 => "SuperHighPriority",
             };
