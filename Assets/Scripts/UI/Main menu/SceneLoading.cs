@@ -1,36 +1,34 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class SceneLoading : MonoBehaviour
 {
-    [Header("Loading scene")]
-    public int sceneID;
-    [Header("Loading scene")]
-    public Image loadingImg;
-    public Text progressText;
-
-
-    // Start is called before the first frame update
+    private RectTransform rectTransform;
+    [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private RawImage image;
+    
     void Start()
     {
-        StartCoroutine(AsyncLoad());
+        rectTransform = GetComponent<RectTransform>();
+        StartCoroutine(AnimationPlaying());
     }
 
-    IEnumerator AsyncLoad()
+    private IEnumerator AnimationPlaying()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneID);
-
-        while(!operation.isDone)
+        float deltaScale = 0.02f;
+        
+        while (rectTransform.localScale.x < 1)
         {
-            float progress = operation.progress / 0.9f;
-            loadingImg.fillAmount = progress;
-            progressText.text = string.Format("{0:0}", progress * 100);
-            yield return null;
+            float newScale = rectTransform.localScale.x + deltaScale;
+            
+            rectTransform.localScale = new Vector3(newScale, newScale, 1);
 
+            yield return new WaitForSeconds(0.01f);
         }
+
+        SceneManager.LoadSceneAsync("MainMenu");
     }
-    
 }
