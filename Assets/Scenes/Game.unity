@@ -198,6 +198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2743108}
   - component: {fileID: 2743109}
+  - component: {fileID: 2743110}
   m_Layer: 0
   m_Name: 'Line switch '
   m_TagString: Untagged
@@ -255,6 +256,27 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &2743110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2743107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b6bb93ab1f44b8b49aca096c192dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 102951698}
+  - {fileID: 1221512835}
+  - {fileID: 1959874845}
+  - {fileID: 284937083}
+  activeColor: {r: 1, g: 1, b: 1, a: 1}
+  defaultColor: {r: 1, g: 0.7725491, b: 0.30588236, a: 1}
+  defaultColorText: {r: 1, g: 1, b: 1, a: 1}
+  activeColorText: {r: 1, g: 0.7725491, b: 0.30588236, a: 1}
 --- !u!1 &8613585
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,6 +460,7 @@ GameObject:
   - component: {fileID: 102951697}
   - component: {fileID: 102951696}
   - component: {fileID: 102951695}
+  - component: {fileID: 102951698}
   m_Layer: 5
   m_Name: 1 line button
   m_TagString: Untagged
@@ -509,7 +532,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 102951696}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 102951698}
+        m_TargetAssemblyTypeName: UI.ManageTeam.Buttons.LineButton, Assembly-CSharp
+        m_MethodName: ChangeActiveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &102951696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,6 +583,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102951693}
   m_CullTransparentMesh: 1
+--- !u!114 &102951698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102951693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a20718553d4d23ab08040bf31c6961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: {fileID: 2743110}
+  image: {fileID: 102951696}
+  text: {fileID: 2021993622}
 --- !u!1 &111154599
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,6 +887,7 @@ GameObject:
   - component: {fileID: 284937082}
   - component: {fileID: 284937081}
   - component: {fileID: 284937080}
+  - component: {fileID: 284937083}
   m_Layer: 5
   m_Name: 4 line button
   m_TagString: Untagged
@@ -908,7 +959,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 284937081}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 284937083}
+        m_TargetAssemblyTypeName: UI.ManageTeam.Buttons.LineButton, Assembly-CSharp
+        m_MethodName: ChangeActiveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &284937081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,6 +1010,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284937078}
   m_CullTransparentMesh: 1
+--- !u!114 &284937083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284937078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a20718553d4d23ab08040bf31c6961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: {fileID: 2743110}
+  image: {fileID: 284937081}
+  text: {fileID: 860367214}
 --- !u!1 &316309485
 GameObject:
   m_ObjectHideFlags: 0
@@ -3554,6 +3632,7 @@ GameObject:
   - component: {fileID: 1221512834}
   - component: {fileID: 1221512833}
   - component: {fileID: 1221512832}
+  - component: {fileID: 1221512835}
   m_Layer: 5
   m_Name: 2 line button
   m_TagString: Untagged
@@ -3625,7 +3704,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1221512833}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1221512835}
+        m_TargetAssemblyTypeName: UI.ManageTeam.Buttons.LineButton, Assembly-CSharp
+        m_MethodName: ChangeActiveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1221512833
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3664,6 +3755,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221512830}
   m_CullTransparentMesh: 1
+--- !u!114 &1221512835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221512830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a20718553d4d23ab08040bf31c6961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: {fileID: 2743110}
+  image: {fileID: 1221512833}
+  text: {fileID: 111154601}
 --- !u!1 &1222059341
 GameObject:
   m_ObjectHideFlags: 0
@@ -6488,6 +6594,7 @@ GameObject:
   - component: {fileID: 1959874844}
   - component: {fileID: 1959874843}
   - component: {fileID: 1959874842}
+  - component: {fileID: 1959874845}
   m_Layer: 5
   m_Name: 3 line button
   m_TagString: Untagged
@@ -6559,7 +6666,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1959874843}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1959874845}
+        m_TargetAssemblyTypeName: UI.ManageTeam.Buttons.LineButton, Assembly-CSharp
+        m_MethodName: ChangeActiveButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1959874843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6598,6 +6717,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1959874840}
   m_CullTransparentMesh: 1
+--- !u!114 &1959874845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959874840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a20718553d4d23ab08040bf31c6961, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  view: {fileID: 2743110}
+  image: {fileID: 1959874843}
+  text: {fileID: 1413257461}
 --- !u!1 &1977261221
 GameObject:
   m_ObjectHideFlags: 0

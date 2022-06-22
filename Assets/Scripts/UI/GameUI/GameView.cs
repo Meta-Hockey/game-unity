@@ -41,12 +41,13 @@ namespace UI.GameUI
             {
                 return;
             }
-            
+
+            gameId = availableGame.GameId;
             numberOfRenderedEvents = 0;
             isEndOfGame = false;
             
-            opponentIdText.text = availableGame.PlayerIds.Item1 == NearPersistentManager.Instance.GetAccountId()
-                ? availableGame.PlayerIds.Item1 : availableGame.PlayerIds.Item2;
+//            opponentIdText.text = availableGame.PlayerIds.Item1 == NearPersistentManager.Instance.GetAccountId()
+ //               ? availableGame.PlayerIds.Item1 : availableGame.PlayerIds.Item2;
 
             StartCoroutine(GenerateEvents());
         }
